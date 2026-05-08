@@ -626,12 +626,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_membership.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_membership.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateMembershipRequest::parent].
@@ -769,12 +787,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_feature.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_feature.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateFeatureRequest::parent].
@@ -902,12 +938,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_membership.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_membership.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteMembershipRequest::name].
@@ -1016,12 +1069,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_feature.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_feature.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteFeatureRequest::name].
@@ -1136,12 +1206,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_membership.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_membership.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::UpdateMembershipRequest::name].
@@ -1293,12 +1381,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_feature.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_feature.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::UpdateFeatureRequest::name].
@@ -1541,12 +1647,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_fleet.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_fleet.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateFleetRequest::parent].
@@ -1730,12 +1854,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_fleet.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_fleet.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [fleet][crate::model::UpdateFleetRequest::fleet].
@@ -1868,12 +2010,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_fleet.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_fleet.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteFleetRequest::name].
@@ -2143,12 +2302,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_scope_namespace.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_scope_namespace.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateScopeNamespaceRequest::parent].
@@ -2283,12 +2460,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_scope_namespace.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_scope_namespace.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [scope_namespace][crate::model::UpdateScopeNamespaceRequest::scope_namespace].
@@ -2424,12 +2619,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_scope_namespace.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_scope_namespace.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteScopeNamespaceRequest::name].
@@ -2708,12 +2920,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_scope_rbac_role_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_scope_rbac_role_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateScopeRBACRoleBindingRequest::parent].
@@ -2850,12 +3080,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_scope_rbac_role_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_scope_rbac_role_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [rbacrolebinding][crate::model::UpdateScopeRBACRoleBindingRequest::rbacrolebinding].
@@ -2993,12 +3241,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_scope_rbac_role_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_scope_rbac_role_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteScopeRBACRoleBindingRequest::name].
@@ -3269,12 +3534,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_scope.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_scope.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateScopeRequest::parent].
@@ -3406,12 +3689,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_scope.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_scope.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [scope][crate::model::UpdateScopeRequest::scope].
@@ -3544,12 +3845,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_scope.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_scope.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteScopeRequest::name].
@@ -3930,12 +4248,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_membership_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_membership_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateMembershipBindingRequest::parent].
@@ -4074,12 +4410,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_membership_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_membership_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [membership_binding][crate::model::UpdateMembershipBindingRequest::membership_binding].
@@ -4217,12 +4571,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_membership_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_membership_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteMembershipBindingRequest::name].
@@ -4507,12 +4878,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::create_membership_rbac_role_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::create_membership_rbac_role_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateMembershipRBACRoleBindingRequest::parent].
@@ -4649,12 +5038,30 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::update_membership_rbac_role_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::update_membership_rbac_role_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [rbacrolebinding][crate::model::UpdateMembershipRBACRoleBindingRequest::rbacrolebinding].
@@ -4792,12 +5199,29 @@ pub mod gke_hub {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::GkeHub::delete_membership_rbac_role_binding.Wait",
+                "gcp.rpc.method" = "client::GkeHub::delete_membership_rbac_role_binding.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteMembershipRBACRoleBindingRequest::name].

@@ -335,12 +335,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::create_instance_config.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::create_instance_config.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateInstanceConfigRequest::parent].
@@ -485,12 +503,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::update_instance_config.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::update_instance_config.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [instance_config][crate::model::UpdateInstanceConfigRequest::instance_config].
@@ -1168,12 +1204,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::create_instance.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::create_instance.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateInstanceRequest::parent].
@@ -1307,12 +1361,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::update_instance.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::update_instance.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [instance][crate::model::UpdateInstanceRequest::instance].
@@ -1854,12 +1926,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::create_instance_partition.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::create_instance_partition.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateInstancePartitionRequest::parent].
@@ -2073,12 +2163,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::update_instance_partition.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::update_instance_partition.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [instance_partition][crate::model::UpdateInstancePartitionRequest::instance_partition].
@@ -2358,12 +2466,30 @@ pub mod instance_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::InstanceAdmin::move_instance.Wait",
+                "gcp.rpc.method" = "client::InstanceAdmin::move_instance.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::MoveInstanceRequest::name].

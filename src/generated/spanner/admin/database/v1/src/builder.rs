@@ -260,12 +260,30 @@ pub mod database_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::DatabaseAdmin::create_database.Wait",
+                "gcp.rpc.method" = "client::DatabaseAdmin::create_database.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateDatabaseRequest::parent].
@@ -483,12 +501,30 @@ pub mod database_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::DatabaseAdmin::update_database.Wait",
+                "gcp.rpc.method" = "client::DatabaseAdmin::update_database.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [database][crate::model::UpdateDatabaseRequest::database].
@@ -630,12 +666,29 @@ pub mod database_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::DatabaseAdmin::update_database_ddl.Wait",
+                "gcp.rpc.method" = "client::DatabaseAdmin::update_database_ddl.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [database][crate::model::UpdateDatabaseDdlRequest::database].
@@ -1162,12 +1215,30 @@ pub mod database_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::DatabaseAdmin::create_backup.Wait",
+                "gcp.rpc.method" = "client::DatabaseAdmin::create_backup.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateBackupRequest::parent].
@@ -1319,12 +1390,30 @@ pub mod database_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::DatabaseAdmin::copy_backup.Wait",
+                "gcp.rpc.method" = "client::DatabaseAdmin::copy_backup.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CopyBackupRequest::parent].
@@ -1816,12 +1905,30 @@ pub mod database_admin {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::DatabaseAdmin::restore_database.Wait",
+                "gcp.rpc.method" = "client::DatabaseAdmin::restore_database.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::RestoreDatabaseRequest::parent].

@@ -327,12 +327,30 @@ pub mod service_manager {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::ServiceManager::create_service.Wait",
+                "gcp.rpc.method" = "client::ServiceManager::create_service.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [service][crate::model::CreateServiceRequest::service].
@@ -445,12 +463,29 @@ pub mod service_manager {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::ServiceManager::delete_service.Wait",
+                "gcp.rpc.method" = "client::ServiceManager::delete_service.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [service_name][crate::model::DeleteServiceRequest::service_name].
@@ -556,12 +591,30 @@ pub mod service_manager {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::ServiceManager::undelete_service.Wait",
+                "gcp.rpc.method" = "client::ServiceManager::undelete_service.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [service_name][crate::model::UndeleteServiceRequest::service_name].
@@ -948,12 +1001,30 @@ pub mod service_manager {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::ServiceManager::submit_config_source.Wait",
+                "gcp.rpc.method" = "client::ServiceManager::submit_config_source.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [service_name][crate::model::SubmitConfigSourceRequest::service_name].
@@ -1278,12 +1349,30 @@ pub mod service_manager {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::ServiceManager::create_service_rollout.Wait",
+                "gcp.rpc.method" = "client::ServiceManager::create_service_rollout.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [service_name][crate::model::CreateServiceRolloutRequest::service_name].

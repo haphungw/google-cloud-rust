@@ -351,12 +351,30 @@ pub mod connectors {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::Connectors::create_connection.Wait",
+                "gcp.rpc.method" = "client::Connectors::create_connection.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::CreateConnectionRequest::parent].
@@ -493,12 +511,30 @@ pub mod connectors {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::Connectors::update_connection.Wait",
+                "gcp.rpc.method" = "client::Connectors::update_connection.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [connection][crate::model::UpdateConnectionRequest::connection].
@@ -636,12 +672,29 @@ pub mod connectors {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_response_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::Connectors::delete_connection.Wait",
+                "gcp.rpc.method" = "client::Connectors::delete_connection.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_response_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_response_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::DeleteConnectionRequest::name].
@@ -1339,12 +1392,30 @@ pub mod connectors {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::Connectors::refresh_connection_schema_metadata.Wait",
+                "gcp.rpc.method" = "client::Connectors::refresh_connection_schema_metadata.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_poller_with_options(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                    google_cloud_lro::internal::PollerOptions::default(),
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [name][crate::model::RefreshConnectionSchemaMetadataRequest::name].

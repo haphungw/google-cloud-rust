@@ -238,12 +238,29 @@ pub mod security_center {
                 Ok(Operation::new(op))
             };
 
-            google_cloud_lro::internal::new_unit_metadata_poller(
+            #[cfg(google_cloud_unstable_tracing)]
+            let span = ::tracing::info_span!(
+                "client::SecurityCenter::bulk_mute_findings.Wait",
+                "gcp.rpc.method" = "client::SecurityCenter::bulk_mute_findings.Wait",
+                "gcp.longrunning.operation_name" = ::tracing::field::Empty
+            );
+
+            #[cfg(google_cloud_unstable_tracing)]
+            return span.in_scope(|| {
+                google_cloud_lro::internal::new_unit_metadata_poller(
+                    polling_error_policy,
+                    polling_backoff_policy,
+                    start,
+                    query,
+                )
+            });
+            #[cfg(not(google_cloud_unstable_tracing))]
+            return google_cloud_lro::internal::new_unit_metadata_poller(
                 polling_error_policy,
                 polling_backoff_policy,
                 start,
                 query,
-            )
+            );
         }
 
         /// Sets the value of [parent][crate::model::BulkMuteFindingsRequest::parent].
