@@ -32,9 +32,11 @@ chrono                        = { workspace = true, features = ["now"] }
 futures.workspace             = true
 google-cloud-auth.workspace   = true
 google-cloud-gax.workspace    = true
+google-cloud-lro.workspace         = true
 gaxi                          = { workspace = true, features = ["_internal-grpc-client"] }
 google-cloud-test-utils       = { workspace = true }
 google-cloud-showcase-v1beta1 = { workspace = true, features = ["default"] }
+google-cloud-texttospeech-v1       = { path = "../../src/generated/cloud/texttospeech/v1" }
 google-cloud-storage          = { workspace = true, features = ["default"] }
 google-cloud-wkt              = { workspace = true }
 storage-samples               = { workspace = true }

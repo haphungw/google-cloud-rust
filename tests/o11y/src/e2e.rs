@@ -15,8 +15,10 @@
 pub mod metrics;
 pub mod resource_detector;
 pub mod showcase;
+// pub mod showcase_lro;
 pub mod signals;
 pub mod storage;
+// pub mod text_to_speech;
 
 use crate::e2e::resource_detector::TestResourceDetector;
 use crate::otlp::logs::EventFormatter;
