@@ -15,7 +15,7 @@
 pub mod metrics;
 pub mod resource_detector;
 pub mod showcase;
-// pub mod showcase_lro;
+pub mod showcase_lro;
 pub mod signals;
 pub mod storage;
 // pub mod text_to_speech;
