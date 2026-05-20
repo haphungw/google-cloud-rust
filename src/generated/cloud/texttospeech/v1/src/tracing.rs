@@ -41,7 +41,6 @@ impl<T> super::stub::TextToSpeech for TextToSpeech<T>
 where
     T: super::stub::TextToSpeech + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_voices(
         &self,
         req: crate::model::ListVoicesRequest,
@@ -51,11 +50,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeech::list_voices",
-            self.inner.list_voices(req, options));
-        pending.await
+            self.inner.list_voices(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn synthesize_speech(
         &self,
         req: crate::model::SynthesizeSpeechRequest,
@@ -65,11 +66,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeech::synthesize_speech",
-            self.inner.synthesize_speech(req, options));
-        pending.await
+            self.inner.synthesize_speech(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -79,11 +82,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeech::list_operations",
-            self.inner.list_operations(req, options));
-        pending.await
+            self.inner.list_operations(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -93,8 +98,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeech::get_operation",
-            self.inner.get_operation(req, options));
-        pending.await
+            self.inner.get_operation(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 }
 
@@ -124,7 +132,6 @@ impl<T> super::stub::TextToSpeechLongAudioSynthesize for TextToSpeechLongAudioSy
 where
     T: super::stub::TextToSpeechLongAudioSynthesize + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn synthesize_long_audio(
         &self,
         req: crate::model::SynthesizeLongAudioRequest,
@@ -134,11 +141,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeechLongAudioSynthesize::synthesize_long_audio",
-            self.inner.synthesize_long_audio(req, options));
-        pending.await
+            self.inner.synthesize_long_audio(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -148,11 +157,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeechLongAudioSynthesize::list_operations",
-            self.inner.list_operations(req, options));
-        pending.await
+            self.inner.list_operations(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -162,8 +173,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TextToSpeechLongAudioSynthesize::get_operation",
-            self.inner.get_operation(req, options));
-        pending.await
+            self.inner.get_operation(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
     fn get_polling_error_policy(
@@ -178,6 +192,17 @@ where
         options: &crate::RequestOptions,
     ) -> std::sync::Arc<dyn google_cloud_gax::polling_backoff_policy::PollingBackoffPolicy> {
         self.inner.get_polling_backoff_policy(options)
+    }
+
+    #[cfg(google_cloud_unstable_tracing)]
+    fn get_poller_options(
+        &self,
+        options: &crate::RequestOptions,
+    ) -> google_cloud_lro::PollerOptions {
+        let mut opts = self.inner.get_poller_options(options);
+        let details = google_cloud_lro::TracingDetails::default();
+        opts.tracing = Some(details);
+        opts
     }
 }
 

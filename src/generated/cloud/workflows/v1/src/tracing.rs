@@ -41,7 +41,6 @@ impl<T> super::stub::Workflows for Workflows<T>
 where
     T: super::stub::Workflows + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workflows(
         &self,
         req: crate::model::ListWorkflowsRequest,
@@ -51,11 +50,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::list_workflows",
-            self.inner.list_workflows(req, options));
-        pending.await
+            self.inner.list_workflows(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_workflow(
         &self,
         req: crate::model::GetWorkflowRequest,
@@ -65,11 +66,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::get_workflow",
-            self.inner.get_workflow(req, options));
-        pending.await
+            self.inner.get_workflow(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_workflow(
         &self,
         req: crate::model::CreateWorkflowRequest,
@@ -79,11 +82,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::create_workflow",
-            self.inner.create_workflow(req, options));
-        pending.await
+            self.inner.create_workflow(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_workflow(
         &self,
         req: crate::model::DeleteWorkflowRequest,
@@ -93,11 +98,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::delete_workflow",
-            self.inner.delete_workflow(req, options));
-        pending.await
+            self.inner.delete_workflow(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_workflow(
         &self,
         req: crate::model::UpdateWorkflowRequest,
@@ -107,11 +114,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::update_workflow",
-            self.inner.update_workflow(req, options));
-        pending.await
+            self.inner.update_workflow(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workflow_revisions(
         &self,
         req: crate::model::ListWorkflowRevisionsRequest,
@@ -121,11 +130,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::list_workflow_revisions",
-            self.inner.list_workflow_revisions(req, options));
-        pending.await
+            self.inner.list_workflow_revisions(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -135,11 +146,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::list_locations",
-            self.inner.list_locations(req, options));
-        pending.await
+            self.inner.list_locations(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -149,11 +162,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::get_location",
-            self.inner.get_location(req, options));
-        pending.await
+            self.inner.get_location(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -163,11 +178,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::list_operations",
-            self.inner.list_operations(req, options));
-        pending.await
+            self.inner.list_operations(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -177,11 +194,13 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::get_operation",
-            self.inner.get_operation(req, options));
-        pending.await
+            self.inner.get_operation(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -191,8 +210,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Workflows::delete_operation",
-            self.inner.delete_operation(req, options));
-        pending.await
+            self.inner.delete_operation(req.clone(), options.clone()));
+
+        let result = pending.await;
+
+        result
     }
 
     fn get_polling_error_policy(

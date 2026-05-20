@@ -1360,6 +1360,8 @@ libraries:
       - showcase
       - googleapis
     skip_release: true
+    rust:
+      lro_stub_options: true
   - name: google-cloud-spanner
     copyright_year: "2026"
     output: src/spanner
@@ -1592,6 +1594,8 @@ libraries:
   - name: google-cloud-texttospeech-v1
     version: 1.11.0
     copyright_year: "2025"
+    rust:
+      lro_stub_options: true
   - name: google-cloud-timeseriesinsights-v1
     version: 1.9.0
     copyright_year: "2025"
