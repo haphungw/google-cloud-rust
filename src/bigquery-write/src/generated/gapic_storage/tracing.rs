@@ -41,7 +41,6 @@ impl<T> super::stub::BigQueryWrite for BigQueryWrite<T>
 where
     T: super::stub::BigQueryWrite + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_write_stream(
         &self,
         req: crate::model::CreateWriteStreamRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigQueryWrite::create_write_stream",
-            self.inner.create_write_stream(req, options));
+            self.inner.create_write_stream(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_write_stream(
         &self,
         req: crate::model::GetWriteStreamRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigQueryWrite::get_write_stream",
-            self.inner.get_write_stream(req, options));
+            self.inner.get_write_stream(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn finalize_write_stream(
         &self,
         req: crate::model::FinalizeWriteStreamRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigQueryWrite::finalize_write_stream",
-            self.inner.finalize_write_stream(req, options));
+            self.inner.finalize_write_stream(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_commit_write_streams(
         &self,
         req: crate::model::BatchCommitWriteStreamsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigQueryWrite::batch_commit_write_streams",
-            self.inner.batch_commit_write_streams(req, options));
+            self.inner.batch_commit_write_streams(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn flush_rows(
         &self,
         req: crate::model::FlushRowsRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigQueryWrite::flush_rows",
-            self.inner.flush_rows(req, options));
+            self.inner.flush_rows(req.clone(), options.clone()));
+
         pending.await
     }
 }

@@ -41,7 +41,6 @@ impl<T> super::stub::AdvisoryNotificationsService for AdvisoryNotificationsServi
 where
     T: super::stub::AdvisoryNotificationsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_notifications(
         &self,
         req: crate::model::ListNotificationsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AdvisoryNotificationsService::list_notifications",
-            self.inner.list_notifications(req, options));
+            self.inner.list_notifications(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_notification(
         &self,
         req: crate::model::GetNotificationRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AdvisoryNotificationsService::get_notification",
-            self.inner.get_notification(req, options));
+            self.inner.get_notification(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_settings(
         &self,
         req: crate::model::GetSettingsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AdvisoryNotificationsService::get_settings",
-            self.inner.get_settings(req, options));
+            self.inner.get_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_settings(
         &self,
         req: crate::model::UpdateSettingsRequest,
@@ -93,7 +92,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AdvisoryNotificationsService::update_settings",
-            self.inner.update_settings(req, options));
+            self.inner.update_settings(req.clone(), options.clone()));
+
         pending.await
     }
 }

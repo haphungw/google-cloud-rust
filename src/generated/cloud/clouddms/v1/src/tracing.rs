@@ -41,7 +41,6 @@ impl<T> super::stub::DataMigrationService for DataMigrationService<T>
 where
     T: super::stub::DataMigrationService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_migration_jobs(
         &self,
         req: crate::model::ListMigrationJobsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_migration_jobs",
-            self.inner.list_migration_jobs(req, options));
+            self.inner.list_migration_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_migration_job(
         &self,
         req: crate::model::GetMigrationJobRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_migration_job",
-            self.inner.get_migration_job(req, options));
+            self.inner.get_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_migration_job(
         &self,
         req: crate::model::CreateMigrationJobRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::create_migration_job",
-            self.inner.create_migration_job(req, options));
+            self.inner.create_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_migration_job(
         &self,
         req: crate::model::UpdateMigrationJobRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::update_migration_job",
-            self.inner.update_migration_job(req, options));
+            self.inner.update_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_migration_job(
         &self,
         req: crate::model::DeleteMigrationJobRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::delete_migration_job",
-            self.inner.delete_migration_job(req, options));
+            self.inner.delete_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_migration_job(
         &self,
         req: crate::model::StartMigrationJobRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::start_migration_job",
-            self.inner.start_migration_job(req, options));
+            self.inner.start_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_migration_job(
         &self,
         req: crate::model::StopMigrationJobRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::stop_migration_job",
-            self.inner.stop_migration_job(req, options));
+            self.inner.stop_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_migration_job(
         &self,
         req: crate::model::ResumeMigrationJobRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::resume_migration_job",
-            self.inner.resume_migration_job(req, options));
+            self.inner.resume_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn promote_migration_job(
         &self,
         req: crate::model::PromoteMigrationJobRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::promote_migration_job",
-            self.inner.promote_migration_job(req, options));
+            self.inner.promote_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_migration_job(
         &self,
         req: crate::model::VerifyMigrationJobRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::verify_migration_job",
-            self.inner.verify_migration_job(req, options));
+            self.inner.verify_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restart_migration_job(
         &self,
         req: crate::model::RestartMigrationJobRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::restart_migration_job",
-            self.inner.restart_migration_job(req, options));
+            self.inner.restart_migration_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_ssh_script(
         &self,
         req: crate::model::GenerateSshScriptRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::generate_ssh_script",
-            self.inner.generate_ssh_script(req, options));
+            self.inner.generate_ssh_script(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_tcp_proxy_script(
         &self,
         req: crate::model::GenerateTcpProxyScriptRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::generate_tcp_proxy_script",
-            self.inner.generate_tcp_proxy_script(req, options));
+            self.inner.generate_tcp_proxy_script(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_connection_profiles(
         &self,
         req: crate::model::ListConnectionProfilesRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_connection_profiles",
-            self.inner.list_connection_profiles(req, options));
+            self.inner.list_connection_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_connection_profile(
         &self,
         req: crate::model::GetConnectionProfileRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_connection_profile",
-            self.inner.get_connection_profile(req, options));
+            self.inner.get_connection_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_connection_profile(
         &self,
         req: crate::model::CreateConnectionProfileRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::create_connection_profile",
-            self.inner.create_connection_profile(req, options));
+            self.inner.create_connection_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_connection_profile(
         &self,
         req: crate::model::UpdateConnectionProfileRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::update_connection_profile",
-            self.inner.update_connection_profile(req, options));
+            self.inner.update_connection_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_connection_profile(
         &self,
         req: crate::model::DeleteConnectionProfileRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::delete_connection_profile",
-            self.inner.delete_connection_profile(req, options));
+            self.inner.delete_connection_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_private_connection(
         &self,
         req: crate::model::CreatePrivateConnectionRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::create_private_connection",
-            self.inner.create_private_connection(req, options));
+            self.inner.create_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_private_connection(
         &self,
         req: crate::model::GetPrivateConnectionRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_private_connection",
-            self.inner.get_private_connection(req, options));
+            self.inner.get_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_private_connections(
         &self,
         req: crate::model::ListPrivateConnectionsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_private_connections",
-            self.inner.list_private_connections(req, options));
+            self.inner.list_private_connections(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_private_connection(
         &self,
         req: crate::model::DeletePrivateConnectionRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::delete_private_connection",
-            self.inner.delete_private_connection(req, options));
+            self.inner.delete_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_conversion_workspace(
         &self,
         req: crate::model::GetConversionWorkspaceRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_conversion_workspace",
-            self.inner.get_conversion_workspace(req, options));
+            self.inner.get_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_conversion_workspaces(
         &self,
         req: crate::model::ListConversionWorkspacesRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_conversion_workspaces",
-            self.inner.list_conversion_workspaces(req, options));
+            self.inner.list_conversion_workspaces(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_conversion_workspace(
         &self,
         req: crate::model::CreateConversionWorkspaceRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::create_conversion_workspace",
-            self.inner.create_conversion_workspace(req, options));
+            self.inner.create_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_conversion_workspace(
         &self,
         req: crate::model::UpdateConversionWorkspaceRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::update_conversion_workspace",
-            self.inner.update_conversion_workspace(req, options));
+            self.inner.update_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_conversion_workspace(
         &self,
         req: crate::model::DeleteConversionWorkspaceRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::delete_conversion_workspace",
-            self.inner.delete_conversion_workspace(req, options));
+            self.inner.delete_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mapping_rule(
         &self,
         req: crate::model::CreateMappingRuleRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::create_mapping_rule",
-            self.inner.create_mapping_rule(req, options));
+            self.inner.create_mapping_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mapping_rule(
         &self,
         req: crate::model::DeleteMappingRuleRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::delete_mapping_rule",
-            self.inner.delete_mapping_rule(req, options));
+            self.inner.delete_mapping_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mapping_rules(
         &self,
         req: crate::model::ListMappingRulesRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_mapping_rules",
-            self.inner.list_mapping_rules(req, options));
+            self.inner.list_mapping_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mapping_rule(
         &self,
         req: crate::model::GetMappingRuleRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_mapping_rule",
-            self.inner.get_mapping_rule(req, options));
+            self.inner.get_mapping_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn seed_conversion_workspace(
         &self,
         req: crate::model::SeedConversionWorkspaceRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::seed_conversion_workspace",
-            self.inner.seed_conversion_workspace(req, options));
+            self.inner.seed_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_mapping_rules(
         &self,
         req: crate::model::ImportMappingRulesRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::import_mapping_rules",
-            self.inner.import_mapping_rules(req, options));
+            self.inner.import_mapping_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn convert_conversion_workspace(
         &self,
         req: crate::model::ConvertConversionWorkspaceRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::convert_conversion_workspace",
-            self.inner.convert_conversion_workspace(req, options));
+            self.inner.convert_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit_conversion_workspace(
         &self,
         req: crate::model::CommitConversionWorkspaceRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::commit_conversion_workspace",
-            self.inner.commit_conversion_workspace(req, options));
+            self.inner.commit_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback_conversion_workspace(
         &self,
         req: crate::model::RollbackConversionWorkspaceRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::rollback_conversion_workspace",
-            self.inner.rollback_conversion_workspace(req, options));
+            self.inner.rollback_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn apply_conversion_workspace(
         &self,
         req: crate::model::ApplyConversionWorkspaceRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::apply_conversion_workspace",
-            self.inner.apply_conversion_workspace(req, options));
+            self.inner.apply_conversion_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn describe_database_entities(
         &self,
         req: crate::model::DescribeDatabaseEntitiesRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::describe_database_entities",
-            self.inner.describe_database_entities(req, options));
+            self.inner.describe_database_entities(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_background_jobs(
         &self,
         req: crate::model::SearchBackgroundJobsRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::search_background_jobs",
-            self.inner.search_background_jobs(req, options));
+            self.inner.search_background_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn describe_conversion_workspace_revisions(
         &self,
         req: crate::model::DescribeConversionWorkspaceRevisionsRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::describe_conversion_workspace_revisions",
-            self.inner.describe_conversion_workspace_revisions(req, options));
+            self.inner.describe_conversion_workspace_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_static_ips(
         &self,
         req: crate::model::FetchStaticIpsRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::fetch_static_ips",
-            self.inner.fetch_static_ips(req, options));
+            self.inner.fetch_static_ips(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -737,7 +736,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataMigrationService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::Firestore for Firestore<T>
 where
     T: super::stub::Firestore + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_document(
         &self,
         req: crate::model::GetDocumentRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::get_document",
-            self.inner.get_document(req, options));
+            self.inner.get_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_documents(
         &self,
         req: crate::model::ListDocumentsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::list_documents",
-            self.inner.list_documents(req, options));
+            self.inner.list_documents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_document(
         &self,
         req: crate::model::UpdateDocumentRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::update_document",
-            self.inner.update_document(req, options));
+            self.inner.update_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_document(
         &self,
         req: crate::model::DeleteDocumentRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::delete_document",
-            self.inner.delete_document(req, options));
+            self.inner.delete_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn begin_transaction(
         &self,
         req: crate::model::BeginTransactionRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::begin_transaction",
-            self.inner.begin_transaction(req, options));
+            self.inner.begin_transaction(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit(
         &self,
         req: crate::model::CommitRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::commit",
-            self.inner.commit(req, options));
+            self.inner.commit(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback(
         &self,
         req: crate::model::RollbackRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::rollback",
-            self.inner.rollback(req, options));
+            self.inner.rollback(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn partition_query(
         &self,
         req: crate::model::PartitionQueryRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::partition_query",
-            self.inner.partition_query(req, options));
+            self.inner.partition_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_collection_ids(
         &self,
         req: crate::model::ListCollectionIdsRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::list_collection_ids",
-            self.inner.list_collection_ids(req, options));
+            self.inner.list_collection_ids(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_write(
         &self,
         req: crate::model::BatchWriteRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::batch_write",
-            self.inner.batch_write(req, options));
+            self.inner.batch_write(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_document(
         &self,
         req: crate::model::CreateDocumentRequest,
@@ -191,7 +190,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firestore::create_document",
-            self.inner.create_document(req, options));
+            self.inner.create_document(req.clone(), options.clone()));
+
         pending.await
     }
 }

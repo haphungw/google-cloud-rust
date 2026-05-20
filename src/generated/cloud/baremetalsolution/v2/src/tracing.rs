@@ -41,7 +41,6 @@ impl<T> super::stub::BareMetalSolution for BareMetalSolution<T>
 where
     T: super::stub::BareMetalSolution + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_instances(
         &self,
         req: crate::model::ListInstancesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_instances",
-            self.inner.list_instances(req, options));
+            self.inner.list_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_instance(
         &self,
         req: crate::model::GetInstanceRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_instance",
-            self.inner.get_instance(req, options));
+            self.inner.get_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_instance(
         &self,
         req: crate::model::UpdateInstanceRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::update_instance",
-            self.inner.update_instance(req, options));
+            self.inner.update_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rename_instance(
         &self,
         req: crate::model::RenameInstanceRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::rename_instance",
-            self.inner.rename_instance(req, options));
+            self.inner.rename_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_instance(
         &self,
         req: crate::model::ResetInstanceRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::reset_instance",
-            self.inner.reset_instance(req, options));
+            self.inner.reset_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_instance(
         &self,
         req: crate::model::StartInstanceRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::start_instance",
-            self.inner.start_instance(req, options));
+            self.inner.start_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_instance(
         &self,
         req: crate::model::StopInstanceRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::stop_instance",
-            self.inner.stop_instance(req, options));
+            self.inner.stop_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_interactive_serial_console(
         &self,
         req: crate::model::EnableInteractiveSerialConsoleRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::enable_interactive_serial_console",
-            self.inner.enable_interactive_serial_console(req, options));
+            self.inner.enable_interactive_serial_console(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_interactive_serial_console(
         &self,
         req: crate::model::DisableInteractiveSerialConsoleRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::disable_interactive_serial_console",
-            self.inner.disable_interactive_serial_console(req, options));
+            self.inner.disable_interactive_serial_console(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_lun(
         &self,
         req: crate::model::DetachLunRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::detach_lun",
-            self.inner.detach_lun(req, options));
+            self.inner.detach_lun(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_ssh_keys(
         &self,
         req: crate::model::ListSSHKeysRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_ssh_keys",
-            self.inner.list_ssh_keys(req, options));
+            self.inner.list_ssh_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_ssh_key(
         &self,
         req: crate::model::CreateSSHKeyRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::create_ssh_key",
-            self.inner.create_ssh_key(req, options));
+            self.inner.create_ssh_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_ssh_key(
         &self,
         req: crate::model::DeleteSSHKeyRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::delete_ssh_key",
-            self.inner.delete_ssh_key(req, options));
+            self.inner.delete_ssh_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_volumes(
         &self,
         req: crate::model::ListVolumesRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_volumes",
-            self.inner.list_volumes(req, options));
+            self.inner.list_volumes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_volume(
         &self,
         req: crate::model::GetVolumeRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_volume",
-            self.inner.get_volume(req, options));
+            self.inner.get_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_volume(
         &self,
         req: crate::model::UpdateVolumeRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::update_volume",
-            self.inner.update_volume(req, options));
+            self.inner.update_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rename_volume(
         &self,
         req: crate::model::RenameVolumeRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::rename_volume",
-            self.inner.rename_volume(req, options));
+            self.inner.rename_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn evict_volume(
         &self,
         req: crate::model::EvictVolumeRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::evict_volume",
-            self.inner.evict_volume(req, options));
+            self.inner.evict_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resize_volume(
         &self,
         req: crate::model::ResizeVolumeRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::resize_volume",
-            self.inner.resize_volume(req, options));
+            self.inner.resize_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_networks(
         &self,
         req: crate::model::ListNetworksRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_networks",
-            self.inner.list_networks(req, options));
+            self.inner.list_networks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_network_usage(
         &self,
         req: crate::model::ListNetworkUsageRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_network_usage",
-            self.inner.list_network_usage(req, options));
+            self.inner.list_network_usage(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_network(
         &self,
         req: crate::model::GetNetworkRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_network",
-            self.inner.get_network(req, options));
+            self.inner.get_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_network(
         &self,
         req: crate::model::UpdateNetworkRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::update_network",
-            self.inner.update_network(req, options));
+            self.inner.update_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_volume_snapshot(
         &self,
         req: crate::model::CreateVolumeSnapshotRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::create_volume_snapshot",
-            self.inner.create_volume_snapshot(req, options));
+            self.inner.create_volume_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_volume_snapshot(
         &self,
         req: crate::model::RestoreVolumeSnapshotRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::restore_volume_snapshot",
-            self.inner.restore_volume_snapshot(req, options));
+            self.inner.restore_volume_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_volume_snapshot(
         &self,
         req: crate::model::DeleteVolumeSnapshotRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::delete_volume_snapshot",
-            self.inner.delete_volume_snapshot(req, options));
+            self.inner.delete_volume_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_volume_snapshot(
         &self,
         req: crate::model::GetVolumeSnapshotRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_volume_snapshot",
-            self.inner.get_volume_snapshot(req, options));
+            self.inner.get_volume_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_volume_snapshots(
         &self,
         req: crate::model::ListVolumeSnapshotsRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_volume_snapshots",
-            self.inner.list_volume_snapshots(req, options));
+            self.inner.list_volume_snapshots(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_lun(
         &self,
         req: crate::model::GetLunRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_lun",
-            self.inner.get_lun(req, options));
+            self.inner.get_lun(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_luns(
         &self,
         req: crate::model::ListLunsRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_luns",
-            self.inner.list_luns(req, options));
+            self.inner.list_luns(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn evict_lun(
         &self,
         req: crate::model::EvictLunRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::evict_lun",
-            self.inner.evict_lun(req, options));
+            self.inner.evict_lun(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_nfs_share(
         &self,
         req: crate::model::GetNfsShareRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_nfs_share",
-            self.inner.get_nfs_share(req, options));
+            self.inner.get_nfs_share(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_nfs_shares(
         &self,
         req: crate::model::ListNfsSharesRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_nfs_shares",
-            self.inner.list_nfs_shares(req, options));
+            self.inner.list_nfs_shares(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_nfs_share(
         &self,
         req: crate::model::UpdateNfsShareRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::update_nfs_share",
-            self.inner.update_nfs_share(req, options));
+            self.inner.update_nfs_share(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_nfs_share(
         &self,
         req: crate::model::CreateNfsShareRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::create_nfs_share",
-            self.inner.create_nfs_share(req, options));
+            self.inner.create_nfs_share(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rename_nfs_share(
         &self,
         req: crate::model::RenameNfsShareRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::rename_nfs_share",
-            self.inner.rename_nfs_share(req, options));
+            self.inner.rename_nfs_share(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_nfs_share(
         &self,
         req: crate::model::DeleteNfsShareRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::delete_nfs_share",
-            self.inner.delete_nfs_share(req, options));
+            self.inner.delete_nfs_share(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_provisioning_quotas(
         &self,
         req: crate::model::ListProvisioningQuotasRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_provisioning_quotas",
-            self.inner.list_provisioning_quotas(req, options));
+            self.inner.list_provisioning_quotas(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn submit_provisioning_config(
         &self,
         req: crate::model::SubmitProvisioningConfigRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::submit_provisioning_config",
-            self.inner.submit_provisioning_config(req, options));
+            self.inner.submit_provisioning_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_provisioning_config(
         &self,
         req: crate::model::GetProvisioningConfigRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_provisioning_config",
-            self.inner.get_provisioning_config(req, options));
+            self.inner.get_provisioning_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_provisioning_config(
         &self,
         req: crate::model::CreateProvisioningConfigRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::create_provisioning_config",
-            self.inner.create_provisioning_config(req, options));
+            self.inner.create_provisioning_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_provisioning_config(
         &self,
         req: crate::model::UpdateProvisioningConfigRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::update_provisioning_config",
-            self.inner.update_provisioning_config(req, options));
+            self.inner.update_provisioning_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rename_network(
         &self,
         req: crate::model::RenameNetworkRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::rename_network",
-            self.inner.rename_network(req, options));
+            self.inner.rename_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_os_images(
         &self,
         req: crate::model::ListOSImagesRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_os_images",
-            self.inner.list_os_images(req, options));
+            self.inner.list_os_images(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -695,7 +694,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BareMetalSolution::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

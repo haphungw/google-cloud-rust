@@ -41,7 +41,6 @@ impl<T> super::stub::LookupService for LookupService<T>
 where
     T: super::stub::LookupService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resolve_service(
         &self,
         req: crate::model::ResolveServiceRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LookupService::resolve_service",
-            self.inner.resolve_service(req, options));
+            self.inner.resolve_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LookupService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -79,7 +78,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LookupService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -110,7 +110,6 @@ impl<T> super::stub::RegistrationService for RegistrationService<T>
 where
     T: super::stub::RegistrationService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_namespace(
         &self,
         req: crate::model::CreateNamespaceRequest,
@@ -120,11 +119,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::create_namespace",
-            self.inner.create_namespace(req, options));
+            self.inner.create_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_namespaces(
         &self,
         req: crate::model::ListNamespacesRequest,
@@ -134,11 +133,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::list_namespaces",
-            self.inner.list_namespaces(req, options));
+            self.inner.list_namespaces(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_namespace(
         &self,
         req: crate::model::GetNamespaceRequest,
@@ -148,11 +147,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::get_namespace",
-            self.inner.get_namespace(req, options));
+            self.inner.get_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_namespace(
         &self,
         req: crate::model::UpdateNamespaceRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::update_namespace",
-            self.inner.update_namespace(req, options));
+            self.inner.update_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_namespace(
         &self,
         req: crate::model::DeleteNamespaceRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::delete_namespace",
-            self.inner.delete_namespace(req, options));
+            self.inner.delete_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service(
         &self,
         req: crate::model::CreateServiceRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::create_service",
-            self.inner.create_service(req, options));
+            self.inner.create_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_services(
         &self,
         req: crate::model::ListServicesRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::list_services",
-            self.inner.list_services(req, options));
+            self.inner.list_services(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service(
         &self,
         req: crate::model::GetServiceRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::get_service",
-            self.inner.get_service(req, options));
+            self.inner.get_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service(
         &self,
         req: crate::model::UpdateServiceRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::update_service",
-            self.inner.update_service(req, options));
+            self.inner.update_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service(
         &self,
         req: crate::model::DeleteServiceRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::delete_service",
-            self.inner.delete_service(req, options));
+            self.inner.delete_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_endpoint(
         &self,
         req: crate::model::CreateEndpointRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::create_endpoint",
-            self.inner.create_endpoint(req, options));
+            self.inner.create_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_endpoints(
         &self,
         req: crate::model::ListEndpointsRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::list_endpoints",
-            self.inner.list_endpoints(req, options));
+            self.inner.list_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_endpoint(
         &self,
         req: crate::model::GetEndpointRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::get_endpoint",
-            self.inner.get_endpoint(req, options));
+            self.inner.get_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_endpoint(
         &self,
         req: crate::model::UpdateEndpointRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::update_endpoint",
-            self.inner.update_endpoint(req, options));
+            self.inner.update_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_endpoint(
         &self,
         req: crate::model::DeleteEndpointRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::delete_endpoint",
-            self.inner.delete_endpoint(req, options));
+            self.inner.delete_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -386,7 +385,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegistrationService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

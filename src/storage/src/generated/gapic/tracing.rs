@@ -41,7 +41,6 @@ impl<T> super::stub::StorageControl for StorageControl<T>
 where
     T: super::stub::StorageControl + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_bucket(
         &self,
         req: crate::model::DeleteBucketRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::delete_bucket",
-            self.inner.delete_bucket(req, options));
+            self.inner.delete_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_bucket(
         &self,
         req: crate::model::GetBucketRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_bucket",
-            self.inner.get_bucket(req, options));
+            self.inner.get_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_bucket(
         &self,
         req: crate::model::CreateBucketRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::create_bucket",
-            self.inner.create_bucket(req, options));
+            self.inner.create_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_buckets(
         &self,
         req: crate::model::ListBucketsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::list_buckets",
-            self.inner.list_buckets(req, options));
+            self.inner.list_buckets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn lock_bucket_retention_policy(
         &self,
         req: crate::model::LockBucketRetentionPolicyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::lock_bucket_retention_policy",
-            self.inner.lock_bucket_retention_policy(req, options));
+            self.inner.lock_bucket_retention_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_bucket(
         &self,
         req: crate::model::UpdateBucketRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::update_bucket",
-            self.inner.update_bucket(req, options));
+            self.inner.update_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn compose_object(
         &self,
         req: crate::model::ComposeObjectRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::compose_object",
-            self.inner.compose_object(req, options));
+            self.inner.compose_object(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_object(
         &self,
         req: crate::model::DeleteObjectRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::delete_object",
-            self.inner.delete_object(req, options));
+            self.inner.delete_object(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_object(
         &self,
         req: crate::model::RestoreObjectRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::restore_object",
-            self.inner.restore_object(req, options));
+            self.inner.restore_object(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_object(
         &self,
         req: crate::model::GetObjectRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_object",
-            self.inner.get_object(req, options));
+            self.inner.get_object(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_object(
         &self,
         req: crate::model::UpdateObjectRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::update_object",
-            self.inner.update_object(req, options));
+            self.inner.update_object(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_objects(
         &self,
         req: crate::model::ListObjectsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::list_objects",
-            self.inner.list_objects(req, options));
+            self.inner.list_objects(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rewrite_object(
         &self,
         req: crate::model::RewriteObjectRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::rewrite_object",
-            self.inner.rewrite_object(req, options));
+            self.inner.rewrite_object(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_object(
         &self,
         req: crate::model::MoveObjectRequest,
@@ -233,7 +232,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::move_object",
-            self.inner.move_object(req, options));
+            self.inner.move_object(req.clone(), options.clone()));
+
         pending.await
     }
 }

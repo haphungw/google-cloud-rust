@@ -41,7 +41,6 @@ impl<T> super::stub::ManagedIdentitiesService for ManagedIdentitiesService<T>
 where
     T: super::stub::ManagedIdentitiesService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_microsoft_ad_domain(
         &self,
         req: crate::model::CreateMicrosoftAdDomainRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::create_microsoft_ad_domain",
-            self.inner.create_microsoft_ad_domain(req, options));
+            self.inner.create_microsoft_ad_domain(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_admin_password(
         &self,
         req: crate::model::ResetAdminPasswordRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::reset_admin_password",
-            self.inner.reset_admin_password(req, options));
+            self.inner.reset_admin_password(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_domains(
         &self,
         req: crate::model::ListDomainsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::list_domains",
-            self.inner.list_domains(req, options));
+            self.inner.list_domains(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_domain(
         &self,
         req: crate::model::GetDomainRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::get_domain",
-            self.inner.get_domain(req, options));
+            self.inner.get_domain(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_domain(
         &self,
         req: crate::model::UpdateDomainRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::update_domain",
-            self.inner.update_domain(req, options));
+            self.inner.update_domain(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_domain(
         &self,
         req: crate::model::DeleteDomainRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::delete_domain",
-            self.inner.delete_domain(req, options));
+            self.inner.delete_domain(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn attach_trust(
         &self,
         req: crate::model::AttachTrustRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::attach_trust",
-            self.inner.attach_trust(req, options));
+            self.inner.attach_trust(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reconfigure_trust(
         &self,
         req: crate::model::ReconfigureTrustRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::reconfigure_trust",
-            self.inner.reconfigure_trust(req, options));
+            self.inner.reconfigure_trust(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_trust(
         &self,
         req: crate::model::DetachTrustRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::detach_trust",
-            self.inner.detach_trust(req, options));
+            self.inner.detach_trust(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_trust(
         &self,
         req: crate::model::ValidateTrustRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::validate_trust",
-            self.inner.validate_trust(req, options));
+            self.inner.validate_trust(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -233,7 +232,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedIdentitiesService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

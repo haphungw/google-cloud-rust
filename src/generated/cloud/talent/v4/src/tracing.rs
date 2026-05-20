@@ -41,7 +41,6 @@ impl<T> super::stub::CompanyService for CompanyService<T>
 where
     T: super::stub::CompanyService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_company(
         &self,
         req: crate::model::CreateCompanyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CompanyService::create_company",
-            self.inner.create_company(req, options));
+            self.inner.create_company(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_company(
         &self,
         req: crate::model::GetCompanyRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CompanyService::get_company",
-            self.inner.get_company(req, options));
+            self.inner.get_company(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_company(
         &self,
         req: crate::model::UpdateCompanyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CompanyService::update_company",
-            self.inner.update_company(req, options));
+            self.inner.update_company(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_company(
         &self,
         req: crate::model::DeleteCompanyRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CompanyService::delete_company",
-            self.inner.delete_company(req, options));
+            self.inner.delete_company(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_companies(
         &self,
         req: crate::model::ListCompaniesRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CompanyService::list_companies",
-            self.inner.list_companies(req, options));
+            self.inner.list_companies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CompanyService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -152,7 +152,6 @@ impl<T> super::stub::Completion for Completion<T>
 where
     T: super::stub::Completion + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn complete_query(
         &self,
         req: crate::model::CompleteQueryRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Completion::complete_query",
-            self.inner.complete_query(req, options));
+            self.inner.complete_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -176,7 +175,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Completion::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -207,7 +207,6 @@ impl<T> super::stub::EventService for EventService<T>
 where
     T: super::stub::EventService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_client_event(
         &self,
         req: crate::model::CreateClientEventRequest,
@@ -217,11 +216,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EventService::create_client_event",
-            self.inner.create_client_event(req, options));
+            self.inner.create_client_event(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -231,7 +230,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EventService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -262,7 +262,6 @@ impl<T> super::stub::JobService for JobService<T>
 where
     T: super::stub::JobService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_job(
         &self,
         req: crate::model::CreateJobRequest,
@@ -272,11 +271,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::create_job",
-            self.inner.create_job(req, options));
+            self.inner.create_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_jobs(
         &self,
         req: crate::model::BatchCreateJobsRequest,
@@ -286,11 +285,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::batch_create_jobs",
-            self.inner.batch_create_jobs(req, options));
+            self.inner.batch_create_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_job(
         &self,
         req: crate::model::GetJobRequest,
@@ -300,11 +299,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::get_job",
-            self.inner.get_job(req, options));
+            self.inner.get_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_job(
         &self,
         req: crate::model::UpdateJobRequest,
@@ -314,11 +313,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::update_job",
-            self.inner.update_job(req, options));
+            self.inner.update_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_update_jobs(
         &self,
         req: crate::model::BatchUpdateJobsRequest,
@@ -328,11 +327,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::batch_update_jobs",
-            self.inner.batch_update_jobs(req, options));
+            self.inner.batch_update_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_job(
         &self,
         req: crate::model::DeleteJobRequest,
@@ -342,11 +341,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::delete_job",
-            self.inner.delete_job(req, options));
+            self.inner.delete_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_delete_jobs(
         &self,
         req: crate::model::BatchDeleteJobsRequest,
@@ -356,11 +355,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::batch_delete_jobs",
-            self.inner.batch_delete_jobs(req, options));
+            self.inner.batch_delete_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_jobs(
         &self,
         req: crate::model::ListJobsRequest,
@@ -370,11 +369,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::list_jobs",
-            self.inner.list_jobs(req, options));
+            self.inner.list_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_jobs(
         &self,
         req: crate::model::SearchJobsRequest,
@@ -384,11 +383,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::search_jobs",
-            self.inner.search_jobs(req, options));
+            self.inner.search_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_jobs_for_alert(
         &self,
         req: crate::model::SearchJobsRequest,
@@ -398,11 +397,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::search_jobs_for_alert",
-            self.inner.search_jobs_for_alert(req, options));
+            self.inner.search_jobs_for_alert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -412,7 +411,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -457,7 +457,6 @@ impl<T> super::stub::TenantService for TenantService<T>
 where
     T: super::stub::TenantService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_tenant(
         &self,
         req: crate::model::CreateTenantRequest,
@@ -467,11 +466,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TenantService::create_tenant",
-            self.inner.create_tenant(req, options));
+            self.inner.create_tenant(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_tenant(
         &self,
         req: crate::model::GetTenantRequest,
@@ -481,11 +480,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TenantService::get_tenant",
-            self.inner.get_tenant(req, options));
+            self.inner.get_tenant(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_tenant(
         &self,
         req: crate::model::UpdateTenantRequest,
@@ -495,11 +494,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TenantService::update_tenant",
-            self.inner.update_tenant(req, options));
+            self.inner.update_tenant(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_tenant(
         &self,
         req: crate::model::DeleteTenantRequest,
@@ -509,11 +508,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TenantService::delete_tenant",
-            self.inner.delete_tenant(req, options));
+            self.inner.delete_tenant(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tenants(
         &self,
         req: crate::model::ListTenantsRequest,
@@ -523,11 +522,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TenantService::list_tenants",
-            self.inner.list_tenants(req, options));
+            self.inner.list_tenants(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -537,7 +536,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TenantService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }

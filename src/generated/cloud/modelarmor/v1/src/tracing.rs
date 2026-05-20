@@ -41,7 +41,6 @@ impl<T> super::stub::ModelArmor for ModelArmor<T>
 where
     T: super::stub::ModelArmor + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_templates(
         &self,
         req: crate::model::ListTemplatesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::list_templates",
-            self.inner.list_templates(req, options));
+            self.inner.list_templates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_template(
         &self,
         req: crate::model::GetTemplateRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::get_template",
-            self.inner.get_template(req, options));
+            self.inner.get_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_template(
         &self,
         req: crate::model::CreateTemplateRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::create_template",
-            self.inner.create_template(req, options));
+            self.inner.create_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_template(
         &self,
         req: crate::model::UpdateTemplateRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::update_template",
-            self.inner.update_template(req, options));
+            self.inner.update_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_template(
         &self,
         req: crate::model::DeleteTemplateRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::delete_template",
-            self.inner.delete_template(req, options));
+            self.inner.delete_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_floor_setting(
         &self,
         req: crate::model::GetFloorSettingRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::get_floor_setting",
-            self.inner.get_floor_setting(req, options));
+            self.inner.get_floor_setting(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_floor_setting(
         &self,
         req: crate::model::UpdateFloorSettingRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::update_floor_setting",
-            self.inner.update_floor_setting(req, options));
+            self.inner.update_floor_setting(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sanitize_user_prompt(
         &self,
         req: crate::model::SanitizeUserPromptRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::sanitize_user_prompt",
-            self.inner.sanitize_user_prompt(req, options));
+            self.inner.sanitize_user_prompt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sanitize_model_response(
         &self,
         req: crate::model::SanitizeModelResponseRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::sanitize_model_response",
-            self.inner.sanitize_model_response(req, options));
+            self.inner.sanitize_model_response(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -191,7 +190,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelArmor::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

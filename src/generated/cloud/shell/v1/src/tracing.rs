@@ -41,7 +41,6 @@ impl<T> super::stub::CloudShellService for CloudShellService<T>
 where
     T: super::stub::CloudShellService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_environment(
         &self,
         req: crate::model::GetEnvironmentRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudShellService::get_environment",
-            self.inner.get_environment(req, options));
+            self.inner.get_environment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_environment(
         &self,
         req: crate::model::StartEnvironmentRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudShellService::start_environment",
-            self.inner.start_environment(req, options));
+            self.inner.start_environment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn authorize_environment(
         &self,
         req: crate::model::AuthorizeEnvironmentRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudShellService::authorize_environment",
-            self.inner.authorize_environment(req, options));
+            self.inner.authorize_environment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_public_key(
         &self,
         req: crate::model::AddPublicKeyRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudShellService::add_public_key",
-            self.inner.add_public_key(req, options));
+            self.inner.add_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_public_key(
         &self,
         req: crate::model::RemovePublicKeyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudShellService::remove_public_key",
-            self.inner.remove_public_key(req, options));
+            self.inner.remove_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudShellService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

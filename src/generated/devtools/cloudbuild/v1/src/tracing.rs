@@ -41,7 +41,6 @@ impl<T> super::stub::CloudBuild for CloudBuild<T>
 where
     T: super::stub::CloudBuild + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_build(
         &self,
         req: crate::model::CreateBuildRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::create_build",
-            self.inner.create_build(req, options));
+            self.inner.create_build(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_build(
         &self,
         req: crate::model::GetBuildRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::get_build",
-            self.inner.get_build(req, options));
+            self.inner.get_build(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_builds(
         &self,
         req: crate::model::ListBuildsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::list_builds",
-            self.inner.list_builds(req, options));
+            self.inner.list_builds(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_build(
         &self,
         req: crate::model::CancelBuildRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::cancel_build",
-            self.inner.cancel_build(req, options));
+            self.inner.cancel_build(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn retry_build(
         &self,
         req: crate::model::RetryBuildRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::retry_build",
-            self.inner.retry_build(req, options));
+            self.inner.retry_build(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn approve_build(
         &self,
         req: crate::model::ApproveBuildRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::approve_build",
-            self.inner.approve_build(req, options));
+            self.inner.approve_build(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_build_trigger(
         &self,
         req: crate::model::CreateBuildTriggerRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::create_build_trigger",
-            self.inner.create_build_trigger(req, options));
+            self.inner.create_build_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_build_trigger(
         &self,
         req: crate::model::GetBuildTriggerRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::get_build_trigger",
-            self.inner.get_build_trigger(req, options));
+            self.inner.get_build_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_build_triggers(
         &self,
         req: crate::model::ListBuildTriggersRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::list_build_triggers",
-            self.inner.list_build_triggers(req, options));
+            self.inner.list_build_triggers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_build_trigger(
         &self,
         req: crate::model::DeleteBuildTriggerRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::delete_build_trigger",
-            self.inner.delete_build_trigger(req, options));
+            self.inner.delete_build_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_build_trigger(
         &self,
         req: crate::model::UpdateBuildTriggerRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::update_build_trigger",
-            self.inner.update_build_trigger(req, options));
+            self.inner.update_build_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn run_build_trigger(
         &self,
         req: crate::model::RunBuildTriggerRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::run_build_trigger",
-            self.inner.run_build_trigger(req, options));
+            self.inner.run_build_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn receive_trigger_webhook(
         &self,
         req: crate::model::ReceiveTriggerWebhookRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::receive_trigger_webhook",
-            self.inner.receive_trigger_webhook(req, options));
+            self.inner.receive_trigger_webhook(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_worker_pool(
         &self,
         req: crate::model::CreateWorkerPoolRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::create_worker_pool",
-            self.inner.create_worker_pool(req, options));
+            self.inner.create_worker_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_worker_pool(
         &self,
         req: crate::model::GetWorkerPoolRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::get_worker_pool",
-            self.inner.get_worker_pool(req, options));
+            self.inner.get_worker_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_worker_pool(
         &self,
         req: crate::model::DeleteWorkerPoolRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::delete_worker_pool",
-            self.inner.delete_worker_pool(req, options));
+            self.inner.delete_worker_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_worker_pool(
         &self,
         req: crate::model::UpdateWorkerPoolRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::update_worker_pool",
-            self.inner.update_worker_pool(req, options));
+            self.inner.update_worker_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_worker_pools(
         &self,
         req: crate::model::ListWorkerPoolsRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::list_worker_pools",
-            self.inner.list_worker_pools(req, options));
+            self.inner.list_worker_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_default_service_account(
         &self,
         req: crate::model::GetDefaultServiceAccountRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::get_default_service_account",
-            self.inner.get_default_service_account(req, options));
+            self.inner.get_default_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -331,7 +330,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudBuild::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

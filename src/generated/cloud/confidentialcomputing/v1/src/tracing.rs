@@ -41,7 +41,6 @@ impl<T> super::stub::ConfidentialComputing for ConfidentialComputing<T>
 where
     T: super::stub::ConfidentialComputing + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_challenge(
         &self,
         req: crate::model::CreateChallengeRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfidentialComputing::create_challenge",
-            self.inner.create_challenge(req, options));
+            self.inner.create_challenge(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_attestation(
         &self,
         req: crate::model::VerifyAttestationRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfidentialComputing::verify_attestation",
-            self.inner.verify_attestation(req, options));
+            self.inner.verify_attestation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_confidential_space(
         &self,
         req: crate::model::VerifyConfidentialSpaceRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfidentialComputing::verify_confidential_space",
-            self.inner.verify_confidential_space(req, options));
+            self.inner.verify_confidential_space(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_confidential_gke(
         &self,
         req: crate::model::VerifyConfidentialGkeRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfidentialComputing::verify_confidential_gke",
-            self.inner.verify_confidential_gke(req, options));
+            self.inner.verify_confidential_gke(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfidentialComputing::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfidentialComputing::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

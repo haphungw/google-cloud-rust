@@ -41,7 +41,6 @@ impl<T> super::stub::GatewayControl for GatewayControl<T>
 where
     T: super::stub::GatewayControl + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_credentials(
         &self,
         req: crate::model::GenerateCredentialsRequest,
@@ -51,7 +50,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GatewayControl::generate_credentials",
-            self.inner.generate_credentials(req, options));
+            self.inner.generate_credentials(req.clone(), options.clone()));
+
         pending.await
     }
 }

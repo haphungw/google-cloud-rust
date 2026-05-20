@@ -41,7 +41,6 @@ impl<T> super::stub::AlloyDBCSQLAdmin for AlloyDBCSQLAdmin<T>
 where
     T: super::stub::AlloyDBCSQLAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_from_cloud_sql(
         &self,
         req: crate::model::RestoreFromCloudSQLRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::restore_from_cloud_sql",
-            self.inner.restore_from_cloud_sql(req, options));
+            self.inner.restore_from_cloud_sql(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBCSQLAdmin::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -180,7 +180,6 @@ impl<T> super::stub::AlloyDBAdmin for AlloyDBAdmin<T>
 where
     T: super::stub::AlloyDBAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_clusters(
         &self,
         req: crate::model::ListClustersRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_clusters",
-            self.inner.list_clusters(req, options));
+            self.inner.list_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cluster(
         &self,
         req: crate::model::GetClusterRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_cluster",
-            self.inner.get_cluster(req, options));
+            self.inner.get_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cluster(
         &self,
         req: crate::model::CreateClusterRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::create_cluster",
-            self.inner.create_cluster(req, options));
+            self.inner.create_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_cluster(
         &self,
         req: crate::model::UpdateClusterRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::update_cluster",
-            self.inner.update_cluster(req, options));
+            self.inner.update_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_cluster(
         &self,
         req: crate::model::ExportClusterRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::export_cluster",
-            self.inner.export_cluster(req, options));
+            self.inner.export_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_cluster(
         &self,
         req: crate::model::ImportClusterRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::import_cluster",
-            self.inner.import_cluster(req, options));
+            self.inner.import_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn upgrade_cluster(
         &self,
         req: crate::model::UpgradeClusterRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::upgrade_cluster",
-            self.inner.upgrade_cluster(req, options));
+            self.inner.upgrade_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cluster(
         &self,
         req: crate::model::DeleteClusterRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::delete_cluster",
-            self.inner.delete_cluster(req, options));
+            self.inner.delete_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn promote_cluster(
         &self,
         req: crate::model::PromoteClusterRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::promote_cluster",
-            self.inner.promote_cluster(req, options));
+            self.inner.promote_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn switchover_cluster(
         &self,
         req: crate::model::SwitchoverClusterRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::switchover_cluster",
-            self.inner.switchover_cluster(req, options));
+            self.inner.switchover_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_cluster(
         &self,
         req: crate::model::RestoreClusterRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::restore_cluster",
-            self.inner.restore_cluster(req, options));
+            self.inner.restore_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_secondary_cluster(
         &self,
         req: crate::model::CreateSecondaryClusterRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::create_secondary_cluster",
-            self.inner.create_secondary_cluster(req, options));
+            self.inner.create_secondary_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_instances(
         &self,
         req: crate::model::ListInstancesRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_instances",
-            self.inner.list_instances(req, options));
+            self.inner.list_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_instance(
         &self,
         req: crate::model::GetInstanceRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_instance",
-            self.inner.get_instance(req, options));
+            self.inner.get_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_instance(
         &self,
         req: crate::model::CreateInstanceRequest,
@@ -386,11 +385,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::create_instance",
-            self.inner.create_instance(req, options));
+            self.inner.create_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_secondary_instance(
         &self,
         req: crate::model::CreateSecondaryInstanceRequest,
@@ -400,11 +399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::create_secondary_instance",
-            self.inner.create_secondary_instance(req, options));
+            self.inner.create_secondary_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_instances(
         &self,
         req: crate::model::BatchCreateInstancesRequest,
@@ -414,11 +413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::batch_create_instances",
-            self.inner.batch_create_instances(req, options));
+            self.inner.batch_create_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_instance(
         &self,
         req: crate::model::UpdateInstanceRequest,
@@ -428,11 +427,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::update_instance",
-            self.inner.update_instance(req, options));
+            self.inner.update_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_instance(
         &self,
         req: crate::model::DeleteInstanceRequest,
@@ -442,11 +441,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::delete_instance",
-            self.inner.delete_instance(req, options));
+            self.inner.delete_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn failover_instance(
         &self,
         req: crate::model::FailoverInstanceRequest,
@@ -456,11 +455,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::failover_instance",
-            self.inner.failover_instance(req, options));
+            self.inner.failover_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn inject_fault(
         &self,
         req: crate::model::InjectFaultRequest,
@@ -470,11 +469,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::inject_fault",
-            self.inner.inject_fault(req, options));
+            self.inner.inject_fault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restart_instance(
         &self,
         req: crate::model::RestartInstanceRequest,
@@ -484,11 +483,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::restart_instance",
-            self.inner.restart_instance(req, options));
+            self.inner.restart_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_sql(
         &self,
         req: crate::model::ExecuteSqlRequest,
@@ -498,11 +497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::execute_sql",
-            self.inner.execute_sql(req, options));
+            self.inner.execute_sql(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backups(
         &self,
         req: crate::model::ListBackupsRequest,
@@ -512,11 +511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_backups",
-            self.inner.list_backups(req, options));
+            self.inner.list_backups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backup(
         &self,
         req: crate::model::GetBackupRequest,
@@ -526,11 +525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_backup",
-            self.inner.get_backup(req, options));
+            self.inner.get_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backup(
         &self,
         req: crate::model::CreateBackupRequest,
@@ -540,11 +539,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::create_backup",
-            self.inner.create_backup(req, options));
+            self.inner.create_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backup(
         &self,
         req: crate::model::UpdateBackupRequest,
@@ -554,11 +553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::update_backup",
-            self.inner.update_backup(req, options));
+            self.inner.update_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backup(
         &self,
         req: crate::model::DeleteBackupRequest,
@@ -568,11 +567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::delete_backup",
-            self.inner.delete_backup(req, options));
+            self.inner.delete_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_supported_database_flags(
         &self,
         req: crate::model::ListSupportedDatabaseFlagsRequest,
@@ -582,11 +581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_supported_database_flags",
-            self.inner.list_supported_database_flags(req, options));
+            self.inner.list_supported_database_flags(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_client_certificate(
         &self,
         req: crate::model::GenerateClientCertificateRequest,
@@ -596,11 +595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::generate_client_certificate",
-            self.inner.generate_client_certificate(req, options));
+            self.inner.generate_client_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_connection_info(
         &self,
         req: crate::model::GetConnectionInfoRequest,
@@ -610,11 +609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_connection_info",
-            self.inner.get_connection_info(req, options));
+            self.inner.get_connection_info(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_users(
         &self,
         req: crate::model::ListUsersRequest,
@@ -624,11 +623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_users",
-            self.inner.list_users(req, options));
+            self.inner.list_users(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_user(
         &self,
         req: crate::model::GetUserRequest,
@@ -638,11 +637,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_user",
-            self.inner.get_user(req, options));
+            self.inner.get_user(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_user(
         &self,
         req: crate::model::CreateUserRequest,
@@ -652,11 +651,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::create_user",
-            self.inner.create_user(req, options));
+            self.inner.create_user(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_user(
         &self,
         req: crate::model::UpdateUserRequest,
@@ -666,11 +665,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::update_user",
-            self.inner.update_user(req, options));
+            self.inner.update_user(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_user(
         &self,
         req: crate::model::DeleteUserRequest,
@@ -680,11 +679,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::delete_user",
-            self.inner.delete_user(req, options));
+            self.inner.delete_user(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_databases(
         &self,
         req: crate::model::ListDatabasesRequest,
@@ -694,11 +693,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_databases",
-            self.inner.list_databases(req, options));
+            self.inner.list_databases(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -708,11 +707,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -722,11 +721,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -736,11 +735,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -750,11 +749,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -764,11 +763,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -778,7 +777,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlloyDBAdmin::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

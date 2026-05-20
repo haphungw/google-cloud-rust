@@ -41,7 +41,6 @@ impl<T> super::stub::RecaptchaEnterpriseService for RecaptchaEnterpriseService<T
 where
     T: super::stub::RecaptchaEnterpriseService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_assessment(
         &self,
         req: crate::model::CreateAssessmentRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::create_assessment",
-            self.inner.create_assessment(req, options));
+            self.inner.create_assessment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn annotate_assessment(
         &self,
         req: crate::model::AnnotateAssessmentRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::annotate_assessment",
-            self.inner.annotate_assessment(req, options));
+            self.inner.annotate_assessment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_key(
         &self,
         req: crate::model::CreateKeyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::create_key",
-            self.inner.create_key(req, options));
+            self.inner.create_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_keys(
         &self,
         req: crate::model::ListKeysRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::list_keys",
-            self.inner.list_keys(req, options));
+            self.inner.list_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn retrieve_legacy_secret_key(
         &self,
         req: crate::model::RetrieveLegacySecretKeyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::retrieve_legacy_secret_key",
-            self.inner.retrieve_legacy_secret_key(req, options));
+            self.inner.retrieve_legacy_secret_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_key(
         &self,
         req: crate::model::GetKeyRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::get_key",
-            self.inner.get_key(req, options));
+            self.inner.get_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_key(
         &self,
         req: crate::model::UpdateKeyRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::update_key",
-            self.inner.update_key(req, options));
+            self.inner.update_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_key(
         &self,
         req: crate::model::DeleteKeyRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::delete_key",
-            self.inner.delete_key(req, options));
+            self.inner.delete_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn migrate_key(
         &self,
         req: crate::model::MigrateKeyRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::migrate_key",
-            self.inner.migrate_key(req, options));
+            self.inner.migrate_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_ip_override(
         &self,
         req: crate::model::AddIpOverrideRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::add_ip_override",
-            self.inner.add_ip_override(req, options));
+            self.inner.add_ip_override(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_ip_override(
         &self,
         req: crate::model::RemoveIpOverrideRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::remove_ip_override",
-            self.inner.remove_ip_override(req, options));
+            self.inner.remove_ip_override(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_ip_overrides(
         &self,
         req: crate::model::ListIpOverridesRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::list_ip_overrides",
-            self.inner.list_ip_overrides(req, options));
+            self.inner.list_ip_overrides(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_metrics(
         &self,
         req: crate::model::GetMetricsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::get_metrics",
-            self.inner.get_metrics(req, options));
+            self.inner.get_metrics(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_firewall_policy(
         &self,
         req: crate::model::CreateFirewallPolicyRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::create_firewall_policy",
-            self.inner.create_firewall_policy(req, options));
+            self.inner.create_firewall_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_firewall_policies(
         &self,
         req: crate::model::ListFirewallPoliciesRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::list_firewall_policies",
-            self.inner.list_firewall_policies(req, options));
+            self.inner.list_firewall_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_firewall_policy(
         &self,
         req: crate::model::GetFirewallPolicyRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::get_firewall_policy",
-            self.inner.get_firewall_policy(req, options));
+            self.inner.get_firewall_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_firewall_policy(
         &self,
         req: crate::model::UpdateFirewallPolicyRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::update_firewall_policy",
-            self.inner.update_firewall_policy(req, options));
+            self.inner.update_firewall_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_firewall_policy(
         &self,
         req: crate::model::DeleteFirewallPolicyRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::delete_firewall_policy",
-            self.inner.delete_firewall_policy(req, options));
+            self.inner.delete_firewall_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reorder_firewall_policies(
         &self,
         req: crate::model::ReorderFirewallPoliciesRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::reorder_firewall_policies",
-            self.inner.reorder_firewall_policies(req, options));
+            self.inner.reorder_firewall_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_related_account_groups(
         &self,
         req: crate::model::ListRelatedAccountGroupsRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::list_related_account_groups",
-            self.inner.list_related_account_groups(req, options));
+            self.inner.list_related_account_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_related_account_group_memberships(
         &self,
         req: crate::model::ListRelatedAccountGroupMembershipsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::list_related_account_group_memberships",
-            self.inner.list_related_account_group_memberships(req, options));
+            self.inner.list_related_account_group_memberships(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_related_account_group_memberships(
         &self,
         req: crate::model::SearchRelatedAccountGroupMembershipsRequest,
@@ -345,7 +344,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RecaptchaEnterpriseService::search_related_account_group_memberships",
-            self.inner.search_related_account_group_memberships(req, options));
+            self.inner.search_related_account_group_memberships(req.clone(), options.clone()));
+
         pending.await
     }
 }

@@ -41,7 +41,6 @@ impl<T> super::stub::IAMPolicy for IAMPolicy<T>
 where
     T: super::stub::IAMPolicy + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::SetIamPolicyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMPolicy::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::GetIamPolicyRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMPolicy::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::TestIamPermissionsRequest,
@@ -79,7 +78,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMPolicy::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 }

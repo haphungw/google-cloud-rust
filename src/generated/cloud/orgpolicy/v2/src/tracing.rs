@@ -41,7 +41,6 @@ impl<T> super::stub::OrgPolicy for OrgPolicy<T>
 where
     T: super::stub::OrgPolicy + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_constraints(
         &self,
         req: crate::model::ListConstraintsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::list_constraints",
-            self.inner.list_constraints(req, options));
+            self.inner.list_constraints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_policies(
         &self,
         req: crate::model::ListPoliciesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::list_policies",
-            self.inner.list_policies(req, options));
+            self.inner.list_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_policy(
         &self,
         req: crate::model::GetPolicyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::get_policy",
-            self.inner.get_policy(req, options));
+            self.inner.get_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_policy(
         &self,
         req: crate::model::GetEffectivePolicyRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::get_effective_policy",
-            self.inner.get_effective_policy(req, options));
+            self.inner.get_effective_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_policy(
         &self,
         req: crate::model::CreatePolicyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::create_policy",
-            self.inner.create_policy(req, options));
+            self.inner.create_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_policy(
         &self,
         req: crate::model::UpdatePolicyRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::update_policy",
-            self.inner.update_policy(req, options));
+            self.inner.update_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_policy(
         &self,
         req: crate::model::DeletePolicyRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::delete_policy",
-            self.inner.delete_policy(req, options));
+            self.inner.delete_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_custom_constraint(
         &self,
         req: crate::model::CreateCustomConstraintRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::create_custom_constraint",
-            self.inner.create_custom_constraint(req, options));
+            self.inner.create_custom_constraint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_custom_constraint(
         &self,
         req: crate::model::UpdateCustomConstraintRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::update_custom_constraint",
-            self.inner.update_custom_constraint(req, options));
+            self.inner.update_custom_constraint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_custom_constraint(
         &self,
         req: crate::model::GetCustomConstraintRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::get_custom_constraint",
-            self.inner.get_custom_constraint(req, options));
+            self.inner.get_custom_constraint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_custom_constraints(
         &self,
         req: crate::model::ListCustomConstraintsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::list_custom_constraints",
-            self.inner.list_custom_constraints(req, options));
+            self.inner.list_custom_constraints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_custom_constraint(
         &self,
         req: crate::model::DeleteCustomConstraintRequest,
@@ -205,7 +204,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicy::delete_custom_constraint",
-            self.inner.delete_custom_constraint(req, options));
+            self.inner.delete_custom_constraint(req.clone(), options.clone()));
+
         pending.await
     }
 }

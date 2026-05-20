@@ -41,7 +41,6 @@ impl<T> super::stub::StorageControl for StorageControl<T>
 where
     T: super::stub::StorageControl + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_folder(
         &self,
         req: crate::model::CreateFolderRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::create_folder",
-            self.inner.create_folder(req, options));
+            self.inner.create_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_folder(
         &self,
         req: crate::model::DeleteFolderRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::delete_folder",
-            self.inner.delete_folder(req, options));
+            self.inner.delete_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_folder(
         &self,
         req: crate::model::GetFolderRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_folder",
-            self.inner.get_folder(req, options));
+            self.inner.get_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_folders(
         &self,
         req: crate::model::ListFoldersRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::list_folders",
-            self.inner.list_folders(req, options));
+            self.inner.list_folders(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rename_folder(
         &self,
         req: crate::model::RenameFolderRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::rename_folder",
-            self.inner.rename_folder(req, options));
+            self.inner.rename_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_folder_recursive(
         &self,
         req: crate::model::DeleteFolderRecursiveRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::delete_folder_recursive",
-            self.inner.delete_folder_recursive(req, options));
+            self.inner.delete_folder_recursive(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_storage_layout(
         &self,
         req: crate::model::GetStorageLayoutRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_storage_layout",
-            self.inner.get_storage_layout(req, options));
+            self.inner.get_storage_layout(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_managed_folder(
         &self,
         req: crate::model::CreateManagedFolderRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::create_managed_folder",
-            self.inner.create_managed_folder(req, options));
+            self.inner.create_managed_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_managed_folder(
         &self,
         req: crate::model::DeleteManagedFolderRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::delete_managed_folder",
-            self.inner.delete_managed_folder(req, options));
+            self.inner.delete_managed_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_managed_folder(
         &self,
         req: crate::model::GetManagedFolderRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_managed_folder",
-            self.inner.get_managed_folder(req, options));
+            self.inner.get_managed_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_managed_folders(
         &self,
         req: crate::model::ListManagedFoldersRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::list_managed_folders",
-            self.inner.list_managed_folders(req, options));
+            self.inner.list_managed_folders(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_anywhere_cache(
         &self,
         req: crate::model::CreateAnywhereCacheRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::create_anywhere_cache",
-            self.inner.create_anywhere_cache(req, options));
+            self.inner.create_anywhere_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_anywhere_cache(
         &self,
         req: crate::model::UpdateAnywhereCacheRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::update_anywhere_cache",
-            self.inner.update_anywhere_cache(req, options));
+            self.inner.update_anywhere_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_anywhere_cache(
         &self,
         req: crate::model::DisableAnywhereCacheRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::disable_anywhere_cache",
-            self.inner.disable_anywhere_cache(req, options));
+            self.inner.disable_anywhere_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn pause_anywhere_cache(
         &self,
         req: crate::model::PauseAnywhereCacheRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::pause_anywhere_cache",
-            self.inner.pause_anywhere_cache(req, options));
+            self.inner.pause_anywhere_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_anywhere_cache(
         &self,
         req: crate::model::ResumeAnywhereCacheRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::resume_anywhere_cache",
-            self.inner.resume_anywhere_cache(req, options));
+            self.inner.resume_anywhere_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_anywhere_cache(
         &self,
         req: crate::model::GetAnywhereCacheRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_anywhere_cache",
-            self.inner.get_anywhere_cache(req, options));
+            self.inner.get_anywhere_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_anywhere_caches(
         &self,
         req: crate::model::ListAnywhereCachesRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::list_anywhere_caches",
-            self.inner.list_anywhere_caches(req, options));
+            self.inner.list_anywhere_caches(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_project_intelligence_config(
         &self,
         req: crate::model::GetProjectIntelligenceConfigRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_project_intelligence_config",
-            self.inner.get_project_intelligence_config(req, options));
+            self.inner.get_project_intelligence_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_project_intelligence_config(
         &self,
         req: crate::model::UpdateProjectIntelligenceConfigRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::update_project_intelligence_config",
-            self.inner.update_project_intelligence_config(req, options));
+            self.inner.update_project_intelligence_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_folder_intelligence_config(
         &self,
         req: crate::model::GetFolderIntelligenceConfigRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_folder_intelligence_config",
-            self.inner.get_folder_intelligence_config(req, options));
+            self.inner.get_folder_intelligence_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_folder_intelligence_config(
         &self,
         req: crate::model::UpdateFolderIntelligenceConfigRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::update_folder_intelligence_config",
-            self.inner.update_folder_intelligence_config(req, options));
+            self.inner.update_folder_intelligence_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_organization_intelligence_config(
         &self,
         req: crate::model::GetOrganizationIntelligenceConfigRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_organization_intelligence_config",
-            self.inner.get_organization_intelligence_config(req, options));
+            self.inner.get_organization_intelligence_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_organization_intelligence_config(
         &self,
         req: crate::model::UpdateOrganizationIntelligenceConfigRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::update_organization_intelligence_config",
-            self.inner.update_organization_intelligence_config(req, options));
+            self.inner.update_organization_intelligence_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -429,7 +428,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageControl::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

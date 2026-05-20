@@ -41,7 +41,6 @@ impl<T> super::stub::SecurityCenterManagement for SecurityCenterManagement<T>
 where
     T: super::stub::SecurityCenterManagement + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_effective_security_health_analytics_custom_modules(
         &self,
         req: crate::model::ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
@@ -53,11 +52,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_effective_security_health_analytics_custom_modules",
-            self.inner.list_effective_security_health_analytics_custom_modules(req, options));
+            self.inner.list_effective_security_health_analytics_custom_modules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_security_health_analytics_custom_module(
         &self,
         req: crate::model::GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
@@ -67,11 +66,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::get_effective_security_health_analytics_custom_module",
-            self.inner.get_effective_security_health_analytics_custom_module(req, options));
+            self.inner.get_effective_security_health_analytics_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_security_health_analytics_custom_modules(
         &self,
         req: crate::model::ListSecurityHealthAnalyticsCustomModulesRequest,
@@ -82,11 +81,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_security_health_analytics_custom_modules",
-            self.inner.list_security_health_analytics_custom_modules(req, options));
+            self.inner.list_security_health_analytics_custom_modules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_descendant_security_health_analytics_custom_modules(
         &self,
         req: crate::model::ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
@@ -98,11 +97,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_descendant_security_health_analytics_custom_modules",
-            self.inner.list_descendant_security_health_analytics_custom_modules(req, options));
+            self.inner.list_descendant_security_health_analytics_custom_modules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_security_health_analytics_custom_module(
         &self,
         req: crate::model::GetSecurityHealthAnalyticsCustomModuleRequest,
@@ -112,11 +111,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::get_security_health_analytics_custom_module",
-            self.inner.get_security_health_analytics_custom_module(req, options));
+            self.inner.get_security_health_analytics_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_security_health_analytics_custom_module(
         &self,
         req: crate::model::CreateSecurityHealthAnalyticsCustomModuleRequest,
@@ -126,11 +125,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::create_security_health_analytics_custom_module",
-            self.inner.create_security_health_analytics_custom_module(req, options));
+            self.inner.create_security_health_analytics_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_security_health_analytics_custom_module(
         &self,
         req: crate::model::UpdateSecurityHealthAnalyticsCustomModuleRequest,
@@ -140,11 +139,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::update_security_health_analytics_custom_module",
-            self.inner.update_security_health_analytics_custom_module(req, options));
+            self.inner.update_security_health_analytics_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_security_health_analytics_custom_module(
         &self,
         req: crate::model::DeleteSecurityHealthAnalyticsCustomModuleRequest,
@@ -154,11 +153,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::delete_security_health_analytics_custom_module",
-            self.inner.delete_security_health_analytics_custom_module(req, options));
+            self.inner.delete_security_health_analytics_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn simulate_security_health_analytics_custom_module(
         &self,
         req: crate::model::SimulateSecurityHealthAnalyticsCustomModuleRequest,
@@ -169,11 +168,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::simulate_security_health_analytics_custom_module",
-            self.inner.simulate_security_health_analytics_custom_module(req, options));
+            self.inner.simulate_security_health_analytics_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_effective_event_threat_detection_custom_modules(
         &self,
         req: crate::model::ListEffectiveEventThreatDetectionCustomModulesRequest,
@@ -184,11 +183,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_effective_event_threat_detection_custom_modules",
-            self.inner.list_effective_event_threat_detection_custom_modules(req, options));
+            self.inner.list_effective_event_threat_detection_custom_modules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_event_threat_detection_custom_module(
         &self,
         req: crate::model::GetEffectiveEventThreatDetectionCustomModuleRequest,
@@ -198,11 +197,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::get_effective_event_threat_detection_custom_module",
-            self.inner.get_effective_event_threat_detection_custom_module(req, options));
+            self.inner.get_effective_event_threat_detection_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_event_threat_detection_custom_modules(
         &self,
         req: crate::model::ListEventThreatDetectionCustomModulesRequest,
@@ -212,11 +211,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_event_threat_detection_custom_modules",
-            self.inner.list_event_threat_detection_custom_modules(req, options));
+            self.inner.list_event_threat_detection_custom_modules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_descendant_event_threat_detection_custom_modules(
         &self,
         req: crate::model::ListDescendantEventThreatDetectionCustomModulesRequest,
@@ -228,11 +227,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_descendant_event_threat_detection_custom_modules",
-            self.inner.list_descendant_event_threat_detection_custom_modules(req, options));
+            self.inner.list_descendant_event_threat_detection_custom_modules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_event_threat_detection_custom_module(
         &self,
         req: crate::model::GetEventThreatDetectionCustomModuleRequest,
@@ -242,11 +241,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::get_event_threat_detection_custom_module",
-            self.inner.get_event_threat_detection_custom_module(req, options));
+            self.inner.get_event_threat_detection_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_event_threat_detection_custom_module(
         &self,
         req: crate::model::CreateEventThreatDetectionCustomModuleRequest,
@@ -256,11 +255,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::create_event_threat_detection_custom_module",
-            self.inner.create_event_threat_detection_custom_module(req, options));
+            self.inner.create_event_threat_detection_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_event_threat_detection_custom_module(
         &self,
         req: crate::model::UpdateEventThreatDetectionCustomModuleRequest,
@@ -270,11 +269,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::update_event_threat_detection_custom_module",
-            self.inner.update_event_threat_detection_custom_module(req, options));
+            self.inner.update_event_threat_detection_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_event_threat_detection_custom_module(
         &self,
         req: crate::model::DeleteEventThreatDetectionCustomModuleRequest,
@@ -284,11 +283,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::delete_event_threat_detection_custom_module",
-            self.inner.delete_event_threat_detection_custom_module(req, options));
+            self.inner.delete_event_threat_detection_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_event_threat_detection_custom_module(
         &self,
         req: crate::model::ValidateEventThreatDetectionCustomModuleRequest,
@@ -299,11 +298,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::validate_event_threat_detection_custom_module",
-            self.inner.validate_event_threat_detection_custom_module(req, options));
+            self.inner.validate_event_threat_detection_custom_module(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_security_center_service(
         &self,
         req: crate::model::GetSecurityCenterServiceRequest,
@@ -313,11 +312,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::get_security_center_service",
-            self.inner.get_security_center_service(req, options));
+            self.inner.get_security_center_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_security_center_services(
         &self,
         req: crate::model::ListSecurityCenterServicesRequest,
@@ -327,11 +326,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_security_center_services",
-            self.inner.list_security_center_services(req, options));
+            self.inner.list_security_center_services(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_security_center_service(
         &self,
         req: crate::model::UpdateSecurityCenterServiceRequest,
@@ -341,11 +340,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::update_security_center_service",
-            self.inner.update_security_center_service(req, options));
+            self.inner.update_security_center_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -355,11 +354,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -369,7 +368,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenterManagement::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

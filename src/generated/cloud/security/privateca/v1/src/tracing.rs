@@ -41,7 +41,6 @@ impl<T> super::stub::CertificateAuthorityService for CertificateAuthorityService
 where
     T: super::stub::CertificateAuthorityService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_certificate(
         &self,
         req: crate::model::CreateCertificateRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::create_certificate",
-            self.inner.create_certificate(req, options));
+            self.inner.create_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_certificate(
         &self,
         req: crate::model::GetCertificateRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_certificate",
-            self.inner.get_certificate(req, options));
+            self.inner.get_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_certificates(
         &self,
         req: crate::model::ListCertificatesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_certificates",
-            self.inner.list_certificates(req, options));
+            self.inner.list_certificates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn revoke_certificate(
         &self,
         req: crate::model::RevokeCertificateRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::revoke_certificate",
-            self.inner.revoke_certificate(req, options));
+            self.inner.revoke_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_certificate(
         &self,
         req: crate::model::UpdateCertificateRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::update_certificate",
-            self.inner.update_certificate(req, options));
+            self.inner.update_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn activate_certificate_authority(
         &self,
         req: crate::model::ActivateCertificateAuthorityRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::activate_certificate_authority",
-            self.inner.activate_certificate_authority(req, options));
+            self.inner.activate_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_certificate_authority(
         &self,
         req: crate::model::CreateCertificateAuthorityRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::create_certificate_authority",
-            self.inner.create_certificate_authority(req, options));
+            self.inner.create_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_certificate_authority(
         &self,
         req: crate::model::DisableCertificateAuthorityRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::disable_certificate_authority",
-            self.inner.disable_certificate_authority(req, options));
+            self.inner.disable_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_certificate_authority(
         &self,
         req: crate::model::EnableCertificateAuthorityRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::enable_certificate_authority",
-            self.inner.enable_certificate_authority(req, options));
+            self.inner.enable_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_certificate_authority_csr(
         &self,
         req: crate::model::FetchCertificateAuthorityCsrRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::fetch_certificate_authority_csr",
-            self.inner.fetch_certificate_authority_csr(req, options));
+            self.inner.fetch_certificate_authority_csr(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_certificate_authority(
         &self,
         req: crate::model::GetCertificateAuthorityRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_certificate_authority",
-            self.inner.get_certificate_authority(req, options));
+            self.inner.get_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_certificate_authorities(
         &self,
         req: crate::model::ListCertificateAuthoritiesRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_certificate_authorities",
-            self.inner.list_certificate_authorities(req, options));
+            self.inner.list_certificate_authorities(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_certificate_authority(
         &self,
         req: crate::model::UndeleteCertificateAuthorityRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::undelete_certificate_authority",
-            self.inner.undelete_certificate_authority(req, options));
+            self.inner.undelete_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_certificate_authority(
         &self,
         req: crate::model::DeleteCertificateAuthorityRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::delete_certificate_authority",
-            self.inner.delete_certificate_authority(req, options));
+            self.inner.delete_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_certificate_authority(
         &self,
         req: crate::model::UpdateCertificateAuthorityRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::update_certificate_authority",
-            self.inner.update_certificate_authority(req, options));
+            self.inner.update_certificate_authority(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_ca_pool(
         &self,
         req: crate::model::CreateCaPoolRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::create_ca_pool",
-            self.inner.create_ca_pool(req, options));
+            self.inner.create_ca_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_ca_pool(
         &self,
         req: crate::model::UpdateCaPoolRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::update_ca_pool",
-            self.inner.update_ca_pool(req, options));
+            self.inner.update_ca_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_ca_pool(
         &self,
         req: crate::model::GetCaPoolRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_ca_pool",
-            self.inner.get_ca_pool(req, options));
+            self.inner.get_ca_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_ca_pools(
         &self,
         req: crate::model::ListCaPoolsRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_ca_pools",
-            self.inner.list_ca_pools(req, options));
+            self.inner.list_ca_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_ca_pool(
         &self,
         req: crate::model::DeleteCaPoolRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::delete_ca_pool",
-            self.inner.delete_ca_pool(req, options));
+            self.inner.delete_ca_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_ca_certs(
         &self,
         req: crate::model::FetchCaCertsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::fetch_ca_certs",
-            self.inner.fetch_ca_certs(req, options));
+            self.inner.fetch_ca_certs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_certificate_revocation_list(
         &self,
         req: crate::model::GetCertificateRevocationListRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_certificate_revocation_list",
-            self.inner.get_certificate_revocation_list(req, options));
+            self.inner.get_certificate_revocation_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_certificate_revocation_lists(
         &self,
         req: crate::model::ListCertificateRevocationListsRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_certificate_revocation_lists",
-            self.inner.list_certificate_revocation_lists(req, options));
+            self.inner.list_certificate_revocation_lists(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_certificate_revocation_list(
         &self,
         req: crate::model::UpdateCertificateRevocationListRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::update_certificate_revocation_list",
-            self.inner.update_certificate_revocation_list(req, options));
+            self.inner.update_certificate_revocation_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_certificate_template(
         &self,
         req: crate::model::CreateCertificateTemplateRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::create_certificate_template",
-            self.inner.create_certificate_template(req, options));
+            self.inner.create_certificate_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_certificate_template(
         &self,
         req: crate::model::DeleteCertificateTemplateRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::delete_certificate_template",
-            self.inner.delete_certificate_template(req, options));
+            self.inner.delete_certificate_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_certificate_template(
         &self,
         req: crate::model::GetCertificateTemplateRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_certificate_template",
-            self.inner.get_certificate_template(req, options));
+            self.inner.get_certificate_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_certificate_templates(
         &self,
         req: crate::model::ListCertificateTemplatesRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_certificate_templates",
-            self.inner.list_certificate_templates(req, options));
+            self.inner.list_certificate_templates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_certificate_template(
         &self,
         req: crate::model::UpdateCertificateTemplateRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::update_certificate_template",
-            self.inner.update_certificate_template(req, options));
+            self.inner.update_certificate_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -569,7 +568,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CertificateAuthorityService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

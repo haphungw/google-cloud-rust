@@ -41,7 +41,6 @@ impl<T> super::stub::Iam for Iam<T>
 where
     T: super::stub::Iam + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_service_accounts(
         &self,
         req: crate::model::ListServiceAccountsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::list_service_accounts",
-            self.inner.list_service_accounts(req, options));
+            self.inner.list_service_accounts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_account(
         &self,
         req: crate::model::GetServiceAccountRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::get_service_account",
-            self.inner.get_service_account(req, options));
+            self.inner.get_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_account(
         &self,
         req: crate::model::CreateServiceAccountRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::create_service_account",
-            self.inner.create_service_account(req, options));
+            self.inner.create_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service_account(
         &self,
         req: crate::model::ServiceAccount,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::update_service_account",
-            self.inner.update_service_account(req, options));
+            self.inner.update_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_service_account(
         &self,
         req: crate::model::PatchServiceAccountRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::patch_service_account",
-            self.inner.patch_service_account(req, options));
+            self.inner.patch_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service_account(
         &self,
         req: crate::model::DeleteServiceAccountRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::delete_service_account",
-            self.inner.delete_service_account(req, options));
+            self.inner.delete_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_service_account(
         &self,
         req: crate::model::UndeleteServiceAccountRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::undelete_service_account",
-            self.inner.undelete_service_account(req, options));
+            self.inner.undelete_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_service_account(
         &self,
         req: crate::model::EnableServiceAccountRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::enable_service_account",
-            self.inner.enable_service_account(req, options));
+            self.inner.enable_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_service_account(
         &self,
         req: crate::model::DisableServiceAccountRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::disable_service_account",
-            self.inner.disable_service_account(req, options));
+            self.inner.disable_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_service_account_keys(
         &self,
         req: crate::model::ListServiceAccountKeysRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::list_service_account_keys",
-            self.inner.list_service_account_keys(req, options));
+            self.inner.list_service_account_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_account_key(
         &self,
         req: crate::model::GetServiceAccountKeyRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::get_service_account_key",
-            self.inner.get_service_account_key(req, options));
+            self.inner.get_service_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_account_key(
         &self,
         req: crate::model::CreateServiceAccountKeyRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::create_service_account_key",
-            self.inner.create_service_account_key(req, options));
+            self.inner.create_service_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn upload_service_account_key(
         &self,
         req: crate::model::UploadServiceAccountKeyRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::upload_service_account_key",
-            self.inner.upload_service_account_key(req, options));
+            self.inner.upload_service_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service_account_key(
         &self,
         req: crate::model::DeleteServiceAccountKeyRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::delete_service_account_key",
-            self.inner.delete_service_account_key(req, options));
+            self.inner.delete_service_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_service_account_key(
         &self,
         req: crate::model::DisableServiceAccountKeyRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::disable_service_account_key",
-            self.inner.disable_service_account_key(req, options));
+            self.inner.disable_service_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_service_account_key(
         &self,
         req: crate::model::EnableServiceAccountKeyRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::enable_service_account_key",
-            self.inner.enable_service_account_key(req, options));
+            self.inner.enable_service_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sign_blob(
         &self,
         req: crate::model::SignBlobRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::sign_blob",
-            self.inner.sign_blob(req, options));
+            self.inner.sign_blob(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sign_jwt(
         &self,
         req: crate::model::SignJwtRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::sign_jwt",
-            self.inner.sign_jwt(req, options));
+            self.inner.sign_jwt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_grantable_roles(
         &self,
         req: crate::model::QueryGrantableRolesRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::query_grantable_roles",
-            self.inner.query_grantable_roles(req, options));
+            self.inner.query_grantable_roles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_roles(
         &self,
         req: crate::model::ListRolesRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::list_roles",
-            self.inner.list_roles(req, options));
+            self.inner.list_roles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_role(
         &self,
         req: crate::model::GetRoleRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::get_role",
-            self.inner.get_role(req, options));
+            self.inner.get_role(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_role(
         &self,
         req: crate::model::CreateRoleRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::create_role",
-            self.inner.create_role(req, options));
+            self.inner.create_role(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_role(
         &self,
         req: crate::model::UpdateRoleRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::update_role",
-            self.inner.update_role(req, options));
+            self.inner.update_role(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_role(
         &self,
         req: crate::model::DeleteRoleRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::delete_role",
-            self.inner.delete_role(req, options));
+            self.inner.delete_role(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_role(
         &self,
         req: crate::model::UndeleteRoleRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::undelete_role",
-            self.inner.undelete_role(req, options));
+            self.inner.undelete_role(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_testable_permissions(
         &self,
         req: crate::model::QueryTestablePermissionsRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::query_testable_permissions",
-            self.inner.query_testable_permissions(req, options));
+            self.inner.query_testable_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_auditable_services(
         &self,
         req: crate::model::QueryAuditableServicesRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::query_auditable_services",
-            self.inner.query_auditable_services(req, options));
+            self.inner.query_auditable_services(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn lint_policy(
         &self,
         req: crate::model::LintPolicyRequest,
@@ -471,7 +470,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Iam::lint_policy",
-            self.inner.lint_policy(req, options));
+            self.inner.lint_policy(req.clone(), options.clone()));
+
         pending.await
     }
 }

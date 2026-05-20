@@ -41,7 +41,6 @@ impl<T> super::stub::TranscoderService for TranscoderService<T>
 where
     T: super::stub::TranscoderService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_job(
         &self,
         req: crate::model::CreateJobRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::create_job",
-            self.inner.create_job(req, options));
+            self.inner.create_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_jobs(
         &self,
         req: crate::model::ListJobsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::list_jobs",
-            self.inner.list_jobs(req, options));
+            self.inner.list_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_job(
         &self,
         req: crate::model::GetJobRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::get_job",
-            self.inner.get_job(req, options));
+            self.inner.get_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_job(
         &self,
         req: crate::model::DeleteJobRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::delete_job",
-            self.inner.delete_job(req, options));
+            self.inner.delete_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_job_template(
         &self,
         req: crate::model::CreateJobTemplateRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::create_job_template",
-            self.inner.create_job_template(req, options));
+            self.inner.create_job_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_job_templates(
         &self,
         req: crate::model::ListJobTemplatesRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::list_job_templates",
-            self.inner.list_job_templates(req, options));
+            self.inner.list_job_templates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_job_template(
         &self,
         req: crate::model::GetJobTemplateRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::get_job_template",
-            self.inner.get_job_template(req, options));
+            self.inner.get_job_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_job_template(
         &self,
         req: crate::model::DeleteJobTemplateRequest,
@@ -149,7 +148,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranscoderService::delete_job_template",
-            self.inner.delete_job_template(req, options));
+            self.inner.delete_job_template(req.clone(), options.clone()));
+
         pending.await
     }
 }

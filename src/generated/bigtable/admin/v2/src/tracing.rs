@@ -41,7 +41,6 @@ impl<T> super::stub::BigtableInstanceAdmin for BigtableInstanceAdmin<T>
 where
     T: super::stub::BigtableInstanceAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_instance(
         &self,
         req: crate::model::CreateInstanceRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::create_instance",
-            self.inner.create_instance(req, options));
+            self.inner.create_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_instance(
         &self,
         req: crate::model::GetInstanceRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_instance",
-            self.inner.get_instance(req, options));
+            self.inner.get_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_instances(
         &self,
         req: crate::model::ListInstancesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_instances",
-            self.inner.list_instances(req, options));
+            self.inner.list_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_instance(
         &self,
         req: crate::model::Instance,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::update_instance",
-            self.inner.update_instance(req, options));
+            self.inner.update_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn partial_update_instance(
         &self,
         req: crate::model::PartialUpdateInstanceRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::partial_update_instance",
-            self.inner.partial_update_instance(req, options));
+            self.inner.partial_update_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_instance(
         &self,
         req: crate::model::DeleteInstanceRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::delete_instance",
-            self.inner.delete_instance(req, options));
+            self.inner.delete_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cluster(
         &self,
         req: crate::model::CreateClusterRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::create_cluster",
-            self.inner.create_cluster(req, options));
+            self.inner.create_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cluster(
         &self,
         req: crate::model::GetClusterRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_cluster",
-            self.inner.get_cluster(req, options));
+            self.inner.get_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_clusters(
         &self,
         req: crate::model::ListClustersRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_clusters",
-            self.inner.list_clusters(req, options));
+            self.inner.list_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_cluster(
         &self,
         req: crate::model::Cluster,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::update_cluster",
-            self.inner.update_cluster(req, options));
+            self.inner.update_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn partial_update_cluster(
         &self,
         req: crate::model::PartialUpdateClusterRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::partial_update_cluster",
-            self.inner.partial_update_cluster(req, options));
+            self.inner.partial_update_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cluster(
         &self,
         req: crate::model::DeleteClusterRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::delete_cluster",
-            self.inner.delete_cluster(req, options));
+            self.inner.delete_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_app_profile(
         &self,
         req: crate::model::CreateAppProfileRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::create_app_profile",
-            self.inner.create_app_profile(req, options));
+            self.inner.create_app_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_app_profile(
         &self,
         req: crate::model::GetAppProfileRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_app_profile",
-            self.inner.get_app_profile(req, options));
+            self.inner.get_app_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_app_profiles(
         &self,
         req: crate::model::ListAppProfilesRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_app_profiles",
-            self.inner.list_app_profiles(req, options));
+            self.inner.list_app_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_app_profile(
         &self,
         req: crate::model::UpdateAppProfileRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::update_app_profile",
-            self.inner.update_app_profile(req, options));
+            self.inner.update_app_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_app_profile(
         &self,
         req: crate::model::DeleteAppProfileRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::delete_app_profile",
-            self.inner.delete_app_profile(req, options));
+            self.inner.delete_app_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_hot_tablets(
         &self,
         req: crate::model::ListHotTabletsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_hot_tablets",
-            self.inner.list_hot_tablets(req, options));
+            self.inner.list_hot_tablets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_logical_view(
         &self,
         req: crate::model::CreateLogicalViewRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::create_logical_view",
-            self.inner.create_logical_view(req, options));
+            self.inner.create_logical_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_logical_view(
         &self,
         req: crate::model::GetLogicalViewRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_logical_view",
-            self.inner.get_logical_view(req, options));
+            self.inner.get_logical_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_logical_views(
         &self,
         req: crate::model::ListLogicalViewsRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_logical_views",
-            self.inner.list_logical_views(req, options));
+            self.inner.list_logical_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_logical_view(
         &self,
         req: crate::model::UpdateLogicalViewRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::update_logical_view",
-            self.inner.update_logical_view(req, options));
+            self.inner.update_logical_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_logical_view(
         &self,
         req: crate::model::DeleteLogicalViewRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::delete_logical_view",
-            self.inner.delete_logical_view(req, options));
+            self.inner.delete_logical_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_materialized_view(
         &self,
         req: crate::model::CreateMaterializedViewRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::create_materialized_view",
-            self.inner.create_materialized_view(req, options));
+            self.inner.create_materialized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_materialized_view(
         &self,
         req: crate::model::GetMaterializedViewRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_materialized_view",
-            self.inner.get_materialized_view(req, options));
+            self.inner.get_materialized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_materialized_views(
         &self,
         req: crate::model::ListMaterializedViewsRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_materialized_views",
-            self.inner.list_materialized_views(req, options));
+            self.inner.list_materialized_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_materialized_view(
         &self,
         req: crate::model::UpdateMaterializedViewRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::update_materialized_view",
-            self.inner.update_materialized_view(req, options));
+            self.inner.update_materialized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_materialized_view(
         &self,
         req: crate::model::DeleteMaterializedViewRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::delete_materialized_view",
-            self.inner.delete_materialized_view(req, options));
+            self.inner.delete_materialized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -527,7 +526,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableInstanceAdmin::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -572,7 +572,6 @@ impl<T> super::stub::BigtableTableAdmin for BigtableTableAdmin<T>
 where
     T: super::stub::BigtableTableAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_table(
         &self,
         req: crate::model::CreateTableRequest,
@@ -582,11 +581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::create_table",
-            self.inner.create_table(req, options));
+            self.inner.create_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_table_from_snapshot(
         &self,
         req: crate::model::CreateTableFromSnapshotRequest,
@@ -596,11 +595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::create_table_from_snapshot",
-            self.inner.create_table_from_snapshot(req, options));
+            self.inner.create_table_from_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tables(
         &self,
         req: crate::model::ListTablesRequest,
@@ -610,11 +609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::list_tables",
-            self.inner.list_tables(req, options));
+            self.inner.list_tables(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_table(
         &self,
         req: crate::model::GetTableRequest,
@@ -624,11 +623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_table",
-            self.inner.get_table(req, options));
+            self.inner.get_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_table(
         &self,
         req: crate::model::UpdateTableRequest,
@@ -638,11 +637,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::update_table",
-            self.inner.update_table(req, options));
+            self.inner.update_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_table(
         &self,
         req: crate::model::DeleteTableRequest,
@@ -652,11 +651,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::delete_table",
-            self.inner.delete_table(req, options));
+            self.inner.delete_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_table(
         &self,
         req: crate::model::UndeleteTableRequest,
@@ -666,11 +665,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::undelete_table",
-            self.inner.undelete_table(req, options));
+            self.inner.undelete_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_authorized_view(
         &self,
         req: crate::model::CreateAuthorizedViewRequest,
@@ -680,11 +679,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::create_authorized_view",
-            self.inner.create_authorized_view(req, options));
+            self.inner.create_authorized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_authorized_views(
         &self,
         req: crate::model::ListAuthorizedViewsRequest,
@@ -694,11 +693,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::list_authorized_views",
-            self.inner.list_authorized_views(req, options));
+            self.inner.list_authorized_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_authorized_view(
         &self,
         req: crate::model::GetAuthorizedViewRequest,
@@ -708,11 +707,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_authorized_view",
-            self.inner.get_authorized_view(req, options));
+            self.inner.get_authorized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_authorized_view(
         &self,
         req: crate::model::UpdateAuthorizedViewRequest,
@@ -722,11 +721,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::update_authorized_view",
-            self.inner.update_authorized_view(req, options));
+            self.inner.update_authorized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_authorized_view(
         &self,
         req: crate::model::DeleteAuthorizedViewRequest,
@@ -736,11 +735,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::delete_authorized_view",
-            self.inner.delete_authorized_view(req, options));
+            self.inner.delete_authorized_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn modify_column_families(
         &self,
         req: crate::model::ModifyColumnFamiliesRequest,
@@ -750,11 +749,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::modify_column_families",
-            self.inner.modify_column_families(req, options));
+            self.inner.modify_column_families(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn drop_row_range(
         &self,
         req: crate::model::DropRowRangeRequest,
@@ -764,11 +763,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::drop_row_range",
-            self.inner.drop_row_range(req, options));
+            self.inner.drop_row_range(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_consistency_token(
         &self,
         req: crate::model::GenerateConsistencyTokenRequest,
@@ -778,11 +777,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::generate_consistency_token",
-            self.inner.generate_consistency_token(req, options));
+            self.inner.generate_consistency_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn check_consistency(
         &self,
         req: crate::model::CheckConsistencyRequest,
@@ -792,11 +791,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::check_consistency",
-            self.inner.check_consistency(req, options));
+            self.inner.check_consistency(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn snapshot_table(
         &self,
         req: crate::model::SnapshotTableRequest,
@@ -806,11 +805,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::snapshot_table",
-            self.inner.snapshot_table(req, options));
+            self.inner.snapshot_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_snapshot(
         &self,
         req: crate::model::GetSnapshotRequest,
@@ -820,11 +819,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_snapshot",
-            self.inner.get_snapshot(req, options));
+            self.inner.get_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_snapshots(
         &self,
         req: crate::model::ListSnapshotsRequest,
@@ -834,11 +833,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::list_snapshots",
-            self.inner.list_snapshots(req, options));
+            self.inner.list_snapshots(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_snapshot(
         &self,
         req: crate::model::DeleteSnapshotRequest,
@@ -848,11 +847,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::delete_snapshot",
-            self.inner.delete_snapshot(req, options));
+            self.inner.delete_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backup(
         &self,
         req: crate::model::CreateBackupRequest,
@@ -862,11 +861,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::create_backup",
-            self.inner.create_backup(req, options));
+            self.inner.create_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backup(
         &self,
         req: crate::model::GetBackupRequest,
@@ -876,11 +875,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_backup",
-            self.inner.get_backup(req, options));
+            self.inner.get_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backup(
         &self,
         req: crate::model::UpdateBackupRequest,
@@ -890,11 +889,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::update_backup",
-            self.inner.update_backup(req, options));
+            self.inner.update_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backup(
         &self,
         req: crate::model::DeleteBackupRequest,
@@ -904,11 +903,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::delete_backup",
-            self.inner.delete_backup(req, options));
+            self.inner.delete_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backups(
         &self,
         req: crate::model::ListBackupsRequest,
@@ -918,11 +917,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::list_backups",
-            self.inner.list_backups(req, options));
+            self.inner.list_backups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_table(
         &self,
         req: crate::model::RestoreTableRequest,
@@ -932,11 +931,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::restore_table",
-            self.inner.restore_table(req, options));
+            self.inner.restore_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn copy_backup(
         &self,
         req: crate::model::CopyBackupRequest,
@@ -946,11 +945,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::copy_backup",
-            self.inner.copy_backup(req, options));
+            self.inner.copy_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -960,11 +959,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -974,11 +973,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -988,11 +987,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_schema_bundle(
         &self,
         req: crate::model::CreateSchemaBundleRequest,
@@ -1002,11 +1001,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::create_schema_bundle",
-            self.inner.create_schema_bundle(req, options));
+            self.inner.create_schema_bundle(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_schema_bundle(
         &self,
         req: crate::model::UpdateSchemaBundleRequest,
@@ -1016,11 +1015,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::update_schema_bundle",
-            self.inner.update_schema_bundle(req, options));
+            self.inner.update_schema_bundle(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_schema_bundle(
         &self,
         req: crate::model::GetSchemaBundleRequest,
@@ -1030,11 +1029,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_schema_bundle",
-            self.inner.get_schema_bundle(req, options));
+            self.inner.get_schema_bundle(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_schema_bundles(
         &self,
         req: crate::model::ListSchemaBundlesRequest,
@@ -1044,11 +1043,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::list_schema_bundles",
-            self.inner.list_schema_bundles(req, options));
+            self.inner.list_schema_bundles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_schema_bundle(
         &self,
         req: crate::model::DeleteSchemaBundleRequest,
@@ -1058,11 +1057,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::delete_schema_bundle",
-            self.inner.delete_schema_bundle(req, options));
+            self.inner.delete_schema_bundle(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1072,11 +1071,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1086,11 +1085,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1100,11 +1099,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1114,7 +1113,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BigtableTableAdmin::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

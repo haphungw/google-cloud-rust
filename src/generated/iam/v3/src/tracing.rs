@@ -41,7 +41,6 @@ impl<T> super::stub::PolicyBindings for PolicyBindings<T>
 where
     T: super::stub::PolicyBindings + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_policy_binding(
         &self,
         req: crate::model::CreatePolicyBindingRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::create_policy_binding",
-            self.inner.create_policy_binding(req, options));
+            self.inner.create_policy_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_policy_binding(
         &self,
         req: crate::model::GetPolicyBindingRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::get_policy_binding",
-            self.inner.get_policy_binding(req, options));
+            self.inner.get_policy_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_policy_binding(
         &self,
         req: crate::model::UpdatePolicyBindingRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::update_policy_binding",
-            self.inner.update_policy_binding(req, options));
+            self.inner.update_policy_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_policy_binding(
         &self,
         req: crate::model::DeletePolicyBindingRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::delete_policy_binding",
-            self.inner.delete_policy_binding(req, options));
+            self.inner.delete_policy_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_policy_bindings(
         &self,
         req: crate::model::ListPolicyBindingsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::list_policy_bindings",
-            self.inner.list_policy_bindings(req, options));
+            self.inner.list_policy_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_target_policy_bindings(
         &self,
         req: crate::model::SearchTargetPolicyBindingsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::search_target_policy_bindings",
-            self.inner.search_target_policy_bindings(req, options));
+            self.inner.search_target_policy_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PolicyBindings::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -180,7 +180,6 @@ impl<T> super::stub::PrincipalAccessBoundaryPolicies for PrincipalAccessBoundary
 where
     T: super::stub::PrincipalAccessBoundaryPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_principal_access_boundary_policy(
         &self,
         req: crate::model::CreatePrincipalAccessBoundaryPolicyRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::create_principal_access_boundary_policy",
-            self.inner.create_principal_access_boundary_policy(req, options));
+            self.inner.create_principal_access_boundary_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_principal_access_boundary_policy(
         &self,
         req: crate::model::GetPrincipalAccessBoundaryPolicyRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::get_principal_access_boundary_policy",
-            self.inner.get_principal_access_boundary_policy(req, options));
+            self.inner.get_principal_access_boundary_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_principal_access_boundary_policy(
         &self,
         req: crate::model::UpdatePrincipalAccessBoundaryPolicyRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::update_principal_access_boundary_policy",
-            self.inner.update_principal_access_boundary_policy(req, options));
+            self.inner.update_principal_access_boundary_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_principal_access_boundary_policy(
         &self,
         req: crate::model::DeletePrincipalAccessBoundaryPolicyRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::delete_principal_access_boundary_policy",
-            self.inner.delete_principal_access_boundary_policy(req, options));
+            self.inner.delete_principal_access_boundary_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_principal_access_boundary_policies(
         &self,
         req: crate::model::ListPrincipalAccessBoundaryPoliciesRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::list_principal_access_boundary_policies",
-            self.inner.list_principal_access_boundary_policies(req, options));
+            self.inner.list_principal_access_boundary_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_principal_access_boundary_policy_bindings(
         &self,
         req: crate::model::SearchPrincipalAccessBoundaryPolicyBindingsRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::search_principal_access_boundary_policy_bindings",
-            self.inner.search_principal_access_boundary_policy_bindings(req, options));
+            self.inner.search_principal_access_boundary_policy_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -275,7 +274,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PrincipalAccessBoundaryPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

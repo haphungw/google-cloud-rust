@@ -41,7 +41,6 @@ impl<T> super::stub::ApiKeys for ApiKeys<T>
 where
     T: super::stub::ApiKeys + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_key(
         &self,
         req: crate::model::CreateKeyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::create_key",
-            self.inner.create_key(req, options));
+            self.inner.create_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_keys(
         &self,
         req: crate::model::ListKeysRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::list_keys",
-            self.inner.list_keys(req, options));
+            self.inner.list_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_key(
         &self,
         req: crate::model::GetKeyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::get_key",
-            self.inner.get_key(req, options));
+            self.inner.get_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_key_string(
         &self,
         req: crate::model::GetKeyStringRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::get_key_string",
-            self.inner.get_key_string(req, options));
+            self.inner.get_key_string(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_key(
         &self,
         req: crate::model::UpdateKeyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::update_key",
-            self.inner.update_key(req, options));
+            self.inner.update_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_key(
         &self,
         req: crate::model::DeleteKeyRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::delete_key",
-            self.inner.delete_key(req, options));
+            self.inner.delete_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_key(
         &self,
         req: crate::model::UndeleteKeyRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::undelete_key",
-            self.inner.undelete_key(req, options));
+            self.inner.undelete_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn lookup_key(
         &self,
         req: crate::model::LookupKeyRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::lookup_key",
-            self.inner.lookup_key(req, options));
+            self.inner.lookup_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -163,7 +162,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ApiKeys::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

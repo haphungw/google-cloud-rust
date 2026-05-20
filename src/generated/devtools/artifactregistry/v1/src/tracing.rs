@@ -41,7 +41,6 @@ impl<T> super::stub::ArtifactRegistry for ArtifactRegistry<T>
 where
     T: super::stub::ArtifactRegistry + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_docker_images(
         &self,
         req: crate::model::ListDockerImagesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_docker_images",
-            self.inner.list_docker_images(req, options));
+            self.inner.list_docker_images(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_docker_image(
         &self,
         req: crate::model::GetDockerImageRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_docker_image",
-            self.inner.get_docker_image(req, options));
+            self.inner.get_docker_image(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_maven_artifacts(
         &self,
         req: crate::model::ListMavenArtifactsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_maven_artifacts",
-            self.inner.list_maven_artifacts(req, options));
+            self.inner.list_maven_artifacts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_maven_artifact(
         &self,
         req: crate::model::GetMavenArtifactRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_maven_artifact",
-            self.inner.get_maven_artifact(req, options));
+            self.inner.get_maven_artifact(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_npm_packages(
         &self,
         req: crate::model::ListNpmPackagesRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_npm_packages",
-            self.inner.list_npm_packages(req, options));
+            self.inner.list_npm_packages(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_npm_package(
         &self,
         req: crate::model::GetNpmPackageRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_npm_package",
-            self.inner.get_npm_package(req, options));
+            self.inner.get_npm_package(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_python_packages(
         &self,
         req: crate::model::ListPythonPackagesRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_python_packages",
-            self.inner.list_python_packages(req, options));
+            self.inner.list_python_packages(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_python_package(
         &self,
         req: crate::model::GetPythonPackageRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_python_package",
-            self.inner.get_python_package(req, options));
+            self.inner.get_python_package(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_apt_artifacts(
         &self,
         req: crate::model::ImportAptArtifactsRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::import_apt_artifacts",
-            self.inner.import_apt_artifacts(req, options));
+            self.inner.import_apt_artifacts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_yum_artifacts(
         &self,
         req: crate::model::ImportYumArtifactsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::import_yum_artifacts",
-            self.inner.import_yum_artifacts(req, options));
+            self.inner.import_yum_artifacts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_repositories(
         &self,
         req: crate::model::ListRepositoriesRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_repositories",
-            self.inner.list_repositories(req, options));
+            self.inner.list_repositories(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_repository(
         &self,
         req: crate::model::GetRepositoryRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_repository",
-            self.inner.get_repository(req, options));
+            self.inner.get_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_repository(
         &self,
         req: crate::model::CreateRepositoryRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::create_repository",
-            self.inner.create_repository(req, options));
+            self.inner.create_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_repository(
         &self,
         req: crate::model::UpdateRepositoryRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_repository",
-            self.inner.update_repository(req, options));
+            self.inner.update_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_repository(
         &self,
         req: crate::model::DeleteRepositoryRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_repository",
-            self.inner.delete_repository(req, options));
+            self.inner.delete_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_packages(
         &self,
         req: crate::model::ListPackagesRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_packages",
-            self.inner.list_packages(req, options));
+            self.inner.list_packages(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_package(
         &self,
         req: crate::model::GetPackageRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_package",
-            self.inner.get_package(req, options));
+            self.inner.get_package(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_package(
         &self,
         req: crate::model::DeletePackageRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_package",
-            self.inner.delete_package(req, options));
+            self.inner.delete_package(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_versions(
         &self,
         req: crate::model::ListVersionsRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_versions",
-            self.inner.list_versions(req, options));
+            self.inner.list_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_version(
         &self,
         req: crate::model::GetVersionRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_version",
-            self.inner.get_version(req, options));
+            self.inner.get_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_version(
         &self,
         req: crate::model::DeleteVersionRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_version",
-            self.inner.delete_version(req, options));
+            self.inner.delete_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_delete_versions(
         &self,
         req: crate::model::BatchDeleteVersionsRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::batch_delete_versions",
-            self.inner.batch_delete_versions(req, options));
+            self.inner.batch_delete_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_version(
         &self,
         req: crate::model::UpdateVersionRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_version",
-            self.inner.update_version(req, options));
+            self.inner.update_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_files(
         &self,
         req: crate::model::ListFilesRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_files",
-            self.inner.list_files(req, options));
+            self.inner.list_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_file(
         &self,
         req: crate::model::GetFileRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_file",
-            self.inner.get_file(req, options));
+            self.inner.get_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_file(
         &self,
         req: crate::model::DeleteFileRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_file",
-            self.inner.delete_file(req, options));
+            self.inner.delete_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_file(
         &self,
         req: crate::model::UpdateFileRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_file",
-            self.inner.update_file(req, options));
+            self.inner.update_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tags(
         &self,
         req: crate::model::ListTagsRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_tags",
-            self.inner.list_tags(req, options));
+            self.inner.list_tags(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_tag(
         &self,
         req: crate::model::GetTagRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_tag",
-            self.inner.get_tag(req, options));
+            self.inner.get_tag(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_tag(
         &self,
         req: crate::model::CreateTagRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::create_tag",
-            self.inner.create_tag(req, options));
+            self.inner.create_tag(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_tag(
         &self,
         req: crate::model::UpdateTagRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_tag",
-            self.inner.update_tag(req, options));
+            self.inner.update_tag(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_tag(
         &self,
         req: crate::model::DeleteTagRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_tag",
-            self.inner.delete_tag(req, options));
+            self.inner.delete_tag(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_rule(
         &self,
         req: crate::model::CreateRuleRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::create_rule",
-            self.inner.create_rule(req, options));
+            self.inner.create_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_rules(
         &self,
         req: crate::model::ListRulesRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_rules",
-            self.inner.list_rules(req, options));
+            self.inner.list_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::GetRuleRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_rule(
         &self,
         req: crate::model::UpdateRuleRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_rule",
-            self.inner.update_rule(req, options));
+            self.inner.update_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_rule(
         &self,
         req: crate::model::DeleteRuleRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_rule",
-            self.inner.delete_rule(req, options));
+            self.inner.delete_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_project_settings(
         &self,
         req: crate::model::GetProjectSettingsRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_project_settings",
-            self.inner.get_project_settings(req, options));
+            self.inner.get_project_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_project_settings(
         &self,
         req: crate::model::UpdateProjectSettingsRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_project_settings",
-            self.inner.update_project_settings(req, options));
+            self.inner.update_project_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vpcsc_config(
         &self,
         req: crate::model::GetVPCSCConfigRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_vpcsc_config",
-            self.inner.get_vpcsc_config(req, options));
+            self.inner.get_vpcsc_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_vpcsc_config(
         &self,
         req: crate::model::UpdateVPCSCConfigRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_vpcsc_config",
-            self.inner.update_vpcsc_config(req, options));
+            self.inner.update_vpcsc_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_package(
         &self,
         req: crate::model::UpdatePackageRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::update_package",
-            self.inner.update_package(req, options));
+            self.inner.update_package(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_attachments(
         &self,
         req: crate::model::ListAttachmentsRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_attachments",
-            self.inner.list_attachments(req, options));
+            self.inner.list_attachments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_attachment(
         &self,
         req: crate::model::GetAttachmentRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_attachment",
-            self.inner.get_attachment(req, options));
+            self.inner.get_attachment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_attachment(
         &self,
         req: crate::model::CreateAttachmentRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::create_attachment",
-            self.inner.create_attachment(req, options));
+            self.inner.create_attachment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_attachment(
         &self,
         req: crate::model::DeleteAttachmentRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::delete_attachment",
-            self.inner.delete_attachment(req, options));
+            self.inner.delete_attachment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_artifact(
         &self,
         req: crate::model::ExportArtifactRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::export_artifact",
-            self.inner.export_artifact(req, options));
+            self.inner.export_artifact(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -779,7 +778,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ArtifactRegistry::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

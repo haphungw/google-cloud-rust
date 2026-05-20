@@ -41,7 +41,6 @@ impl<T> super::stub::SecureSourceManager for SecureSourceManager<T>
 where
     T: super::stub::SecureSourceManager + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_instances(
         &self,
         req: crate::model::ListInstancesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_instances",
-            self.inner.list_instances(req, options));
+            self.inner.list_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_instance(
         &self,
         req: crate::model::GetInstanceRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_instance",
-            self.inner.get_instance(req, options));
+            self.inner.get_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_instance(
         &self,
         req: crate::model::CreateInstanceRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_instance",
-            self.inner.create_instance(req, options));
+            self.inner.create_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_instance(
         &self,
         req: crate::model::DeleteInstanceRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_instance",
-            self.inner.delete_instance(req, options));
+            self.inner.delete_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_repositories(
         &self,
         req: crate::model::ListRepositoriesRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_repositories",
-            self.inner.list_repositories(req, options));
+            self.inner.list_repositories(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_repository(
         &self,
         req: crate::model::GetRepositoryRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_repository",
-            self.inner.get_repository(req, options));
+            self.inner.get_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_repository(
         &self,
         req: crate::model::CreateRepositoryRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_repository",
-            self.inner.create_repository(req, options));
+            self.inner.create_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_repository(
         &self,
         req: crate::model::UpdateRepositoryRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_repository",
-            self.inner.update_repository(req, options));
+            self.inner.update_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_repository(
         &self,
         req: crate::model::DeleteRepositoryRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_repository",
-            self.inner.delete_repository(req, options));
+            self.inner.delete_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_hooks(
         &self,
         req: crate::model::ListHooksRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_hooks",
-            self.inner.list_hooks(req, options));
+            self.inner.list_hooks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_hook(
         &self,
         req: crate::model::GetHookRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_hook",
-            self.inner.get_hook(req, options));
+            self.inner.get_hook(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_hook(
         &self,
         req: crate::model::CreateHookRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_hook",
-            self.inner.create_hook(req, options));
+            self.inner.create_hook(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_hook(
         &self,
         req: crate::model::UpdateHookRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_hook",
-            self.inner.update_hook(req, options));
+            self.inner.update_hook(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_hook(
         &self,
         req: crate::model::DeleteHookRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_hook",
-            self.inner.delete_hook(req, options));
+            self.inner.delete_hook(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy_repo(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_iam_policy_repo",
-            self.inner.get_iam_policy_repo(req, options));
+            self.inner.get_iam_policy_repo(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy_repo(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::set_iam_policy_repo",
-            self.inner.set_iam_policy_repo(req, options));
+            self.inner.set_iam_policy_repo(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions_repo(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::test_iam_permissions_repo",
-            self.inner.test_iam_permissions_repo(req, options));
+            self.inner.test_iam_permissions_repo(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_branch_rule(
         &self,
         req: crate::model::CreateBranchRuleRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_branch_rule",
-            self.inner.create_branch_rule(req, options));
+            self.inner.create_branch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_branch_rules(
         &self,
         req: crate::model::ListBranchRulesRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_branch_rules",
-            self.inner.list_branch_rules(req, options));
+            self.inner.list_branch_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_branch_rule(
         &self,
         req: crate::model::GetBranchRuleRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_branch_rule",
-            self.inner.get_branch_rule(req, options));
+            self.inner.get_branch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_branch_rule(
         &self,
         req: crate::model::UpdateBranchRuleRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_branch_rule",
-            self.inner.update_branch_rule(req, options));
+            self.inner.update_branch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_branch_rule(
         &self,
         req: crate::model::DeleteBranchRuleRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_branch_rule",
-            self.inner.delete_branch_rule(req, options));
+            self.inner.delete_branch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_pull_request(
         &self,
         req: crate::model::CreatePullRequestRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_pull_request",
-            self.inner.create_pull_request(req, options));
+            self.inner.create_pull_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_pull_request(
         &self,
         req: crate::model::GetPullRequestRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_pull_request",
-            self.inner.get_pull_request(req, options));
+            self.inner.get_pull_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_pull_requests(
         &self,
         req: crate::model::ListPullRequestsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_pull_requests",
-            self.inner.list_pull_requests(req, options));
+            self.inner.list_pull_requests(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_pull_request(
         &self,
         req: crate::model::UpdatePullRequestRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_pull_request",
-            self.inner.update_pull_request(req, options));
+            self.inner.update_pull_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn merge_pull_request(
         &self,
         req: crate::model::MergePullRequestRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::merge_pull_request",
-            self.inner.merge_pull_request(req, options));
+            self.inner.merge_pull_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn open_pull_request(
         &self,
         req: crate::model::OpenPullRequestRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::open_pull_request",
-            self.inner.open_pull_request(req, options));
+            self.inner.open_pull_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn close_pull_request(
         &self,
         req: crate::model::ClosePullRequestRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::close_pull_request",
-            self.inner.close_pull_request(req, options));
+            self.inner.close_pull_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_pull_request_file_diffs(
         &self,
         req: crate::model::ListPullRequestFileDiffsRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_pull_request_file_diffs",
-            self.inner.list_pull_request_file_diffs(req, options));
+            self.inner.list_pull_request_file_diffs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_tree(
         &self,
         req: crate::model::FetchTreeRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::fetch_tree",
-            self.inner.fetch_tree(req, options));
+            self.inner.fetch_tree(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_blob(
         &self,
         req: crate::model::FetchBlobRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::fetch_blob",
-            self.inner.fetch_blob(req, options));
+            self.inner.fetch_blob(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_issue(
         &self,
         req: crate::model::CreateIssueRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_issue",
-            self.inner.create_issue(req, options));
+            self.inner.create_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_issue(
         &self,
         req: crate::model::GetIssueRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_issue",
-            self.inner.get_issue(req, options));
+            self.inner.get_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_issues(
         &self,
         req: crate::model::ListIssuesRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_issues",
-            self.inner.list_issues(req, options));
+            self.inner.list_issues(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_issue(
         &self,
         req: crate::model::UpdateIssueRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_issue",
-            self.inner.update_issue(req, options));
+            self.inner.update_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_issue(
         &self,
         req: crate::model::DeleteIssueRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_issue",
-            self.inner.delete_issue(req, options));
+            self.inner.delete_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn open_issue(
         &self,
         req: crate::model::OpenIssueRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::open_issue",
-            self.inner.open_issue(req, options));
+            self.inner.open_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn close_issue(
         &self,
         req: crate::model::CloseIssueRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::close_issue",
-            self.inner.close_issue(req, options));
+            self.inner.close_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_pull_request_comment(
         &self,
         req: crate::model::GetPullRequestCommentRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_pull_request_comment",
-            self.inner.get_pull_request_comment(req, options));
+            self.inner.get_pull_request_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_pull_request_comments(
         &self,
         req: crate::model::ListPullRequestCommentsRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_pull_request_comments",
-            self.inner.list_pull_request_comments(req, options));
+            self.inner.list_pull_request_comments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_pull_request_comment(
         &self,
         req: crate::model::CreatePullRequestCommentRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_pull_request_comment",
-            self.inner.create_pull_request_comment(req, options));
+            self.inner.create_pull_request_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_pull_request_comment(
         &self,
         req: crate::model::UpdatePullRequestCommentRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_pull_request_comment",
-            self.inner.update_pull_request_comment(req, options));
+            self.inner.update_pull_request_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_pull_request_comment(
         &self,
         req: crate::model::DeletePullRequestCommentRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_pull_request_comment",
-            self.inner.delete_pull_request_comment(req, options));
+            self.inner.delete_pull_request_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_pull_request_comments(
         &self,
         req: crate::model::BatchCreatePullRequestCommentsRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::batch_create_pull_request_comments",
-            self.inner.batch_create_pull_request_comments(req, options));
+            self.inner.batch_create_pull_request_comments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resolve_pull_request_comments(
         &self,
         req: crate::model::ResolvePullRequestCommentsRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::resolve_pull_request_comments",
-            self.inner.resolve_pull_request_comments(req, options));
+            self.inner.resolve_pull_request_comments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn unresolve_pull_request_comments(
         &self,
         req: crate::model::UnresolvePullRequestCommentsRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::unresolve_pull_request_comments",
-            self.inner.unresolve_pull_request_comments(req, options));
+            self.inner.unresolve_pull_request_comments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_issue_comment(
         &self,
         req: crate::model::CreateIssueCommentRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::create_issue_comment",
-            self.inner.create_issue_comment(req, options));
+            self.inner.create_issue_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_issue_comment(
         &self,
         req: crate::model::GetIssueCommentRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_issue_comment",
-            self.inner.get_issue_comment(req, options));
+            self.inner.get_issue_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_issue_comments(
         &self,
         req: crate::model::ListIssueCommentsRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_issue_comments",
-            self.inner.list_issue_comments(req, options));
+            self.inner.list_issue_comments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_issue_comment(
         &self,
         req: crate::model::UpdateIssueCommentRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::update_issue_comment",
-            self.inner.update_issue_comment(req, options));
+            self.inner.update_issue_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_issue_comment(
         &self,
         req: crate::model::DeleteIssueCommentRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_issue_comment",
-            self.inner.delete_issue_comment(req, options));
+            self.inner.delete_issue_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -807,11 +806,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -821,11 +820,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -835,11 +834,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -849,11 +848,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -863,11 +862,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -877,11 +876,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -891,7 +890,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecureSourceManager::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

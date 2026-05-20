@@ -41,7 +41,6 @@ impl<T> super::stub::Grafeas for Grafeas<T>
 where
     T: super::stub::Grafeas + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_occurrence(
         &self,
         req: crate::model::GetOccurrenceRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::get_occurrence",
-            self.inner.get_occurrence(req, options));
+            self.inner.get_occurrence(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_occurrences(
         &self,
         req: crate::model::ListOccurrencesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::list_occurrences",
-            self.inner.list_occurrences(req, options));
+            self.inner.list_occurrences(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_occurrence(
         &self,
         req: crate::model::DeleteOccurrenceRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::delete_occurrence",
-            self.inner.delete_occurrence(req, options));
+            self.inner.delete_occurrence(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_occurrence(
         &self,
         req: crate::model::CreateOccurrenceRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::create_occurrence",
-            self.inner.create_occurrence(req, options));
+            self.inner.create_occurrence(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_occurrences(
         &self,
         req: crate::model::BatchCreateOccurrencesRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::batch_create_occurrences",
-            self.inner.batch_create_occurrences(req, options));
+            self.inner.batch_create_occurrences(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_occurrence(
         &self,
         req: crate::model::UpdateOccurrenceRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::update_occurrence",
-            self.inner.update_occurrence(req, options));
+            self.inner.update_occurrence(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_occurrence_note(
         &self,
         req: crate::model::GetOccurrenceNoteRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::get_occurrence_note",
-            self.inner.get_occurrence_note(req, options));
+            self.inner.get_occurrence_note(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_note(
         &self,
         req: crate::model::GetNoteRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::get_note",
-            self.inner.get_note(req, options));
+            self.inner.get_note(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_notes(
         &self,
         req: crate::model::ListNotesRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::list_notes",
-            self.inner.list_notes(req, options));
+            self.inner.list_notes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_note(
         &self,
         req: crate::model::DeleteNoteRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::delete_note",
-            self.inner.delete_note(req, options));
+            self.inner.delete_note(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_note(
         &self,
         req: crate::model::CreateNoteRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::create_note",
-            self.inner.create_note(req, options));
+            self.inner.create_note(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_notes(
         &self,
         req: crate::model::BatchCreateNotesRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::batch_create_notes",
-            self.inner.batch_create_notes(req, options));
+            self.inner.batch_create_notes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_note(
         &self,
         req: crate::model::UpdateNoteRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::update_note",
-            self.inner.update_note(req, options));
+            self.inner.update_note(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_note_occurrences(
         &self,
         req: crate::model::ListNoteOccurrencesRequest,
@@ -233,7 +232,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Grafeas::list_note_occurrences",
-            self.inner.list_note_occurrences(req, options));
+            self.inner.list_note_occurrences(req.clone(), options.clone()));
+
         pending.await
     }
 }

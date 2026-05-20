@@ -41,7 +41,6 @@ impl<T> super::stub::CloudApiRegistry for CloudApiRegistry<T>
 where
     T: super::stub::CloudApiRegistry + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mcp_server(
         &self,
         req: crate::model::GetMcpServerRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudApiRegistry::get_mcp_server",
-            self.inner.get_mcp_server(req, options));
+            self.inner.get_mcp_server(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mcp_servers(
         &self,
         req: crate::model::ListMcpServersRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudApiRegistry::list_mcp_servers",
-            self.inner.list_mcp_servers(req, options));
+            self.inner.list_mcp_servers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mcp_tool(
         &self,
         req: crate::model::GetMcpToolRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudApiRegistry::get_mcp_tool",
-            self.inner.get_mcp_tool(req, options));
+            self.inner.get_mcp_tool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mcp_tools(
         &self,
         req: crate::model::ListMcpToolsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudApiRegistry::list_mcp_tools",
-            self.inner.list_mcp_tools(req, options));
+            self.inner.list_mcp_tools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudApiRegistry::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudApiRegistry::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

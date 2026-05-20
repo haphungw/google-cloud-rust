@@ -41,7 +41,6 @@ impl<T> super::stub::AccessContextManager for AccessContextManager<T>
 where
     T: super::stub::AccessContextManager + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_access_policies(
         &self,
         req: crate::model::ListAccessPoliciesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::list_access_policies",
-            self.inner.list_access_policies(req, options));
+            self.inner.list_access_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_access_policy(
         &self,
         req: crate::model::GetAccessPolicyRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::get_access_policy",
-            self.inner.get_access_policy(req, options));
+            self.inner.get_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_access_policy(
         &self,
         req: crate::model::AccessPolicy,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::create_access_policy",
-            self.inner.create_access_policy(req, options));
+            self.inner.create_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_access_policy(
         &self,
         req: crate::model::UpdateAccessPolicyRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::update_access_policy",
-            self.inner.update_access_policy(req, options));
+            self.inner.update_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_access_policy(
         &self,
         req: crate::model::DeleteAccessPolicyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::delete_access_policy",
-            self.inner.delete_access_policy(req, options));
+            self.inner.delete_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_access_levels(
         &self,
         req: crate::model::ListAccessLevelsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::list_access_levels",
-            self.inner.list_access_levels(req, options));
+            self.inner.list_access_levels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_access_level(
         &self,
         req: crate::model::GetAccessLevelRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::get_access_level",
-            self.inner.get_access_level(req, options));
+            self.inner.get_access_level(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_access_level(
         &self,
         req: crate::model::CreateAccessLevelRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::create_access_level",
-            self.inner.create_access_level(req, options));
+            self.inner.create_access_level(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_access_level(
         &self,
         req: crate::model::UpdateAccessLevelRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::update_access_level",
-            self.inner.update_access_level(req, options));
+            self.inner.update_access_level(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_access_level(
         &self,
         req: crate::model::DeleteAccessLevelRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::delete_access_level",
-            self.inner.delete_access_level(req, options));
+            self.inner.delete_access_level(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn replace_access_levels(
         &self,
         req: crate::model::ReplaceAccessLevelsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::replace_access_levels",
-            self.inner.replace_access_levels(req, options));
+            self.inner.replace_access_levels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_service_perimeters(
         &self,
         req: crate::model::ListServicePerimetersRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::list_service_perimeters",
-            self.inner.list_service_perimeters(req, options));
+            self.inner.list_service_perimeters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_perimeter(
         &self,
         req: crate::model::GetServicePerimeterRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::get_service_perimeter",
-            self.inner.get_service_perimeter(req, options));
+            self.inner.get_service_perimeter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_perimeter(
         &self,
         req: crate::model::CreateServicePerimeterRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::create_service_perimeter",
-            self.inner.create_service_perimeter(req, options));
+            self.inner.create_service_perimeter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service_perimeter(
         &self,
         req: crate::model::UpdateServicePerimeterRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::update_service_perimeter",
-            self.inner.update_service_perimeter(req, options));
+            self.inner.update_service_perimeter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service_perimeter(
         &self,
         req: crate::model::DeleteServicePerimeterRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::delete_service_perimeter",
-            self.inner.delete_service_perimeter(req, options));
+            self.inner.delete_service_perimeter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn replace_service_perimeters(
         &self,
         req: crate::model::ReplaceServicePerimetersRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::replace_service_perimeters",
-            self.inner.replace_service_perimeters(req, options));
+            self.inner.replace_service_perimeters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit_service_perimeters(
         &self,
         req: crate::model::CommitServicePerimetersRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::commit_service_perimeters",
-            self.inner.commit_service_perimeters(req, options));
+            self.inner.commit_service_perimeters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_gcp_user_access_bindings(
         &self,
         req: crate::model::ListGcpUserAccessBindingsRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::list_gcp_user_access_bindings",
-            self.inner.list_gcp_user_access_bindings(req, options));
+            self.inner.list_gcp_user_access_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_gcp_user_access_binding(
         &self,
         req: crate::model::GetGcpUserAccessBindingRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::get_gcp_user_access_binding",
-            self.inner.get_gcp_user_access_binding(req, options));
+            self.inner.get_gcp_user_access_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_gcp_user_access_binding(
         &self,
         req: crate::model::CreateGcpUserAccessBindingRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::create_gcp_user_access_binding",
-            self.inner.create_gcp_user_access_binding(req, options));
+            self.inner.create_gcp_user_access_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_gcp_user_access_binding(
         &self,
         req: crate::model::UpdateGcpUserAccessBindingRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::update_gcp_user_access_binding",
-            self.inner.update_gcp_user_access_binding(req, options));
+            self.inner.update_gcp_user_access_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_gcp_user_access_binding(
         &self,
         req: crate::model::DeleteGcpUserAccessBindingRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::delete_gcp_user_access_binding",
-            self.inner.delete_gcp_user_access_binding(req, options));
+            self.inner.delete_gcp_user_access_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -415,7 +414,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessContextManager::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::AssuredWorkloadsService for AssuredWorkloadsService<T>
 where
     T: super::stub::AssuredWorkloadsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_workload(
         &self,
         req: crate::model::CreateWorkloadRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::create_workload",
-            self.inner.create_workload(req, options));
+            self.inner.create_workload(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_workload(
         &self,
         req: crate::model::UpdateWorkloadRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::update_workload",
-            self.inner.update_workload(req, options));
+            self.inner.update_workload(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restrict_allowed_resources(
         &self,
         req: crate::model::RestrictAllowedResourcesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::restrict_allowed_resources",
-            self.inner.restrict_allowed_resources(req, options));
+            self.inner.restrict_allowed_resources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_workload(
         &self,
         req: crate::model::DeleteWorkloadRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::delete_workload",
-            self.inner.delete_workload(req, options));
+            self.inner.delete_workload(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_workload(
         &self,
         req: crate::model::GetWorkloadRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::get_workload",
-            self.inner.get_workload(req, options));
+            self.inner.get_workload(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workloads(
         &self,
         req: crate::model::ListWorkloadsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::list_workloads",
-            self.inner.list_workloads(req, options));
+            self.inner.list_workloads(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -149,7 +148,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssuredWorkloadsService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -52,9 +52,7 @@ where
             method: "client::TextToSpeech::list_voices",
             self.inner.list_voices(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn synthesize_speech(
@@ -68,9 +66,7 @@ where
             method: "client::TextToSpeech::synthesize_speech",
             self.inner.synthesize_speech(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -84,9 +80,7 @@ where
             method: "client::TextToSpeech::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -100,9 +94,7 @@ where
             method: "client::TextToSpeech::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 }
 
@@ -143,9 +135,7 @@ where
             method: "client::TextToSpeechLongAudioSynthesize::synthesize_long_audio",
             self.inner.synthesize_long_audio(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -159,9 +149,7 @@ where
             method: "client::TextToSpeechLongAudioSynthesize::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -175,9 +163,7 @@ where
             method: "client::TextToSpeechLongAudioSynthesize::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     fn get_polling_error_policy(

@@ -41,7 +41,6 @@ impl<T> super::stub::AddressGroupService for AddressGroupService<T>
 where
     T: super::stub::AddressGroupService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_address_groups(
         &self,
         req: crate::model::ListAddressGroupsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::list_address_groups",
-            self.inner.list_address_groups(req, options));
+            self.inner.list_address_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_address_group(
         &self,
         req: crate::model::GetAddressGroupRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::get_address_group",
-            self.inner.get_address_group(req, options));
+            self.inner.get_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_address_group(
         &self,
         req: crate::model::CreateAddressGroupRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::create_address_group",
-            self.inner.create_address_group(req, options));
+            self.inner.create_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_address_group(
         &self,
         req: crate::model::UpdateAddressGroupRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::update_address_group",
-            self.inner.update_address_group(req, options));
+            self.inner.update_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_address_group_items(
         &self,
         req: crate::model::AddAddressGroupItemsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::add_address_group_items",
-            self.inner.add_address_group_items(req, options));
+            self.inner.add_address_group_items(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_address_group_items(
         &self,
         req: crate::model::RemoveAddressGroupItemsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::remove_address_group_items",
-            self.inner.remove_address_group_items(req, options));
+            self.inner.remove_address_group_items(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn clone_address_group_items(
         &self,
         req: crate::model::CloneAddressGroupItemsRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::clone_address_group_items",
-            self.inner.clone_address_group_items(req, options));
+            self.inner.clone_address_group_items(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_address_group(
         &self,
         req: crate::model::DeleteAddressGroupRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::delete_address_group",
-            self.inner.delete_address_group(req, options));
+            self.inner.delete_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_address_group_references(
         &self,
         req: crate::model::ListAddressGroupReferencesRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::list_address_group_references",
-            self.inner.list_address_group_references(req, options));
+            self.inner.list_address_group_references(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -289,7 +288,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AddressGroupService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -334,7 +334,6 @@ impl<T> super::stub::OrganizationAddressGroupService for OrganizationAddressGrou
 where
     T: super::stub::OrganizationAddressGroupService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_address_groups(
         &self,
         req: crate::model::ListAddressGroupsRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::list_address_groups",
-            self.inner.list_address_groups(req, options));
+            self.inner.list_address_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_address_group(
         &self,
         req: crate::model::GetAddressGroupRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::get_address_group",
-            self.inner.get_address_group(req, options));
+            self.inner.get_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_address_group(
         &self,
         req: crate::model::CreateAddressGroupRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::create_address_group",
-            self.inner.create_address_group(req, options));
+            self.inner.create_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_address_group(
         &self,
         req: crate::model::UpdateAddressGroupRequest,
@@ -386,11 +385,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::update_address_group",
-            self.inner.update_address_group(req, options));
+            self.inner.update_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_address_group_items(
         &self,
         req: crate::model::AddAddressGroupItemsRequest,
@@ -400,11 +399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::add_address_group_items",
-            self.inner.add_address_group_items(req, options));
+            self.inner.add_address_group_items(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_address_group_items(
         &self,
         req: crate::model::RemoveAddressGroupItemsRequest,
@@ -414,11 +413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::remove_address_group_items",
-            self.inner.remove_address_group_items(req, options));
+            self.inner.remove_address_group_items(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn clone_address_group_items(
         &self,
         req: crate::model::CloneAddressGroupItemsRequest,
@@ -428,11 +427,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::clone_address_group_items",
-            self.inner.clone_address_group_items(req, options));
+            self.inner.clone_address_group_items(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_address_group(
         &self,
         req: crate::model::DeleteAddressGroupRequest,
@@ -442,11 +441,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::delete_address_group",
-            self.inner.delete_address_group(req, options));
+            self.inner.delete_address_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_address_group_references(
         &self,
         req: crate::model::ListAddressGroupReferencesRequest,
@@ -456,11 +455,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::list_address_group_references",
-            self.inner.list_address_group_references(req, options));
+            self.inner.list_address_group_references(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -470,11 +469,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -484,11 +483,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -498,11 +497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -512,11 +511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -526,11 +525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -540,11 +539,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -554,11 +553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -568,11 +567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -582,7 +581,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationAddressGroupService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -627,7 +627,6 @@ impl<T> super::stub::DnsThreatDetectorService for DnsThreatDetectorService<T>
 where
     T: super::stub::DnsThreatDetectorService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_dns_threat_detectors(
         &self,
         req: crate::model::ListDnsThreatDetectorsRequest,
@@ -637,11 +636,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::list_dns_threat_detectors",
-            self.inner.list_dns_threat_detectors(req, options));
+            self.inner.list_dns_threat_detectors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dns_threat_detector(
         &self,
         req: crate::model::GetDnsThreatDetectorRequest,
@@ -651,11 +650,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::get_dns_threat_detector",
-            self.inner.get_dns_threat_detector(req, options));
+            self.inner.get_dns_threat_detector(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_dns_threat_detector(
         &self,
         req: crate::model::CreateDnsThreatDetectorRequest,
@@ -665,11 +664,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::create_dns_threat_detector",
-            self.inner.create_dns_threat_detector(req, options));
+            self.inner.create_dns_threat_detector(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_dns_threat_detector(
         &self,
         req: crate::model::UpdateDnsThreatDetectorRequest,
@@ -679,11 +678,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::update_dns_threat_detector",
-            self.inner.update_dns_threat_detector(req, options));
+            self.inner.update_dns_threat_detector(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_dns_threat_detector(
         &self,
         req: crate::model::DeleteDnsThreatDetectorRequest,
@@ -693,11 +692,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::delete_dns_threat_detector",
-            self.inner.delete_dns_threat_detector(req, options));
+            self.inner.delete_dns_threat_detector(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -707,11 +706,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -721,11 +720,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -735,11 +734,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -749,11 +748,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -763,11 +762,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -777,11 +776,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -791,11 +790,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -805,11 +804,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -819,7 +818,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DnsThreatDetectorService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -850,7 +850,6 @@ impl<T> super::stub::FirewallActivation for FirewallActivation<T>
 where
     T: super::stub::FirewallActivation + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_firewall_endpoints(
         &self,
         req: crate::model::ListFirewallEndpointsRequest,
@@ -860,11 +859,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::list_firewall_endpoints",
-            self.inner.list_firewall_endpoints(req, options));
+            self.inner.list_firewall_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_firewall_endpoint(
         &self,
         req: crate::model::GetFirewallEndpointRequest,
@@ -874,11 +873,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::get_firewall_endpoint",
-            self.inner.get_firewall_endpoint(req, options));
+            self.inner.get_firewall_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_firewall_endpoint(
         &self,
         req: crate::model::CreateFirewallEndpointRequest,
@@ -888,11 +887,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::create_firewall_endpoint",
-            self.inner.create_firewall_endpoint(req, options));
+            self.inner.create_firewall_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_firewall_endpoint(
         &self,
         req: crate::model::DeleteFirewallEndpointRequest,
@@ -902,11 +901,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::delete_firewall_endpoint",
-            self.inner.delete_firewall_endpoint(req, options));
+            self.inner.delete_firewall_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_firewall_endpoint(
         &self,
         req: crate::model::UpdateFirewallEndpointRequest,
@@ -916,11 +915,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::update_firewall_endpoint",
-            self.inner.update_firewall_endpoint(req, options));
+            self.inner.update_firewall_endpoint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_firewall_endpoint_associations(
         &self,
         req: crate::model::ListFirewallEndpointAssociationsRequest,
@@ -930,11 +929,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::list_firewall_endpoint_associations",
-            self.inner.list_firewall_endpoint_associations(req, options));
+            self.inner.list_firewall_endpoint_associations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_firewall_endpoint_association(
         &self,
         req: crate::model::GetFirewallEndpointAssociationRequest,
@@ -944,11 +943,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::get_firewall_endpoint_association",
-            self.inner.get_firewall_endpoint_association(req, options));
+            self.inner.get_firewall_endpoint_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_firewall_endpoint_association(
         &self,
         req: crate::model::CreateFirewallEndpointAssociationRequest,
@@ -958,11 +957,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::create_firewall_endpoint_association",
-            self.inner.create_firewall_endpoint_association(req, options));
+            self.inner.create_firewall_endpoint_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_firewall_endpoint_association(
         &self,
         req: crate::model::DeleteFirewallEndpointAssociationRequest,
@@ -972,11 +971,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::delete_firewall_endpoint_association",
-            self.inner.delete_firewall_endpoint_association(req, options));
+            self.inner.delete_firewall_endpoint_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_firewall_endpoint_association(
         &self,
         req: crate::model::UpdateFirewallEndpointAssociationRequest,
@@ -986,11 +985,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::update_firewall_endpoint_association",
-            self.inner.update_firewall_endpoint_association(req, options));
+            self.inner.update_firewall_endpoint_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1000,11 +999,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1014,11 +1013,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1028,11 +1027,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1042,11 +1041,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1056,11 +1055,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1070,11 +1069,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1084,11 +1083,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1098,11 +1097,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1112,7 +1111,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallActivation::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -1157,7 +1157,6 @@ impl<T> super::stub::Intercept for Intercept<T>
 where
     T: super::stub::Intercept + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_intercept_endpoint_groups(
         &self,
         req: crate::model::ListInterceptEndpointGroupsRequest,
@@ -1167,11 +1166,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::list_intercept_endpoint_groups",
-            self.inner.list_intercept_endpoint_groups(req, options));
+            self.inner.list_intercept_endpoint_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_intercept_endpoint_group(
         &self,
         req: crate::model::GetInterceptEndpointGroupRequest,
@@ -1181,11 +1180,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_intercept_endpoint_group",
-            self.inner.get_intercept_endpoint_group(req, options));
+            self.inner.get_intercept_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_intercept_endpoint_group(
         &self,
         req: crate::model::CreateInterceptEndpointGroupRequest,
@@ -1195,11 +1194,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::create_intercept_endpoint_group",
-            self.inner.create_intercept_endpoint_group(req, options));
+            self.inner.create_intercept_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_intercept_endpoint_group(
         &self,
         req: crate::model::UpdateInterceptEndpointGroupRequest,
@@ -1209,11 +1208,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::update_intercept_endpoint_group",
-            self.inner.update_intercept_endpoint_group(req, options));
+            self.inner.update_intercept_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_intercept_endpoint_group(
         &self,
         req: crate::model::DeleteInterceptEndpointGroupRequest,
@@ -1223,11 +1222,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::delete_intercept_endpoint_group",
-            self.inner.delete_intercept_endpoint_group(req, options));
+            self.inner.delete_intercept_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_intercept_endpoint_group_associations(
         &self,
         req: crate::model::ListInterceptEndpointGroupAssociationsRequest,
@@ -1237,11 +1236,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::list_intercept_endpoint_group_associations",
-            self.inner.list_intercept_endpoint_group_associations(req, options));
+            self.inner.list_intercept_endpoint_group_associations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_intercept_endpoint_group_association(
         &self,
         req: crate::model::GetInterceptEndpointGroupAssociationRequest,
@@ -1251,11 +1250,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_intercept_endpoint_group_association",
-            self.inner.get_intercept_endpoint_group_association(req, options));
+            self.inner.get_intercept_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_intercept_endpoint_group_association(
         &self,
         req: crate::model::CreateInterceptEndpointGroupAssociationRequest,
@@ -1265,11 +1264,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::create_intercept_endpoint_group_association",
-            self.inner.create_intercept_endpoint_group_association(req, options));
+            self.inner.create_intercept_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_intercept_endpoint_group_association(
         &self,
         req: crate::model::UpdateInterceptEndpointGroupAssociationRequest,
@@ -1279,11 +1278,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::update_intercept_endpoint_group_association",
-            self.inner.update_intercept_endpoint_group_association(req, options));
+            self.inner.update_intercept_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_intercept_endpoint_group_association(
         &self,
         req: crate::model::DeleteInterceptEndpointGroupAssociationRequest,
@@ -1293,11 +1292,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::delete_intercept_endpoint_group_association",
-            self.inner.delete_intercept_endpoint_group_association(req, options));
+            self.inner.delete_intercept_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_intercept_deployment_groups(
         &self,
         req: crate::model::ListInterceptDeploymentGroupsRequest,
@@ -1307,11 +1306,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::list_intercept_deployment_groups",
-            self.inner.list_intercept_deployment_groups(req, options));
+            self.inner.list_intercept_deployment_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_intercept_deployment_group(
         &self,
         req: crate::model::GetInterceptDeploymentGroupRequest,
@@ -1321,11 +1320,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_intercept_deployment_group",
-            self.inner.get_intercept_deployment_group(req, options));
+            self.inner.get_intercept_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_intercept_deployment_group(
         &self,
         req: crate::model::CreateInterceptDeploymentGroupRequest,
@@ -1335,11 +1334,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::create_intercept_deployment_group",
-            self.inner.create_intercept_deployment_group(req, options));
+            self.inner.create_intercept_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_intercept_deployment_group(
         &self,
         req: crate::model::UpdateInterceptDeploymentGroupRequest,
@@ -1349,11 +1348,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::update_intercept_deployment_group",
-            self.inner.update_intercept_deployment_group(req, options));
+            self.inner.update_intercept_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_intercept_deployment_group(
         &self,
         req: crate::model::DeleteInterceptDeploymentGroupRequest,
@@ -1363,11 +1362,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::delete_intercept_deployment_group",
-            self.inner.delete_intercept_deployment_group(req, options));
+            self.inner.delete_intercept_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_intercept_deployments(
         &self,
         req: crate::model::ListInterceptDeploymentsRequest,
@@ -1377,11 +1376,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::list_intercept_deployments",
-            self.inner.list_intercept_deployments(req, options));
+            self.inner.list_intercept_deployments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_intercept_deployment(
         &self,
         req: crate::model::GetInterceptDeploymentRequest,
@@ -1391,11 +1390,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_intercept_deployment",
-            self.inner.get_intercept_deployment(req, options));
+            self.inner.get_intercept_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_intercept_deployment(
         &self,
         req: crate::model::CreateInterceptDeploymentRequest,
@@ -1405,11 +1404,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::create_intercept_deployment",
-            self.inner.create_intercept_deployment(req, options));
+            self.inner.create_intercept_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_intercept_deployment(
         &self,
         req: crate::model::UpdateInterceptDeploymentRequest,
@@ -1419,11 +1418,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::update_intercept_deployment",
-            self.inner.update_intercept_deployment(req, options));
+            self.inner.update_intercept_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_intercept_deployment(
         &self,
         req: crate::model::DeleteInterceptDeploymentRequest,
@@ -1433,11 +1432,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::delete_intercept_deployment",
-            self.inner.delete_intercept_deployment(req, options));
+            self.inner.delete_intercept_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1447,11 +1446,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1461,11 +1460,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1475,11 +1474,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1489,11 +1488,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1503,11 +1502,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1517,11 +1516,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1531,11 +1530,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1545,11 +1544,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1559,7 +1558,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Intercept::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -1604,7 +1604,6 @@ impl<T> super::stub::Mirroring for Mirroring<T>
 where
     T: super::stub::Mirroring + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mirroring_endpoint_groups(
         &self,
         req: crate::model::ListMirroringEndpointGroupsRequest,
@@ -1614,11 +1613,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::list_mirroring_endpoint_groups",
-            self.inner.list_mirroring_endpoint_groups(req, options));
+            self.inner.list_mirroring_endpoint_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mirroring_endpoint_group(
         &self,
         req: crate::model::GetMirroringEndpointGroupRequest,
@@ -1628,11 +1627,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_mirroring_endpoint_group",
-            self.inner.get_mirroring_endpoint_group(req, options));
+            self.inner.get_mirroring_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mirroring_endpoint_group(
         &self,
         req: crate::model::CreateMirroringEndpointGroupRequest,
@@ -1642,11 +1641,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::create_mirroring_endpoint_group",
-            self.inner.create_mirroring_endpoint_group(req, options));
+            self.inner.create_mirroring_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_mirroring_endpoint_group(
         &self,
         req: crate::model::UpdateMirroringEndpointGroupRequest,
@@ -1656,11 +1655,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::update_mirroring_endpoint_group",
-            self.inner.update_mirroring_endpoint_group(req, options));
+            self.inner.update_mirroring_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mirroring_endpoint_group(
         &self,
         req: crate::model::DeleteMirroringEndpointGroupRequest,
@@ -1670,11 +1669,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::delete_mirroring_endpoint_group",
-            self.inner.delete_mirroring_endpoint_group(req, options));
+            self.inner.delete_mirroring_endpoint_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mirroring_endpoint_group_associations(
         &self,
         req: crate::model::ListMirroringEndpointGroupAssociationsRequest,
@@ -1684,11 +1683,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::list_mirroring_endpoint_group_associations",
-            self.inner.list_mirroring_endpoint_group_associations(req, options));
+            self.inner.list_mirroring_endpoint_group_associations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mirroring_endpoint_group_association(
         &self,
         req: crate::model::GetMirroringEndpointGroupAssociationRequest,
@@ -1698,11 +1697,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_mirroring_endpoint_group_association",
-            self.inner.get_mirroring_endpoint_group_association(req, options));
+            self.inner.get_mirroring_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mirroring_endpoint_group_association(
         &self,
         req: crate::model::CreateMirroringEndpointGroupAssociationRequest,
@@ -1712,11 +1711,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::create_mirroring_endpoint_group_association",
-            self.inner.create_mirroring_endpoint_group_association(req, options));
+            self.inner.create_mirroring_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_mirroring_endpoint_group_association(
         &self,
         req: crate::model::UpdateMirroringEndpointGroupAssociationRequest,
@@ -1726,11 +1725,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::update_mirroring_endpoint_group_association",
-            self.inner.update_mirroring_endpoint_group_association(req, options));
+            self.inner.update_mirroring_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mirroring_endpoint_group_association(
         &self,
         req: crate::model::DeleteMirroringEndpointGroupAssociationRequest,
@@ -1740,11 +1739,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::delete_mirroring_endpoint_group_association",
-            self.inner.delete_mirroring_endpoint_group_association(req, options));
+            self.inner.delete_mirroring_endpoint_group_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mirroring_deployment_groups(
         &self,
         req: crate::model::ListMirroringDeploymentGroupsRequest,
@@ -1754,11 +1753,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::list_mirroring_deployment_groups",
-            self.inner.list_mirroring_deployment_groups(req, options));
+            self.inner.list_mirroring_deployment_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mirroring_deployment_group(
         &self,
         req: crate::model::GetMirroringDeploymentGroupRequest,
@@ -1768,11 +1767,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_mirroring_deployment_group",
-            self.inner.get_mirroring_deployment_group(req, options));
+            self.inner.get_mirroring_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mirroring_deployment_group(
         &self,
         req: crate::model::CreateMirroringDeploymentGroupRequest,
@@ -1782,11 +1781,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::create_mirroring_deployment_group",
-            self.inner.create_mirroring_deployment_group(req, options));
+            self.inner.create_mirroring_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_mirroring_deployment_group(
         &self,
         req: crate::model::UpdateMirroringDeploymentGroupRequest,
@@ -1796,11 +1795,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::update_mirroring_deployment_group",
-            self.inner.update_mirroring_deployment_group(req, options));
+            self.inner.update_mirroring_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mirroring_deployment_group(
         &self,
         req: crate::model::DeleteMirroringDeploymentGroupRequest,
@@ -1810,11 +1809,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::delete_mirroring_deployment_group",
-            self.inner.delete_mirroring_deployment_group(req, options));
+            self.inner.delete_mirroring_deployment_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mirroring_deployments(
         &self,
         req: crate::model::ListMirroringDeploymentsRequest,
@@ -1824,11 +1823,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::list_mirroring_deployments",
-            self.inner.list_mirroring_deployments(req, options));
+            self.inner.list_mirroring_deployments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mirroring_deployment(
         &self,
         req: crate::model::GetMirroringDeploymentRequest,
@@ -1838,11 +1837,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_mirroring_deployment",
-            self.inner.get_mirroring_deployment(req, options));
+            self.inner.get_mirroring_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mirroring_deployment(
         &self,
         req: crate::model::CreateMirroringDeploymentRequest,
@@ -1852,11 +1851,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::create_mirroring_deployment",
-            self.inner.create_mirroring_deployment(req, options));
+            self.inner.create_mirroring_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_mirroring_deployment(
         &self,
         req: crate::model::UpdateMirroringDeploymentRequest,
@@ -1866,11 +1865,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::update_mirroring_deployment",
-            self.inner.update_mirroring_deployment(req, options));
+            self.inner.update_mirroring_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mirroring_deployment(
         &self,
         req: crate::model::DeleteMirroringDeploymentRequest,
@@ -1880,11 +1879,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::delete_mirroring_deployment",
-            self.inner.delete_mirroring_deployment(req, options));
+            self.inner.delete_mirroring_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1894,11 +1893,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1908,11 +1907,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1922,11 +1921,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1936,11 +1935,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1950,11 +1949,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1964,11 +1963,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1978,11 +1977,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1992,11 +1991,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -2006,7 +2005,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Mirroring::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2051,7 +2051,6 @@ impl<T> super::stub::NetworkSecurity for NetworkSecurity<T>
 where
     T: super::stub::NetworkSecurity + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_authorization_policies(
         &self,
         req: crate::model::ListAuthorizationPoliciesRequest,
@@ -2061,11 +2060,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_authorization_policies",
-            self.inner.list_authorization_policies(req, options));
+            self.inner.list_authorization_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_authorization_policy(
         &self,
         req: crate::model::GetAuthorizationPolicyRequest,
@@ -2075,11 +2074,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_authorization_policy",
-            self.inner.get_authorization_policy(req, options));
+            self.inner.get_authorization_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_authorization_policy(
         &self,
         req: crate::model::CreateAuthorizationPolicyRequest,
@@ -2089,11 +2088,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_authorization_policy",
-            self.inner.create_authorization_policy(req, options));
+            self.inner.create_authorization_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_authorization_policy(
         &self,
         req: crate::model::UpdateAuthorizationPolicyRequest,
@@ -2103,11 +2102,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_authorization_policy",
-            self.inner.update_authorization_policy(req, options));
+            self.inner.update_authorization_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_authorization_policy(
         &self,
         req: crate::model::DeleteAuthorizationPolicyRequest,
@@ -2117,11 +2116,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_authorization_policy",
-            self.inner.delete_authorization_policy(req, options));
+            self.inner.delete_authorization_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backend_authentication_configs(
         &self,
         req: crate::model::ListBackendAuthenticationConfigsRequest,
@@ -2131,11 +2130,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_backend_authentication_configs",
-            self.inner.list_backend_authentication_configs(req, options));
+            self.inner.list_backend_authentication_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backend_authentication_config(
         &self,
         req: crate::model::GetBackendAuthenticationConfigRequest,
@@ -2145,11 +2144,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_backend_authentication_config",
-            self.inner.get_backend_authentication_config(req, options));
+            self.inner.get_backend_authentication_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backend_authentication_config(
         &self,
         req: crate::model::CreateBackendAuthenticationConfigRequest,
@@ -2159,11 +2158,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_backend_authentication_config",
-            self.inner.create_backend_authentication_config(req, options));
+            self.inner.create_backend_authentication_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backend_authentication_config(
         &self,
         req: crate::model::UpdateBackendAuthenticationConfigRequest,
@@ -2173,11 +2172,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_backend_authentication_config",
-            self.inner.update_backend_authentication_config(req, options));
+            self.inner.update_backend_authentication_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backend_authentication_config(
         &self,
         req: crate::model::DeleteBackendAuthenticationConfigRequest,
@@ -2187,11 +2186,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_backend_authentication_config",
-            self.inner.delete_backend_authentication_config(req, options));
+            self.inner.delete_backend_authentication_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_server_tls_policies(
         &self,
         req: crate::model::ListServerTlsPoliciesRequest,
@@ -2201,11 +2200,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_server_tls_policies",
-            self.inner.list_server_tls_policies(req, options));
+            self.inner.list_server_tls_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_server_tls_policy(
         &self,
         req: crate::model::GetServerTlsPolicyRequest,
@@ -2215,11 +2214,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_server_tls_policy",
-            self.inner.get_server_tls_policy(req, options));
+            self.inner.get_server_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_server_tls_policy(
         &self,
         req: crate::model::CreateServerTlsPolicyRequest,
@@ -2229,11 +2228,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_server_tls_policy",
-            self.inner.create_server_tls_policy(req, options));
+            self.inner.create_server_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_server_tls_policy(
         &self,
         req: crate::model::UpdateServerTlsPolicyRequest,
@@ -2243,11 +2242,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_server_tls_policy",
-            self.inner.update_server_tls_policy(req, options));
+            self.inner.update_server_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_server_tls_policy(
         &self,
         req: crate::model::DeleteServerTlsPolicyRequest,
@@ -2257,11 +2256,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_server_tls_policy",
-            self.inner.delete_server_tls_policy(req, options));
+            self.inner.delete_server_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_client_tls_policies(
         &self,
         req: crate::model::ListClientTlsPoliciesRequest,
@@ -2271,11 +2270,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_client_tls_policies",
-            self.inner.list_client_tls_policies(req, options));
+            self.inner.list_client_tls_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_client_tls_policy(
         &self,
         req: crate::model::GetClientTlsPolicyRequest,
@@ -2285,11 +2284,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_client_tls_policy",
-            self.inner.get_client_tls_policy(req, options));
+            self.inner.get_client_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_client_tls_policy(
         &self,
         req: crate::model::CreateClientTlsPolicyRequest,
@@ -2299,11 +2298,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_client_tls_policy",
-            self.inner.create_client_tls_policy(req, options));
+            self.inner.create_client_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_client_tls_policy(
         &self,
         req: crate::model::UpdateClientTlsPolicyRequest,
@@ -2313,11 +2312,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_client_tls_policy",
-            self.inner.update_client_tls_policy(req, options));
+            self.inner.update_client_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_client_tls_policy(
         &self,
         req: crate::model::DeleteClientTlsPolicyRequest,
@@ -2327,11 +2326,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_client_tls_policy",
-            self.inner.delete_client_tls_policy(req, options));
+            self.inner.delete_client_tls_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_gateway_security_policies(
         &self,
         req: crate::model::ListGatewaySecurityPoliciesRequest,
@@ -2341,11 +2340,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_gateway_security_policies",
-            self.inner.list_gateway_security_policies(req, options));
+            self.inner.list_gateway_security_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_gateway_security_policy(
         &self,
         req: crate::model::GetGatewaySecurityPolicyRequest,
@@ -2355,11 +2354,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_gateway_security_policy",
-            self.inner.get_gateway_security_policy(req, options));
+            self.inner.get_gateway_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_gateway_security_policy(
         &self,
         req: crate::model::CreateGatewaySecurityPolicyRequest,
@@ -2369,11 +2368,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_gateway_security_policy",
-            self.inner.create_gateway_security_policy(req, options));
+            self.inner.create_gateway_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_gateway_security_policy(
         &self,
         req: crate::model::UpdateGatewaySecurityPolicyRequest,
@@ -2383,11 +2382,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_gateway_security_policy",
-            self.inner.update_gateway_security_policy(req, options));
+            self.inner.update_gateway_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_gateway_security_policy(
         &self,
         req: crate::model::DeleteGatewaySecurityPolicyRequest,
@@ -2397,11 +2396,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_gateway_security_policy",
-            self.inner.delete_gateway_security_policy(req, options));
+            self.inner.delete_gateway_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_gateway_security_policy_rules(
         &self,
         req: crate::model::ListGatewaySecurityPolicyRulesRequest,
@@ -2411,11 +2410,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_gateway_security_policy_rules",
-            self.inner.list_gateway_security_policy_rules(req, options));
+            self.inner.list_gateway_security_policy_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_gateway_security_policy_rule(
         &self,
         req: crate::model::GetGatewaySecurityPolicyRuleRequest,
@@ -2425,11 +2424,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_gateway_security_policy_rule",
-            self.inner.get_gateway_security_policy_rule(req, options));
+            self.inner.get_gateway_security_policy_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_gateway_security_policy_rule(
         &self,
         req: crate::model::CreateGatewaySecurityPolicyRuleRequest,
@@ -2439,11 +2438,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_gateway_security_policy_rule",
-            self.inner.create_gateway_security_policy_rule(req, options));
+            self.inner.create_gateway_security_policy_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_gateway_security_policy_rule(
         &self,
         req: crate::model::UpdateGatewaySecurityPolicyRuleRequest,
@@ -2453,11 +2452,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_gateway_security_policy_rule",
-            self.inner.update_gateway_security_policy_rule(req, options));
+            self.inner.update_gateway_security_policy_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_gateway_security_policy_rule(
         &self,
         req: crate::model::DeleteGatewaySecurityPolicyRuleRequest,
@@ -2467,11 +2466,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_gateway_security_policy_rule",
-            self.inner.delete_gateway_security_policy_rule(req, options));
+            self.inner.delete_gateway_security_policy_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_url_lists(
         &self,
         req: crate::model::ListUrlListsRequest,
@@ -2481,11 +2480,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_url_lists",
-            self.inner.list_url_lists(req, options));
+            self.inner.list_url_lists(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_url_list(
         &self,
         req: crate::model::GetUrlListRequest,
@@ -2495,11 +2494,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_url_list",
-            self.inner.get_url_list(req, options));
+            self.inner.get_url_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_url_list(
         &self,
         req: crate::model::CreateUrlListRequest,
@@ -2509,11 +2508,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_url_list",
-            self.inner.create_url_list(req, options));
+            self.inner.create_url_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_url_list(
         &self,
         req: crate::model::UpdateUrlListRequest,
@@ -2523,11 +2522,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_url_list",
-            self.inner.update_url_list(req, options));
+            self.inner.update_url_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_url_list(
         &self,
         req: crate::model::DeleteUrlListRequest,
@@ -2537,11 +2536,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_url_list",
-            self.inner.delete_url_list(req, options));
+            self.inner.delete_url_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tls_inspection_policies(
         &self,
         req: crate::model::ListTlsInspectionPoliciesRequest,
@@ -2551,11 +2550,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_tls_inspection_policies",
-            self.inner.list_tls_inspection_policies(req, options));
+            self.inner.list_tls_inspection_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_tls_inspection_policy(
         &self,
         req: crate::model::GetTlsInspectionPolicyRequest,
@@ -2565,11 +2564,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_tls_inspection_policy",
-            self.inner.get_tls_inspection_policy(req, options));
+            self.inner.get_tls_inspection_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_tls_inspection_policy(
         &self,
         req: crate::model::CreateTlsInspectionPolicyRequest,
@@ -2579,11 +2578,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_tls_inspection_policy",
-            self.inner.create_tls_inspection_policy(req, options));
+            self.inner.create_tls_inspection_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_tls_inspection_policy(
         &self,
         req: crate::model::UpdateTlsInspectionPolicyRequest,
@@ -2593,11 +2592,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_tls_inspection_policy",
-            self.inner.update_tls_inspection_policy(req, options));
+            self.inner.update_tls_inspection_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_tls_inspection_policy(
         &self,
         req: crate::model::DeleteTlsInspectionPolicyRequest,
@@ -2607,11 +2606,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_tls_inspection_policy",
-            self.inner.delete_tls_inspection_policy(req, options));
+            self.inner.delete_tls_inspection_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_authz_policies(
         &self,
         req: crate::model::ListAuthzPoliciesRequest,
@@ -2621,11 +2620,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_authz_policies",
-            self.inner.list_authz_policies(req, options));
+            self.inner.list_authz_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_authz_policy(
         &self,
         req: crate::model::GetAuthzPolicyRequest,
@@ -2635,11 +2634,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_authz_policy",
-            self.inner.get_authz_policy(req, options));
+            self.inner.get_authz_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_authz_policy(
         &self,
         req: crate::model::CreateAuthzPolicyRequest,
@@ -2649,11 +2648,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::create_authz_policy",
-            self.inner.create_authz_policy(req, options));
+            self.inner.create_authz_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_authz_policy(
         &self,
         req: crate::model::UpdateAuthzPolicyRequest,
@@ -2663,11 +2662,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::update_authz_policy",
-            self.inner.update_authz_policy(req, options));
+            self.inner.update_authz_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_authz_policy(
         &self,
         req: crate::model::DeleteAuthzPolicyRequest,
@@ -2677,11 +2676,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_authz_policy",
-            self.inner.delete_authz_policy(req, options));
+            self.inner.delete_authz_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -2691,11 +2690,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -2705,11 +2704,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -2719,11 +2718,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -2733,11 +2732,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -2747,11 +2746,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -2761,11 +2760,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -2775,11 +2774,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -2789,11 +2788,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -2803,7 +2802,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkSecurity::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2849,7 +2849,6 @@ impl<T> super::stub::OrganizationSecurityProfileGroupService
 where
     T: super::stub::OrganizationSecurityProfileGroupService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_security_profile_groups(
         &self,
         req: crate::model::ListSecurityProfileGroupsRequest,
@@ -2859,11 +2858,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::list_security_profile_groups",
-            self.inner.list_security_profile_groups(req, options));
+            self.inner.list_security_profile_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_security_profile_group(
         &self,
         req: crate::model::GetSecurityProfileGroupRequest,
@@ -2873,11 +2872,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::get_security_profile_group",
-            self.inner.get_security_profile_group(req, options));
+            self.inner.get_security_profile_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_security_profile_group(
         &self,
         req: crate::model::CreateSecurityProfileGroupRequest,
@@ -2887,11 +2886,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::create_security_profile_group",
-            self.inner.create_security_profile_group(req, options));
+            self.inner.create_security_profile_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_security_profile_group(
         &self,
         req: crate::model::UpdateSecurityProfileGroupRequest,
@@ -2901,11 +2900,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::update_security_profile_group",
-            self.inner.update_security_profile_group(req, options));
+            self.inner.update_security_profile_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_security_profile_group(
         &self,
         req: crate::model::DeleteSecurityProfileGroupRequest,
@@ -2915,11 +2914,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::delete_security_profile_group",
-            self.inner.delete_security_profile_group(req, options));
+            self.inner.delete_security_profile_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_security_profiles(
         &self,
         req: crate::model::ListSecurityProfilesRequest,
@@ -2929,11 +2928,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::list_security_profiles",
-            self.inner.list_security_profiles(req, options));
+            self.inner.list_security_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_security_profile(
         &self,
         req: crate::model::GetSecurityProfileRequest,
@@ -2943,11 +2942,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::get_security_profile",
-            self.inner.get_security_profile(req, options));
+            self.inner.get_security_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_security_profile(
         &self,
         req: crate::model::CreateSecurityProfileRequest,
@@ -2957,11 +2956,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::create_security_profile",
-            self.inner.create_security_profile(req, options));
+            self.inner.create_security_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_security_profile(
         &self,
         req: crate::model::UpdateSecurityProfileRequest,
@@ -2971,11 +2970,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::update_security_profile",
-            self.inner.update_security_profile(req, options));
+            self.inner.update_security_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_security_profile(
         &self,
         req: crate::model::DeleteSecurityProfileRequest,
@@ -2985,11 +2984,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::delete_security_profile",
-            self.inner.delete_security_profile(req, options));
+            self.inner.delete_security_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -2999,11 +2998,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -3013,11 +3012,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -3027,11 +3026,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -3041,11 +3040,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -3055,11 +3054,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -3069,11 +3068,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -3083,11 +3082,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -3097,11 +3096,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -3111,7 +3110,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityProfileGroupService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

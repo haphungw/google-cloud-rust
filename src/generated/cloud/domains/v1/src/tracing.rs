@@ -41,7 +41,6 @@ impl<T> super::stub::Domains for Domains<T>
 where
     T: super::stub::Domains + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_domains(
         &self,
         req: crate::model::SearchDomainsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::search_domains",
-            self.inner.search_domains(req, options));
+            self.inner.search_domains(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn retrieve_register_parameters(
         &self,
         req: crate::model::RetrieveRegisterParametersRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::retrieve_register_parameters",
-            self.inner.retrieve_register_parameters(req, options));
+            self.inner.retrieve_register_parameters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn register_domain(
         &self,
         req: crate::model::RegisterDomainRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::register_domain",
-            self.inner.register_domain(req, options));
+            self.inner.register_domain(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn retrieve_transfer_parameters(
         &self,
         req: crate::model::RetrieveTransferParametersRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::retrieve_transfer_parameters",
-            self.inner.retrieve_transfer_parameters(req, options));
+            self.inner.retrieve_transfer_parameters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn transfer_domain(
         &self,
         req: crate::model::TransferDomainRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::transfer_domain",
-            self.inner.transfer_domain(req, options));
+            self.inner.transfer_domain(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_registrations(
         &self,
         req: crate::model::ListRegistrationsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::list_registrations",
-            self.inner.list_registrations(req, options));
+            self.inner.list_registrations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_registration(
         &self,
         req: crate::model::GetRegistrationRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::get_registration",
-            self.inner.get_registration(req, options));
+            self.inner.get_registration(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_registration(
         &self,
         req: crate::model::UpdateRegistrationRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::update_registration",
-            self.inner.update_registration(req, options));
+            self.inner.update_registration(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn configure_management_settings(
         &self,
         req: crate::model::ConfigureManagementSettingsRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::configure_management_settings",
-            self.inner.configure_management_settings(req, options));
+            self.inner.configure_management_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn configure_dns_settings(
         &self,
         req: crate::model::ConfigureDnsSettingsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::configure_dns_settings",
-            self.inner.configure_dns_settings(req, options));
+            self.inner.configure_dns_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn configure_contact_settings(
         &self,
         req: crate::model::ConfigureContactSettingsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::configure_contact_settings",
-            self.inner.configure_contact_settings(req, options));
+            self.inner.configure_contact_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_registration(
         &self,
         req: crate::model::ExportRegistrationRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::export_registration",
-            self.inner.export_registration(req, options));
+            self.inner.export_registration(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_registration(
         &self,
         req: crate::model::DeleteRegistrationRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::delete_registration",
-            self.inner.delete_registration(req, options));
+            self.inner.delete_registration(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn retrieve_authorization_code(
         &self,
         req: crate::model::RetrieveAuthorizationCodeRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::retrieve_authorization_code",
-            self.inner.retrieve_authorization_code(req, options));
+            self.inner.retrieve_authorization_code(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_authorization_code(
         &self,
         req: crate::model::ResetAuthorizationCodeRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::reset_authorization_code",
-            self.inner.reset_authorization_code(req, options));
+            self.inner.reset_authorization_code(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -275,7 +274,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Domains::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

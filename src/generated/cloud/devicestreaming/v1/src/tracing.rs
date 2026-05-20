@@ -41,7 +41,6 @@ impl<T> super::stub::DirectAccessService for DirectAccessService<T>
 where
     T: super::stub::DirectAccessService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_device_session(
         &self,
         req: crate::model::CreateDeviceSessionRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DirectAccessService::create_device_session",
-            self.inner.create_device_session(req, options));
+            self.inner.create_device_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_device_sessions(
         &self,
         req: crate::model::ListDeviceSessionsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DirectAccessService::list_device_sessions",
-            self.inner.list_device_sessions(req, options));
+            self.inner.list_device_sessions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_device_session(
         &self,
         req: crate::model::GetDeviceSessionRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DirectAccessService::get_device_session",
-            self.inner.get_device_session(req, options));
+            self.inner.get_device_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_device_session(
         &self,
         req: crate::model::CancelDeviceSessionRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DirectAccessService::cancel_device_session",
-            self.inner.cancel_device_session(req, options));
+            self.inner.cancel_device_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_device_session(
         &self,
         req: crate::model::UpdateDeviceSessionRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DirectAccessService::update_device_session",
-            self.inner.update_device_session(req, options));
+            self.inner.update_device_session(req.clone(), options.clone()));
+
         pending.await
     }
 }

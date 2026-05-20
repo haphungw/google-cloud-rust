@@ -41,7 +41,6 @@ impl<T> super::stub::ConnectionService for ConnectionService<T>
 where
     T: super::stub::ConnectionService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_connections(
         &self,
         req: crate::model::ListConnectionsRequest,
@@ -51,7 +50,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConnectionService::list_connections",
-            self.inner.list_connections(req, options));
+            self.inner.list_connections(req.clone(), options.clone()));
+
         pending.await
     }
 }

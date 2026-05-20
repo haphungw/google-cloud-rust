@@ -41,7 +41,6 @@ impl<T> super::stub::Publisher for Publisher<T>
 where
     T: super::stub::Publisher + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn publish_channel_connection_events(
         &self,
         req: crate::model::PublishChannelConnectionEventsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Publisher::publish_channel_connection_events",
-            self.inner.publish_channel_connection_events(req, options));
+            self.inner.publish_channel_connection_events(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn publish_events(
         &self,
         req: crate::model::PublishEventsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Publisher::publish_events",
-            self.inner.publish_events(req, options));
+            self.inner.publish_events(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn publish(
         &self,
         req: crate::model::PublishRequest,
@@ -79,7 +78,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Publisher::publish",
-            self.inner.publish(req, options));
+            self.inner.publish(req.clone(), options.clone()));
+
         pending.await
     }
 }

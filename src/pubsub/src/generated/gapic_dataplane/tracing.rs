@@ -41,7 +41,6 @@ impl<T> super::stub::Publisher for Publisher<T>
 where
     T: super::stub::Publisher + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn publish(
         &self,
         req: crate::model::PublishRequest,
@@ -51,7 +50,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Publisher::publish",
-            self.inner.publish(req, options));
+            self.inner.publish(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -82,7 +82,6 @@ impl<T> super::stub::Subscriber for Subscriber<T>
 where
     T: super::stub::Subscriber + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn modify_ack_deadline(
         &self,
         req: crate::model::ModifyAckDeadlineRequest,
@@ -92,11 +91,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subscriber::modify_ack_deadline",
-            self.inner.modify_ack_deadline(req, options));
+            self.inner.modify_ack_deadline(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn acknowledge(
         &self,
         req: crate::model::AcknowledgeRequest,
@@ -106,7 +105,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subscriber::acknowledge",
-            self.inner.acknowledge(req, options));
+            self.inner.acknowledge(req.clone(), options.clone()));
+
         pending.await
     }
 }

@@ -41,7 +41,6 @@ impl<T> super::stub::IdentityAwareProxyAdminService for IdentityAwareProxyAdminS
 where
     T: super::stub::IdentityAwareProxyAdminService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iap_settings(
         &self,
         req: crate::model::GetIapSettingsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::get_iap_settings",
-            self.inner.get_iap_settings(req, options));
+            self.inner.get_iap_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_iap_settings(
         &self,
         req: crate::model::UpdateIapSettingsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::update_iap_settings",
-            self.inner.update_iap_settings(req, options));
+            self.inner.update_iap_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_iap_attribute_expression(
         &self,
         req: crate::model::ValidateIapAttributeExpressionRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::validate_iap_attribute_expression",
-            self.inner.validate_iap_attribute_expression(req, options));
+            self.inner.validate_iap_attribute_expression(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tunnel_dest_groups(
         &self,
         req: crate::model::ListTunnelDestGroupsRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::list_tunnel_dest_groups",
-            self.inner.list_tunnel_dest_groups(req, options));
+            self.inner.list_tunnel_dest_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_tunnel_dest_group(
         &self,
         req: crate::model::CreateTunnelDestGroupRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::create_tunnel_dest_group",
-            self.inner.create_tunnel_dest_group(req, options));
+            self.inner.create_tunnel_dest_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_tunnel_dest_group(
         &self,
         req: crate::model::GetTunnelDestGroupRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::get_tunnel_dest_group",
-            self.inner.get_tunnel_dest_group(req, options));
+            self.inner.get_tunnel_dest_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_tunnel_dest_group(
         &self,
         req: crate::model::DeleteTunnelDestGroupRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::delete_tunnel_dest_group",
-            self.inner.delete_tunnel_dest_group(req, options));
+            self.inner.delete_tunnel_dest_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_tunnel_dest_group(
         &self,
         req: crate::model::UpdateTunnelDestGroupRequest,
@@ -191,7 +190,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyAdminService::update_tunnel_dest_group",
-            self.inner.update_tunnel_dest_group(req, options));
+            self.inner.update_tunnel_dest_group(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -222,7 +222,6 @@ impl<T> super::stub::IdentityAwareProxyOAuthService for IdentityAwareProxyOAuthS
 where
     T: super::stub::IdentityAwareProxyOAuthService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_brands(
         &self,
         req: crate::model::ListBrandsRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::list_brands",
-            self.inner.list_brands(req, options));
+            self.inner.list_brands(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_brand(
         &self,
         req: crate::model::CreateBrandRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::create_brand",
-            self.inner.create_brand(req, options));
+            self.inner.create_brand(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_brand(
         &self,
         req: crate::model::GetBrandRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::get_brand",
-            self.inner.get_brand(req, options));
+            self.inner.get_brand(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_identity_aware_proxy_client(
         &self,
         req: crate::model::CreateIdentityAwareProxyClientRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::create_identity_aware_proxy_client",
-            self.inner.create_identity_aware_proxy_client(req, options));
+            self.inner.create_identity_aware_proxy_client(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_identity_aware_proxy_clients(
         &self,
         req: crate::model::ListIdentityAwareProxyClientsRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::list_identity_aware_proxy_clients",
-            self.inner.list_identity_aware_proxy_clients(req, options));
+            self.inner.list_identity_aware_proxy_clients(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_identity_aware_proxy_client(
         &self,
         req: crate::model::GetIdentityAwareProxyClientRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::get_identity_aware_proxy_client",
-            self.inner.get_identity_aware_proxy_client(req, options));
+            self.inner.get_identity_aware_proxy_client(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_identity_aware_proxy_client_secret(
         &self,
         req: crate::model::ResetIdentityAwareProxyClientSecretRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::reset_identity_aware_proxy_client_secret",
-            self.inner.reset_identity_aware_proxy_client_secret(req, options));
+            self.inner.reset_identity_aware_proxy_client_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_identity_aware_proxy_client(
         &self,
         req: crate::model::DeleteIdentityAwareProxyClientRequest,
@@ -330,7 +329,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IdentityAwareProxyOAuthService::delete_identity_aware_proxy_client",
-            self.inner.delete_identity_aware_proxy_client(req, options));
+            self.inner.delete_identity_aware_proxy_client(req.clone(), options.clone()));
+
         pending.await
     }
 }

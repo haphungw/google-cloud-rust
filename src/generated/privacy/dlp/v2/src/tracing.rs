@@ -41,7 +41,6 @@ impl<T> super::stub::DlpService for DlpService<T>
 where
     T: super::stub::DlpService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn inspect_content(
         &self,
         req: crate::model::InspectContentRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::inspect_content",
-            self.inner.inspect_content(req, options));
+            self.inner.inspect_content(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn redact_image(
         &self,
         req: crate::model::RedactImageRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::redact_image",
-            self.inner.redact_image(req, options));
+            self.inner.redact_image(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn deidentify_content(
         &self,
         req: crate::model::DeidentifyContentRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::deidentify_content",
-            self.inner.deidentify_content(req, options));
+            self.inner.deidentify_content(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reidentify_content(
         &self,
         req: crate::model::ReidentifyContentRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::reidentify_content",
-            self.inner.reidentify_content(req, options));
+            self.inner.reidentify_content(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_info_types(
         &self,
         req: crate::model::ListInfoTypesRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_info_types",
-            self.inner.list_info_types(req, options));
+            self.inner.list_info_types(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_inspect_template(
         &self,
         req: crate::model::CreateInspectTemplateRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_inspect_template",
-            self.inner.create_inspect_template(req, options));
+            self.inner.create_inspect_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_inspect_template(
         &self,
         req: crate::model::UpdateInspectTemplateRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::update_inspect_template",
-            self.inner.update_inspect_template(req, options));
+            self.inner.update_inspect_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_inspect_template(
         &self,
         req: crate::model::GetInspectTemplateRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_inspect_template",
-            self.inner.get_inspect_template(req, options));
+            self.inner.get_inspect_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_inspect_templates(
         &self,
         req: crate::model::ListInspectTemplatesRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_inspect_templates",
-            self.inner.list_inspect_templates(req, options));
+            self.inner.list_inspect_templates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_inspect_template(
         &self,
         req: crate::model::DeleteInspectTemplateRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_inspect_template",
-            self.inner.delete_inspect_template(req, options));
+            self.inner.delete_inspect_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_deidentify_template(
         &self,
         req: crate::model::CreateDeidentifyTemplateRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_deidentify_template",
-            self.inner.create_deidentify_template(req, options));
+            self.inner.create_deidentify_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_deidentify_template(
         &self,
         req: crate::model::UpdateDeidentifyTemplateRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::update_deidentify_template",
-            self.inner.update_deidentify_template(req, options));
+            self.inner.update_deidentify_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_deidentify_template(
         &self,
         req: crate::model::GetDeidentifyTemplateRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_deidentify_template",
-            self.inner.get_deidentify_template(req, options));
+            self.inner.get_deidentify_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_deidentify_templates(
         &self,
         req: crate::model::ListDeidentifyTemplatesRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_deidentify_templates",
-            self.inner.list_deidentify_templates(req, options));
+            self.inner.list_deidentify_templates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_deidentify_template(
         &self,
         req: crate::model::DeleteDeidentifyTemplateRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_deidentify_template",
-            self.inner.delete_deidentify_template(req, options));
+            self.inner.delete_deidentify_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_job_trigger(
         &self,
         req: crate::model::CreateJobTriggerRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_job_trigger",
-            self.inner.create_job_trigger(req, options));
+            self.inner.create_job_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_job_trigger(
         &self,
         req: crate::model::UpdateJobTriggerRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::update_job_trigger",
-            self.inner.update_job_trigger(req, options));
+            self.inner.update_job_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn hybrid_inspect_job_trigger(
         &self,
         req: crate::model::HybridInspectJobTriggerRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::hybrid_inspect_job_trigger",
-            self.inner.hybrid_inspect_job_trigger(req, options));
+            self.inner.hybrid_inspect_job_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_job_trigger(
         &self,
         req: crate::model::GetJobTriggerRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_job_trigger",
-            self.inner.get_job_trigger(req, options));
+            self.inner.get_job_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_job_triggers(
         &self,
         req: crate::model::ListJobTriggersRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_job_triggers",
-            self.inner.list_job_triggers(req, options));
+            self.inner.list_job_triggers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_job_trigger(
         &self,
         req: crate::model::DeleteJobTriggerRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_job_trigger",
-            self.inner.delete_job_trigger(req, options));
+            self.inner.delete_job_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn activate_job_trigger(
         &self,
         req: crate::model::ActivateJobTriggerRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::activate_job_trigger",
-            self.inner.activate_job_trigger(req, options));
+            self.inner.activate_job_trigger(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_discovery_config(
         &self,
         req: crate::model::CreateDiscoveryConfigRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_discovery_config",
-            self.inner.create_discovery_config(req, options));
+            self.inner.create_discovery_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_discovery_config(
         &self,
         req: crate::model::UpdateDiscoveryConfigRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::update_discovery_config",
-            self.inner.update_discovery_config(req, options));
+            self.inner.update_discovery_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_discovery_config(
         &self,
         req: crate::model::GetDiscoveryConfigRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_discovery_config",
-            self.inner.get_discovery_config(req, options));
+            self.inner.get_discovery_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_discovery_configs(
         &self,
         req: crate::model::ListDiscoveryConfigsRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_discovery_configs",
-            self.inner.list_discovery_configs(req, options));
+            self.inner.list_discovery_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_discovery_config(
         &self,
         req: crate::model::DeleteDiscoveryConfigRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_discovery_config",
-            self.inner.delete_discovery_config(req, options));
+            self.inner.delete_discovery_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_dlp_job(
         &self,
         req: crate::model::CreateDlpJobRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_dlp_job",
-            self.inner.create_dlp_job(req, options));
+            self.inner.create_dlp_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_dlp_jobs(
         &self,
         req: crate::model::ListDlpJobsRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_dlp_jobs",
-            self.inner.list_dlp_jobs(req, options));
+            self.inner.list_dlp_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dlp_job(
         &self,
         req: crate::model::GetDlpJobRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_dlp_job",
-            self.inner.get_dlp_job(req, options));
+            self.inner.get_dlp_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_dlp_job(
         &self,
         req: crate::model::DeleteDlpJobRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_dlp_job",
-            self.inner.delete_dlp_job(req, options));
+            self.inner.delete_dlp_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_dlp_job(
         &self,
         req: crate::model::CancelDlpJobRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::cancel_dlp_job",
-            self.inner.cancel_dlp_job(req, options));
+            self.inner.cancel_dlp_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_stored_info_type(
         &self,
         req: crate::model::CreateStoredInfoTypeRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_stored_info_type",
-            self.inner.create_stored_info_type(req, options));
+            self.inner.create_stored_info_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_stored_info_type(
         &self,
         req: crate::model::UpdateStoredInfoTypeRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::update_stored_info_type",
-            self.inner.update_stored_info_type(req, options));
+            self.inner.update_stored_info_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_stored_info_type(
         &self,
         req: crate::model::GetStoredInfoTypeRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_stored_info_type",
-            self.inner.get_stored_info_type(req, options));
+            self.inner.get_stored_info_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_stored_info_types(
         &self,
         req: crate::model::ListStoredInfoTypesRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_stored_info_types",
-            self.inner.list_stored_info_types(req, options));
+            self.inner.list_stored_info_types(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_stored_info_type(
         &self,
         req: crate::model::DeleteStoredInfoTypeRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_stored_info_type",
-            self.inner.delete_stored_info_type(req, options));
+            self.inner.delete_stored_info_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_project_data_profiles(
         &self,
         req: crate::model::ListProjectDataProfilesRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_project_data_profiles",
-            self.inner.list_project_data_profiles(req, options));
+            self.inner.list_project_data_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_table_data_profiles(
         &self,
         req: crate::model::ListTableDataProfilesRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_table_data_profiles",
-            self.inner.list_table_data_profiles(req, options));
+            self.inner.list_table_data_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_column_data_profiles(
         &self,
         req: crate::model::ListColumnDataProfilesRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_column_data_profiles",
-            self.inner.list_column_data_profiles(req, options));
+            self.inner.list_column_data_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_project_data_profile(
         &self,
         req: crate::model::GetProjectDataProfileRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_project_data_profile",
-            self.inner.get_project_data_profile(req, options));
+            self.inner.get_project_data_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_file_store_data_profiles(
         &self,
         req: crate::model::ListFileStoreDataProfilesRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_file_store_data_profiles",
-            self.inner.list_file_store_data_profiles(req, options));
+            self.inner.list_file_store_data_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_file_store_data_profile(
         &self,
         req: crate::model::GetFileStoreDataProfileRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_file_store_data_profile",
-            self.inner.get_file_store_data_profile(req, options));
+            self.inner.get_file_store_data_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_file_store_data_profile(
         &self,
         req: crate::model::DeleteFileStoreDataProfileRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_file_store_data_profile",
-            self.inner.delete_file_store_data_profile(req, options));
+            self.inner.delete_file_store_data_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_table_data_profile(
         &self,
         req: crate::model::GetTableDataProfileRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_table_data_profile",
-            self.inner.get_table_data_profile(req, options));
+            self.inner.get_table_data_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_column_data_profile(
         &self,
         req: crate::model::GetColumnDataProfileRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_column_data_profile",
-            self.inner.get_column_data_profile(req, options));
+            self.inner.get_column_data_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_table_data_profile(
         &self,
         req: crate::model::DeleteTableDataProfileRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_table_data_profile",
-            self.inner.delete_table_data_profile(req, options));
+            self.inner.delete_table_data_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn hybrid_inspect_dlp_job(
         &self,
         req: crate::model::HybridInspectDlpJobRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::hybrid_inspect_dlp_job",
-            self.inner.hybrid_inspect_dlp_job(req, options));
+            self.inner.hybrid_inspect_dlp_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn finish_dlp_job(
         &self,
         req: crate::model::FinishDlpJobRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::finish_dlp_job",
-            self.inner.finish_dlp_job(req, options));
+            self.inner.finish_dlp_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_connection(
         &self,
         req: crate::model::CreateConnectionRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::create_connection",
-            self.inner.create_connection(req, options));
+            self.inner.create_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_connection(
         &self,
         req: crate::model::GetConnectionRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::get_connection",
-            self.inner.get_connection(req, options));
+            self.inner.get_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_connections(
         &self,
         req: crate::model::ListConnectionsRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::list_connections",
-            self.inner.list_connections(req, options));
+            self.inner.list_connections(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_connections(
         &self,
         req: crate::model::SearchConnectionsRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::search_connections",
-            self.inner.search_connections(req, options));
+            self.inner.search_connections(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_connection(
         &self,
         req: crate::model::DeleteConnectionRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::delete_connection",
-            self.inner.delete_connection(req, options));
+            self.inner.delete_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_connection(
         &self,
         req: crate::model::UpdateConnectionRequest,
@@ -807,7 +806,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DlpService::update_connection",
-            self.inner.update_connection(req, options));
+            self.inner.update_connection(req.clone(), options.clone()));
+
         pending.await
     }
 }

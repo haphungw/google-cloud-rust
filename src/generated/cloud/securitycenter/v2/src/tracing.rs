@@ -41,7 +41,6 @@ impl<T> super::stub::SecurityCenter for SecurityCenter<T>
 where
     T: super::stub::SecurityCenter + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_resource_value_configs(
         &self,
         req: crate::model::BatchCreateResourceValueConfigsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::batch_create_resource_value_configs",
-            self.inner.batch_create_resource_value_configs(req, options));
+            self.inner.batch_create_resource_value_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_mute_findings(
         &self,
         req: crate::model::BulkMuteFindingsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::bulk_mute_findings",
-            self.inner.bulk_mute_findings(req, options));
+            self.inner.bulk_mute_findings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_big_query_export(
         &self,
         req: crate::model::CreateBigQueryExportRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::create_big_query_export",
-            self.inner.create_big_query_export(req, options));
+            self.inner.create_big_query_export(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_finding(
         &self,
         req: crate::model::CreateFindingRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::create_finding",
-            self.inner.create_finding(req, options));
+            self.inner.create_finding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mute_config(
         &self,
         req: crate::model::CreateMuteConfigRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::create_mute_config",
-            self.inner.create_mute_config(req, options));
+            self.inner.create_mute_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_notification_config(
         &self,
         req: crate::model::CreateNotificationConfigRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::create_notification_config",
-            self.inner.create_notification_config(req, options));
+            self.inner.create_notification_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_source(
         &self,
         req: crate::model::CreateSourceRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::create_source",
-            self.inner.create_source(req, options));
+            self.inner.create_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_big_query_export(
         &self,
         req: crate::model::DeleteBigQueryExportRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::delete_big_query_export",
-            self.inner.delete_big_query_export(req, options));
+            self.inner.delete_big_query_export(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mute_config(
         &self,
         req: crate::model::DeleteMuteConfigRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::delete_mute_config",
-            self.inner.delete_mute_config(req, options));
+            self.inner.delete_mute_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_notification_config(
         &self,
         req: crate::model::DeleteNotificationConfigRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::delete_notification_config",
-            self.inner.delete_notification_config(req, options));
+            self.inner.delete_notification_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_resource_value_config(
         &self,
         req: crate::model::DeleteResourceValueConfigRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::delete_resource_value_config",
-            self.inner.delete_resource_value_config(req, options));
+            self.inner.delete_resource_value_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_big_query_export(
         &self,
         req: crate::model::GetBigQueryExportRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_big_query_export",
-            self.inner.get_big_query_export(req, options));
+            self.inner.get_big_query_export(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_simulation(
         &self,
         req: crate::model::GetSimulationRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_simulation",
-            self.inner.get_simulation(req, options));
+            self.inner.get_simulation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_valued_resource(
         &self,
         req: crate::model::GetValuedResourceRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_valued_resource",
-            self.inner.get_valued_resource(req, options));
+            self.inner.get_valued_resource(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mute_config(
         &self,
         req: crate::model::GetMuteConfigRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_mute_config",
-            self.inner.get_mute_config(req, options));
+            self.inner.get_mute_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_notification_config(
         &self,
         req: crate::model::GetNotificationConfigRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_notification_config",
-            self.inner.get_notification_config(req, options));
+            self.inner.get_notification_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_resource_value_config(
         &self,
         req: crate::model::GetResourceValueConfigRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_resource_value_config",
-            self.inner.get_resource_value_config(req, options));
+            self.inner.get_resource_value_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_source(
         &self,
         req: crate::model::GetSourceRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_source",
-            self.inner.get_source(req, options));
+            self.inner.get_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn group_findings(
         &self,
         req: crate::model::GroupFindingsRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::group_findings",
-            self.inner.group_findings(req, options));
+            self.inner.group_findings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_attack_paths(
         &self,
         req: crate::model::ListAttackPathsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_attack_paths",
-            self.inner.list_attack_paths(req, options));
+            self.inner.list_attack_paths(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_big_query_exports(
         &self,
         req: crate::model::ListBigQueryExportsRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_big_query_exports",
-            self.inner.list_big_query_exports(req, options));
+            self.inner.list_big_query_exports(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_findings(
         &self,
         req: crate::model::ListFindingsRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_findings",
-            self.inner.list_findings(req, options));
+            self.inner.list_findings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mute_configs(
         &self,
         req: crate::model::ListMuteConfigsRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_mute_configs",
-            self.inner.list_mute_configs(req, options));
+            self.inner.list_mute_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_notification_configs(
         &self,
         req: crate::model::ListNotificationConfigsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_notification_configs",
-            self.inner.list_notification_configs(req, options));
+            self.inner.list_notification_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_resource_value_configs(
         &self,
         req: crate::model::ListResourceValueConfigsRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_resource_value_configs",
-            self.inner.list_resource_value_configs(req, options));
+            self.inner.list_resource_value_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_sources(
         &self,
         req: crate::model::ListSourcesRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_sources",
-            self.inner.list_sources(req, options));
+            self.inner.list_sources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_valued_resources(
         &self,
         req: crate::model::ListValuedResourcesRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_valued_resources",
-            self.inner.list_valued_resources(req, options));
+            self.inner.list_valued_resources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_finding_state(
         &self,
         req: crate::model::SetFindingStateRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::set_finding_state",
-            self.inner.set_finding_state(req, options));
+            self.inner.set_finding_state(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_mute(
         &self,
         req: crate::model::SetMuteRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::set_mute",
-            self.inner.set_mute(req, options));
+            self.inner.set_mute(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_big_query_export(
         &self,
         req: crate::model::UpdateBigQueryExportRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_big_query_export",
-            self.inner.update_big_query_export(req, options));
+            self.inner.update_big_query_export(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_external_system(
         &self,
         req: crate::model::UpdateExternalSystemRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_external_system",
-            self.inner.update_external_system(req, options));
+            self.inner.update_external_system(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_finding(
         &self,
         req: crate::model::UpdateFindingRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_finding",
-            self.inner.update_finding(req, options));
+            self.inner.update_finding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_mute_config(
         &self,
         req: crate::model::UpdateMuteConfigRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_mute_config",
-            self.inner.update_mute_config(req, options));
+            self.inner.update_mute_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_notification_config(
         &self,
         req: crate::model::UpdateNotificationConfigRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_notification_config",
-            self.inner.update_notification_config(req, options));
+            self.inner.update_notification_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_resource_value_config(
         &self,
         req: crate::model::UpdateResourceValueConfigRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_resource_value_config",
-            self.inner.update_resource_value_config(req, options));
+            self.inner.update_resource_value_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_security_marks(
         &self,
         req: crate::model::UpdateSecurityMarksRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_security_marks",
-            self.inner.update_security_marks(req, options));
+            self.inner.update_security_marks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_source(
         &self,
         req: crate::model::UpdateSourceRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::update_source",
-            self.inner.update_source(req, options));
+            self.inner.update_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -653,7 +652,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityCenter::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::LanguageService for LanguageService<T>
 where
     T: super::stub::LanguageService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_sentiment(
         &self,
         req: crate::model::AnalyzeSentimentRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LanguageService::analyze_sentiment",
-            self.inner.analyze_sentiment(req, options));
+            self.inner.analyze_sentiment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_entities(
         &self,
         req: crate::model::AnalyzeEntitiesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LanguageService::analyze_entities",
-            self.inner.analyze_entities(req, options));
+            self.inner.analyze_entities(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn classify_text(
         &self,
         req: crate::model::ClassifyTextRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LanguageService::classify_text",
-            self.inner.classify_text(req, options));
+            self.inner.classify_text(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn moderate_text(
         &self,
         req: crate::model::ModerateTextRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LanguageService::moderate_text",
-            self.inner.moderate_text(req, options));
+            self.inner.moderate_text(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn annotate_text(
         &self,
         req: crate::model::AnnotateTextRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LanguageService::annotate_text",
-            self.inner.annotate_text(req, options));
+            self.inner.annotate_text(req.clone(), options.clone()));
+
         pending.await
     }
 }

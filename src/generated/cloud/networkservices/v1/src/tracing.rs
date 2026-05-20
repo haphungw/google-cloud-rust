@@ -41,7 +41,6 @@ impl<T> super::stub::DepService for DepService<T>
 where
     T: super::stub::DepService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_lb_traffic_extensions(
         &self,
         req: crate::model::ListLbTrafficExtensionsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::list_lb_traffic_extensions",
-            self.inner.list_lb_traffic_extensions(req, options));
+            self.inner.list_lb_traffic_extensions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_lb_traffic_extension(
         &self,
         req: crate::model::GetLbTrafficExtensionRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_lb_traffic_extension",
-            self.inner.get_lb_traffic_extension(req, options));
+            self.inner.get_lb_traffic_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_lb_traffic_extension(
         &self,
         req: crate::model::CreateLbTrafficExtensionRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::create_lb_traffic_extension",
-            self.inner.create_lb_traffic_extension(req, options));
+            self.inner.create_lb_traffic_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_lb_traffic_extension(
         &self,
         req: crate::model::UpdateLbTrafficExtensionRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::update_lb_traffic_extension",
-            self.inner.update_lb_traffic_extension(req, options));
+            self.inner.update_lb_traffic_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_lb_traffic_extension(
         &self,
         req: crate::model::DeleteLbTrafficExtensionRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::delete_lb_traffic_extension",
-            self.inner.delete_lb_traffic_extension(req, options));
+            self.inner.delete_lb_traffic_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_lb_route_extensions(
         &self,
         req: crate::model::ListLbRouteExtensionsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::list_lb_route_extensions",
-            self.inner.list_lb_route_extensions(req, options));
+            self.inner.list_lb_route_extensions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_lb_route_extension(
         &self,
         req: crate::model::GetLbRouteExtensionRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_lb_route_extension",
-            self.inner.get_lb_route_extension(req, options));
+            self.inner.get_lb_route_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_lb_route_extension(
         &self,
         req: crate::model::CreateLbRouteExtensionRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::create_lb_route_extension",
-            self.inner.create_lb_route_extension(req, options));
+            self.inner.create_lb_route_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_lb_route_extension(
         &self,
         req: crate::model::UpdateLbRouteExtensionRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::update_lb_route_extension",
-            self.inner.update_lb_route_extension(req, options));
+            self.inner.update_lb_route_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_lb_route_extension(
         &self,
         req: crate::model::DeleteLbRouteExtensionRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::delete_lb_route_extension",
-            self.inner.delete_lb_route_extension(req, options));
+            self.inner.delete_lb_route_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_lb_edge_extensions(
         &self,
         req: crate::model::ListLbEdgeExtensionsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::list_lb_edge_extensions",
-            self.inner.list_lb_edge_extensions(req, options));
+            self.inner.list_lb_edge_extensions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_lb_edge_extension(
         &self,
         req: crate::model::GetLbEdgeExtensionRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_lb_edge_extension",
-            self.inner.get_lb_edge_extension(req, options));
+            self.inner.get_lb_edge_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_lb_edge_extension(
         &self,
         req: crate::model::CreateLbEdgeExtensionRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::create_lb_edge_extension",
-            self.inner.create_lb_edge_extension(req, options));
+            self.inner.create_lb_edge_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_lb_edge_extension(
         &self,
         req: crate::model::UpdateLbEdgeExtensionRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::update_lb_edge_extension",
-            self.inner.update_lb_edge_extension(req, options));
+            self.inner.update_lb_edge_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_lb_edge_extension(
         &self,
         req: crate::model::DeleteLbEdgeExtensionRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::delete_lb_edge_extension",
-            self.inner.delete_lb_edge_extension(req, options));
+            self.inner.delete_lb_edge_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_authz_extensions(
         &self,
         req: crate::model::ListAuthzExtensionsRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::list_authz_extensions",
-            self.inner.list_authz_extensions(req, options));
+            self.inner.list_authz_extensions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_authz_extension(
         &self,
         req: crate::model::GetAuthzExtensionRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_authz_extension",
-            self.inner.get_authz_extension(req, options));
+            self.inner.get_authz_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_authz_extension(
         &self,
         req: crate::model::CreateAuthzExtensionRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::create_authz_extension",
-            self.inner.create_authz_extension(req, options));
+            self.inner.create_authz_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_authz_extension(
         &self,
         req: crate::model::UpdateAuthzExtensionRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::update_authz_extension",
-            self.inner.update_authz_extension(req, options));
+            self.inner.update_authz_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_authz_extension(
         &self,
         req: crate::model::DeleteAuthzExtensionRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::delete_authz_extension",
-            self.inner.delete_authz_extension(req, options));
+            self.inner.delete_authz_extension(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -443,7 +442,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DepService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -488,7 +488,6 @@ impl<T> super::stub::NetworkServices for NetworkServices<T>
 where
     T: super::stub::NetworkServices + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_endpoint_policies(
         &self,
         req: crate::model::ListEndpointPoliciesRequest,
@@ -498,11 +497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_endpoint_policies",
-            self.inner.list_endpoint_policies(req, options));
+            self.inner.list_endpoint_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_endpoint_policy(
         &self,
         req: crate::model::GetEndpointPolicyRequest,
@@ -512,11 +511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_endpoint_policy",
-            self.inner.get_endpoint_policy(req, options));
+            self.inner.get_endpoint_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_endpoint_policy(
         &self,
         req: crate::model::CreateEndpointPolicyRequest,
@@ -526,11 +525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_endpoint_policy",
-            self.inner.create_endpoint_policy(req, options));
+            self.inner.create_endpoint_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_endpoint_policy(
         &self,
         req: crate::model::UpdateEndpointPolicyRequest,
@@ -540,11 +539,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_endpoint_policy",
-            self.inner.update_endpoint_policy(req, options));
+            self.inner.update_endpoint_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_endpoint_policy(
         &self,
         req: crate::model::DeleteEndpointPolicyRequest,
@@ -554,11 +553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_endpoint_policy",
-            self.inner.delete_endpoint_policy(req, options));
+            self.inner.delete_endpoint_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_wasm_plugin_versions(
         &self,
         req: crate::model::ListWasmPluginVersionsRequest,
@@ -568,11 +567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_wasm_plugin_versions",
-            self.inner.list_wasm_plugin_versions(req, options));
+            self.inner.list_wasm_plugin_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_wasm_plugin_version(
         &self,
         req: crate::model::GetWasmPluginVersionRequest,
@@ -582,11 +581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_wasm_plugin_version",
-            self.inner.get_wasm_plugin_version(req, options));
+            self.inner.get_wasm_plugin_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_wasm_plugin_version(
         &self,
         req: crate::model::CreateWasmPluginVersionRequest,
@@ -596,11 +595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_wasm_plugin_version",
-            self.inner.create_wasm_plugin_version(req, options));
+            self.inner.create_wasm_plugin_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_wasm_plugin_version(
         &self,
         req: crate::model::DeleteWasmPluginVersionRequest,
@@ -610,11 +609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_wasm_plugin_version",
-            self.inner.delete_wasm_plugin_version(req, options));
+            self.inner.delete_wasm_plugin_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_wasm_plugins(
         &self,
         req: crate::model::ListWasmPluginsRequest,
@@ -624,11 +623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_wasm_plugins",
-            self.inner.list_wasm_plugins(req, options));
+            self.inner.list_wasm_plugins(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_wasm_plugin(
         &self,
         req: crate::model::GetWasmPluginRequest,
@@ -638,11 +637,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_wasm_plugin",
-            self.inner.get_wasm_plugin(req, options));
+            self.inner.get_wasm_plugin(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_wasm_plugin(
         &self,
         req: crate::model::CreateWasmPluginRequest,
@@ -652,11 +651,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_wasm_plugin",
-            self.inner.create_wasm_plugin(req, options));
+            self.inner.create_wasm_plugin(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_wasm_plugin(
         &self,
         req: crate::model::UpdateWasmPluginRequest,
@@ -666,11 +665,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_wasm_plugin",
-            self.inner.update_wasm_plugin(req, options));
+            self.inner.update_wasm_plugin(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_wasm_plugin(
         &self,
         req: crate::model::DeleteWasmPluginRequest,
@@ -680,11 +679,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_wasm_plugin",
-            self.inner.delete_wasm_plugin(req, options));
+            self.inner.delete_wasm_plugin(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_gateways(
         &self,
         req: crate::model::ListGatewaysRequest,
@@ -694,11 +693,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_gateways",
-            self.inner.list_gateways(req, options));
+            self.inner.list_gateways(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_gateway(
         &self,
         req: crate::model::GetGatewayRequest,
@@ -708,11 +707,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_gateway",
-            self.inner.get_gateway(req, options));
+            self.inner.get_gateway(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_gateway(
         &self,
         req: crate::model::CreateGatewayRequest,
@@ -722,11 +721,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_gateway",
-            self.inner.create_gateway(req, options));
+            self.inner.create_gateway(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_gateway(
         &self,
         req: crate::model::UpdateGatewayRequest,
@@ -736,11 +735,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_gateway",
-            self.inner.update_gateway(req, options));
+            self.inner.update_gateway(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_gateway(
         &self,
         req: crate::model::DeleteGatewayRequest,
@@ -750,11 +749,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_gateway",
-            self.inner.delete_gateway(req, options));
+            self.inner.delete_gateway(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_grpc_routes(
         &self,
         req: crate::model::ListGrpcRoutesRequest,
@@ -764,11 +763,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_grpc_routes",
-            self.inner.list_grpc_routes(req, options));
+            self.inner.list_grpc_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_grpc_route(
         &self,
         req: crate::model::GetGrpcRouteRequest,
@@ -778,11 +777,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_grpc_route",
-            self.inner.get_grpc_route(req, options));
+            self.inner.get_grpc_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_grpc_route(
         &self,
         req: crate::model::CreateGrpcRouteRequest,
@@ -792,11 +791,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_grpc_route",
-            self.inner.create_grpc_route(req, options));
+            self.inner.create_grpc_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_grpc_route(
         &self,
         req: crate::model::UpdateGrpcRouteRequest,
@@ -806,11 +805,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_grpc_route",
-            self.inner.update_grpc_route(req, options));
+            self.inner.update_grpc_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_grpc_route(
         &self,
         req: crate::model::DeleteGrpcRouteRequest,
@@ -820,11 +819,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_grpc_route",
-            self.inner.delete_grpc_route(req, options));
+            self.inner.delete_grpc_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_http_routes(
         &self,
         req: crate::model::ListHttpRoutesRequest,
@@ -834,11 +833,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_http_routes",
-            self.inner.list_http_routes(req, options));
+            self.inner.list_http_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_http_route(
         &self,
         req: crate::model::GetHttpRouteRequest,
@@ -848,11 +847,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_http_route",
-            self.inner.get_http_route(req, options));
+            self.inner.get_http_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_http_route(
         &self,
         req: crate::model::CreateHttpRouteRequest,
@@ -862,11 +861,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_http_route",
-            self.inner.create_http_route(req, options));
+            self.inner.create_http_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_http_route(
         &self,
         req: crate::model::UpdateHttpRouteRequest,
@@ -876,11 +875,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_http_route",
-            self.inner.update_http_route(req, options));
+            self.inner.update_http_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_http_route(
         &self,
         req: crate::model::DeleteHttpRouteRequest,
@@ -890,11 +889,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_http_route",
-            self.inner.delete_http_route(req, options));
+            self.inner.delete_http_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tcp_routes(
         &self,
         req: crate::model::ListTcpRoutesRequest,
@@ -904,11 +903,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_tcp_routes",
-            self.inner.list_tcp_routes(req, options));
+            self.inner.list_tcp_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_tcp_route(
         &self,
         req: crate::model::GetTcpRouteRequest,
@@ -918,11 +917,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_tcp_route",
-            self.inner.get_tcp_route(req, options));
+            self.inner.get_tcp_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_tcp_route(
         &self,
         req: crate::model::CreateTcpRouteRequest,
@@ -932,11 +931,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_tcp_route",
-            self.inner.create_tcp_route(req, options));
+            self.inner.create_tcp_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_tcp_route(
         &self,
         req: crate::model::UpdateTcpRouteRequest,
@@ -946,11 +945,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_tcp_route",
-            self.inner.update_tcp_route(req, options));
+            self.inner.update_tcp_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_tcp_route(
         &self,
         req: crate::model::DeleteTcpRouteRequest,
@@ -960,11 +959,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_tcp_route",
-            self.inner.delete_tcp_route(req, options));
+            self.inner.delete_tcp_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tls_routes(
         &self,
         req: crate::model::ListTlsRoutesRequest,
@@ -974,11 +973,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_tls_routes",
-            self.inner.list_tls_routes(req, options));
+            self.inner.list_tls_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_tls_route(
         &self,
         req: crate::model::GetTlsRouteRequest,
@@ -988,11 +987,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_tls_route",
-            self.inner.get_tls_route(req, options));
+            self.inner.get_tls_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_tls_route(
         &self,
         req: crate::model::CreateTlsRouteRequest,
@@ -1002,11 +1001,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_tls_route",
-            self.inner.create_tls_route(req, options));
+            self.inner.create_tls_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_tls_route(
         &self,
         req: crate::model::UpdateTlsRouteRequest,
@@ -1016,11 +1015,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_tls_route",
-            self.inner.update_tls_route(req, options));
+            self.inner.update_tls_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_tls_route(
         &self,
         req: crate::model::DeleteTlsRouteRequest,
@@ -1030,11 +1029,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_tls_route",
-            self.inner.delete_tls_route(req, options));
+            self.inner.delete_tls_route(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_service_bindings(
         &self,
         req: crate::model::ListServiceBindingsRequest,
@@ -1044,11 +1043,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_service_bindings",
-            self.inner.list_service_bindings(req, options));
+            self.inner.list_service_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_binding(
         &self,
         req: crate::model::GetServiceBindingRequest,
@@ -1058,11 +1057,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_service_binding",
-            self.inner.get_service_binding(req, options));
+            self.inner.get_service_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_binding(
         &self,
         req: crate::model::CreateServiceBindingRequest,
@@ -1072,11 +1071,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_service_binding",
-            self.inner.create_service_binding(req, options));
+            self.inner.create_service_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service_binding(
         &self,
         req: crate::model::UpdateServiceBindingRequest,
@@ -1086,11 +1085,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_service_binding",
-            self.inner.update_service_binding(req, options));
+            self.inner.update_service_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service_binding(
         &self,
         req: crate::model::DeleteServiceBindingRequest,
@@ -1100,11 +1099,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_service_binding",
-            self.inner.delete_service_binding(req, options));
+            self.inner.delete_service_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_meshes(
         &self,
         req: crate::model::ListMeshesRequest,
@@ -1114,11 +1113,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_meshes",
-            self.inner.list_meshes(req, options));
+            self.inner.list_meshes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mesh(
         &self,
         req: crate::model::GetMeshRequest,
@@ -1128,11 +1127,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_mesh",
-            self.inner.get_mesh(req, options));
+            self.inner.get_mesh(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_mesh(
         &self,
         req: crate::model::CreateMeshRequest,
@@ -1142,11 +1141,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_mesh",
-            self.inner.create_mesh(req, options));
+            self.inner.create_mesh(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_mesh(
         &self,
         req: crate::model::UpdateMeshRequest,
@@ -1156,11 +1155,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_mesh",
-            self.inner.update_mesh(req, options));
+            self.inner.update_mesh(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_mesh(
         &self,
         req: crate::model::DeleteMeshRequest,
@@ -1170,11 +1169,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_mesh",
-            self.inner.delete_mesh(req, options));
+            self.inner.delete_mesh(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_service_lb_policies(
         &self,
         req: crate::model::ListServiceLbPoliciesRequest,
@@ -1184,11 +1183,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_service_lb_policies",
-            self.inner.list_service_lb_policies(req, options));
+            self.inner.list_service_lb_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_lb_policy(
         &self,
         req: crate::model::GetServiceLbPolicyRequest,
@@ -1198,11 +1197,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_service_lb_policy",
-            self.inner.get_service_lb_policy(req, options));
+            self.inner.get_service_lb_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_lb_policy(
         &self,
         req: crate::model::CreateServiceLbPolicyRequest,
@@ -1212,11 +1211,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::create_service_lb_policy",
-            self.inner.create_service_lb_policy(req, options));
+            self.inner.create_service_lb_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service_lb_policy(
         &self,
         req: crate::model::UpdateServiceLbPolicyRequest,
@@ -1226,11 +1225,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::update_service_lb_policy",
-            self.inner.update_service_lb_policy(req, options));
+            self.inner.update_service_lb_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service_lb_policy(
         &self,
         req: crate::model::DeleteServiceLbPolicyRequest,
@@ -1240,11 +1239,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_service_lb_policy",
-            self.inner.delete_service_lb_policy(req, options));
+            self.inner.delete_service_lb_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_gateway_route_view(
         &self,
         req: crate::model::GetGatewayRouteViewRequest,
@@ -1254,11 +1253,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_gateway_route_view",
-            self.inner.get_gateway_route_view(req, options));
+            self.inner.get_gateway_route_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_mesh_route_view(
         &self,
         req: crate::model::GetMeshRouteViewRequest,
@@ -1268,11 +1267,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_mesh_route_view",
-            self.inner.get_mesh_route_view(req, options));
+            self.inner.get_mesh_route_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_gateway_route_views(
         &self,
         req: crate::model::ListGatewayRouteViewsRequest,
@@ -1282,11 +1281,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_gateway_route_views",
-            self.inner.list_gateway_route_views(req, options));
+            self.inner.list_gateway_route_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_mesh_route_views(
         &self,
         req: crate::model::ListMeshRouteViewsRequest,
@@ -1296,11 +1295,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_mesh_route_views",
-            self.inner.list_mesh_route_views(req, options));
+            self.inner.list_mesh_route_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1310,11 +1309,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1324,11 +1323,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1338,11 +1337,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1352,11 +1351,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1366,11 +1365,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1380,11 +1379,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1394,11 +1393,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1408,11 +1407,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1422,7 +1421,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkServices::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

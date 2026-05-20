@@ -41,7 +41,6 @@ impl<T> super::stub::FleetRouting for FleetRouting<T>
 where
     T: super::stub::FleetRouting + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn optimize_tours(
         &self,
         req: crate::model::OptimizeToursRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FleetRouting::optimize_tours",
-            self.inner.optimize_tours(req, options));
+            self.inner.optimize_tours(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_optimize_tours(
         &self,
         req: crate::model::BatchOptimizeToursRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FleetRouting::batch_optimize_tours",
-            self.inner.batch_optimize_tours(req, options));
+            self.inner.batch_optimize_tours(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -79,7 +78,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FleetRouting::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

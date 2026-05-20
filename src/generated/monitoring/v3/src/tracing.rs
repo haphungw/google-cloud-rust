@@ -41,7 +41,6 @@ impl<T> super::stub::AlertPolicyService for AlertPolicyService<T>
 where
     T: super::stub::AlertPolicyService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_alert_policies(
         &self,
         req: crate::model::ListAlertPoliciesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlertPolicyService::list_alert_policies",
-            self.inner.list_alert_policies(req, options));
+            self.inner.list_alert_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_alert_policy(
         &self,
         req: crate::model::GetAlertPolicyRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlertPolicyService::get_alert_policy",
-            self.inner.get_alert_policy(req, options));
+            self.inner.get_alert_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_alert_policy(
         &self,
         req: crate::model::CreateAlertPolicyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlertPolicyService::create_alert_policy",
-            self.inner.create_alert_policy(req, options));
+            self.inner.create_alert_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_alert_policy(
         &self,
         req: crate::model::DeleteAlertPolicyRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlertPolicyService::delete_alert_policy",
-            self.inner.delete_alert_policy(req, options));
+            self.inner.delete_alert_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_alert_policy(
         &self,
         req: crate::model::UpdateAlertPolicyRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AlertPolicyService::update_alert_policy",
-            self.inner.update_alert_policy(req, options));
+            self.inner.update_alert_policy(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -138,7 +138,6 @@ impl<T> super::stub::GroupService for GroupService<T>
 where
     T: super::stub::GroupService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_groups(
         &self,
         req: crate::model::ListGroupsRequest,
@@ -148,11 +147,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GroupService::list_groups",
-            self.inner.list_groups(req, options));
+            self.inner.list_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_group(
         &self,
         req: crate::model::GetGroupRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GroupService::get_group",
-            self.inner.get_group(req, options));
+            self.inner.get_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_group(
         &self,
         req: crate::model::CreateGroupRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GroupService::create_group",
-            self.inner.create_group(req, options));
+            self.inner.create_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_group(
         &self,
         req: crate::model::UpdateGroupRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GroupService::update_group",
-            self.inner.update_group(req, options));
+            self.inner.update_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_group(
         &self,
         req: crate::model::DeleteGroupRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GroupService::delete_group",
-            self.inner.delete_group(req, options));
+            self.inner.delete_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_group_members(
         &self,
         req: crate::model::ListGroupMembersRequest,
@@ -218,7 +217,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GroupService::list_group_members",
-            self.inner.list_group_members(req, options));
+            self.inner.list_group_members(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -249,7 +249,6 @@ impl<T> super::stub::MetricService for MetricService<T>
 where
     T: super::stub::MetricService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_monitored_resource_descriptors(
         &self,
         req: crate::model::ListMonitoredResourceDescriptorsRequest,
@@ -259,11 +258,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::list_monitored_resource_descriptors",
-            self.inner.list_monitored_resource_descriptors(req, options));
+            self.inner.list_monitored_resource_descriptors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_monitored_resource_descriptor(
         &self,
         req: crate::model::GetMonitoredResourceDescriptorRequest,
@@ -273,11 +272,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::get_monitored_resource_descriptor",
-            self.inner.get_monitored_resource_descriptor(req, options));
+            self.inner.get_monitored_resource_descriptor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_metric_descriptors(
         &self,
         req: crate::model::ListMetricDescriptorsRequest,
@@ -287,11 +286,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::list_metric_descriptors",
-            self.inner.list_metric_descriptors(req, options));
+            self.inner.list_metric_descriptors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_metric_descriptor(
         &self,
         req: crate::model::GetMetricDescriptorRequest,
@@ -301,11 +300,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::get_metric_descriptor",
-            self.inner.get_metric_descriptor(req, options));
+            self.inner.get_metric_descriptor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_metric_descriptor(
         &self,
         req: crate::model::CreateMetricDescriptorRequest,
@@ -315,11 +314,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::create_metric_descriptor",
-            self.inner.create_metric_descriptor(req, options));
+            self.inner.create_metric_descriptor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_metric_descriptor(
         &self,
         req: crate::model::DeleteMetricDescriptorRequest,
@@ -329,11 +328,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::delete_metric_descriptor",
-            self.inner.delete_metric_descriptor(req, options));
+            self.inner.delete_metric_descriptor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_time_series(
         &self,
         req: crate::model::ListTimeSeriesRequest,
@@ -343,11 +342,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::list_time_series",
-            self.inner.list_time_series(req, options));
+            self.inner.list_time_series(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_time_series(
         &self,
         req: crate::model::CreateTimeSeriesRequest,
@@ -357,11 +356,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::create_time_series",
-            self.inner.create_time_series(req, options));
+            self.inner.create_time_series(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_time_series(
         &self,
         req: crate::model::CreateTimeSeriesRequest,
@@ -371,7 +370,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricService::create_service_time_series",
-            self.inner.create_service_time_series(req, options));
+            self.inner.create_service_time_series(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -402,7 +402,6 @@ impl<T> super::stub::NotificationChannelService for NotificationChannelService<T
 where
     T: super::stub::NotificationChannelService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_notification_channel_descriptors(
         &self,
         req: crate::model::ListNotificationChannelDescriptorsRequest,
@@ -412,11 +411,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::list_notification_channel_descriptors",
-            self.inner.list_notification_channel_descriptors(req, options));
+            self.inner.list_notification_channel_descriptors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_notification_channel_descriptor(
         &self,
         req: crate::model::GetNotificationChannelDescriptorRequest,
@@ -426,11 +425,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::get_notification_channel_descriptor",
-            self.inner.get_notification_channel_descriptor(req, options));
+            self.inner.get_notification_channel_descriptor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_notification_channels(
         &self,
         req: crate::model::ListNotificationChannelsRequest,
@@ -440,11 +439,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::list_notification_channels",
-            self.inner.list_notification_channels(req, options));
+            self.inner.list_notification_channels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_notification_channel(
         &self,
         req: crate::model::GetNotificationChannelRequest,
@@ -454,11 +453,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::get_notification_channel",
-            self.inner.get_notification_channel(req, options));
+            self.inner.get_notification_channel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_notification_channel(
         &self,
         req: crate::model::CreateNotificationChannelRequest,
@@ -468,11 +467,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::create_notification_channel",
-            self.inner.create_notification_channel(req, options));
+            self.inner.create_notification_channel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_notification_channel(
         &self,
         req: crate::model::UpdateNotificationChannelRequest,
@@ -482,11 +481,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::update_notification_channel",
-            self.inner.update_notification_channel(req, options));
+            self.inner.update_notification_channel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_notification_channel(
         &self,
         req: crate::model::DeleteNotificationChannelRequest,
@@ -496,11 +495,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::delete_notification_channel",
-            self.inner.delete_notification_channel(req, options));
+            self.inner.delete_notification_channel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn send_notification_channel_verification_code(
         &self,
         req: crate::model::SendNotificationChannelVerificationCodeRequest,
@@ -510,11 +509,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::send_notification_channel_verification_code",
-            self.inner.send_notification_channel_verification_code(req, options));
+            self.inner.send_notification_channel_verification_code(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_notification_channel_verification_code(
         &self,
         req: crate::model::GetNotificationChannelVerificationCodeRequest,
@@ -524,11 +523,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::get_notification_channel_verification_code",
-            self.inner.get_notification_channel_verification_code(req, options));
+            self.inner.get_notification_channel_verification_code(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_notification_channel(
         &self,
         req: crate::model::VerifyNotificationChannelRequest,
@@ -538,7 +537,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NotificationChannelService::verify_notification_channel",
-            self.inner.verify_notification_channel(req, options));
+            self.inner.verify_notification_channel(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -569,7 +569,6 @@ impl<T> super::stub::QueryService for QueryService<T>
 where
     T: super::stub::QueryService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_time_series(
         &self,
         req: crate::model::QueryTimeSeriesRequest,
@@ -579,7 +578,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::QueryService::query_time_series",
-            self.inner.query_time_series(req, options));
+            self.inner.query_time_series(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -610,7 +610,6 @@ impl<T> super::stub::ServiceMonitoringService for ServiceMonitoringService<T>
 where
     T: super::stub::ServiceMonitoringService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service(
         &self,
         req: crate::model::CreateServiceRequest,
@@ -620,11 +619,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::create_service",
-            self.inner.create_service(req, options));
+            self.inner.create_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service(
         &self,
         req: crate::model::GetServiceRequest,
@@ -634,11 +633,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::get_service",
-            self.inner.get_service(req, options));
+            self.inner.get_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_services(
         &self,
         req: crate::model::ListServicesRequest,
@@ -648,11 +647,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::list_services",
-            self.inner.list_services(req, options));
+            self.inner.list_services(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service(
         &self,
         req: crate::model::UpdateServiceRequest,
@@ -662,11 +661,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::update_service",
-            self.inner.update_service(req, options));
+            self.inner.update_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service(
         &self,
         req: crate::model::DeleteServiceRequest,
@@ -676,11 +675,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::delete_service",
-            self.inner.delete_service(req, options));
+            self.inner.delete_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_service_level_objective(
         &self,
         req: crate::model::CreateServiceLevelObjectiveRequest,
@@ -690,11 +689,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::create_service_level_objective",
-            self.inner.create_service_level_objective(req, options));
+            self.inner.create_service_level_objective(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_level_objective(
         &self,
         req: crate::model::GetServiceLevelObjectiveRequest,
@@ -704,11 +703,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::get_service_level_objective",
-            self.inner.get_service_level_objective(req, options));
+            self.inner.get_service_level_objective(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_service_level_objectives(
         &self,
         req: crate::model::ListServiceLevelObjectivesRequest,
@@ -718,11 +717,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::list_service_level_objectives",
-            self.inner.list_service_level_objectives(req, options));
+            self.inner.list_service_level_objectives(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_service_level_objective(
         &self,
         req: crate::model::UpdateServiceLevelObjectiveRequest,
@@ -732,11 +731,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::update_service_level_objective",
-            self.inner.update_service_level_objective(req, options));
+            self.inner.update_service_level_objective(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_service_level_objective(
         &self,
         req: crate::model::DeleteServiceLevelObjectiveRequest,
@@ -746,7 +745,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceMonitoringService::delete_service_level_objective",
-            self.inner.delete_service_level_objective(req, options));
+            self.inner.delete_service_level_objective(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -777,7 +777,6 @@ impl<T> super::stub::SnoozeService for SnoozeService<T>
 where
     T: super::stub::SnoozeService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_snooze(
         &self,
         req: crate::model::CreateSnoozeRequest,
@@ -787,11 +786,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnoozeService::create_snooze",
-            self.inner.create_snooze(req, options));
+            self.inner.create_snooze(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_snoozes(
         &self,
         req: crate::model::ListSnoozesRequest,
@@ -801,11 +800,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnoozeService::list_snoozes",
-            self.inner.list_snoozes(req, options));
+            self.inner.list_snoozes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_snooze(
         &self,
         req: crate::model::GetSnoozeRequest,
@@ -815,11 +814,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnoozeService::get_snooze",
-            self.inner.get_snooze(req, options));
+            self.inner.get_snooze(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_snooze(
         &self,
         req: crate::model::UpdateSnoozeRequest,
@@ -829,7 +828,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnoozeService::update_snooze",
-            self.inner.update_snooze(req, options));
+            self.inner.update_snooze(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -860,7 +860,6 @@ impl<T> super::stub::UptimeCheckService for UptimeCheckService<T>
 where
     T: super::stub::UptimeCheckService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_uptime_check_configs(
         &self,
         req: crate::model::ListUptimeCheckConfigsRequest,
@@ -870,11 +869,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UptimeCheckService::list_uptime_check_configs",
-            self.inner.list_uptime_check_configs(req, options));
+            self.inner.list_uptime_check_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_uptime_check_config(
         &self,
         req: crate::model::GetUptimeCheckConfigRequest,
@@ -884,11 +883,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UptimeCheckService::get_uptime_check_config",
-            self.inner.get_uptime_check_config(req, options));
+            self.inner.get_uptime_check_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_uptime_check_config(
         &self,
         req: crate::model::CreateUptimeCheckConfigRequest,
@@ -898,11 +897,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UptimeCheckService::create_uptime_check_config",
-            self.inner.create_uptime_check_config(req, options));
+            self.inner.create_uptime_check_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_uptime_check_config(
         &self,
         req: crate::model::UpdateUptimeCheckConfigRequest,
@@ -912,11 +911,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UptimeCheckService::update_uptime_check_config",
-            self.inner.update_uptime_check_config(req, options));
+            self.inner.update_uptime_check_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_uptime_check_config(
         &self,
         req: crate::model::DeleteUptimeCheckConfigRequest,
@@ -926,11 +925,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UptimeCheckService::delete_uptime_check_config",
-            self.inner.delete_uptime_check_config(req, options));
+            self.inner.delete_uptime_check_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_uptime_check_ips(
         &self,
         req: crate::model::ListUptimeCheckIpsRequest,
@@ -940,7 +939,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UptimeCheckService::list_uptime_check_ips",
-            self.inner.list_uptime_check_ips(req, options));
+            self.inner.list_uptime_check_ips(req.clone(), options.clone()));
+
         pending.await
     }
 }

@@ -41,7 +41,6 @@ impl<T> super::stub::Spanner for Spanner<T>
 where
     T: super::stub::Spanner + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_session(
         &self,
         req: crate::model::CreateSessionRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::create_session",
-            self.inner.create_session(req, options));
+            self.inner.create_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_create_sessions(
         &self,
         req: crate::model::BatchCreateSessionsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::batch_create_sessions",
-            self.inner.batch_create_sessions(req, options));
+            self.inner.batch_create_sessions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_session(
         &self,
         req: crate::model::GetSessionRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::get_session",
-            self.inner.get_session(req, options));
+            self.inner.get_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_sessions(
         &self,
         req: crate::model::ListSessionsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::list_sessions",
-            self.inner.list_sessions(req, options));
+            self.inner.list_sessions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_session(
         &self,
         req: crate::model::DeleteSessionRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::delete_session",
-            self.inner.delete_session(req, options));
+            self.inner.delete_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_sql(
         &self,
         req: crate::model::ExecuteSqlRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::execute_sql",
-            self.inner.execute_sql(req, options));
+            self.inner.execute_sql(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_batch_dml(
         &self,
         req: crate::model::ExecuteBatchDmlRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::execute_batch_dml",
-            self.inner.execute_batch_dml(req, options));
+            self.inner.execute_batch_dml(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn read(
         &self,
         req: crate::model::ReadRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::read",
-            self.inner.read(req, options));
+            self.inner.read(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn begin_transaction(
         &self,
         req: crate::model::BeginTransactionRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::begin_transaction",
-            self.inner.begin_transaction(req, options));
+            self.inner.begin_transaction(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit(
         &self,
         req: crate::model::CommitRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::commit",
-            self.inner.commit(req, options));
+            self.inner.commit(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback(
         &self,
         req: crate::model::RollbackRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::rollback",
-            self.inner.rollback(req, options));
+            self.inner.rollback(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn partition_query(
         &self,
         req: crate::model::PartitionQueryRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::partition_query",
-            self.inner.partition_query(req, options));
+            self.inner.partition_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn partition_read(
         &self,
         req: crate::model::PartitionReadRequest,
@@ -219,7 +218,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Spanner::partition_read",
-            self.inner.partition_read(req, options));
+            self.inner.partition_read(req.clone(), options.clone()));
+
         pending.await
     }
 }

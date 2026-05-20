@@ -41,7 +41,6 @@ impl<T> super::stub::IcebergCatalogService for IcebergCatalogService<T>
 where
     T: super::stub::IcebergCatalogService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iceberg_catalog_config(
         &self,
         req: crate::model::GetIcebergCatalogConfigRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::get_iceberg_catalog_config",
-            self.inner.get_iceberg_catalog_config(req, options));
+            self.inner.get_iceberg_catalog_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_iceberg_namespaces(
         &self,
         req: crate::model::ListIcebergNamespacesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::list_iceberg_namespaces",
-            self.inner.list_iceberg_namespaces(req, options));
+            self.inner.list_iceberg_namespaces(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iceberg_namespace(
         &self,
         req: crate::model::GetIcebergNamespaceRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::get_iceberg_namespace",
-            self.inner.get_iceberg_namespace(req, options));
+            self.inner.get_iceberg_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_iceberg_namespace(
         &self,
         req: crate::model::CreateIcebergNamespaceRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::create_iceberg_namespace",
-            self.inner.create_iceberg_namespace(req, options));
+            self.inner.create_iceberg_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_iceberg_namespace(
         &self,
         req: crate::model::DeleteIcebergNamespaceRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::delete_iceberg_namespace",
-            self.inner.delete_iceberg_namespace(req, options));
+            self.inner.delete_iceberg_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_iceberg_namespace(
         &self,
         req: crate::model::UpdateIcebergNamespaceRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::update_iceberg_namespace",
-            self.inner.update_iceberg_namespace(req, options));
+            self.inner.update_iceberg_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_iceberg_table_identifiers(
         &self,
         req: crate::model::ListIcebergTableIdentifiersRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::list_iceberg_table_identifiers",
-            self.inner.list_iceberg_table_identifiers(req, options));
+            self.inner.list_iceberg_table_identifiers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_iceberg_table(
         &self,
         req: crate::model::CreateIcebergTableRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::create_iceberg_table",
-            self.inner.create_iceberg_table(req, options));
+            self.inner.create_iceberg_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_iceberg_table(
         &self,
         req: crate::model::DeleteIcebergTableRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::delete_iceberg_table",
-            self.inner.delete_iceberg_table(req, options));
+            self.inner.delete_iceberg_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iceberg_table(
         &self,
         req: crate::model::GetIcebergTableRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::get_iceberg_table",
-            self.inner.get_iceberg_table(req, options));
+            self.inner.get_iceberg_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn load_iceberg_table_credentials(
         &self,
         req: crate::model::GetIcebergTableRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::load_iceberg_table_credentials",
-            self.inner.load_iceberg_table_credentials(req, options));
+            self.inner.load_iceberg_table_credentials(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_iceberg_table(
         &self,
         req: crate::model::UpdateIcebergTableRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::update_iceberg_table",
-            self.inner.update_iceberg_table(req, options));
+            self.inner.update_iceberg_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn register_iceberg_table(
         &self,
         req: crate::model::RegisterIcebergTableRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::register_iceberg_table",
-            self.inner.register_iceberg_table(req, options));
+            self.inner.register_iceberg_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iceberg_catalog(
         &self,
         req: crate::model::GetIcebergCatalogRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::get_iceberg_catalog",
-            self.inner.get_iceberg_catalog(req, options));
+            self.inner.get_iceberg_catalog(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_iceberg_catalogs(
         &self,
         req: crate::model::ListIcebergCatalogsRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::list_iceberg_catalogs",
-            self.inner.list_iceberg_catalogs(req, options));
+            self.inner.list_iceberg_catalogs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_iceberg_catalog(
         &self,
         req: crate::model::DeleteIcebergCatalogRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::delete_iceberg_catalog",
-            self.inner.delete_iceberg_catalog(req, options));
+            self.inner.delete_iceberg_catalog(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_iceberg_catalog(
         &self,
         req: crate::model::UpdateIcebergCatalogRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::update_iceberg_catalog",
-            self.inner.update_iceberg_catalog(req, options));
+            self.inner.update_iceberg_catalog(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_iceberg_catalog(
         &self,
         req: crate::model::CreateIcebergCatalogRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::create_iceberg_catalog",
-            self.inner.create_iceberg_catalog(req, options));
+            self.inner.create_iceberg_catalog(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn failover_iceberg_catalog(
         &self,
         req: crate::model::FailoverIcebergCatalogRequest,
@@ -303,7 +302,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IcebergCatalogService::failover_iceberg_catalog",
-            self.inner.failover_iceberg_catalog(req, options));
+            self.inner.failover_iceberg_catalog(req.clone(), options.clone()));
+
         pending.await
     }
 }

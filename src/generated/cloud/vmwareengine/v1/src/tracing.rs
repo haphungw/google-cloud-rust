@@ -41,7 +41,6 @@ impl<T> super::stub::VmwareEngine for VmwareEngine<T>
 where
     T: super::stub::VmwareEngine + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_private_clouds(
         &self,
         req: crate::model::ListPrivateCloudsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_private_clouds",
-            self.inner.list_private_clouds(req, options));
+            self.inner.list_private_clouds(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_private_cloud(
         &self,
         req: crate::model::GetPrivateCloudRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_private_cloud",
-            self.inner.get_private_cloud(req, options));
+            self.inner.get_private_cloud(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_private_cloud(
         &self,
         req: crate::model::CreatePrivateCloudRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_private_cloud",
-            self.inner.create_private_cloud(req, options));
+            self.inner.create_private_cloud(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_private_cloud(
         &self,
         req: crate::model::UpdatePrivateCloudRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_private_cloud",
-            self.inner.update_private_cloud(req, options));
+            self.inner.update_private_cloud(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_private_cloud(
         &self,
         req: crate::model::DeletePrivateCloudRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_private_cloud",
-            self.inner.delete_private_cloud(req, options));
+            self.inner.delete_private_cloud(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_private_cloud(
         &self,
         req: crate::model::UndeletePrivateCloudRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::undelete_private_cloud",
-            self.inner.undelete_private_cloud(req, options));
+            self.inner.undelete_private_cloud(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_clusters(
         &self,
         req: crate::model::ListClustersRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_clusters",
-            self.inner.list_clusters(req, options));
+            self.inner.list_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cluster(
         &self,
         req: crate::model::GetClusterRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_cluster",
-            self.inner.get_cluster(req, options));
+            self.inner.get_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cluster(
         &self,
         req: crate::model::CreateClusterRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_cluster",
-            self.inner.create_cluster(req, options));
+            self.inner.create_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_cluster(
         &self,
         req: crate::model::UpdateClusterRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_cluster",
-            self.inner.update_cluster(req, options));
+            self.inner.update_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cluster(
         &self,
         req: crate::model::DeleteClusterRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_cluster",
-            self.inner.delete_cluster(req, options));
+            self.inner.delete_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_nodes(
         &self,
         req: crate::model::ListNodesRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_nodes",
-            self.inner.list_nodes(req, options));
+            self.inner.list_nodes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_node(
         &self,
         req: crate::model::GetNodeRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_node",
-            self.inner.get_node(req, options));
+            self.inner.get_node(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_external_addresses(
         &self,
         req: crate::model::ListExternalAddressesRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_external_addresses",
-            self.inner.list_external_addresses(req, options));
+            self.inner.list_external_addresses(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_network_policy_external_addresses(
         &self,
         req: crate::model::FetchNetworkPolicyExternalAddressesRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::fetch_network_policy_external_addresses",
-            self.inner.fetch_network_policy_external_addresses(req, options));
+            self.inner.fetch_network_policy_external_addresses(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_external_address(
         &self,
         req: crate::model::GetExternalAddressRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_external_address",
-            self.inner.get_external_address(req, options));
+            self.inner.get_external_address(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_external_address(
         &self,
         req: crate::model::CreateExternalAddressRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_external_address",
-            self.inner.create_external_address(req, options));
+            self.inner.create_external_address(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_external_address(
         &self,
         req: crate::model::UpdateExternalAddressRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_external_address",
-            self.inner.update_external_address(req, options));
+            self.inner.update_external_address(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_external_address(
         &self,
         req: crate::model::DeleteExternalAddressRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_external_address",
-            self.inner.delete_external_address(req, options));
+            self.inner.delete_external_address(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_subnets(
         &self,
         req: crate::model::ListSubnetsRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_subnets",
-            self.inner.list_subnets(req, options));
+            self.inner.list_subnets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_subnet(
         &self,
         req: crate::model::GetSubnetRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_subnet",
-            self.inner.get_subnet(req, options));
+            self.inner.get_subnet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_subnet(
         &self,
         req: crate::model::UpdateSubnetRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_subnet",
-            self.inner.update_subnet(req, options));
+            self.inner.update_subnet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_external_access_rules(
         &self,
         req: crate::model::ListExternalAccessRulesRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_external_access_rules",
-            self.inner.list_external_access_rules(req, options));
+            self.inner.list_external_access_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_external_access_rule(
         &self,
         req: crate::model::GetExternalAccessRuleRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_external_access_rule",
-            self.inner.get_external_access_rule(req, options));
+            self.inner.get_external_access_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_external_access_rule(
         &self,
         req: crate::model::CreateExternalAccessRuleRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_external_access_rule",
-            self.inner.create_external_access_rule(req, options));
+            self.inner.create_external_access_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_external_access_rule(
         &self,
         req: crate::model::UpdateExternalAccessRuleRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_external_access_rule",
-            self.inner.update_external_access_rule(req, options));
+            self.inner.update_external_access_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_external_access_rule(
         &self,
         req: crate::model::DeleteExternalAccessRuleRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_external_access_rule",
-            self.inner.delete_external_access_rule(req, options));
+            self.inner.delete_external_access_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_logging_servers(
         &self,
         req: crate::model::ListLoggingServersRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_logging_servers",
-            self.inner.list_logging_servers(req, options));
+            self.inner.list_logging_servers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_logging_server(
         &self,
         req: crate::model::GetLoggingServerRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_logging_server",
-            self.inner.get_logging_server(req, options));
+            self.inner.get_logging_server(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_logging_server(
         &self,
         req: crate::model::CreateLoggingServerRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_logging_server",
-            self.inner.create_logging_server(req, options));
+            self.inner.create_logging_server(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_logging_server(
         &self,
         req: crate::model::UpdateLoggingServerRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_logging_server",
-            self.inner.update_logging_server(req, options));
+            self.inner.update_logging_server(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_logging_server(
         &self,
         req: crate::model::DeleteLoggingServerRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_logging_server",
-            self.inner.delete_logging_server(req, options));
+            self.inner.delete_logging_server(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_node_types(
         &self,
         req: crate::model::ListNodeTypesRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_node_types",
-            self.inner.list_node_types(req, options));
+            self.inner.list_node_types(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_node_type(
         &self,
         req: crate::model::GetNodeTypeRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_node_type",
-            self.inner.get_node_type(req, options));
+            self.inner.get_node_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn show_nsx_credentials(
         &self,
         req: crate::model::ShowNsxCredentialsRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::show_nsx_credentials",
-            self.inner.show_nsx_credentials(req, options));
+            self.inner.show_nsx_credentials(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn show_vcenter_credentials(
         &self,
         req: crate::model::ShowVcenterCredentialsRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::show_vcenter_credentials",
-            self.inner.show_vcenter_credentials(req, options));
+            self.inner.show_vcenter_credentials(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_nsx_credentials(
         &self,
         req: crate::model::ResetNsxCredentialsRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::reset_nsx_credentials",
-            self.inner.reset_nsx_credentials(req, options));
+            self.inner.reset_nsx_credentials(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_vcenter_credentials(
         &self,
         req: crate::model::ResetVcenterCredentialsRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::reset_vcenter_credentials",
-            self.inner.reset_vcenter_credentials(req, options));
+            self.inner.reset_vcenter_credentials(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dns_forwarding(
         &self,
         req: crate::model::GetDnsForwardingRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_dns_forwarding",
-            self.inner.get_dns_forwarding(req, options));
+            self.inner.get_dns_forwarding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_dns_forwarding(
         &self,
         req: crate::model::UpdateDnsForwardingRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_dns_forwarding",
-            self.inner.update_dns_forwarding(req, options));
+            self.inner.update_dns_forwarding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_network_peering(
         &self,
         req: crate::model::GetNetworkPeeringRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_network_peering",
-            self.inner.get_network_peering(req, options));
+            self.inner.get_network_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_network_peerings(
         &self,
         req: crate::model::ListNetworkPeeringsRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_network_peerings",
-            self.inner.list_network_peerings(req, options));
+            self.inner.list_network_peerings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_network_peering(
         &self,
         req: crate::model::CreateNetworkPeeringRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_network_peering",
-            self.inner.create_network_peering(req, options));
+            self.inner.create_network_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_network_peering(
         &self,
         req: crate::model::DeleteNetworkPeeringRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_network_peering",
-            self.inner.delete_network_peering(req, options));
+            self.inner.delete_network_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_network_peering(
         &self,
         req: crate::model::UpdateNetworkPeeringRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_network_peering",
-            self.inner.update_network_peering(req, options));
+            self.inner.update_network_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_peering_routes(
         &self,
         req: crate::model::ListPeeringRoutesRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_peering_routes",
-            self.inner.list_peering_routes(req, options));
+            self.inner.list_peering_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_hcx_activation_key(
         &self,
         req: crate::model::CreateHcxActivationKeyRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_hcx_activation_key",
-            self.inner.create_hcx_activation_key(req, options));
+            self.inner.create_hcx_activation_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_hcx_activation_keys(
         &self,
         req: crate::model::ListHcxActivationKeysRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_hcx_activation_keys",
-            self.inner.list_hcx_activation_keys(req, options));
+            self.inner.list_hcx_activation_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_hcx_activation_key(
         &self,
         req: crate::model::GetHcxActivationKeyRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_hcx_activation_key",
-            self.inner.get_hcx_activation_key(req, options));
+            self.inner.get_hcx_activation_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_network_policy(
         &self,
         req: crate::model::GetNetworkPolicyRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_network_policy",
-            self.inner.get_network_policy(req, options));
+            self.inner.get_network_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_network_policies(
         &self,
         req: crate::model::ListNetworkPoliciesRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_network_policies",
-            self.inner.list_network_policies(req, options));
+            self.inner.list_network_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_network_policy(
         &self,
         req: crate::model::CreateNetworkPolicyRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_network_policy",
-            self.inner.create_network_policy(req, options));
+            self.inner.create_network_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_network_policy(
         &self,
         req: crate::model::UpdateNetworkPolicyRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_network_policy",
-            self.inner.update_network_policy(req, options));
+            self.inner.update_network_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_network_policy(
         &self,
         req: crate::model::DeleteNetworkPolicyRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_network_policy",
-            self.inner.delete_network_policy(req, options));
+            self.inner.delete_network_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_management_dns_zone_bindings(
         &self,
         req: crate::model::ListManagementDnsZoneBindingsRequest,
@@ -807,11 +806,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_management_dns_zone_bindings",
-            self.inner.list_management_dns_zone_bindings(req, options));
+            self.inner.list_management_dns_zone_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_management_dns_zone_binding(
         &self,
         req: crate::model::GetManagementDnsZoneBindingRequest,
@@ -821,11 +820,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_management_dns_zone_binding",
-            self.inner.get_management_dns_zone_binding(req, options));
+            self.inner.get_management_dns_zone_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_management_dns_zone_binding(
         &self,
         req: crate::model::CreateManagementDnsZoneBindingRequest,
@@ -835,11 +834,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_management_dns_zone_binding",
-            self.inner.create_management_dns_zone_binding(req, options));
+            self.inner.create_management_dns_zone_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_management_dns_zone_binding(
         &self,
         req: crate::model::UpdateManagementDnsZoneBindingRequest,
@@ -849,11 +848,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_management_dns_zone_binding",
-            self.inner.update_management_dns_zone_binding(req, options));
+            self.inner.update_management_dns_zone_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_management_dns_zone_binding(
         &self,
         req: crate::model::DeleteManagementDnsZoneBindingRequest,
@@ -863,11 +862,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_management_dns_zone_binding",
-            self.inner.delete_management_dns_zone_binding(req, options));
+            self.inner.delete_management_dns_zone_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn repair_management_dns_zone_binding(
         &self,
         req: crate::model::RepairManagementDnsZoneBindingRequest,
@@ -877,11 +876,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::repair_management_dns_zone_binding",
-            self.inner.repair_management_dns_zone_binding(req, options));
+            self.inner.repair_management_dns_zone_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_vmware_engine_network(
         &self,
         req: crate::model::CreateVmwareEngineNetworkRequest,
@@ -891,11 +890,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_vmware_engine_network",
-            self.inner.create_vmware_engine_network(req, options));
+            self.inner.create_vmware_engine_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_vmware_engine_network(
         &self,
         req: crate::model::UpdateVmwareEngineNetworkRequest,
@@ -905,11 +904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_vmware_engine_network",
-            self.inner.update_vmware_engine_network(req, options));
+            self.inner.update_vmware_engine_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_vmware_engine_network(
         &self,
         req: crate::model::DeleteVmwareEngineNetworkRequest,
@@ -919,11 +918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_vmware_engine_network",
-            self.inner.delete_vmware_engine_network(req, options));
+            self.inner.delete_vmware_engine_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vmware_engine_network(
         &self,
         req: crate::model::GetVmwareEngineNetworkRequest,
@@ -933,11 +932,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_vmware_engine_network",
-            self.inner.get_vmware_engine_network(req, options));
+            self.inner.get_vmware_engine_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_vmware_engine_networks(
         &self,
         req: crate::model::ListVmwareEngineNetworksRequest,
@@ -947,11 +946,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_vmware_engine_networks",
-            self.inner.list_vmware_engine_networks(req, options));
+            self.inner.list_vmware_engine_networks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_private_connection(
         &self,
         req: crate::model::CreatePrivateConnectionRequest,
@@ -961,11 +960,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::create_private_connection",
-            self.inner.create_private_connection(req, options));
+            self.inner.create_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_private_connection(
         &self,
         req: crate::model::GetPrivateConnectionRequest,
@@ -975,11 +974,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_private_connection",
-            self.inner.get_private_connection(req, options));
+            self.inner.get_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_private_connections(
         &self,
         req: crate::model::ListPrivateConnectionsRequest,
@@ -989,11 +988,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_private_connections",
-            self.inner.list_private_connections(req, options));
+            self.inner.list_private_connections(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_private_connection(
         &self,
         req: crate::model::UpdatePrivateConnectionRequest,
@@ -1003,11 +1002,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::update_private_connection",
-            self.inner.update_private_connection(req, options));
+            self.inner.update_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_private_connection(
         &self,
         req: crate::model::DeletePrivateConnectionRequest,
@@ -1017,11 +1016,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_private_connection",
-            self.inner.delete_private_connection(req, options));
+            self.inner.delete_private_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_private_connection_peering_routes(
         &self,
         req: crate::model::ListPrivateConnectionPeeringRoutesRequest,
@@ -1031,11 +1030,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_private_connection_peering_routes",
-            self.inner.list_private_connection_peering_routes(req, options));
+            self.inner.list_private_connection_peering_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn grant_dns_bind_permission(
         &self,
         req: crate::model::GrantDnsBindPermissionRequest,
@@ -1045,11 +1044,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::grant_dns_bind_permission",
-            self.inner.grant_dns_bind_permission(req, options));
+            self.inner.grant_dns_bind_permission(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dns_bind_permission(
         &self,
         req: crate::model::GetDnsBindPermissionRequest,
@@ -1059,11 +1058,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_dns_bind_permission",
-            self.inner.get_dns_bind_permission(req, options));
+            self.inner.get_dns_bind_permission(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn revoke_dns_bind_permission(
         &self,
         req: crate::model::RevokeDnsBindPermissionRequest,
@@ -1073,11 +1072,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::revoke_dns_bind_permission",
-            self.inner.revoke_dns_bind_permission(req, options));
+            self.inner.revoke_dns_bind_permission(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1087,11 +1086,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1101,11 +1100,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1115,11 +1114,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1129,11 +1128,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1143,11 +1142,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1157,11 +1156,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1171,11 +1170,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1185,7 +1184,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VmwareEngine::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

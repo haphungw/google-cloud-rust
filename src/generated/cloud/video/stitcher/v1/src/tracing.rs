@@ -41,7 +41,6 @@ impl<T> super::stub::VideoStitcherService for VideoStitcherService<T>
 where
     T: super::stub::VideoStitcherService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cdn_key(
         &self,
         req: crate::model::CreateCdnKeyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::create_cdn_key",
-            self.inner.create_cdn_key(req, options));
+            self.inner.create_cdn_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_cdn_keys(
         &self,
         req: crate::model::ListCdnKeysRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_cdn_keys",
-            self.inner.list_cdn_keys(req, options));
+            self.inner.list_cdn_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cdn_key(
         &self,
         req: crate::model::GetCdnKeyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_cdn_key",
-            self.inner.get_cdn_key(req, options));
+            self.inner.get_cdn_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cdn_key(
         &self,
         req: crate::model::DeleteCdnKeyRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::delete_cdn_key",
-            self.inner.delete_cdn_key(req, options));
+            self.inner.delete_cdn_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_cdn_key(
         &self,
         req: crate::model::UpdateCdnKeyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::update_cdn_key",
-            self.inner.update_cdn_key(req, options));
+            self.inner.update_cdn_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_vod_session(
         &self,
         req: crate::model::CreateVodSessionRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::create_vod_session",
-            self.inner.create_vod_session(req, options));
+            self.inner.create_vod_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vod_session(
         &self,
         req: crate::model::GetVodSessionRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_vod_session",
-            self.inner.get_vod_session(req, options));
+            self.inner.get_vod_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_vod_stitch_details(
         &self,
         req: crate::model::ListVodStitchDetailsRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_vod_stitch_details",
-            self.inner.list_vod_stitch_details(req, options));
+            self.inner.list_vod_stitch_details(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vod_stitch_detail(
         &self,
         req: crate::model::GetVodStitchDetailRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_vod_stitch_detail",
-            self.inner.get_vod_stitch_detail(req, options));
+            self.inner.get_vod_stitch_detail(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_vod_ad_tag_details(
         &self,
         req: crate::model::ListVodAdTagDetailsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_vod_ad_tag_details",
-            self.inner.list_vod_ad_tag_details(req, options));
+            self.inner.list_vod_ad_tag_details(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vod_ad_tag_detail(
         &self,
         req: crate::model::GetVodAdTagDetailRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_vod_ad_tag_detail",
-            self.inner.get_vod_ad_tag_detail(req, options));
+            self.inner.get_vod_ad_tag_detail(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_live_ad_tag_details(
         &self,
         req: crate::model::ListLiveAdTagDetailsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_live_ad_tag_details",
-            self.inner.list_live_ad_tag_details(req, options));
+            self.inner.list_live_ad_tag_details(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_live_ad_tag_detail(
         &self,
         req: crate::model::GetLiveAdTagDetailRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_live_ad_tag_detail",
-            self.inner.get_live_ad_tag_detail(req, options));
+            self.inner.get_live_ad_tag_detail(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_slate(
         &self,
         req: crate::model::CreateSlateRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::create_slate",
-            self.inner.create_slate(req, options));
+            self.inner.create_slate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_slates(
         &self,
         req: crate::model::ListSlatesRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_slates",
-            self.inner.list_slates(req, options));
+            self.inner.list_slates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_slate(
         &self,
         req: crate::model::GetSlateRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_slate",
-            self.inner.get_slate(req, options));
+            self.inner.get_slate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_slate(
         &self,
         req: crate::model::UpdateSlateRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::update_slate",
-            self.inner.update_slate(req, options));
+            self.inner.update_slate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_slate(
         &self,
         req: crate::model::DeleteSlateRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::delete_slate",
-            self.inner.delete_slate(req, options));
+            self.inner.delete_slate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_live_session(
         &self,
         req: crate::model::CreateLiveSessionRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::create_live_session",
-            self.inner.create_live_session(req, options));
+            self.inner.create_live_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_live_session(
         &self,
         req: crate::model::GetLiveSessionRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_live_session",
-            self.inner.get_live_session(req, options));
+            self.inner.get_live_session(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_live_config(
         &self,
         req: crate::model::CreateLiveConfigRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::create_live_config",
-            self.inner.create_live_config(req, options));
+            self.inner.create_live_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_live_configs(
         &self,
         req: crate::model::ListLiveConfigsRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_live_configs",
-            self.inner.list_live_configs(req, options));
+            self.inner.list_live_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_live_config(
         &self,
         req: crate::model::GetLiveConfigRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_live_config",
-            self.inner.get_live_config(req, options));
+            self.inner.get_live_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_live_config(
         &self,
         req: crate::model::DeleteLiveConfigRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::delete_live_config",
-            self.inner.delete_live_config(req, options));
+            self.inner.delete_live_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_live_config(
         &self,
         req: crate::model::UpdateLiveConfigRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::update_live_config",
-            self.inner.update_live_config(req, options));
+            self.inner.update_live_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_vod_config(
         &self,
         req: crate::model::CreateVodConfigRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::create_vod_config",
-            self.inner.create_vod_config(req, options));
+            self.inner.create_vod_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_vod_configs(
         &self,
         req: crate::model::ListVodConfigsRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_vod_configs",
-            self.inner.list_vod_configs(req, options));
+            self.inner.list_vod_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vod_config(
         &self,
         req: crate::model::GetVodConfigRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_vod_config",
-            self.inner.get_vod_config(req, options));
+            self.inner.get_vod_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_vod_config(
         &self,
         req: crate::model::DeleteVodConfigRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::delete_vod_config",
-            self.inner.delete_vod_config(req, options));
+            self.inner.delete_vod_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_vod_config(
         &self,
         req: crate::model::UpdateVodConfigRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::update_vod_config",
-            self.inner.update_vod_config(req, options));
+            self.inner.update_vod_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -513,7 +512,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VideoStitcherService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::MigrationCenter for MigrationCenter<T>
 where
     T: super::stub::MigrationCenter + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_assets(
         &self,
         req: crate::model::ListAssetsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_assets",
-            self.inner.list_assets(req, options));
+            self.inner.list_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_asset(
         &self,
         req: crate::model::GetAssetRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_asset",
-            self.inner.get_asset(req, options));
+            self.inner.get_asset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_asset(
         &self,
         req: crate::model::UpdateAssetRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::update_asset",
-            self.inner.update_asset(req, options));
+            self.inner.update_asset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_update_assets(
         &self,
         req: crate::model::BatchUpdateAssetsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::batch_update_assets",
-            self.inner.batch_update_assets(req, options));
+            self.inner.batch_update_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_asset(
         &self,
         req: crate::model::DeleteAssetRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_asset",
-            self.inner.delete_asset(req, options));
+            self.inner.delete_asset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_delete_assets(
         &self,
         req: crate::model::BatchDeleteAssetsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::batch_delete_assets",
-            self.inner.batch_delete_assets(req, options));
+            self.inner.batch_delete_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn report_asset_frames(
         &self,
         req: crate::model::ReportAssetFramesRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::report_asset_frames",
-            self.inner.report_asset_frames(req, options));
+            self.inner.report_asset_frames(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregate_assets_values(
         &self,
         req: crate::model::AggregateAssetsValuesRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::aggregate_assets_values",
-            self.inner.aggregate_assets_values(req, options));
+            self.inner.aggregate_assets_values(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_import_job(
         &self,
         req: crate::model::CreateImportJobRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_import_job",
-            self.inner.create_import_job(req, options));
+            self.inner.create_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_import_jobs(
         &self,
         req: crate::model::ListImportJobsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_import_jobs",
-            self.inner.list_import_jobs(req, options));
+            self.inner.list_import_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_import_job(
         &self,
         req: crate::model::GetImportJobRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_import_job",
-            self.inner.get_import_job(req, options));
+            self.inner.get_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_import_job(
         &self,
         req: crate::model::DeleteImportJobRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_import_job",
-            self.inner.delete_import_job(req, options));
+            self.inner.delete_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_import_job(
         &self,
         req: crate::model::UpdateImportJobRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::update_import_job",
-            self.inner.update_import_job(req, options));
+            self.inner.update_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_import_job(
         &self,
         req: crate::model::ValidateImportJobRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::validate_import_job",
-            self.inner.validate_import_job(req, options));
+            self.inner.validate_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn run_import_job(
         &self,
         req: crate::model::RunImportJobRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::run_import_job",
-            self.inner.run_import_job(req, options));
+            self.inner.run_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_import_data_file(
         &self,
         req: crate::model::GetImportDataFileRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_import_data_file",
-            self.inner.get_import_data_file(req, options));
+            self.inner.get_import_data_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_import_data_files(
         &self,
         req: crate::model::ListImportDataFilesRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_import_data_files",
-            self.inner.list_import_data_files(req, options));
+            self.inner.list_import_data_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_import_data_file(
         &self,
         req: crate::model::CreateImportDataFileRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_import_data_file",
-            self.inner.create_import_data_file(req, options));
+            self.inner.create_import_data_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_import_data_file(
         &self,
         req: crate::model::DeleteImportDataFileRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_import_data_file",
-            self.inner.delete_import_data_file(req, options));
+            self.inner.delete_import_data_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_groups(
         &self,
         req: crate::model::ListGroupsRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_groups",
-            self.inner.list_groups(req, options));
+            self.inner.list_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_group(
         &self,
         req: crate::model::GetGroupRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_group",
-            self.inner.get_group(req, options));
+            self.inner.get_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_group(
         &self,
         req: crate::model::CreateGroupRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_group",
-            self.inner.create_group(req, options));
+            self.inner.create_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_group(
         &self,
         req: crate::model::UpdateGroupRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::update_group",
-            self.inner.update_group(req, options));
+            self.inner.update_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_group(
         &self,
         req: crate::model::DeleteGroupRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_group",
-            self.inner.delete_group(req, options));
+            self.inner.delete_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_assets_to_group(
         &self,
         req: crate::model::AddAssetsToGroupRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::add_assets_to_group",
-            self.inner.add_assets_to_group(req, options));
+            self.inner.add_assets_to_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_assets_from_group(
         &self,
         req: crate::model::RemoveAssetsFromGroupRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::remove_assets_from_group",
-            self.inner.remove_assets_from_group(req, options));
+            self.inner.remove_assets_from_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_error_frames(
         &self,
         req: crate::model::ListErrorFramesRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_error_frames",
-            self.inner.list_error_frames(req, options));
+            self.inner.list_error_frames(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_error_frame(
         &self,
         req: crate::model::GetErrorFrameRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_error_frame",
-            self.inner.get_error_frame(req, options));
+            self.inner.get_error_frame(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_sources(
         &self,
         req: crate::model::ListSourcesRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_sources",
-            self.inner.list_sources(req, options));
+            self.inner.list_sources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_source(
         &self,
         req: crate::model::GetSourceRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_source",
-            self.inner.get_source(req, options));
+            self.inner.get_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_source(
         &self,
         req: crate::model::CreateSourceRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_source",
-            self.inner.create_source(req, options));
+            self.inner.create_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_source(
         &self,
         req: crate::model::UpdateSourceRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::update_source",
-            self.inner.update_source(req, options));
+            self.inner.update_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_source(
         &self,
         req: crate::model::DeleteSourceRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_source",
-            self.inner.delete_source(req, options));
+            self.inner.delete_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_preference_sets(
         &self,
         req: crate::model::ListPreferenceSetsRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_preference_sets",
-            self.inner.list_preference_sets(req, options));
+            self.inner.list_preference_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_preference_set(
         &self,
         req: crate::model::GetPreferenceSetRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_preference_set",
-            self.inner.get_preference_set(req, options));
+            self.inner.get_preference_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_preference_set(
         &self,
         req: crate::model::CreatePreferenceSetRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_preference_set",
-            self.inner.create_preference_set(req, options));
+            self.inner.create_preference_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_preference_set(
         &self,
         req: crate::model::UpdatePreferenceSetRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::update_preference_set",
-            self.inner.update_preference_set(req, options));
+            self.inner.update_preference_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_preference_set(
         &self,
         req: crate::model::DeletePreferenceSetRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_preference_set",
-            self.inner.delete_preference_set(req, options));
+            self.inner.delete_preference_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_settings(
         &self,
         req: crate::model::GetSettingsRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_settings",
-            self.inner.get_settings(req, options));
+            self.inner.get_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_settings(
         &self,
         req: crate::model::UpdateSettingsRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::update_settings",
-            self.inner.update_settings(req, options));
+            self.inner.update_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_report_config(
         &self,
         req: crate::model::CreateReportConfigRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_report_config",
-            self.inner.create_report_config(req, options));
+            self.inner.create_report_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_report_config(
         &self,
         req: crate::model::GetReportConfigRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_report_config",
-            self.inner.get_report_config(req, options));
+            self.inner.get_report_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_report_configs(
         &self,
         req: crate::model::ListReportConfigsRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_report_configs",
-            self.inner.list_report_configs(req, options));
+            self.inner.list_report_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_report_config(
         &self,
         req: crate::model::DeleteReportConfigRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_report_config",
-            self.inner.delete_report_config(req, options));
+            self.inner.delete_report_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_report(
         &self,
         req: crate::model::CreateReportRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::create_report",
-            self.inner.create_report(req, options));
+            self.inner.create_report(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_report(
         &self,
         req: crate::model::GetReportRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_report",
-            self.inner.get_report(req, options));
+            self.inner.get_report(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_reports(
         &self,
         req: crate::model::ListReportsRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_reports",
-            self.inner.list_reports(req, options));
+            self.inner.list_reports(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_report(
         &self,
         req: crate::model::DeleteReportRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_report",
-            self.inner.delete_report(req, options));
+            self.inner.delete_report(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -793,7 +792,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationCenter::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

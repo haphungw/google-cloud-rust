@@ -41,7 +41,6 @@ impl<T> super::stub::ParameterManager for ParameterManager<T>
 where
     T: super::stub::ParameterManager + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_parameters(
         &self,
         req: crate::model::ListParametersRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::list_parameters",
-            self.inner.list_parameters(req, options));
+            self.inner.list_parameters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_parameter(
         &self,
         req: crate::model::GetParameterRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::get_parameter",
-            self.inner.get_parameter(req, options));
+            self.inner.get_parameter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_parameter(
         &self,
         req: crate::model::CreateParameterRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::create_parameter",
-            self.inner.create_parameter(req, options));
+            self.inner.create_parameter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_parameter(
         &self,
         req: crate::model::UpdateParameterRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::update_parameter",
-            self.inner.update_parameter(req, options));
+            self.inner.update_parameter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_parameter(
         &self,
         req: crate::model::DeleteParameterRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::delete_parameter",
-            self.inner.delete_parameter(req, options));
+            self.inner.delete_parameter(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_parameter_versions(
         &self,
         req: crate::model::ListParameterVersionsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::list_parameter_versions",
-            self.inner.list_parameter_versions(req, options));
+            self.inner.list_parameter_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_parameter_version(
         &self,
         req: crate::model::GetParameterVersionRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::get_parameter_version",
-            self.inner.get_parameter_version(req, options));
+            self.inner.get_parameter_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn render_parameter_version(
         &self,
         req: crate::model::RenderParameterVersionRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::render_parameter_version",
-            self.inner.render_parameter_version(req, options));
+            self.inner.render_parameter_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_parameter_version(
         &self,
         req: crate::model::CreateParameterVersionRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::create_parameter_version",
-            self.inner.create_parameter_version(req, options));
+            self.inner.create_parameter_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_parameter_version(
         &self,
         req: crate::model::UpdateParameterVersionRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::update_parameter_version",
-            self.inner.update_parameter_version(req, options));
+            self.inner.update_parameter_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_parameter_version(
         &self,
         req: crate::model::DeleteParameterVersionRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::delete_parameter_version",
-            self.inner.delete_parameter_version(req, options));
+            self.inner.delete_parameter_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -219,7 +218,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ParameterManager::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

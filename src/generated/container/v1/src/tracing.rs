@@ -41,7 +41,6 @@ impl<T> super::stub::ClusterManager for ClusterManager<T>
 where
     T: super::stub::ClusterManager + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_clusters(
         &self,
         req: crate::model::ListClustersRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::list_clusters",
-            self.inner.list_clusters(req, options));
+            self.inner.list_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cluster(
         &self,
         req: crate::model::GetClusterRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::get_cluster",
-            self.inner.get_cluster(req, options));
+            self.inner.get_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cluster(
         &self,
         req: crate::model::CreateClusterRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::create_cluster",
-            self.inner.create_cluster(req, options));
+            self.inner.create_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_cluster(
         &self,
         req: crate::model::UpdateClusterRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::update_cluster",
-            self.inner.update_cluster(req, options));
+            self.inner.update_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_node_pool(
         &self,
         req: crate::model::UpdateNodePoolRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::update_node_pool",
-            self.inner.update_node_pool(req, options));
+            self.inner.update_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_node_pool_autoscaling(
         &self,
         req: crate::model::SetNodePoolAutoscalingRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_node_pool_autoscaling",
-            self.inner.set_node_pool_autoscaling(req, options));
+            self.inner.set_node_pool_autoscaling(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_logging_service(
         &self,
         req: crate::model::SetLoggingServiceRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_logging_service",
-            self.inner.set_logging_service(req, options));
+            self.inner.set_logging_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_monitoring_service(
         &self,
         req: crate::model::SetMonitoringServiceRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_monitoring_service",
-            self.inner.set_monitoring_service(req, options));
+            self.inner.set_monitoring_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_addons_config(
         &self,
         req: crate::model::SetAddonsConfigRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_addons_config",
-            self.inner.set_addons_config(req, options));
+            self.inner.set_addons_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_locations(
         &self,
         req: crate::model::SetLocationsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_locations",
-            self.inner.set_locations(req, options));
+            self.inner.set_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_master(
         &self,
         req: crate::model::UpdateMasterRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::update_master",
-            self.inner.update_master(req, options));
+            self.inner.update_master(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_master_auth(
         &self,
         req: crate::model::SetMasterAuthRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_master_auth",
-            self.inner.set_master_auth(req, options));
+            self.inner.set_master_auth(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cluster(
         &self,
         req: crate::model::DeleteClusterRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::delete_cluster",
-            self.inner.delete_cluster(req, options));
+            self.inner.delete_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: crate::model::ListOperationsRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::GetOperationRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: crate::model::CancelOperationRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_server_config(
         &self,
         req: crate::model::GetServerConfigRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::get_server_config",
-            self.inner.get_server_config(req, options));
+            self.inner.get_server_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_json_web_keys(
         &self,
         req: crate::model::GetJSONWebKeysRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::get_json_web_keys",
-            self.inner.get_json_web_keys(req, options));
+            self.inner.get_json_web_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_node_pools(
         &self,
         req: crate::model::ListNodePoolsRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::list_node_pools",
-            self.inner.list_node_pools(req, options));
+            self.inner.list_node_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_node_pool(
         &self,
         req: crate::model::GetNodePoolRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::get_node_pool",
-            self.inner.get_node_pool(req, options));
+            self.inner.get_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_node_pool(
         &self,
         req: crate::model::CreateNodePoolRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::create_node_pool",
-            self.inner.create_node_pool(req, options));
+            self.inner.create_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_node_pool(
         &self,
         req: crate::model::DeleteNodePoolRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::delete_node_pool",
-            self.inner.delete_node_pool(req, options));
+            self.inner.delete_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn complete_node_pool_upgrade(
         &self,
         req: crate::model::CompleteNodePoolUpgradeRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::complete_node_pool_upgrade",
-            self.inner.complete_node_pool_upgrade(req, options));
+            self.inner.complete_node_pool_upgrade(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback_node_pool_upgrade(
         &self,
         req: crate::model::RollbackNodePoolUpgradeRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::rollback_node_pool_upgrade",
-            self.inner.rollback_node_pool_upgrade(req, options));
+            self.inner.rollback_node_pool_upgrade(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_node_pool_management(
         &self,
         req: crate::model::SetNodePoolManagementRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_node_pool_management",
-            self.inner.set_node_pool_management(req, options));
+            self.inner.set_node_pool_management(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::SetLabelsRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_legacy_abac(
         &self,
         req: crate::model::SetLegacyAbacRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_legacy_abac",
-            self.inner.set_legacy_abac(req, options));
+            self.inner.set_legacy_abac(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_ip_rotation(
         &self,
         req: crate::model::StartIPRotationRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::start_ip_rotation",
-            self.inner.start_ip_rotation(req, options));
+            self.inner.start_ip_rotation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn complete_ip_rotation(
         &self,
         req: crate::model::CompleteIPRotationRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::complete_ip_rotation",
-            self.inner.complete_ip_rotation(req, options));
+            self.inner.complete_ip_rotation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_node_pool_size(
         &self,
         req: crate::model::SetNodePoolSizeRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_node_pool_size",
-            self.inner.set_node_pool_size(req, options));
+            self.inner.set_node_pool_size(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_network_policy(
         &self,
         req: crate::model::SetNetworkPolicyRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_network_policy",
-            self.inner.set_network_policy(req, options));
+            self.inner.set_network_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_maintenance_policy(
         &self,
         req: crate::model::SetMaintenancePolicyRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::set_maintenance_policy",
-            self.inner.set_maintenance_policy(req, options));
+            self.inner.set_maintenance_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_usable_subnetworks(
         &self,
         req: crate::model::ListUsableSubnetworksRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::list_usable_subnetworks",
-            self.inner.list_usable_subnetworks(req, options));
+            self.inner.list_usable_subnetworks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn check_autopilot_compatibility(
         &self,
         req: crate::model::CheckAutopilotCompatibilityRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::check_autopilot_compatibility",
-            self.inner.check_autopilot_compatibility(req, options));
+            self.inner.check_autopilot_compatibility(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_cluster_upgrade_info(
         &self,
         req: crate::model::FetchClusterUpgradeInfoRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::fetch_cluster_upgrade_info",
-            self.inner.fetch_cluster_upgrade_info(req, options));
+            self.inner.fetch_cluster_upgrade_info(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_node_pool_upgrade_info(
         &self,
         req: crate::model::FetchNodePoolUpgradeInfoRequest,
@@ -541,7 +540,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ClusterManager::fetch_node_pool_upgrade_info",
-            self.inner.fetch_node_pool_upgrade_info(req, options));
+            self.inner.fetch_node_pool_upgrade_info(req.clone(), options.clone()));
+
         pending.await
     }
 }

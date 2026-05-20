@@ -41,7 +41,6 @@ impl<T> super::stub::TelcoAutomation for TelcoAutomation<T>
 where
     T: super::stub::TelcoAutomation + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_orchestration_clusters(
         &self,
         req: crate::model::ListOrchestrationClustersRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_orchestration_clusters",
-            self.inner.list_orchestration_clusters(req, options));
+            self.inner.list_orchestration_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_orchestration_cluster(
         &self,
         req: crate::model::GetOrchestrationClusterRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_orchestration_cluster",
-            self.inner.get_orchestration_cluster(req, options));
+            self.inner.get_orchestration_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_orchestration_cluster(
         &self,
         req: crate::model::CreateOrchestrationClusterRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::create_orchestration_cluster",
-            self.inner.create_orchestration_cluster(req, options));
+            self.inner.create_orchestration_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_orchestration_cluster(
         &self,
         req: crate::model::DeleteOrchestrationClusterRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::delete_orchestration_cluster",
-            self.inner.delete_orchestration_cluster(req, options));
+            self.inner.delete_orchestration_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_edge_slms(
         &self,
         req: crate::model::ListEdgeSlmsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_edge_slms",
-            self.inner.list_edge_slms(req, options));
+            self.inner.list_edge_slms(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_edge_slm(
         &self,
         req: crate::model::GetEdgeSlmRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_edge_slm",
-            self.inner.get_edge_slm(req, options));
+            self.inner.get_edge_slm(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_edge_slm(
         &self,
         req: crate::model::CreateEdgeSlmRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::create_edge_slm",
-            self.inner.create_edge_slm(req, options));
+            self.inner.create_edge_slm(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_edge_slm(
         &self,
         req: crate::model::DeleteEdgeSlmRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::delete_edge_slm",
-            self.inner.delete_edge_slm(req, options));
+            self.inner.delete_edge_slm(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_blueprint(
         &self,
         req: crate::model::CreateBlueprintRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::create_blueprint",
-            self.inner.create_blueprint(req, options));
+            self.inner.create_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_blueprint(
         &self,
         req: crate::model::UpdateBlueprintRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::update_blueprint",
-            self.inner.update_blueprint(req, options));
+            self.inner.update_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_blueprint(
         &self,
         req: crate::model::GetBlueprintRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_blueprint",
-            self.inner.get_blueprint(req, options));
+            self.inner.get_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_blueprint(
         &self,
         req: crate::model::DeleteBlueprintRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::delete_blueprint",
-            self.inner.delete_blueprint(req, options));
+            self.inner.delete_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_blueprints(
         &self,
         req: crate::model::ListBlueprintsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_blueprints",
-            self.inner.list_blueprints(req, options));
+            self.inner.list_blueprints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn approve_blueprint(
         &self,
         req: crate::model::ApproveBlueprintRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::approve_blueprint",
-            self.inner.approve_blueprint(req, options));
+            self.inner.approve_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn propose_blueprint(
         &self,
         req: crate::model::ProposeBlueprintRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::propose_blueprint",
-            self.inner.propose_blueprint(req, options));
+            self.inner.propose_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reject_blueprint(
         &self,
         req: crate::model::RejectBlueprintRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::reject_blueprint",
-            self.inner.reject_blueprint(req, options));
+            self.inner.reject_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_blueprint_revisions(
         &self,
         req: crate::model::ListBlueprintRevisionsRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_blueprint_revisions",
-            self.inner.list_blueprint_revisions(req, options));
+            self.inner.list_blueprint_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_blueprint_revisions(
         &self,
         req: crate::model::SearchBlueprintRevisionsRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::search_blueprint_revisions",
-            self.inner.search_blueprint_revisions(req, options));
+            self.inner.search_blueprint_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_deployment_revisions(
         &self,
         req: crate::model::SearchDeploymentRevisionsRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::search_deployment_revisions",
-            self.inner.search_deployment_revisions(req, options));
+            self.inner.search_deployment_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn discard_blueprint_changes(
         &self,
         req: crate::model::DiscardBlueprintChangesRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::discard_blueprint_changes",
-            self.inner.discard_blueprint_changes(req, options));
+            self.inner.discard_blueprint_changes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_public_blueprints(
         &self,
         req: crate::model::ListPublicBlueprintsRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_public_blueprints",
-            self.inner.list_public_blueprints(req, options));
+            self.inner.list_public_blueprints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_public_blueprint(
         &self,
         req: crate::model::GetPublicBlueprintRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_public_blueprint",
-            self.inner.get_public_blueprint(req, options));
+            self.inner.get_public_blueprint(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_deployment(
         &self,
         req: crate::model::CreateDeploymentRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::create_deployment",
-            self.inner.create_deployment(req, options));
+            self.inner.create_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_deployment(
         &self,
         req: crate::model::UpdateDeploymentRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::update_deployment",
-            self.inner.update_deployment(req, options));
+            self.inner.update_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_deployment(
         &self,
         req: crate::model::GetDeploymentRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_deployment",
-            self.inner.get_deployment(req, options));
+            self.inner.get_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_deployment(
         &self,
         req: crate::model::RemoveDeploymentRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::remove_deployment",
-            self.inner.remove_deployment(req, options));
+            self.inner.remove_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_deployments(
         &self,
         req: crate::model::ListDeploymentsRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_deployments",
-            self.inner.list_deployments(req, options));
+            self.inner.list_deployments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_deployment_revisions(
         &self,
         req: crate::model::ListDeploymentRevisionsRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_deployment_revisions",
-            self.inner.list_deployment_revisions(req, options));
+            self.inner.list_deployment_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn discard_deployment_changes(
         &self,
         req: crate::model::DiscardDeploymentChangesRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::discard_deployment_changes",
-            self.inner.discard_deployment_changes(req, options));
+            self.inner.discard_deployment_changes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn apply_deployment(
         &self,
         req: crate::model::ApplyDeploymentRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::apply_deployment",
-            self.inner.apply_deployment(req, options));
+            self.inner.apply_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn compute_deployment_status(
         &self,
         req: crate::model::ComputeDeploymentStatusRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::compute_deployment_status",
-            self.inner.compute_deployment_status(req, options));
+            self.inner.compute_deployment_status(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback_deployment(
         &self,
         req: crate::model::RollbackDeploymentRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::rollback_deployment",
-            self.inner.rollback_deployment(req, options));
+            self.inner.rollback_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_hydrated_deployment(
         &self,
         req: crate::model::GetHydratedDeploymentRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_hydrated_deployment",
-            self.inner.get_hydrated_deployment(req, options));
+            self.inner.get_hydrated_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_hydrated_deployments(
         &self,
         req: crate::model::ListHydratedDeploymentsRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_hydrated_deployments",
-            self.inner.list_hydrated_deployments(req, options));
+            self.inner.list_hydrated_deployments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_hydrated_deployment(
         &self,
         req: crate::model::UpdateHydratedDeploymentRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::update_hydrated_deployment",
-            self.inner.update_hydrated_deployment(req, options));
+            self.inner.update_hydrated_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn apply_hydrated_deployment(
         &self,
         req: crate::model::ApplyHydratedDeploymentRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::apply_hydrated_deployment",
-            self.inner.apply_hydrated_deployment(req, options));
+            self.inner.apply_hydrated_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -625,7 +624,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TelcoAutomation::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

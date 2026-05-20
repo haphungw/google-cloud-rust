@@ -41,7 +41,6 @@ impl<T> super::stub::KeyDashboardService for KeyDashboardService<T>
 where
     T: super::stub::KeyDashboardService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_crypto_keys(
         &self,
         req: crate::model::ListCryptoKeysRequest,
@@ -51,7 +50,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyDashboardService::list_crypto_keys",
-            self.inner.list_crypto_keys(req, options));
+            self.inner.list_crypto_keys(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -82,7 +82,6 @@ impl<T> super::stub::KeyTrackingService for KeyTrackingService<T>
 where
     T: super::stub::KeyTrackingService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_protected_resources_summary(
         &self,
         req: crate::model::GetProtectedResourcesSummaryRequest,
@@ -92,11 +91,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyTrackingService::get_protected_resources_summary",
-            self.inner.get_protected_resources_summary(req, options));
+            self.inner.get_protected_resources_summary(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_protected_resources(
         &self,
         req: crate::model::SearchProtectedResourcesRequest,
@@ -106,7 +105,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyTrackingService::search_protected_resources",
-            self.inner.search_protected_resources(req, options));
+            self.inner.search_protected_resources(req.clone(), options.clone()));
+
         pending.await
     }
 }

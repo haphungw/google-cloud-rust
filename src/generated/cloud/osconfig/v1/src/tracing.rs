@@ -41,7 +41,6 @@ impl<T> super::stub::OsConfigService for OsConfigService<T>
 where
     T: super::stub::OsConfigService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_patch_job(
         &self,
         req: crate::model::ExecutePatchJobRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::execute_patch_job",
-            self.inner.execute_patch_job(req, options));
+            self.inner.execute_patch_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_patch_job(
         &self,
         req: crate::model::GetPatchJobRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::get_patch_job",
-            self.inner.get_patch_job(req, options));
+            self.inner.get_patch_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_patch_job(
         &self,
         req: crate::model::CancelPatchJobRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::cancel_patch_job",
-            self.inner.cancel_patch_job(req, options));
+            self.inner.cancel_patch_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_patch_jobs(
         &self,
         req: crate::model::ListPatchJobsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::list_patch_jobs",
-            self.inner.list_patch_jobs(req, options));
+            self.inner.list_patch_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_patch_job_instance_details(
         &self,
         req: crate::model::ListPatchJobInstanceDetailsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::list_patch_job_instance_details",
-            self.inner.list_patch_job_instance_details(req, options));
+            self.inner.list_patch_job_instance_details(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_patch_deployment(
         &self,
         req: crate::model::CreatePatchDeploymentRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::create_patch_deployment",
-            self.inner.create_patch_deployment(req, options));
+            self.inner.create_patch_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_patch_deployment(
         &self,
         req: crate::model::GetPatchDeploymentRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::get_patch_deployment",
-            self.inner.get_patch_deployment(req, options));
+            self.inner.get_patch_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_patch_deployments(
         &self,
         req: crate::model::ListPatchDeploymentsRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::list_patch_deployments",
-            self.inner.list_patch_deployments(req, options));
+            self.inner.list_patch_deployments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_patch_deployment(
         &self,
         req: crate::model::DeletePatchDeploymentRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::delete_patch_deployment",
-            self.inner.delete_patch_deployment(req, options));
+            self.inner.delete_patch_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_patch_deployment(
         &self,
         req: crate::model::UpdatePatchDeploymentRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::update_patch_deployment",
-            self.inner.update_patch_deployment(req, options));
+            self.inner.update_patch_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn pause_patch_deployment(
         &self,
         req: crate::model::PausePatchDeploymentRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::pause_patch_deployment",
-            self.inner.pause_patch_deployment(req, options));
+            self.inner.pause_patch_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_patch_deployment(
         &self,
         req: crate::model::ResumePatchDeploymentRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::resume_patch_deployment",
-            self.inner.resume_patch_deployment(req, options));
+            self.inner.resume_patch_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -233,7 +232,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -264,7 +264,6 @@ impl<T> super::stub::OsConfigZonalService for OsConfigZonalService<T>
 where
     T: super::stub::OsConfigZonalService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_os_policy_assignment(
         &self,
         req: crate::model::CreateOSPolicyAssignmentRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::create_os_policy_assignment",
-            self.inner.create_os_policy_assignment(req, options));
+            self.inner.create_os_policy_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_os_policy_assignment(
         &self,
         req: crate::model::UpdateOSPolicyAssignmentRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::update_os_policy_assignment",
-            self.inner.update_os_policy_assignment(req, options));
+            self.inner.update_os_policy_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_os_policy_assignment(
         &self,
         req: crate::model::GetOSPolicyAssignmentRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::get_os_policy_assignment",
-            self.inner.get_os_policy_assignment(req, options));
+            self.inner.get_os_policy_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_os_policy_assignments(
         &self,
         req: crate::model::ListOSPolicyAssignmentsRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::list_os_policy_assignments",
-            self.inner.list_os_policy_assignments(req, options));
+            self.inner.list_os_policy_assignments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_os_policy_assignment_revisions(
         &self,
         req: crate::model::ListOSPolicyAssignmentRevisionsRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::list_os_policy_assignment_revisions",
-            self.inner.list_os_policy_assignment_revisions(req, options));
+            self.inner.list_os_policy_assignment_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_os_policy_assignment(
         &self,
         req: crate::model::DeleteOSPolicyAssignmentRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::delete_os_policy_assignment",
-            self.inner.delete_os_policy_assignment(req, options));
+            self.inner.delete_os_policy_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_os_policy_assignment_report(
         &self,
         req: crate::model::GetOSPolicyAssignmentReportRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::get_os_policy_assignment_report",
-            self.inner.get_os_policy_assignment_report(req, options));
+            self.inner.get_os_policy_assignment_report(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_os_policy_assignment_reports(
         &self,
         req: crate::model::ListOSPolicyAssignmentReportsRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::list_os_policy_assignment_reports",
-            self.inner.list_os_policy_assignment_reports(req, options));
+            self.inner.list_os_policy_assignment_reports(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_inventory(
         &self,
         req: crate::model::GetInventoryRequest,
@@ -386,11 +385,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::get_inventory",
-            self.inner.get_inventory(req, options));
+            self.inner.get_inventory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_inventories(
         &self,
         req: crate::model::ListInventoriesRequest,
@@ -400,11 +399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::list_inventories",
-            self.inner.list_inventories(req, options));
+            self.inner.list_inventories(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_vulnerability_report(
         &self,
         req: crate::model::GetVulnerabilityReportRequest,
@@ -414,11 +413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::get_vulnerability_report",
-            self.inner.get_vulnerability_report(req, options));
+            self.inner.get_vulnerability_report(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_vulnerability_reports(
         &self,
         req: crate::model::ListVulnerabilityReportsRequest,
@@ -428,11 +427,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::list_vulnerability_reports",
-            self.inner.list_vulnerability_reports(req, options));
+            self.inner.list_vulnerability_reports(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -442,11 +441,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -456,7 +455,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsConfigZonalService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

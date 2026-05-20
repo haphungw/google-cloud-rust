@@ -41,7 +41,6 @@ impl<T> super::stub::OrgPolicyViolationsPreviewService for OrgPolicyViolationsPr
 where
     T: super::stub::OrgPolicyViolationsPreviewService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_org_policy_violations_previews(
         &self,
         req: crate::model::ListOrgPolicyViolationsPreviewsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicyViolationsPreviewService::list_org_policy_violations_previews",
-            self.inner.list_org_policy_violations_previews(req, options));
+            self.inner.list_org_policy_violations_previews(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_org_policy_violations_preview(
         &self,
         req: crate::model::GetOrgPolicyViolationsPreviewRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicyViolationsPreviewService::get_org_policy_violations_preview",
-            self.inner.get_org_policy_violations_preview(req, options));
+            self.inner.get_org_policy_violations_preview(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_org_policy_violations_preview(
         &self,
         req: crate::model::CreateOrgPolicyViolationsPreviewRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicyViolationsPreviewService::create_org_policy_violations_preview",
-            self.inner.create_org_policy_violations_preview(req, options));
+            self.inner.create_org_policy_violations_preview(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_org_policy_violations(
         &self,
         req: crate::model::ListOrgPolicyViolationsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicyViolationsPreviewService::list_org_policy_violations",
-            self.inner.list_org_policy_violations(req, options));
+            self.inner.list_org_policy_violations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicyViolationsPreviewService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrgPolicyViolationsPreviewService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -166,7 +166,6 @@ impl<T> super::stub::Simulator for Simulator<T>
 where
     T: super::stub::Simulator + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_replay(
         &self,
         req: crate::model::GetReplayRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Simulator::get_replay",
-            self.inner.get_replay(req, options));
+            self.inner.get_replay(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_replay(
         &self,
         req: crate::model::CreateReplayRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Simulator::create_replay",
-            self.inner.create_replay(req, options));
+            self.inner.create_replay(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_replay_results(
         &self,
         req: crate::model::ListReplayResultsRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Simulator::list_replay_results",
-            self.inner.list_replay_results(req, options));
+            self.inner.list_replay_results(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Simulator::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -232,7 +231,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Simulator::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::CloudQuotas for CloudQuotas<T>
 where
     T: super::stub::CloudQuotas + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_quota_infos(
         &self,
         req: crate::model::ListQuotaInfosRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudQuotas::list_quota_infos",
-            self.inner.list_quota_infos(req, options));
+            self.inner.list_quota_infos(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_quota_info(
         &self,
         req: crate::model::GetQuotaInfoRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudQuotas::get_quota_info",
-            self.inner.get_quota_info(req, options));
+            self.inner.get_quota_info(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_quota_preferences(
         &self,
         req: crate::model::ListQuotaPreferencesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudQuotas::list_quota_preferences",
-            self.inner.list_quota_preferences(req, options));
+            self.inner.list_quota_preferences(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_quota_preference(
         &self,
         req: crate::model::GetQuotaPreferenceRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudQuotas::get_quota_preference",
-            self.inner.get_quota_preference(req, options));
+            self.inner.get_quota_preference(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_quota_preference(
         &self,
         req: crate::model::CreateQuotaPreferenceRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudQuotas::create_quota_preference",
-            self.inner.create_quota_preference(req, options));
+            self.inner.create_quota_preference(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_quota_preference(
         &self,
         req: crate::model::UpdateQuotaPreferenceRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudQuotas::update_quota_preference",
-            self.inner.update_quota_preference(req, options));
+            self.inner.update_quota_preference(req.clone(), options.clone()));
+
         pending.await
     }
 }

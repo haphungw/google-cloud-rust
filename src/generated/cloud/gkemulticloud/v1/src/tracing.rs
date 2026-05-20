@@ -41,7 +41,6 @@ impl<T> super::stub::AttachedClusters for AttachedClusters<T>
 where
     T: super::stub::AttachedClusters + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_attached_cluster(
         &self,
         req: crate::model::CreateAttachedClusterRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::create_attached_cluster",
-            self.inner.create_attached_cluster(req, options));
+            self.inner.create_attached_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_attached_cluster(
         &self,
         req: crate::model::UpdateAttachedClusterRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::update_attached_cluster",
-            self.inner.update_attached_cluster(req, options));
+            self.inner.update_attached_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_attached_cluster(
         &self,
         req: crate::model::ImportAttachedClusterRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::import_attached_cluster",
-            self.inner.import_attached_cluster(req, options));
+            self.inner.import_attached_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_attached_cluster(
         &self,
         req: crate::model::GetAttachedClusterRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::get_attached_cluster",
-            self.inner.get_attached_cluster(req, options));
+            self.inner.get_attached_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_attached_clusters(
         &self,
         req: crate::model::ListAttachedClustersRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::list_attached_clusters",
-            self.inner.list_attached_clusters(req, options));
+            self.inner.list_attached_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_attached_cluster(
         &self,
         req: crate::model::DeleteAttachedClusterRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::delete_attached_cluster",
-            self.inner.delete_attached_cluster(req, options));
+            self.inner.delete_attached_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_attached_server_config(
         &self,
         req: crate::model::GetAttachedServerConfigRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::get_attached_server_config",
-            self.inner.get_attached_server_config(req, options));
+            self.inner.get_attached_server_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_attached_cluster_install_manifest(
         &self,
         req: crate::model::GenerateAttachedClusterInstallManifestRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::generate_attached_cluster_install_manifest",
-            self.inner.generate_attached_cluster_install_manifest(req, options));
+            self.inner.generate_attached_cluster_install_manifest(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_attached_cluster_agent_token(
         &self,
         req: crate::model::GenerateAttachedClusterAgentTokenRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::generate_attached_cluster_agent_token",
-            self.inner.generate_attached_cluster_agent_token(req, options));
+            self.inner.generate_attached_cluster_agent_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -219,7 +218,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AttachedClusters::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -264,7 +264,6 @@ impl<T> super::stub::AwsClusters for AwsClusters<T>
 where
     T: super::stub::AwsClusters + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_aws_cluster(
         &self,
         req: crate::model::CreateAwsClusterRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::create_aws_cluster",
-            self.inner.create_aws_cluster(req, options));
+            self.inner.create_aws_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_aws_cluster(
         &self,
         req: crate::model::UpdateAwsClusterRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::update_aws_cluster",
-            self.inner.update_aws_cluster(req, options));
+            self.inner.update_aws_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_aws_cluster(
         &self,
         req: crate::model::GetAwsClusterRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::get_aws_cluster",
-            self.inner.get_aws_cluster(req, options));
+            self.inner.get_aws_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_aws_clusters(
         &self,
         req: crate::model::ListAwsClustersRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::list_aws_clusters",
-            self.inner.list_aws_clusters(req, options));
+            self.inner.list_aws_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_aws_cluster(
         &self,
         req: crate::model::DeleteAwsClusterRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::delete_aws_cluster",
-            self.inner.delete_aws_cluster(req, options));
+            self.inner.delete_aws_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_aws_cluster_agent_token(
         &self,
         req: crate::model::GenerateAwsClusterAgentTokenRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::generate_aws_cluster_agent_token",
-            self.inner.generate_aws_cluster_agent_token(req, options));
+            self.inner.generate_aws_cluster_agent_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_aws_access_token(
         &self,
         req: crate::model::GenerateAwsAccessTokenRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::generate_aws_access_token",
-            self.inner.generate_aws_access_token(req, options));
+            self.inner.generate_aws_access_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_aws_node_pool(
         &self,
         req: crate::model::CreateAwsNodePoolRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::create_aws_node_pool",
-            self.inner.create_aws_node_pool(req, options));
+            self.inner.create_aws_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_aws_node_pool(
         &self,
         req: crate::model::UpdateAwsNodePoolRequest,
@@ -386,11 +385,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::update_aws_node_pool",
-            self.inner.update_aws_node_pool(req, options));
+            self.inner.update_aws_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback_aws_node_pool_update(
         &self,
         req: crate::model::RollbackAwsNodePoolUpdateRequest,
@@ -400,11 +399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::rollback_aws_node_pool_update",
-            self.inner.rollback_aws_node_pool_update(req, options));
+            self.inner.rollback_aws_node_pool_update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_aws_node_pool(
         &self,
         req: crate::model::GetAwsNodePoolRequest,
@@ -414,11 +413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::get_aws_node_pool",
-            self.inner.get_aws_node_pool(req, options));
+            self.inner.get_aws_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_aws_node_pools(
         &self,
         req: crate::model::ListAwsNodePoolsRequest,
@@ -428,11 +427,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::list_aws_node_pools",
-            self.inner.list_aws_node_pools(req, options));
+            self.inner.list_aws_node_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_aws_node_pool(
         &self,
         req: crate::model::DeleteAwsNodePoolRequest,
@@ -442,11 +441,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::delete_aws_node_pool",
-            self.inner.delete_aws_node_pool(req, options));
+            self.inner.delete_aws_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_aws_open_id_config(
         &self,
         req: crate::model::GetAwsOpenIdConfigRequest,
@@ -456,11 +455,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::get_aws_open_id_config",
-            self.inner.get_aws_open_id_config(req, options));
+            self.inner.get_aws_open_id_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_aws_json_web_keys(
         &self,
         req: crate::model::GetAwsJsonWebKeysRequest,
@@ -470,11 +469,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::get_aws_json_web_keys",
-            self.inner.get_aws_json_web_keys(req, options));
+            self.inner.get_aws_json_web_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_aws_server_config(
         &self,
         req: crate::model::GetAwsServerConfigRequest,
@@ -484,11 +483,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::get_aws_server_config",
-            self.inner.get_aws_server_config(req, options));
+            self.inner.get_aws_server_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -498,11 +497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -512,11 +511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -526,11 +525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -540,7 +539,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AwsClusters::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -585,7 +585,6 @@ impl<T> super::stub::AzureClusters for AzureClusters<T>
 where
     T: super::stub::AzureClusters + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_azure_client(
         &self,
         req: crate::model::CreateAzureClientRequest,
@@ -595,11 +594,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::create_azure_client",
-            self.inner.create_azure_client(req, options));
+            self.inner.create_azure_client(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_azure_client(
         &self,
         req: crate::model::GetAzureClientRequest,
@@ -609,11 +608,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_azure_client",
-            self.inner.get_azure_client(req, options));
+            self.inner.get_azure_client(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_azure_clients(
         &self,
         req: crate::model::ListAzureClientsRequest,
@@ -623,11 +622,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::list_azure_clients",
-            self.inner.list_azure_clients(req, options));
+            self.inner.list_azure_clients(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_azure_client(
         &self,
         req: crate::model::DeleteAzureClientRequest,
@@ -637,11 +636,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::delete_azure_client",
-            self.inner.delete_azure_client(req, options));
+            self.inner.delete_azure_client(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_azure_cluster(
         &self,
         req: crate::model::CreateAzureClusterRequest,
@@ -651,11 +650,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::create_azure_cluster",
-            self.inner.create_azure_cluster(req, options));
+            self.inner.create_azure_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_azure_cluster(
         &self,
         req: crate::model::UpdateAzureClusterRequest,
@@ -665,11 +664,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::update_azure_cluster",
-            self.inner.update_azure_cluster(req, options));
+            self.inner.update_azure_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_azure_cluster(
         &self,
         req: crate::model::GetAzureClusterRequest,
@@ -679,11 +678,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_azure_cluster",
-            self.inner.get_azure_cluster(req, options));
+            self.inner.get_azure_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_azure_clusters(
         &self,
         req: crate::model::ListAzureClustersRequest,
@@ -693,11 +692,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::list_azure_clusters",
-            self.inner.list_azure_clusters(req, options));
+            self.inner.list_azure_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_azure_cluster(
         &self,
         req: crate::model::DeleteAzureClusterRequest,
@@ -707,11 +706,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::delete_azure_cluster",
-            self.inner.delete_azure_cluster(req, options));
+            self.inner.delete_azure_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_azure_cluster_agent_token(
         &self,
         req: crate::model::GenerateAzureClusterAgentTokenRequest,
@@ -721,11 +720,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::generate_azure_cluster_agent_token",
-            self.inner.generate_azure_cluster_agent_token(req, options));
+            self.inner.generate_azure_cluster_agent_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_azure_access_token(
         &self,
         req: crate::model::GenerateAzureAccessTokenRequest,
@@ -735,11 +734,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::generate_azure_access_token",
-            self.inner.generate_azure_access_token(req, options));
+            self.inner.generate_azure_access_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_azure_node_pool(
         &self,
         req: crate::model::CreateAzureNodePoolRequest,
@@ -749,11 +748,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::create_azure_node_pool",
-            self.inner.create_azure_node_pool(req, options));
+            self.inner.create_azure_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_azure_node_pool(
         &self,
         req: crate::model::UpdateAzureNodePoolRequest,
@@ -763,11 +762,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::update_azure_node_pool",
-            self.inner.update_azure_node_pool(req, options));
+            self.inner.update_azure_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_azure_node_pool(
         &self,
         req: crate::model::GetAzureNodePoolRequest,
@@ -777,11 +776,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_azure_node_pool",
-            self.inner.get_azure_node_pool(req, options));
+            self.inner.get_azure_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_azure_node_pools(
         &self,
         req: crate::model::ListAzureNodePoolsRequest,
@@ -791,11 +790,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::list_azure_node_pools",
-            self.inner.list_azure_node_pools(req, options));
+            self.inner.list_azure_node_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_azure_node_pool(
         &self,
         req: crate::model::DeleteAzureNodePoolRequest,
@@ -805,11 +804,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::delete_azure_node_pool",
-            self.inner.delete_azure_node_pool(req, options));
+            self.inner.delete_azure_node_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_azure_open_id_config(
         &self,
         req: crate::model::GetAzureOpenIdConfigRequest,
@@ -819,11 +818,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_azure_open_id_config",
-            self.inner.get_azure_open_id_config(req, options));
+            self.inner.get_azure_open_id_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_azure_json_web_keys(
         &self,
         req: crate::model::GetAzureJsonWebKeysRequest,
@@ -833,11 +832,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_azure_json_web_keys",
-            self.inner.get_azure_json_web_keys(req, options));
+            self.inner.get_azure_json_web_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_azure_server_config(
         &self,
         req: crate::model::GetAzureServerConfigRequest,
@@ -847,11 +846,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_azure_server_config",
-            self.inner.get_azure_server_config(req, options));
+            self.inner.get_azure_server_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -861,11 +860,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -875,11 +874,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -889,11 +888,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -903,7 +902,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AzureClusters::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

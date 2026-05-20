@@ -41,7 +41,6 @@ impl<T> super::stub::ProfilerService for ProfilerService<T>
 where
     T: super::stub::ProfilerService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_profile(
         &self,
         req: crate::model::CreateProfileRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProfilerService::create_profile",
-            self.inner.create_profile(req, options));
+            self.inner.create_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_offline_profile(
         &self,
         req: crate::model::CreateOfflineProfileRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProfilerService::create_offline_profile",
-            self.inner.create_offline_profile(req, options));
+            self.inner.create_offline_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_profile(
         &self,
         req: crate::model::UpdateProfileRequest,
@@ -79,7 +78,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProfilerService::update_profile",
-            self.inner.update_profile(req, options));
+            self.inner.update_profile(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -110,7 +110,6 @@ impl<T> super::stub::ExportService for ExportService<T>
 where
     T: super::stub::ExportService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_profiles(
         &self,
         req: crate::model::ListProfilesRequest,
@@ -120,7 +119,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExportService::list_profiles",
-            self.inner.list_profiles(req, options));
+            self.inner.list_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 }

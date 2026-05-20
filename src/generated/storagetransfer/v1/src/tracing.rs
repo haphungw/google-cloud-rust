@@ -41,7 +41,6 @@ impl<T> super::stub::StorageTransferService for StorageTransferService<T>
 where
     T: super::stub::StorageTransferService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_google_service_account(
         &self,
         req: crate::model::GetGoogleServiceAccountRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::get_google_service_account",
-            self.inner.get_google_service_account(req, options));
+            self.inner.get_google_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_transfer_job(
         &self,
         req: crate::model::CreateTransferJobRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::create_transfer_job",
-            self.inner.create_transfer_job(req, options));
+            self.inner.create_transfer_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_transfer_job(
         &self,
         req: crate::model::UpdateTransferJobRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::update_transfer_job",
-            self.inner.update_transfer_job(req, options));
+            self.inner.update_transfer_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_transfer_job(
         &self,
         req: crate::model::GetTransferJobRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::get_transfer_job",
-            self.inner.get_transfer_job(req, options));
+            self.inner.get_transfer_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_transfer_jobs(
         &self,
         req: crate::model::ListTransferJobsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::list_transfer_jobs",
-            self.inner.list_transfer_jobs(req, options));
+            self.inner.list_transfer_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn pause_transfer_operation(
         &self,
         req: crate::model::PauseTransferOperationRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::pause_transfer_operation",
-            self.inner.pause_transfer_operation(req, options));
+            self.inner.pause_transfer_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_transfer_operation(
         &self,
         req: crate::model::ResumeTransferOperationRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::resume_transfer_operation",
-            self.inner.resume_transfer_operation(req, options));
+            self.inner.resume_transfer_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn run_transfer_job(
         &self,
         req: crate::model::RunTransferJobRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::run_transfer_job",
-            self.inner.run_transfer_job(req, options));
+            self.inner.run_transfer_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_transfer_job(
         &self,
         req: crate::model::DeleteTransferJobRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::delete_transfer_job",
-            self.inner.delete_transfer_job(req, options));
+            self.inner.delete_transfer_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_agent_pool(
         &self,
         req: crate::model::CreateAgentPoolRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::create_agent_pool",
-            self.inner.create_agent_pool(req, options));
+            self.inner.create_agent_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_agent_pool(
         &self,
         req: crate::model::UpdateAgentPoolRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::update_agent_pool",
-            self.inner.update_agent_pool(req, options));
+            self.inner.update_agent_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_agent_pool(
         &self,
         req: crate::model::GetAgentPoolRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::get_agent_pool",
-            self.inner.get_agent_pool(req, options));
+            self.inner.get_agent_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_agent_pools(
         &self,
         req: crate::model::ListAgentPoolsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::list_agent_pools",
-            self.inner.list_agent_pools(req, options));
+            self.inner.list_agent_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_agent_pool(
         &self,
         req: crate::model::DeleteAgentPoolRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::delete_agent_pool",
-            self.inner.delete_agent_pool(req, options));
+            self.inner.delete_agent_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -275,7 +274,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StorageTransferService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

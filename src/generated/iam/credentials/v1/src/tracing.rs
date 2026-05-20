@@ -41,7 +41,6 @@ impl<T> super::stub::IAMCredentials for IAMCredentials<T>
 where
     T: super::stub::IAMCredentials + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_access_token(
         &self,
         req: crate::model::GenerateAccessTokenRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMCredentials::generate_access_token",
-            self.inner.generate_access_token(req, options));
+            self.inner.generate_access_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_id_token(
         &self,
         req: crate::model::GenerateIdTokenRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMCredentials::generate_id_token",
-            self.inner.generate_id_token(req, options));
+            self.inner.generate_id_token(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sign_blob(
         &self,
         req: crate::model::SignBlobRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMCredentials::sign_blob",
-            self.inner.sign_blob(req, options));
+            self.inner.sign_blob(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sign_jwt(
         &self,
         req: crate::model::SignJwtRequest,
@@ -93,7 +92,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IAMCredentials::sign_jwt",
-            self.inner.sign_jwt(req, options));
+            self.inner.sign_jwt(req.clone(), options.clone()));
+
         pending.await
     }
 }

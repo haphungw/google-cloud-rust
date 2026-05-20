@@ -41,7 +41,6 @@ impl<T> super::stub::ImageAnnotator for ImageAnnotator<T>
 where
     T: super::stub::ImageAnnotator + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_annotate_images(
         &self,
         req: crate::model::BatchAnnotateImagesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ImageAnnotator::batch_annotate_images",
-            self.inner.batch_annotate_images(req, options));
+            self.inner.batch_annotate_images(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_annotate_files(
         &self,
         req: crate::model::BatchAnnotateFilesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ImageAnnotator::batch_annotate_files",
-            self.inner.batch_annotate_files(req, options));
+            self.inner.batch_annotate_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn async_batch_annotate_images(
         &self,
         req: crate::model::AsyncBatchAnnotateImagesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ImageAnnotator::async_batch_annotate_images",
-            self.inner.async_batch_annotate_images(req, options));
+            self.inner.async_batch_annotate_images(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn async_batch_annotate_files(
         &self,
         req: crate::model::AsyncBatchAnnotateFilesRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ImageAnnotator::async_batch_annotate_files",
-            self.inner.async_batch_annotate_files(req, options));
+            self.inner.async_batch_annotate_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ImageAnnotator::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -152,7 +152,6 @@ impl<T> super::stub::ProductSearch for ProductSearch<T>
 where
     T: super::stub::ProductSearch + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_product_set(
         &self,
         req: crate::model::CreateProductSetRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::create_product_set",
-            self.inner.create_product_set(req, options));
+            self.inner.create_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_product_sets(
         &self,
         req: crate::model::ListProductSetsRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::list_product_sets",
-            self.inner.list_product_sets(req, options));
+            self.inner.list_product_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_product_set(
         &self,
         req: crate::model::GetProductSetRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::get_product_set",
-            self.inner.get_product_set(req, options));
+            self.inner.get_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_product_set(
         &self,
         req: crate::model::UpdateProductSetRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::update_product_set",
-            self.inner.update_product_set(req, options));
+            self.inner.update_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_product_set(
         &self,
         req: crate::model::DeleteProductSetRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::delete_product_set",
-            self.inner.delete_product_set(req, options));
+            self.inner.delete_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_product(
         &self,
         req: crate::model::CreateProductRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::create_product",
-            self.inner.create_product(req, options));
+            self.inner.create_product(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_products(
         &self,
         req: crate::model::ListProductsRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::list_products",
-            self.inner.list_products(req, options));
+            self.inner.list_products(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_product(
         &self,
         req: crate::model::GetProductRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::get_product",
-            self.inner.get_product(req, options));
+            self.inner.get_product(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_product(
         &self,
         req: crate::model::UpdateProductRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::update_product",
-            self.inner.update_product(req, options));
+            self.inner.update_product(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_product(
         &self,
         req: crate::model::DeleteProductRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::delete_product",
-            self.inner.delete_product(req, options));
+            self.inner.delete_product(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_reference_image(
         &self,
         req: crate::model::CreateReferenceImageRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::create_reference_image",
-            self.inner.create_reference_image(req, options));
+            self.inner.create_reference_image(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_reference_image(
         &self,
         req: crate::model::DeleteReferenceImageRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::delete_reference_image",
-            self.inner.delete_reference_image(req, options));
+            self.inner.delete_reference_image(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_reference_images(
         &self,
         req: crate::model::ListReferenceImagesRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::list_reference_images",
-            self.inner.list_reference_images(req, options));
+            self.inner.list_reference_images(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_reference_image(
         &self,
         req: crate::model::GetReferenceImageRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::get_reference_image",
-            self.inner.get_reference_image(req, options));
+            self.inner.get_reference_image(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_product_to_product_set(
         &self,
         req: crate::model::AddProductToProductSetRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::add_product_to_product_set",
-            self.inner.add_product_to_product_set(req, options));
+            self.inner.add_product_to_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_product_from_product_set(
         &self,
         req: crate::model::RemoveProductFromProductSetRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::remove_product_from_product_set",
-            self.inner.remove_product_from_product_set(req, options));
+            self.inner.remove_product_from_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_products_in_product_set(
         &self,
         req: crate::model::ListProductsInProductSetRequest,
@@ -386,11 +385,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::list_products_in_product_set",
-            self.inner.list_products_in_product_set(req, options));
+            self.inner.list_products_in_product_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_product_sets(
         &self,
         req: crate::model::ImportProductSetsRequest,
@@ -400,11 +399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::import_product_sets",
-            self.inner.import_product_sets(req, options));
+            self.inner.import_product_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn purge_products(
         &self,
         req: crate::model::PurgeProductsRequest,
@@ -414,11 +413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::purge_products",
-            self.inner.purge_products(req, options));
+            self.inner.purge_products(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -428,7 +427,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProductSearch::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

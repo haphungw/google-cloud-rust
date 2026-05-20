@@ -41,7 +41,6 @@ impl<T> super::stub::Autokey for Autokey<T>
 where
     T: super::stub::Autokey + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_key_handle(
         &self,
         req: crate::model::CreateKeyHandleRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::create_key_handle",
-            self.inner.create_key_handle(req, options));
+            self.inner.create_key_handle(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_key_handle(
         &self,
         req: crate::model::GetKeyHandleRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::get_key_handle",
-            self.inner.get_key_handle(req, options));
+            self.inner.get_key_handle(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_key_handles(
         &self,
         req: crate::model::ListKeyHandlesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::list_key_handles",
-            self.inner.list_key_handles(req, options));
+            self.inner.list_key_handles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -163,7 +162,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autokey::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -208,7 +208,6 @@ impl<T> super::stub::AutokeyAdmin for AutokeyAdmin<T>
 where
     T: super::stub::AutokeyAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_autokey_config(
         &self,
         req: crate::model::UpdateAutokeyConfigRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::update_autokey_config",
-            self.inner.update_autokey_config(req, options));
+            self.inner.update_autokey_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_autokey_config(
         &self,
         req: crate::model::GetAutokeyConfigRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::get_autokey_config",
-            self.inner.get_autokey_config(req, options));
+            self.inner.get_autokey_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn show_effective_autokey_config(
         &self,
         req: crate::model::ShowEffectiveAutokeyConfigRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::show_effective_autokey_config",
-            self.inner.show_effective_autokey_config(req, options));
+            self.inner.show_effective_autokey_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -330,7 +329,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AutokeyAdmin::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -361,7 +361,6 @@ impl<T> super::stub::EkmService for EkmService<T>
 where
     T: super::stub::EkmService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_ekm_connections(
         &self,
         req: crate::model::ListEkmConnectionsRequest,
@@ -371,11 +370,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::list_ekm_connections",
-            self.inner.list_ekm_connections(req, options));
+            self.inner.list_ekm_connections(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_ekm_connection(
         &self,
         req: crate::model::GetEkmConnectionRequest,
@@ -385,11 +384,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::get_ekm_connection",
-            self.inner.get_ekm_connection(req, options));
+            self.inner.get_ekm_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_ekm_connection(
         &self,
         req: crate::model::CreateEkmConnectionRequest,
@@ -399,11 +398,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::create_ekm_connection",
-            self.inner.create_ekm_connection(req, options));
+            self.inner.create_ekm_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_ekm_connection(
         &self,
         req: crate::model::UpdateEkmConnectionRequest,
@@ -413,11 +412,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::update_ekm_connection",
-            self.inner.update_ekm_connection(req, options));
+            self.inner.update_ekm_connection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_ekm_config(
         &self,
         req: crate::model::GetEkmConfigRequest,
@@ -427,11 +426,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::get_ekm_config",
-            self.inner.get_ekm_config(req, options));
+            self.inner.get_ekm_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_ekm_config(
         &self,
         req: crate::model::UpdateEkmConfigRequest,
@@ -441,11 +440,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::update_ekm_config",
-            self.inner.update_ekm_config(req, options));
+            self.inner.update_ekm_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_connectivity(
         &self,
         req: crate::model::VerifyConnectivityRequest,
@@ -455,11 +454,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::verify_connectivity",
-            self.inner.verify_connectivity(req, options));
+            self.inner.verify_connectivity(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -469,11 +468,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -483,11 +482,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -497,11 +496,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -511,11 +510,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -525,11 +524,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -539,7 +538,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EkmService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -570,7 +570,6 @@ impl<T> super::stub::HsmManagement for HsmManagement<T>
 where
     T: super::stub::HsmManagement + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_single_tenant_hsm_instances(
         &self,
         req: crate::model::ListSingleTenantHsmInstancesRequest,
@@ -580,11 +579,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::list_single_tenant_hsm_instances",
-            self.inner.list_single_tenant_hsm_instances(req, options));
+            self.inner.list_single_tenant_hsm_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_single_tenant_hsm_instance(
         &self,
         req: crate::model::GetSingleTenantHsmInstanceRequest,
@@ -594,11 +593,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::get_single_tenant_hsm_instance",
-            self.inner.get_single_tenant_hsm_instance(req, options));
+            self.inner.get_single_tenant_hsm_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_single_tenant_hsm_instance(
         &self,
         req: crate::model::CreateSingleTenantHsmInstanceRequest,
@@ -608,11 +607,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::create_single_tenant_hsm_instance",
-            self.inner.create_single_tenant_hsm_instance(req, options));
+            self.inner.create_single_tenant_hsm_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_single_tenant_hsm_instance_proposal(
         &self,
         req: crate::model::CreateSingleTenantHsmInstanceProposalRequest,
@@ -622,11 +621,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::create_single_tenant_hsm_instance_proposal",
-            self.inner.create_single_tenant_hsm_instance_proposal(req, options));
+            self.inner.create_single_tenant_hsm_instance_proposal(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn approve_single_tenant_hsm_instance_proposal(
         &self,
         req: crate::model::ApproveSingleTenantHsmInstanceProposalRequest,
@@ -636,11 +635,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::approve_single_tenant_hsm_instance_proposal",
-            self.inner.approve_single_tenant_hsm_instance_proposal(req, options));
+            self.inner.approve_single_tenant_hsm_instance_proposal(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_single_tenant_hsm_instance_proposal(
         &self,
         req: crate::model::ExecuteSingleTenantHsmInstanceProposalRequest,
@@ -650,11 +649,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::execute_single_tenant_hsm_instance_proposal",
-            self.inner.execute_single_tenant_hsm_instance_proposal(req, options));
+            self.inner.execute_single_tenant_hsm_instance_proposal(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_single_tenant_hsm_instance_proposal(
         &self,
         req: crate::model::GetSingleTenantHsmInstanceProposalRequest,
@@ -664,11 +663,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::get_single_tenant_hsm_instance_proposal",
-            self.inner.get_single_tenant_hsm_instance_proposal(req, options));
+            self.inner.get_single_tenant_hsm_instance_proposal(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_single_tenant_hsm_instance_proposals(
         &self,
         req: crate::model::ListSingleTenantHsmInstanceProposalsRequest,
@@ -678,11 +677,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::list_single_tenant_hsm_instance_proposals",
-            self.inner.list_single_tenant_hsm_instance_proposals(req, options));
+            self.inner.list_single_tenant_hsm_instance_proposals(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_single_tenant_hsm_instance_proposal(
         &self,
         req: crate::model::DeleteSingleTenantHsmInstanceProposalRequest,
@@ -692,11 +691,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::delete_single_tenant_hsm_instance_proposal",
-            self.inner.delete_single_tenant_hsm_instance_proposal(req, options));
+            self.inner.delete_single_tenant_hsm_instance_proposal(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -706,11 +705,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -720,11 +719,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -734,11 +733,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -748,11 +747,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -762,11 +761,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -776,7 +775,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HsmManagement::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -821,7 +821,6 @@ impl<T> super::stub::KeyManagementService for KeyManagementService<T>
 where
     T: super::stub::KeyManagementService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_key_rings(
         &self,
         req: crate::model::ListKeyRingsRequest,
@@ -831,11 +830,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::list_key_rings",
-            self.inner.list_key_rings(req, options));
+            self.inner.list_key_rings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_crypto_keys(
         &self,
         req: crate::model::ListCryptoKeysRequest,
@@ -845,11 +844,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::list_crypto_keys",
-            self.inner.list_crypto_keys(req, options));
+            self.inner.list_crypto_keys(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_crypto_key_versions(
         &self,
         req: crate::model::ListCryptoKeyVersionsRequest,
@@ -859,11 +858,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::list_crypto_key_versions",
-            self.inner.list_crypto_key_versions(req, options));
+            self.inner.list_crypto_key_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_import_jobs(
         &self,
         req: crate::model::ListImportJobsRequest,
@@ -873,11 +872,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::list_import_jobs",
-            self.inner.list_import_jobs(req, options));
+            self.inner.list_import_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_retired_resources(
         &self,
         req: crate::model::ListRetiredResourcesRequest,
@@ -887,11 +886,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::list_retired_resources",
-            self.inner.list_retired_resources(req, options));
+            self.inner.list_retired_resources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_key_ring(
         &self,
         req: crate::model::GetKeyRingRequest,
@@ -901,11 +900,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_key_ring",
-            self.inner.get_key_ring(req, options));
+            self.inner.get_key_ring(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_crypto_key(
         &self,
         req: crate::model::GetCryptoKeyRequest,
@@ -915,11 +914,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_crypto_key",
-            self.inner.get_crypto_key(req, options));
+            self.inner.get_crypto_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_crypto_key_version(
         &self,
         req: crate::model::GetCryptoKeyVersionRequest,
@@ -929,11 +928,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_crypto_key_version",
-            self.inner.get_crypto_key_version(req, options));
+            self.inner.get_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_public_key(
         &self,
         req: crate::model::GetPublicKeyRequest,
@@ -943,11 +942,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_public_key",
-            self.inner.get_public_key(req, options));
+            self.inner.get_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_import_job(
         &self,
         req: crate::model::GetImportJobRequest,
@@ -957,11 +956,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_import_job",
-            self.inner.get_import_job(req, options));
+            self.inner.get_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_retired_resource(
         &self,
         req: crate::model::GetRetiredResourceRequest,
@@ -971,11 +970,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_retired_resource",
-            self.inner.get_retired_resource(req, options));
+            self.inner.get_retired_resource(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_key_ring(
         &self,
         req: crate::model::CreateKeyRingRequest,
@@ -985,11 +984,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::create_key_ring",
-            self.inner.create_key_ring(req, options));
+            self.inner.create_key_ring(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_crypto_key(
         &self,
         req: crate::model::CreateCryptoKeyRequest,
@@ -999,11 +998,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::create_crypto_key",
-            self.inner.create_crypto_key(req, options));
+            self.inner.create_crypto_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_crypto_key_version(
         &self,
         req: crate::model::CreateCryptoKeyVersionRequest,
@@ -1013,11 +1012,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::create_crypto_key_version",
-            self.inner.create_crypto_key_version(req, options));
+            self.inner.create_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_crypto_key(
         &self,
         req: crate::model::DeleteCryptoKeyRequest,
@@ -1027,11 +1026,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::delete_crypto_key",
-            self.inner.delete_crypto_key(req, options));
+            self.inner.delete_crypto_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_crypto_key_version(
         &self,
         req: crate::model::DeleteCryptoKeyVersionRequest,
@@ -1041,11 +1040,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::delete_crypto_key_version",
-            self.inner.delete_crypto_key_version(req, options));
+            self.inner.delete_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_crypto_key_version(
         &self,
         req: crate::model::ImportCryptoKeyVersionRequest,
@@ -1055,11 +1054,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::import_crypto_key_version",
-            self.inner.import_crypto_key_version(req, options));
+            self.inner.import_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_import_job(
         &self,
         req: crate::model::CreateImportJobRequest,
@@ -1069,11 +1068,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::create_import_job",
-            self.inner.create_import_job(req, options));
+            self.inner.create_import_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_crypto_key(
         &self,
         req: crate::model::UpdateCryptoKeyRequest,
@@ -1083,11 +1082,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::update_crypto_key",
-            self.inner.update_crypto_key(req, options));
+            self.inner.update_crypto_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_crypto_key_version(
         &self,
         req: crate::model::UpdateCryptoKeyVersionRequest,
@@ -1097,11 +1096,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::update_crypto_key_version",
-            self.inner.update_crypto_key_version(req, options));
+            self.inner.update_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_crypto_key_primary_version(
         &self,
         req: crate::model::UpdateCryptoKeyPrimaryVersionRequest,
@@ -1111,11 +1110,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::update_crypto_key_primary_version",
-            self.inner.update_crypto_key_primary_version(req, options));
+            self.inner.update_crypto_key_primary_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn destroy_crypto_key_version(
         &self,
         req: crate::model::DestroyCryptoKeyVersionRequest,
@@ -1125,11 +1124,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::destroy_crypto_key_version",
-            self.inner.destroy_crypto_key_version(req, options));
+            self.inner.destroy_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_crypto_key_version(
         &self,
         req: crate::model::RestoreCryptoKeyVersionRequest,
@@ -1139,11 +1138,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::restore_crypto_key_version",
-            self.inner.restore_crypto_key_version(req, options));
+            self.inner.restore_crypto_key_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn encrypt(
         &self,
         req: crate::model::EncryptRequest,
@@ -1153,11 +1152,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::encrypt",
-            self.inner.encrypt(req, options));
+            self.inner.encrypt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn decrypt(
         &self,
         req: crate::model::DecryptRequest,
@@ -1167,11 +1166,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::decrypt",
-            self.inner.decrypt(req, options));
+            self.inner.decrypt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn raw_encrypt(
         &self,
         req: crate::model::RawEncryptRequest,
@@ -1181,11 +1180,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::raw_encrypt",
-            self.inner.raw_encrypt(req, options));
+            self.inner.raw_encrypt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn raw_decrypt(
         &self,
         req: crate::model::RawDecryptRequest,
@@ -1195,11 +1194,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::raw_decrypt",
-            self.inner.raw_decrypt(req, options));
+            self.inner.raw_decrypt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn asymmetric_sign(
         &self,
         req: crate::model::AsymmetricSignRequest,
@@ -1209,11 +1208,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::asymmetric_sign",
-            self.inner.asymmetric_sign(req, options));
+            self.inner.asymmetric_sign(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn asymmetric_decrypt(
         &self,
         req: crate::model::AsymmetricDecryptRequest,
@@ -1223,11 +1222,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::asymmetric_decrypt",
-            self.inner.asymmetric_decrypt(req, options));
+            self.inner.asymmetric_decrypt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mac_sign(
         &self,
         req: crate::model::MacSignRequest,
@@ -1237,11 +1236,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::mac_sign",
-            self.inner.mac_sign(req, options));
+            self.inner.mac_sign(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mac_verify(
         &self,
         req: crate::model::MacVerifyRequest,
@@ -1251,11 +1250,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::mac_verify",
-            self.inner.mac_verify(req, options));
+            self.inner.mac_verify(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn decapsulate(
         &self,
         req: crate::model::DecapsulateRequest,
@@ -1265,11 +1264,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::decapsulate",
-            self.inner.decapsulate(req, options));
+            self.inner.decapsulate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_random_bytes(
         &self,
         req: crate::model::GenerateRandomBytesRequest,
@@ -1279,11 +1278,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::generate_random_bytes",
-            self.inner.generate_random_bytes(req, options));
+            self.inner.generate_random_bytes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1293,11 +1292,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1307,11 +1306,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1321,11 +1320,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1335,11 +1334,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1349,11 +1348,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1363,7 +1362,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::KeyManagementService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::SqlBackupRunsService for SqlBackupRunsService<T>
 where
     T: super::stub::SqlBackupRunsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::SqlBackupRunsDeleteRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupRunsService::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::SqlBackupRunsGetRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupRunsService::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::SqlBackupRunsInsertRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupRunsService::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlBackupRunsListRequest,
@@ -93,7 +92,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupRunsService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -124,7 +124,6 @@ impl<T> super::stub::SqlBackupsService for SqlBackupsService<T>
 where
     T: super::stub::SqlBackupsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backup(
         &self,
         req: crate::model::CreateBackupRequest,
@@ -134,11 +133,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupsService::create_backup",
-            self.inner.create_backup(req, options));
+            self.inner.create_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backup(
         &self,
         req: crate::model::GetBackupRequest,
@@ -148,11 +147,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupsService::get_backup",
-            self.inner.get_backup(req, options));
+            self.inner.get_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backups(
         &self,
         req: crate::model::ListBackupsRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupsService::list_backups",
-            self.inner.list_backups(req, options));
+            self.inner.list_backups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backup(
         &self,
         req: crate::model::UpdateBackupRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupsService::update_backup",
-            self.inner.update_backup(req, options));
+            self.inner.update_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backup(
         &self,
         req: crate::model::DeleteBackupRequest,
@@ -190,7 +189,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlBackupsService::delete_backup",
-            self.inner.delete_backup(req, options));
+            self.inner.delete_backup(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -221,7 +221,6 @@ impl<T> super::stub::SqlConnectService for SqlConnectService<T>
 where
     T: super::stub::SqlConnectService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_connect_settings(
         &self,
         req: crate::model::GetConnectSettingsRequest,
@@ -231,11 +230,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlConnectService::get_connect_settings",
-            self.inner.get_connect_settings(req, options));
+            self.inner.get_connect_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_ephemeral_cert(
         &self,
         req: crate::model::GenerateEphemeralCertRequest,
@@ -245,7 +244,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlConnectService::generate_ephemeral_cert",
-            self.inner.generate_ephemeral_cert(req, options));
+            self.inner.generate_ephemeral_cert(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -276,7 +276,6 @@ impl<T> super::stub::SqlDatabasesService for SqlDatabasesService<T>
 where
     T: super::stub::SqlDatabasesService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::SqlDatabasesDeleteRequest,
@@ -286,11 +285,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlDatabasesService::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::SqlDatabasesGetRequest,
@@ -300,11 +299,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlDatabasesService::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::SqlDatabasesInsertRequest,
@@ -314,11 +313,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlDatabasesService::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlDatabasesListRequest,
@@ -328,11 +327,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlDatabasesService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::SqlDatabasesUpdateRequest,
@@ -342,11 +341,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlDatabasesService::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::SqlDatabasesUpdateRequest,
@@ -356,7 +355,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlDatabasesService::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -387,7 +387,6 @@ impl<T> super::stub::SqlFlagsService for SqlFlagsService<T>
 where
     T: super::stub::SqlFlagsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlFlagsListRequest,
@@ -397,7 +396,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlFlagsService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -428,7 +428,6 @@ impl<T> super::stub::SqlInstancesService for SqlInstancesService<T>
 where
     T: super::stub::SqlInstancesService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_server_ca(
         &self,
         req: crate::model::SqlInstancesAddServerCaRequest,
@@ -438,11 +437,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::add_server_ca",
-            self.inner.add_server_ca(req, options));
+            self.inner.add_server_ca(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_server_certificate(
         &self,
         req: crate::model::SqlInstancesAddServerCertificateRequest,
@@ -452,11 +451,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::add_server_certificate",
-            self.inner.add_server_certificate(req, options));
+            self.inner.add_server_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_entra_id_certificate(
         &self,
         req: crate::model::SqlInstancesAddEntraIdCertificateRequest,
@@ -466,11 +465,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::add_entra_id_certificate",
-            self.inner.add_entra_id_certificate(req, options));
+            self.inner.add_entra_id_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn clone(
         &self,
         req: crate::model::SqlInstancesCloneRequest,
@@ -480,11 +479,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::clone",
-            self.inner.clone(req, options));
+            self.inner.clone(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::SqlInstancesDeleteRequest,
@@ -494,11 +493,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn demote_master(
         &self,
         req: crate::model::SqlInstancesDemoteMasterRequest,
@@ -508,11 +507,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::demote_master",
-            self.inner.demote_master(req, options));
+            self.inner.demote_master(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn demote(
         &self,
         req: crate::model::SqlInstancesDemoteRequest,
@@ -522,11 +521,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::demote",
-            self.inner.demote(req, options));
+            self.inner.demote(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export(
         &self,
         req: crate::model::SqlInstancesExportRequest,
@@ -536,11 +535,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::export",
-            self.inner.export(req, options));
+            self.inner.export(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn failover(
         &self,
         req: crate::model::SqlInstancesFailoverRequest,
@@ -550,11 +549,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::failover",
-            self.inner.failover(req, options));
+            self.inner.failover(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reencrypt(
         &self,
         req: crate::model::SqlInstancesReencryptRequest,
@@ -564,11 +563,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::reencrypt",
-            self.inner.reencrypt(req, options));
+            self.inner.reencrypt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::SqlInstancesGetRequest,
@@ -578,11 +577,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import(
         &self,
         req: crate::model::SqlInstancesImportRequest,
@@ -592,11 +591,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::import",
-            self.inner.import(req, options));
+            self.inner.import(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::SqlInstancesInsertRequest,
@@ -606,11 +605,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlInstancesListRequest,
@@ -620,11 +619,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_server_cas(
         &self,
         req: crate::model::SqlInstancesListServerCasRequest,
@@ -634,11 +633,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::list_server_cas",
-            self.inner.list_server_cas(req, options));
+            self.inner.list_server_cas(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_server_certificates(
         &self,
         req: crate::model::SqlInstancesListServerCertificatesRequest,
@@ -648,11 +647,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::list_server_certificates",
-            self.inner.list_server_certificates(req, options));
+            self.inner.list_server_certificates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_entra_id_certificates(
         &self,
         req: crate::model::SqlInstancesListEntraIdCertificatesRequest,
@@ -662,11 +661,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::list_entra_id_certificates",
-            self.inner.list_entra_id_certificates(req, options));
+            self.inner.list_entra_id_certificates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::SqlInstancesPatchRequest,
@@ -676,11 +675,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn promote_replica(
         &self,
         req: crate::model::SqlInstancesPromoteReplicaRequest,
@@ -690,11 +689,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::promote_replica",
-            self.inner.promote_replica(req, options));
+            self.inner.promote_replica(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn switchover(
         &self,
         req: crate::model::SqlInstancesSwitchoverRequest,
@@ -704,11 +703,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::switchover",
-            self.inner.switchover(req, options));
+            self.inner.switchover(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_ssl_config(
         &self,
         req: crate::model::SqlInstancesResetSslConfigRequest,
@@ -718,11 +717,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::reset_ssl_config",
-            self.inner.reset_ssl_config(req, options));
+            self.inner.reset_ssl_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restart(
         &self,
         req: crate::model::SqlInstancesRestartRequest,
@@ -732,11 +731,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::restart",
-            self.inner.restart(req, options));
+            self.inner.restart(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_backup(
         &self,
         req: crate::model::SqlInstancesRestoreBackupRequest,
@@ -746,11 +745,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::restore_backup",
-            self.inner.restore_backup(req, options));
+            self.inner.restore_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rotate_server_ca(
         &self,
         req: crate::model::SqlInstancesRotateServerCaRequest,
@@ -760,11 +759,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::rotate_server_ca",
-            self.inner.rotate_server_ca(req, options));
+            self.inner.rotate_server_ca(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rotate_server_certificate(
         &self,
         req: crate::model::SqlInstancesRotateServerCertificateRequest,
@@ -774,11 +773,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::rotate_server_certificate",
-            self.inner.rotate_server_certificate(req, options));
+            self.inner.rotate_server_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rotate_entra_id_certificate(
         &self,
         req: crate::model::SqlInstancesRotateEntraIdCertificateRequest,
@@ -788,11 +787,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::rotate_entra_id_certificate",
-            self.inner.rotate_entra_id_certificate(req, options));
+            self.inner.rotate_entra_id_certificate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_replica(
         &self,
         req: crate::model::SqlInstancesStartReplicaRequest,
@@ -802,11 +801,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::start_replica",
-            self.inner.start_replica(req, options));
+            self.inner.start_replica(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_replica(
         &self,
         req: crate::model::SqlInstancesStopReplicaRequest,
@@ -816,11 +815,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::stop_replica",
-            self.inner.stop_replica(req, options));
+            self.inner.stop_replica(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn truncate_log(
         &self,
         req: crate::model::SqlInstancesTruncateLogRequest,
@@ -830,11 +829,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::truncate_log",
-            self.inner.truncate_log(req, options));
+            self.inner.truncate_log(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::SqlInstancesUpdateRequest,
@@ -844,11 +843,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_ephemeral(
         &self,
         req: crate::model::SqlInstancesCreateEphemeralCertRequest,
@@ -858,11 +857,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::create_ephemeral",
-            self.inner.create_ephemeral(req, options));
+            self.inner.create_ephemeral(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reschedule_maintenance(
         &self,
         req: crate::model::SqlInstancesRescheduleMaintenanceRequest,
@@ -872,11 +871,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::reschedule_maintenance",
-            self.inner.reschedule_maintenance(req, options));
+            self.inner.reschedule_maintenance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_external_sync_settings(
         &self,
         req: crate::model::SqlInstancesVerifyExternalSyncSettingsRequest,
@@ -886,11 +885,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::verify_external_sync_settings",
-            self.inner.verify_external_sync_settings(req, options));
+            self.inner.verify_external_sync_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_external_sync(
         &self,
         req: crate::model::SqlInstancesStartExternalSyncRequest,
@@ -900,11 +899,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::start_external_sync",
-            self.inner.start_external_sync(req, options));
+            self.inner.start_external_sync(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn perform_disk_shrink(
         &self,
         req: crate::model::SqlInstancesPerformDiskShrinkRequest,
@@ -914,11 +913,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::perform_disk_shrink",
-            self.inner.perform_disk_shrink(req, options));
+            self.inner.perform_disk_shrink(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_disk_shrink_config(
         &self,
         req: crate::model::SqlInstancesGetDiskShrinkConfigRequest,
@@ -928,11 +927,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::get_disk_shrink_config",
-            self.inner.get_disk_shrink_config(req, options));
+            self.inner.get_disk_shrink_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_replica_size(
         &self,
         req: crate::model::SqlInstancesResetReplicaSizeRequest,
@@ -942,11 +941,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::reset_replica_size",
-            self.inner.reset_replica_size(req, options));
+            self.inner.reset_replica_size(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_latest_recovery_time(
         &self,
         req: crate::model::SqlInstancesGetLatestRecoveryTimeRequest,
@@ -956,11 +955,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::get_latest_recovery_time",
-            self.inner.get_latest_recovery_time(req, options));
+            self.inner.get_latest_recovery_time(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_sql(
         &self,
         req: crate::model::SqlInstancesExecuteSqlRequest,
@@ -970,11 +969,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::execute_sql",
-            self.inner.execute_sql(req, options));
+            self.inner.execute_sql(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn acquire_ssrs_lease(
         &self,
         req: crate::model::SqlInstancesAcquireSsrsLeaseRequest,
@@ -984,11 +983,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::acquire_ssrs_lease",
-            self.inner.acquire_ssrs_lease(req, options));
+            self.inner.acquire_ssrs_lease(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn release_ssrs_lease(
         &self,
         req: crate::model::SqlInstancesReleaseSsrsLeaseRequest,
@@ -998,11 +997,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::release_ssrs_lease",
-            self.inner.release_ssrs_lease(req, options));
+            self.inner.release_ssrs_lease(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn pre_check_major_version_upgrade(
         &self,
         req: crate::model::SqlInstancesPreCheckMajorVersionUpgradeRequest,
@@ -1012,11 +1011,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::pre_check_major_version_upgrade",
-            self.inner.pre_check_major_version_upgrade(req, options));
+            self.inner.pre_check_major_version_upgrade(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn point_in_time_restore(
         &self,
         req: crate::model::SqlInstancesPointInTimeRestoreRequest,
@@ -1026,7 +1025,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlInstancesService::point_in_time_restore",
-            self.inner.point_in_time_restore(req, options));
+            self.inner.point_in_time_restore(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -1057,7 +1057,6 @@ impl<T> super::stub::SqlOperationsService for SqlOperationsService<T>
 where
     T: super::stub::SqlOperationsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::SqlOperationsGetRequest,
@@ -1067,11 +1066,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlOperationsService::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlOperationsListRequest,
@@ -1081,11 +1080,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlOperationsService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel(
         &self,
         req: crate::model::SqlOperationsCancelRequest,
@@ -1095,7 +1094,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlOperationsService::cancel",
-            self.inner.cancel(req, options));
+            self.inner.cancel(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -1126,7 +1126,6 @@ impl<T> super::stub::SqlSslCertsService for SqlSslCertsService<T>
 where
     T: super::stub::SqlSslCertsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::SqlSslCertsDeleteRequest,
@@ -1136,11 +1135,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlSslCertsService::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::SqlSslCertsGetRequest,
@@ -1150,11 +1149,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlSslCertsService::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::SqlSslCertsInsertRequest,
@@ -1164,11 +1163,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlSslCertsService::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlSslCertsListRequest,
@@ -1178,7 +1177,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlSslCertsService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -1209,7 +1209,6 @@ impl<T> super::stub::SqlTiersService for SqlTiersService<T>
 where
     T: super::stub::SqlTiersService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlTiersListRequest,
@@ -1219,7 +1218,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlTiersService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -1250,7 +1250,6 @@ impl<T> super::stub::SqlUsersService for SqlUsersService<T>
 where
     T: super::stub::SqlUsersService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::SqlUsersDeleteRequest,
@@ -1260,11 +1259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlUsersService::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::SqlUsersGetRequest,
@@ -1274,11 +1273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlUsersService::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::SqlUsersInsertRequest,
@@ -1288,11 +1287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlUsersService::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::SqlUsersListRequest,
@@ -1302,11 +1301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlUsersService::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::SqlUsersUpdateRequest,
@@ -1316,7 +1315,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SqlUsersService::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 }

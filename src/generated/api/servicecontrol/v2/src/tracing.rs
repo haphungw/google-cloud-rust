@@ -41,7 +41,6 @@ impl<T> super::stub::ServiceController for ServiceController<T>
 where
     T: super::stub::ServiceController + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn check(
         &self,
         req: crate::model::CheckRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceController::check",
-            self.inner.check(req, options));
+            self.inner.check(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn report(
         &self,
         req: crate::model::ReportRequest,
@@ -65,7 +64,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceController::report",
-            self.inner.report(req, options));
+            self.inner.report(req.clone(), options.clone()));
+
         pending.await
     }
 }

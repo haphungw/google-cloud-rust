@@ -41,7 +41,6 @@ impl<T> super::stub::Dataform for Dataform<T>
 where
     T: super::stub::Dataform + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_team_folder(
         &self,
         req: crate::model::GetTeamFolderRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_team_folder",
-            self.inner.get_team_folder(req, options));
+            self.inner.get_team_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_team_folder(
         &self,
         req: crate::model::CreateTeamFolderRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_team_folder",
-            self.inner.create_team_folder(req, options));
+            self.inner.create_team_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_team_folder(
         &self,
         req: crate::model::UpdateTeamFolderRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::update_team_folder",
-            self.inner.update_team_folder(req, options));
+            self.inner.update_team_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_team_folder(
         &self,
         req: crate::model::DeleteTeamFolderRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_team_folder",
-            self.inner.delete_team_folder(req, options));
+            self.inner.delete_team_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_team_folder_tree(
         &self,
         req: crate::model::DeleteTeamFolderTreeRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_team_folder_tree",
-            self.inner.delete_team_folder_tree(req, options));
+            self.inner.delete_team_folder_tree(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_team_folder_contents(
         &self,
         req: crate::model::QueryTeamFolderContentsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_team_folder_contents",
-            self.inner.query_team_folder_contents(req, options));
+            self.inner.query_team_folder_contents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_team_folders(
         &self,
         req: crate::model::SearchTeamFoldersRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::search_team_folders",
-            self.inner.search_team_folders(req, options));
+            self.inner.search_team_folders(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_folder(
         &self,
         req: crate::model::GetFolderRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_folder",
-            self.inner.get_folder(req, options));
+            self.inner.get_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_folder(
         &self,
         req: crate::model::CreateFolderRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_folder",
-            self.inner.create_folder(req, options));
+            self.inner.create_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_folder(
         &self,
         req: crate::model::UpdateFolderRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::update_folder",
-            self.inner.update_folder(req, options));
+            self.inner.update_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_folder(
         &self,
         req: crate::model::DeleteFolderRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_folder",
-            self.inner.delete_folder(req, options));
+            self.inner.delete_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_folder_tree(
         &self,
         req: crate::model::DeleteFolderTreeRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_folder_tree",
-            self.inner.delete_folder_tree(req, options));
+            self.inner.delete_folder_tree(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_folder_contents(
         &self,
         req: crate::model::QueryFolderContentsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_folder_contents",
-            self.inner.query_folder_contents(req, options));
+            self.inner.query_folder_contents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_user_root_contents(
         &self,
         req: crate::model::QueryUserRootContentsRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_user_root_contents",
-            self.inner.query_user_root_contents(req, options));
+            self.inner.query_user_root_contents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_folder(
         &self,
         req: crate::model::MoveFolderRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::move_folder",
-            self.inner.move_folder(req, options));
+            self.inner.move_folder(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_repositories(
         &self,
         req: crate::model::ListRepositoriesRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_repositories",
-            self.inner.list_repositories(req, options));
+            self.inner.list_repositories(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_repository(
         &self,
         req: crate::model::GetRepositoryRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_repository",
-            self.inner.get_repository(req, options));
+            self.inner.get_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_repository(
         &self,
         req: crate::model::CreateRepositoryRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_repository",
-            self.inner.create_repository(req, options));
+            self.inner.create_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_repository(
         &self,
         req: crate::model::UpdateRepositoryRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::update_repository",
-            self.inner.update_repository(req, options));
+            self.inner.update_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_repository(
         &self,
         req: crate::model::DeleteRepositoryRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_repository",
-            self.inner.delete_repository(req, options));
+            self.inner.delete_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_repository(
         &self,
         req: crate::model::MoveRepositoryRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::move_repository",
-            self.inner.move_repository(req, options));
+            self.inner.move_repository(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit_repository_changes(
         &self,
         req: crate::model::CommitRepositoryChangesRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::commit_repository_changes",
-            self.inner.commit_repository_changes(req, options));
+            self.inner.commit_repository_changes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn read_repository_file(
         &self,
         req: crate::model::ReadRepositoryFileRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::read_repository_file",
-            self.inner.read_repository_file(req, options));
+            self.inner.read_repository_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_repository_directory_contents(
         &self,
         req: crate::model::QueryRepositoryDirectoryContentsRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_repository_directory_contents",
-            self.inner.query_repository_directory_contents(req, options));
+            self.inner.query_repository_directory_contents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_repository_history(
         &self,
         req: crate::model::FetchRepositoryHistoryRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::fetch_repository_history",
-            self.inner.fetch_repository_history(req, options));
+            self.inner.fetch_repository_history(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn compute_repository_access_token_status(
         &self,
         req: crate::model::ComputeRepositoryAccessTokenStatusRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::compute_repository_access_token_status",
-            self.inner.compute_repository_access_token_status(req, options));
+            self.inner.compute_repository_access_token_status(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_remote_branches(
         &self,
         req: crate::model::FetchRemoteBranchesRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::fetch_remote_branches",
-            self.inner.fetch_remote_branches(req, options));
+            self.inner.fetch_remote_branches(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workspaces(
         &self,
         req: crate::model::ListWorkspacesRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_workspaces",
-            self.inner.list_workspaces(req, options));
+            self.inner.list_workspaces(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_workspace(
         &self,
         req: crate::model::GetWorkspaceRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_workspace",
-            self.inner.get_workspace(req, options));
+            self.inner.get_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_workspace(
         &self,
         req: crate::model::CreateWorkspaceRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_workspace",
-            self.inner.create_workspace(req, options));
+            self.inner.create_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_workspace(
         &self,
         req: crate::model::DeleteWorkspaceRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_workspace",
-            self.inner.delete_workspace(req, options));
+            self.inner.delete_workspace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn install_npm_packages(
         &self,
         req: crate::model::InstallNpmPackagesRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::install_npm_packages",
-            self.inner.install_npm_packages(req, options));
+            self.inner.install_npm_packages(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn pull_git_commits(
         &self,
         req: crate::model::PullGitCommitsRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::pull_git_commits",
-            self.inner.pull_git_commits(req, options));
+            self.inner.pull_git_commits(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn push_git_commits(
         &self,
         req: crate::model::PushGitCommitsRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::push_git_commits",
-            self.inner.push_git_commits(req, options));
+            self.inner.push_git_commits(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_file_git_statuses(
         &self,
         req: crate::model::FetchFileGitStatusesRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::fetch_file_git_statuses",
-            self.inner.fetch_file_git_statuses(req, options));
+            self.inner.fetch_file_git_statuses(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_git_ahead_behind(
         &self,
         req: crate::model::FetchGitAheadBehindRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::fetch_git_ahead_behind",
-            self.inner.fetch_git_ahead_behind(req, options));
+            self.inner.fetch_git_ahead_behind(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit_workspace_changes(
         &self,
         req: crate::model::CommitWorkspaceChangesRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::commit_workspace_changes",
-            self.inner.commit_workspace_changes(req, options));
+            self.inner.commit_workspace_changes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset_workspace_changes(
         &self,
         req: crate::model::ResetWorkspaceChangesRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::reset_workspace_changes",
-            self.inner.reset_workspace_changes(req, options));
+            self.inner.reset_workspace_changes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_file_diff(
         &self,
         req: crate::model::FetchFileDiffRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::fetch_file_diff",
-            self.inner.fetch_file_diff(req, options));
+            self.inner.fetch_file_diff(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_directory_contents(
         &self,
         req: crate::model::QueryDirectoryContentsRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_directory_contents",
-            self.inner.query_directory_contents(req, options));
+            self.inner.query_directory_contents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_files(
         &self,
         req: crate::model::SearchFilesRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::search_files",
-            self.inner.search_files(req, options));
+            self.inner.search_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn make_directory(
         &self,
         req: crate::model::MakeDirectoryRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::make_directory",
-            self.inner.make_directory(req, options));
+            self.inner.make_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_directory(
         &self,
         req: crate::model::RemoveDirectoryRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::remove_directory",
-            self.inner.remove_directory(req, options));
+            self.inner.remove_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_directory(
         &self,
         req: crate::model::MoveDirectoryRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::move_directory",
-            self.inner.move_directory(req, options));
+            self.inner.move_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn read_file(
         &self,
         req: crate::model::ReadFileRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::read_file",
-            self.inner.read_file(req, options));
+            self.inner.read_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_file(
         &self,
         req: crate::model::RemoveFileRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::remove_file",
-            self.inner.remove_file(req, options));
+            self.inner.remove_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_file(
         &self,
         req: crate::model::MoveFileRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::move_file",
-            self.inner.move_file(req, options));
+            self.inner.move_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn write_file(
         &self,
         req: crate::model::WriteFileRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::write_file",
-            self.inner.write_file(req, options));
+            self.inner.write_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_release_configs(
         &self,
         req: crate::model::ListReleaseConfigsRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_release_configs",
-            self.inner.list_release_configs(req, options));
+            self.inner.list_release_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_release_config(
         &self,
         req: crate::model::GetReleaseConfigRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_release_config",
-            self.inner.get_release_config(req, options));
+            self.inner.get_release_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_release_config(
         &self,
         req: crate::model::CreateReleaseConfigRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_release_config",
-            self.inner.create_release_config(req, options));
+            self.inner.create_release_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_release_config(
         &self,
         req: crate::model::UpdateReleaseConfigRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::update_release_config",
-            self.inner.update_release_config(req, options));
+            self.inner.update_release_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_release_config(
         &self,
         req: crate::model::DeleteReleaseConfigRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_release_config",
-            self.inner.delete_release_config(req, options));
+            self.inner.delete_release_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_compilation_results(
         &self,
         req: crate::model::ListCompilationResultsRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_compilation_results",
-            self.inner.list_compilation_results(req, options));
+            self.inner.list_compilation_results(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_compilation_result(
         &self,
         req: crate::model::GetCompilationResultRequest,
@@ -807,11 +806,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_compilation_result",
-            self.inner.get_compilation_result(req, options));
+            self.inner.get_compilation_result(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_compilation_result(
         &self,
         req: crate::model::CreateCompilationResultRequest,
@@ -821,11 +820,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_compilation_result",
-            self.inner.create_compilation_result(req, options));
+            self.inner.create_compilation_result(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_compilation_result_actions(
         &self,
         req: crate::model::QueryCompilationResultActionsRequest,
@@ -835,11 +834,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_compilation_result_actions",
-            self.inner.query_compilation_result_actions(req, options));
+            self.inner.query_compilation_result_actions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workflow_configs(
         &self,
         req: crate::model::ListWorkflowConfigsRequest,
@@ -849,11 +848,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_workflow_configs",
-            self.inner.list_workflow_configs(req, options));
+            self.inner.list_workflow_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_workflow_config(
         &self,
         req: crate::model::GetWorkflowConfigRequest,
@@ -863,11 +862,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_workflow_config",
-            self.inner.get_workflow_config(req, options));
+            self.inner.get_workflow_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_workflow_config(
         &self,
         req: crate::model::CreateWorkflowConfigRequest,
@@ -877,11 +876,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_workflow_config",
-            self.inner.create_workflow_config(req, options));
+            self.inner.create_workflow_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_workflow_config(
         &self,
         req: crate::model::UpdateWorkflowConfigRequest,
@@ -891,11 +890,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::update_workflow_config",
-            self.inner.update_workflow_config(req, options));
+            self.inner.update_workflow_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_workflow_config(
         &self,
         req: crate::model::DeleteWorkflowConfigRequest,
@@ -905,11 +904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_workflow_config",
-            self.inner.delete_workflow_config(req, options));
+            self.inner.delete_workflow_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workflow_invocations(
         &self,
         req: crate::model::ListWorkflowInvocationsRequest,
@@ -919,11 +918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_workflow_invocations",
-            self.inner.list_workflow_invocations(req, options));
+            self.inner.list_workflow_invocations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_workflow_invocation(
         &self,
         req: crate::model::GetWorkflowInvocationRequest,
@@ -933,11 +932,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_workflow_invocation",
-            self.inner.get_workflow_invocation(req, options));
+            self.inner.get_workflow_invocation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_workflow_invocation(
         &self,
         req: crate::model::CreateWorkflowInvocationRequest,
@@ -947,11 +946,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::create_workflow_invocation",
-            self.inner.create_workflow_invocation(req, options));
+            self.inner.create_workflow_invocation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_workflow_invocation(
         &self,
         req: crate::model::DeleteWorkflowInvocationRequest,
@@ -961,11 +960,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_workflow_invocation",
-            self.inner.delete_workflow_invocation(req, options));
+            self.inner.delete_workflow_invocation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_workflow_invocation(
         &self,
         req: crate::model::CancelWorkflowInvocationRequest,
@@ -975,11 +974,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::cancel_workflow_invocation",
-            self.inner.cancel_workflow_invocation(req, options));
+            self.inner.cancel_workflow_invocation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_workflow_invocation_actions(
         &self,
         req: crate::model::QueryWorkflowInvocationActionsRequest,
@@ -989,11 +988,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::query_workflow_invocation_actions",
-            self.inner.query_workflow_invocation_actions(req, options));
+            self.inner.query_workflow_invocation_actions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_config(
         &self,
         req: crate::model::GetConfigRequest,
@@ -1003,11 +1002,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_config",
-            self.inner.get_config(req, options));
+            self.inner.get_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_config(
         &self,
         req: crate::model::UpdateConfigRequest,
@@ -1017,11 +1016,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::update_config",
-            self.inner.update_config(req, options));
+            self.inner.update_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -1031,11 +1030,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -1045,11 +1044,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -1059,11 +1058,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1073,11 +1072,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1087,11 +1086,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1101,11 +1100,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1115,11 +1114,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1129,11 +1128,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1143,7 +1142,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Dataform::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

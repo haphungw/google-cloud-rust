@@ -41,7 +41,6 @@ impl<T> super::stub::GkeInferenceQuickstart for GkeInferenceQuickstart<T>
 where
     T: super::stub::GkeInferenceQuickstart + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_models(
         &self,
         req: crate::model::FetchModelsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeInferenceQuickstart::fetch_models",
-            self.inner.fetch_models(req, options));
+            self.inner.fetch_models(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_model_servers(
         &self,
         req: crate::model::FetchModelServersRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeInferenceQuickstart::fetch_model_servers",
-            self.inner.fetch_model_servers(req, options));
+            self.inner.fetch_model_servers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_model_server_versions(
         &self,
         req: crate::model::FetchModelServerVersionsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeInferenceQuickstart::fetch_model_server_versions",
-            self.inner.fetch_model_server_versions(req, options));
+            self.inner.fetch_model_server_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_profiles(
         &self,
         req: crate::model::FetchProfilesRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeInferenceQuickstart::fetch_profiles",
-            self.inner.fetch_profiles(req, options));
+            self.inner.fetch_profiles(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_optimized_manifest(
         &self,
         req: crate::model::GenerateOptimizedManifestRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeInferenceQuickstart::generate_optimized_manifest",
-            self.inner.generate_optimized_manifest(req, options));
+            self.inner.generate_optimized_manifest(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_benchmarking_data(
         &self,
         req: crate::model::FetchBenchmarkingDataRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeInferenceQuickstart::fetch_benchmarking_data",
-            self.inner.fetch_benchmarking_data(req, options));
+            self.inner.fetch_benchmarking_data(req.clone(), options.clone()));
+
         pending.await
     }
 }

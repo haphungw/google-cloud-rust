@@ -41,7 +41,6 @@ impl<T> super::stub::IamChecker for IamChecker<T>
 where
     T: super::stub::IamChecker + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn troubleshoot_iam_policy(
         &self,
         req: crate::model::TroubleshootIamPolicyRequest,
@@ -51,7 +50,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::IamChecker::troubleshoot_iam_policy",
-            self.inner.troubleshoot_iam_policy(req, options));
+            self.inner.troubleshoot_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 }

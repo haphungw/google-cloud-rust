@@ -41,7 +41,6 @@ impl<T> super::stub::Recommender for Recommender<T>
 where
     T: super::stub::Recommender + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_insights(
         &self,
         req: crate::model::ListInsightsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::list_insights",
-            self.inner.list_insights(req, options));
+            self.inner.list_insights(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_insight(
         &self,
         req: crate::model::GetInsightRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::get_insight",
-            self.inner.get_insight(req, options));
+            self.inner.get_insight(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mark_insight_accepted(
         &self,
         req: crate::model::MarkInsightAcceptedRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::mark_insight_accepted",
-            self.inner.mark_insight_accepted(req, options));
+            self.inner.mark_insight_accepted(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_recommendations(
         &self,
         req: crate::model::ListRecommendationsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::list_recommendations",
-            self.inner.list_recommendations(req, options));
+            self.inner.list_recommendations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_recommendation(
         &self,
         req: crate::model::GetRecommendationRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::get_recommendation",
-            self.inner.get_recommendation(req, options));
+            self.inner.get_recommendation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mark_recommendation_dismissed(
         &self,
         req: crate::model::MarkRecommendationDismissedRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::mark_recommendation_dismissed",
-            self.inner.mark_recommendation_dismissed(req, options));
+            self.inner.mark_recommendation_dismissed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mark_recommendation_claimed(
         &self,
         req: crate::model::MarkRecommendationClaimedRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::mark_recommendation_claimed",
-            self.inner.mark_recommendation_claimed(req, options));
+            self.inner.mark_recommendation_claimed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mark_recommendation_succeeded(
         &self,
         req: crate::model::MarkRecommendationSucceededRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::mark_recommendation_succeeded",
-            self.inner.mark_recommendation_succeeded(req, options));
+            self.inner.mark_recommendation_succeeded(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn mark_recommendation_failed(
         &self,
         req: crate::model::MarkRecommendationFailedRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::mark_recommendation_failed",
-            self.inner.mark_recommendation_failed(req, options));
+            self.inner.mark_recommendation_failed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_recommender_config(
         &self,
         req: crate::model::GetRecommenderConfigRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::get_recommender_config",
-            self.inner.get_recommender_config(req, options));
+            self.inner.get_recommender_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_recommender_config(
         &self,
         req: crate::model::UpdateRecommenderConfigRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::update_recommender_config",
-            self.inner.update_recommender_config(req, options));
+            self.inner.update_recommender_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_insight_type_config(
         &self,
         req: crate::model::GetInsightTypeConfigRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::get_insight_type_config",
-            self.inner.get_insight_type_config(req, options));
+            self.inner.get_insight_type_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_insight_type_config(
         &self,
         req: crate::model::UpdateInsightTypeConfigRequest,
@@ -219,7 +218,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Recommender::update_insight_type_config",
-            self.inner.update_insight_type_config(req, options));
+            self.inner.update_insight_type_config(req.clone(), options.clone()));
+
         pending.await
     }
 }

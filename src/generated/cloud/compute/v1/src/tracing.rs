@@ -171,7 +171,6 @@ impl<T> super::stub::AcceleratorTypes for AcceleratorTypes<T>
 where
     T: super::stub::AcceleratorTypes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::accelerator_types::AggregatedListRequest,
@@ -181,11 +180,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AcceleratorTypes::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::accelerator_types::GetRequest,
@@ -195,11 +194,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AcceleratorTypes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::accelerator_types::ListRequest,
@@ -209,7 +208,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AcceleratorTypes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -243,7 +243,6 @@ impl<T> super::stub::Addresses for Addresses<T>
 where
     T: super::stub::Addresses + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::addresses::AggregatedListRequest,
@@ -253,11 +252,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::addresses::DeleteRequest,
@@ -267,11 +266,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::addresses::GetRequest,
@@ -281,11 +280,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::addresses::InsertRequest,
@@ -295,11 +294,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::addresses::ListRequest,
@@ -309,11 +308,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn r#move(
         &self,
         req: crate::model::addresses::MoveRequest,
@@ -323,11 +322,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::r#move",
-            self.inner.r#move(req, options));
+            self.inner.r#move(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::addresses::SetLabelsRequest,
@@ -337,11 +336,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::addresses::TestIamPermissionsRequest,
@@ -351,11 +350,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -365,7 +364,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Addresses::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -413,7 +413,6 @@ impl<T> super::stub::Advice for Advice<T>
 where
     T: super::stub::Advice + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn calendar_mode(
         &self,
         req: crate::model::advice::CalendarModeRequest,
@@ -423,7 +422,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Advice::calendar_mode",
-            self.inner.calendar_mode(req, options));
+            self.inner.calendar_mode(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -457,7 +457,6 @@ impl<T> super::stub::Autoscalers for Autoscalers<T>
 where
     T: super::stub::Autoscalers + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::autoscalers::AggregatedListRequest,
@@ -467,11 +466,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::autoscalers::DeleteRequest,
@@ -481,11 +480,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::autoscalers::GetRequest,
@@ -495,11 +494,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::autoscalers::InsertRequest,
@@ -509,11 +508,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::autoscalers::ListRequest,
@@ -523,11 +522,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::autoscalers::PatchRequest,
@@ -537,11 +536,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::autoscalers::TestIamPermissionsRequest,
@@ -551,11 +550,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::autoscalers::UpdateRequest,
@@ -565,11 +564,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -579,7 +578,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Autoscalers::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -627,7 +627,6 @@ impl<T> super::stub::BackendBuckets for BackendBuckets<T>
 where
     T: super::stub::BackendBuckets + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_signed_url_key(
         &self,
         req: crate::model::backend_buckets::AddSignedUrlKeyRequest,
@@ -637,11 +636,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::add_signed_url_key",
-            self.inner.add_signed_url_key(req, options));
+            self.inner.add_signed_url_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::backend_buckets::AggregatedListRequest,
@@ -651,11 +650,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::backend_buckets::DeleteRequest,
@@ -665,11 +664,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_signed_url_key(
         &self,
         req: crate::model::backend_buckets::DeleteSignedUrlKeyRequest,
@@ -679,11 +678,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::delete_signed_url_key",
-            self.inner.delete_signed_url_key(req, options));
+            self.inner.delete_signed_url_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::backend_buckets::GetRequest,
@@ -693,11 +692,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::backend_buckets::GetIamPolicyRequest,
@@ -707,11 +706,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::backend_buckets::InsertRequest,
@@ -721,11 +720,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::backend_buckets::ListRequest,
@@ -735,11 +734,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_usable(
         &self,
         req: crate::model::backend_buckets::ListUsableRequest,
@@ -749,11 +748,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::list_usable",
-            self.inner.list_usable(req, options));
+            self.inner.list_usable(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::backend_buckets::PatchRequest,
@@ -763,11 +762,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_edge_security_policy(
         &self,
         req: crate::model::backend_buckets::SetEdgeSecurityPolicyRequest,
@@ -777,11 +776,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::set_edge_security_policy",
-            self.inner.set_edge_security_policy(req, options));
+            self.inner.set_edge_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::backend_buckets::SetIamPolicyRequest,
@@ -791,11 +790,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::backend_buckets::TestIamPermissionsRequest,
@@ -805,11 +804,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::backend_buckets::UpdateRequest,
@@ -819,11 +818,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -833,7 +832,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendBuckets::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -881,7 +881,6 @@ impl<T> super::stub::BackendServices for BackendServices<T>
 where
     T: super::stub::BackendServices + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_signed_url_key(
         &self,
         req: crate::model::backend_services::AddSignedUrlKeyRequest,
@@ -891,11 +890,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::add_signed_url_key",
-            self.inner.add_signed_url_key(req, options));
+            self.inner.add_signed_url_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::backend_services::AggregatedListRequest,
@@ -905,11 +904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::backend_services::DeleteRequest,
@@ -919,11 +918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_signed_url_key(
         &self,
         req: crate::model::backend_services::DeleteSignedUrlKeyRequest,
@@ -933,11 +932,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::delete_signed_url_key",
-            self.inner.delete_signed_url_key(req, options));
+            self.inner.delete_signed_url_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::backend_services::GetRequest,
@@ -947,11 +946,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_security_policies(
         &self,
         req: crate::model::backend_services::GetEffectiveSecurityPoliciesRequest,
@@ -961,11 +960,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::get_effective_security_policies",
-            self.inner.get_effective_security_policies(req, options));
+            self.inner.get_effective_security_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_health(
         &self,
         req: crate::model::backend_services::GetHealthRequest,
@@ -975,11 +974,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::get_health",
-            self.inner.get_health(req, options));
+            self.inner.get_health(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::backend_services::GetIamPolicyRequest,
@@ -989,11 +988,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::backend_services::InsertRequest,
@@ -1003,11 +1002,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::backend_services::ListRequest,
@@ -1017,11 +1016,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_usable(
         &self,
         req: crate::model::backend_services::ListUsableRequest,
@@ -1031,11 +1030,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::list_usable",
-            self.inner.list_usable(req, options));
+            self.inner.list_usable(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::backend_services::PatchRequest,
@@ -1045,11 +1044,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_edge_security_policy(
         &self,
         req: crate::model::backend_services::SetEdgeSecurityPolicyRequest,
@@ -1059,11 +1058,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::set_edge_security_policy",
-            self.inner.set_edge_security_policy(req, options));
+            self.inner.set_edge_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::backend_services::SetIamPolicyRequest,
@@ -1073,11 +1072,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_security_policy(
         &self,
         req: crate::model::backend_services::SetSecurityPolicyRequest,
@@ -1087,11 +1086,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::set_security_policy",
-            self.inner.set_security_policy(req, options));
+            self.inner.set_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::backend_services::TestIamPermissionsRequest,
@@ -1101,11 +1100,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::backend_services::UpdateRequest,
@@ -1115,11 +1114,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -1129,7 +1128,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BackendServices::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -1177,7 +1177,6 @@ impl<T> super::stub::CrossSiteNetworks for CrossSiteNetworks<T>
 where
     T: super::stub::CrossSiteNetworks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::cross_site_networks::DeleteRequest,
@@ -1187,11 +1186,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CrossSiteNetworks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::cross_site_networks::GetRequest,
@@ -1201,11 +1200,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CrossSiteNetworks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::cross_site_networks::InsertRequest,
@@ -1215,11 +1214,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CrossSiteNetworks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::cross_site_networks::ListRequest,
@@ -1229,11 +1228,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CrossSiteNetworks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::cross_site_networks::PatchRequest,
@@ -1243,11 +1242,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CrossSiteNetworks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -1257,7 +1256,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CrossSiteNetworks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -1305,7 +1305,6 @@ impl<T> super::stub::DiskTypes for DiskTypes<T>
 where
     T: super::stub::DiskTypes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::disk_types::AggregatedListRequest,
@@ -1315,11 +1314,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DiskTypes::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::disk_types::GetRequest,
@@ -1329,11 +1328,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DiskTypes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::disk_types::ListRequest,
@@ -1343,7 +1342,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DiskTypes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -1377,7 +1377,6 @@ impl<T> super::stub::Disks for Disks<T>
 where
     T: super::stub::Disks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_resource_policies(
         &self,
         req: crate::model::disks::AddResourcePoliciesRequest,
@@ -1387,11 +1386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::add_resource_policies",
-            self.inner.add_resource_policies(req, options));
+            self.inner.add_resource_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::disks::AggregatedListRequest,
@@ -1401,11 +1400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_insert(
         &self,
         req: crate::model::disks::BulkInsertRequest,
@@ -1415,11 +1414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::bulk_insert",
-            self.inner.bulk_insert(req, options));
+            self.inner.bulk_insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_set_labels(
         &self,
         req: crate::model::disks::BulkSetLabelsRequest,
@@ -1429,11 +1428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::bulk_set_labels",
-            self.inner.bulk_set_labels(req, options));
+            self.inner.bulk_set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_snapshot(
         &self,
         req: crate::model::disks::CreateSnapshotRequest,
@@ -1443,11 +1442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::create_snapshot",
-            self.inner.create_snapshot(req, options));
+            self.inner.create_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::disks::DeleteRequest,
@@ -1457,11 +1456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::disks::GetRequest,
@@ -1471,11 +1470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::disks::GetIamPolicyRequest,
@@ -1485,11 +1484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::disks::InsertRequest,
@@ -1499,11 +1498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::disks::ListRequest,
@@ -1513,11 +1512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_resource_policies(
         &self,
         req: crate::model::disks::RemoveResourcePoliciesRequest,
@@ -1527,11 +1526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::remove_resource_policies",
-            self.inner.remove_resource_policies(req, options));
+            self.inner.remove_resource_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resize(
         &self,
         req: crate::model::disks::ResizeRequest,
@@ -1541,11 +1540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::resize",
-            self.inner.resize(req, options));
+            self.inner.resize(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::disks::SetIamPolicyRequest,
@@ -1555,11 +1554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::disks::SetLabelsRequest,
@@ -1569,11 +1568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_async_replication(
         &self,
         req: crate::model::disks::StartAsyncReplicationRequest,
@@ -1583,11 +1582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::start_async_replication",
-            self.inner.start_async_replication(req, options));
+            self.inner.start_async_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_async_replication(
         &self,
         req: crate::model::disks::StopAsyncReplicationRequest,
@@ -1597,11 +1596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::stop_async_replication",
-            self.inner.stop_async_replication(req, options));
+            self.inner.stop_async_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_group_async_replication(
         &self,
         req: crate::model::disks::StopGroupAsyncReplicationRequest,
@@ -1611,11 +1610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::stop_group_async_replication",
-            self.inner.stop_group_async_replication(req, options));
+            self.inner.stop_group_async_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::disks::TestIamPermissionsRequest,
@@ -1625,11 +1624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::disks::UpdateRequest,
@@ -1639,11 +1638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_kms_key(
         &self,
         req: crate::model::disks::UpdateKmsKeyRequest,
@@ -1653,11 +1652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::update_kms_key",
-            self.inner.update_kms_key(req, options));
+            self.inner.update_kms_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -1667,7 +1666,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Disks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -1715,7 +1715,6 @@ impl<T> super::stub::ExternalVpnGateways for ExternalVpnGateways<T>
 where
     T: super::stub::ExternalVpnGateways + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::external_vpn_gateways::DeleteRequest,
@@ -1725,11 +1724,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::external_vpn_gateways::GetRequest,
@@ -1739,11 +1738,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::external_vpn_gateways::InsertRequest,
@@ -1753,11 +1752,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::external_vpn_gateways::ListRequest,
@@ -1767,11 +1766,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::external_vpn_gateways::SetLabelsRequest,
@@ -1781,11 +1780,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::external_vpn_gateways::TestIamPermissionsRequest,
@@ -1795,11 +1794,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -1809,7 +1808,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ExternalVpnGateways::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -1857,7 +1857,6 @@ impl<T> super::stub::FirewallPolicies for FirewallPolicies<T>
 where
     T: super::stub::FirewallPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_association(
         &self,
         req: crate::model::firewall_policies::AddAssociationRequest,
@@ -1867,11 +1866,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::add_association",
-            self.inner.add_association(req, options));
+            self.inner.add_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_rule(
         &self,
         req: crate::model::firewall_policies::AddRuleRequest,
@@ -1881,11 +1880,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::add_rule",
-            self.inner.add_rule(req, options));
+            self.inner.add_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn clone_rules(
         &self,
         req: crate::model::firewall_policies::CloneRulesRequest,
@@ -1895,11 +1894,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::clone_rules",
-            self.inner.clone_rules(req, options));
+            self.inner.clone_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::firewall_policies::DeleteRequest,
@@ -1909,11 +1908,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::firewall_policies::GetRequest,
@@ -1923,11 +1922,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_association(
         &self,
         req: crate::model::firewall_policies::GetAssociationRequest,
@@ -1937,11 +1936,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::get_association",
-            self.inner.get_association(req, options));
+            self.inner.get_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::firewall_policies::GetIamPolicyRequest,
@@ -1951,11 +1950,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::firewall_policies::GetRuleRequest,
@@ -1965,11 +1964,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::firewall_policies::InsertRequest,
@@ -1979,11 +1978,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::firewall_policies::ListRequest,
@@ -1993,11 +1992,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_associations(
         &self,
         req: crate::model::firewall_policies::ListAssociationsRequest,
@@ -2007,11 +2006,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::list_associations",
-            self.inner.list_associations(req, options));
+            self.inner.list_associations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn r#move(
         &self,
         req: crate::model::firewall_policies::MoveRequest,
@@ -2021,11 +2020,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::r#move",
-            self.inner.r#move(req, options));
+            self.inner.r#move(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::firewall_policies::PatchRequest,
@@ -2035,11 +2034,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_rule(
         &self,
         req: crate::model::firewall_policies::PatchRuleRequest,
@@ -2049,11 +2048,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::patch_rule",
-            self.inner.patch_rule(req, options));
+            self.inner.patch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_association(
         &self,
         req: crate::model::firewall_policies::RemoveAssociationRequest,
@@ -2063,11 +2062,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::remove_association",
-            self.inner.remove_association(req, options));
+            self.inner.remove_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_rule(
         &self,
         req: crate::model::firewall_policies::RemoveRuleRequest,
@@ -2077,11 +2076,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::remove_rule",
-            self.inner.remove_rule(req, options));
+            self.inner.remove_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::firewall_policies::SetIamPolicyRequest,
@@ -2091,11 +2090,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::firewall_policies::TestIamPermissionsRequest,
@@ -2105,11 +2104,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_organization_operations::GetRequest,
@@ -2119,7 +2118,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FirewallPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2167,7 +2167,6 @@ impl<T> super::stub::Firewalls for Firewalls<T>
 where
     T: super::stub::Firewalls + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::firewalls::DeleteRequest,
@@ -2177,11 +2176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::firewalls::GetRequest,
@@ -2191,11 +2190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::firewalls::InsertRequest,
@@ -2205,11 +2204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::firewalls::ListRequest,
@@ -2219,11 +2218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::firewalls::PatchRequest,
@@ -2233,11 +2232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::firewalls::TestIamPermissionsRequest,
@@ -2247,11 +2246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::firewalls::UpdateRequest,
@@ -2261,11 +2260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -2275,7 +2274,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Firewalls::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2323,7 +2323,6 @@ impl<T> super::stub::ForwardingRules for ForwardingRules<T>
 where
     T: super::stub::ForwardingRules + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::forwarding_rules::AggregatedListRequest,
@@ -2333,11 +2332,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::forwarding_rules::DeleteRequest,
@@ -2347,11 +2346,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::forwarding_rules::GetRequest,
@@ -2361,11 +2360,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::forwarding_rules::InsertRequest,
@@ -2375,11 +2374,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::forwarding_rules::ListRequest,
@@ -2389,11 +2388,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::forwarding_rules::PatchRequest,
@@ -2403,11 +2402,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::forwarding_rules::SetLabelsRequest,
@@ -2417,11 +2416,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_target(
         &self,
         req: crate::model::forwarding_rules::SetTargetRequest,
@@ -2431,11 +2430,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::set_target",
-            self.inner.set_target(req, options));
+            self.inner.set_target(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -2445,7 +2444,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ForwardingRules::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2493,7 +2493,6 @@ impl<T> super::stub::FutureReservations for FutureReservations<T>
 where
     T: super::stub::FutureReservations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::future_reservations::AggregatedListRequest,
@@ -2503,11 +2502,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel(
         &self,
         req: crate::model::future_reservations::CancelRequest,
@@ -2517,11 +2516,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::cancel",
-            self.inner.cancel(req, options));
+            self.inner.cancel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::future_reservations::DeleteRequest,
@@ -2531,11 +2530,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::future_reservations::GetRequest,
@@ -2545,11 +2544,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::future_reservations::InsertRequest,
@@ -2559,11 +2558,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::future_reservations::ListRequest,
@@ -2573,11 +2572,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::future_reservations::UpdateRequest,
@@ -2587,11 +2586,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -2601,7 +2600,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::FutureReservations::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2649,7 +2649,6 @@ impl<T> super::stub::GlobalAddresses for GlobalAddresses<T>
 where
     T: super::stub::GlobalAddresses + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_addresses::DeleteRequest,
@@ -2659,11 +2658,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_addresses::GetRequest,
@@ -2673,11 +2672,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::global_addresses::InsertRequest,
@@ -2687,11 +2686,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_addresses::ListRequest,
@@ -2701,11 +2700,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn r#move(
         &self,
         req: crate::model::global_addresses::MoveRequest,
@@ -2715,11 +2714,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::r#move",
-            self.inner.r#move(req, options));
+            self.inner.r#move(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::global_addresses::SetLabelsRequest,
@@ -2729,11 +2728,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::global_addresses::TestIamPermissionsRequest,
@@ -2743,11 +2742,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -2757,7 +2756,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalAddresses::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2805,7 +2805,6 @@ impl<T> super::stub::GlobalForwardingRules for GlobalForwardingRules<T>
 where
     T: super::stub::GlobalForwardingRules + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_forwarding_rules::DeleteRequest,
@@ -2815,11 +2814,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_forwarding_rules::GetRequest,
@@ -2829,11 +2828,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::global_forwarding_rules::InsertRequest,
@@ -2843,11 +2842,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_forwarding_rules::ListRequest,
@@ -2857,11 +2856,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::global_forwarding_rules::PatchRequest,
@@ -2871,11 +2870,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::global_forwarding_rules::SetLabelsRequest,
@@ -2885,11 +2884,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_target(
         &self,
         req: crate::model::global_forwarding_rules::SetTargetRequest,
@@ -2899,11 +2898,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::set_target",
-            self.inner.set_target(req, options));
+            self.inner.set_target(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -2913,7 +2912,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalForwardingRules::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -2961,7 +2961,6 @@ impl<T> super::stub::GlobalNetworkEndpointGroups for GlobalNetworkEndpointGroups
 where
     T: super::stub::GlobalNetworkEndpointGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn attach_network_endpoints(
         &self,
         req: crate::model::global_network_endpoint_groups::AttachNetworkEndpointsRequest,
@@ -2971,11 +2970,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::attach_network_endpoints",
-            self.inner.attach_network_endpoints(req, options));
+            self.inner.attach_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_network_endpoint_groups::DeleteRequest,
@@ -2985,11 +2984,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_network_endpoints(
         &self,
         req: crate::model::global_network_endpoint_groups::DetachNetworkEndpointsRequest,
@@ -2999,11 +2998,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::detach_network_endpoints",
-            self.inner.detach_network_endpoints(req, options));
+            self.inner.detach_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_network_endpoint_groups::GetRequest,
@@ -3013,11 +3012,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::global_network_endpoint_groups::InsertRequest,
@@ -3027,11 +3026,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_network_endpoint_groups::ListRequest,
@@ -3041,11 +3040,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_network_endpoints(
         &self,
         req: crate::model::global_network_endpoint_groups::ListNetworkEndpointsRequest,
@@ -3055,11 +3054,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::list_network_endpoints",
-            self.inner.list_network_endpoints(req, options));
+            self.inner.list_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3069,7 +3068,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalNetworkEndpointGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -3117,7 +3117,6 @@ impl<T> super::stub::GlobalOperations for GlobalOperations<T>
 where
     T: super::stub::GlobalOperations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::global_operations::AggregatedListRequest,
@@ -3127,11 +3126,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOperations::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_operations::DeleteRequest,
@@ -3141,11 +3140,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOperations::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3155,11 +3154,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOperations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_operations::ListRequest,
@@ -3169,11 +3168,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOperations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn wait(
         &self,
         req: crate::model::global_operations::WaitRequest,
@@ -3183,7 +3182,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOperations::wait",
-            self.inner.wait(req, options));
+            self.inner.wait(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -3217,7 +3217,6 @@ impl<T> super::stub::GlobalOrganizationOperations for GlobalOrganizationOperatio
 where
     T: super::stub::GlobalOrganizationOperations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_organization_operations::DeleteRequest,
@@ -3227,11 +3226,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOrganizationOperations::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_organization_operations::GetRequest,
@@ -3241,11 +3240,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOrganizationOperations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_organization_operations::ListRequest,
@@ -3255,7 +3254,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalOrganizationOperations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -3289,7 +3289,6 @@ impl<T> super::stub::GlobalPublicDelegatedPrefixes for GlobalPublicDelegatedPref
 where
     T: super::stub::GlobalPublicDelegatedPrefixes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_public_delegated_prefixes::DeleteRequest,
@@ -3299,11 +3298,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalPublicDelegatedPrefixes::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_public_delegated_prefixes::GetRequest,
@@ -3313,11 +3312,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalPublicDelegatedPrefixes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::global_public_delegated_prefixes::InsertRequest,
@@ -3327,11 +3326,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalPublicDelegatedPrefixes::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_public_delegated_prefixes::ListRequest,
@@ -3341,11 +3340,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalPublicDelegatedPrefixes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::global_public_delegated_prefixes::PatchRequest,
@@ -3355,11 +3354,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalPublicDelegatedPrefixes::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3369,7 +3368,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalPublicDelegatedPrefixes::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -3417,7 +3417,6 @@ impl<T> super::stub::GlobalVmExtensionPolicies for GlobalVmExtensionPolicies<T>
 where
     T: super::stub::GlobalVmExtensionPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::global_vm_extension_policies::AggregatedListRequest,
@@ -3427,11 +3426,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::global_vm_extension_policies::DeleteRequest,
@@ -3441,11 +3440,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::global_vm_extension_policies::GetRequest,
@@ -3455,11 +3454,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::global_vm_extension_policies::InsertRequest,
@@ -3469,11 +3468,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::global_vm_extension_policies::ListRequest,
@@ -3483,11 +3482,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::global_vm_extension_policies::UpdateRequest,
@@ -3497,11 +3496,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3511,7 +3510,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GlobalVmExtensionPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -3559,7 +3559,6 @@ impl<T> super::stub::HealthChecks for HealthChecks<T>
 where
     T: super::stub::HealthChecks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::health_checks::AggregatedListRequest,
@@ -3569,11 +3568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::health_checks::DeleteRequest,
@@ -3583,11 +3582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::health_checks::GetRequest,
@@ -3597,11 +3596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::health_checks::InsertRequest,
@@ -3611,11 +3610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::health_checks::ListRequest,
@@ -3625,11 +3624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::health_checks::PatchRequest,
@@ -3639,11 +3638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::health_checks::TestIamPermissionsRequest,
@@ -3653,11 +3652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::health_checks::UpdateRequest,
@@ -3667,11 +3666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3681,7 +3680,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HealthChecks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -3729,7 +3729,6 @@ impl<T> super::stub::HttpHealthChecks for HttpHealthChecks<T>
 where
     T: super::stub::HttpHealthChecks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::http_health_checks::DeleteRequest,
@@ -3739,11 +3738,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::http_health_checks::GetRequest,
@@ -3753,11 +3752,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::http_health_checks::InsertRequest,
@@ -3767,11 +3766,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::http_health_checks::ListRequest,
@@ -3781,11 +3780,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::http_health_checks::PatchRequest,
@@ -3795,11 +3794,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::http_health_checks::TestIamPermissionsRequest,
@@ -3809,11 +3808,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::http_health_checks::UpdateRequest,
@@ -3823,11 +3822,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3837,7 +3836,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpHealthChecks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -3885,7 +3885,6 @@ impl<T> super::stub::HttpsHealthChecks for HttpsHealthChecks<T>
 where
     T: super::stub::HttpsHealthChecks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::https_health_checks::DeleteRequest,
@@ -3895,11 +3894,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::https_health_checks::GetRequest,
@@ -3909,11 +3908,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::https_health_checks::InsertRequest,
@@ -3923,11 +3922,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::https_health_checks::ListRequest,
@@ -3937,11 +3936,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::https_health_checks::PatchRequest,
@@ -3951,11 +3950,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::https_health_checks::TestIamPermissionsRequest,
@@ -3965,11 +3964,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::https_health_checks::UpdateRequest,
@@ -3979,11 +3978,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -3993,7 +3992,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::HttpsHealthChecks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -4041,7 +4041,6 @@ impl<T> super::stub::ImageFamilyViews for ImageFamilyViews<T>
 where
     T: super::stub::ImageFamilyViews + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::image_family_views::GetRequest,
@@ -4051,7 +4050,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ImageFamilyViews::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -4085,7 +4085,6 @@ impl<T> super::stub::Images for Images<T>
 where
     T: super::stub::Images + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::images::DeleteRequest,
@@ -4095,11 +4094,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn deprecate(
         &self,
         req: crate::model::images::DeprecateRequest,
@@ -4109,11 +4108,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::deprecate",
-            self.inner.deprecate(req, options));
+            self.inner.deprecate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::images::GetRequest,
@@ -4123,11 +4122,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_from_family(
         &self,
         req: crate::model::images::GetFromFamilyRequest,
@@ -4137,11 +4136,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::get_from_family",
-            self.inner.get_from_family(req, options));
+            self.inner.get_from_family(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::images::GetIamPolicyRequest,
@@ -4151,11 +4150,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::images::InsertRequest,
@@ -4165,11 +4164,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::images::ListRequest,
@@ -4179,11 +4178,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::images::PatchRequest,
@@ -4193,11 +4192,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::images::SetIamPolicyRequest,
@@ -4207,11 +4206,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::images::SetLabelsRequest,
@@ -4221,11 +4220,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::images::TestIamPermissionsRequest,
@@ -4235,11 +4234,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -4249,7 +4248,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Images::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -4297,7 +4297,6 @@ impl<T> super::stub::InstanceGroupManagerResizeRequests for InstanceGroupManager
 where
     T: super::stub::InstanceGroupManagerResizeRequests + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel(
         &self,
         req: crate::model::instance_group_manager_resize_requests::CancelRequest,
@@ -4307,11 +4306,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagerResizeRequests::cancel",
-            self.inner.cancel(req, options));
+            self.inner.cancel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instance_group_manager_resize_requests::DeleteRequest,
@@ -4321,11 +4320,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagerResizeRequests::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instance_group_manager_resize_requests::GetRequest,
@@ -4335,11 +4334,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagerResizeRequests::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instance_group_manager_resize_requests::InsertRequest,
@@ -4349,11 +4348,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagerResizeRequests::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instance_group_manager_resize_requests::ListRequest,
@@ -4363,11 +4362,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagerResizeRequests::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -4377,7 +4376,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagerResizeRequests::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -4425,7 +4425,6 @@ impl<T> super::stub::InstanceGroupManagers for InstanceGroupManagers<T>
 where
     T: super::stub::InstanceGroupManagers + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn abandon_instances(
         &self,
         req: crate::model::instance_group_managers::AbandonInstancesRequest,
@@ -4435,11 +4434,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::abandon_instances",
-            self.inner.abandon_instances(req, options));
+            self.inner.abandon_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::instance_group_managers::AggregatedListRequest,
@@ -4449,11 +4448,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn apply_updates_to_instances(
         &self,
         req: crate::model::instance_group_managers::ApplyUpdatesToInstancesRequest,
@@ -4463,11 +4462,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::apply_updates_to_instances",
-            self.inner.apply_updates_to_instances(req, options));
+            self.inner.apply_updates_to_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_instances(
         &self,
         req: crate::model::instance_group_managers::CreateInstancesRequest,
@@ -4477,11 +4476,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::create_instances",
-            self.inner.create_instances(req, options));
+            self.inner.create_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instance_group_managers::DeleteRequest,
@@ -4491,11 +4490,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_instances(
         &self,
         req: crate::model::instance_group_managers::DeleteInstancesRequest,
@@ -4505,11 +4504,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::delete_instances",
-            self.inner.delete_instances(req, options));
+            self.inner.delete_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_per_instance_configs(
         &self,
         req: crate::model::instance_group_managers::DeletePerInstanceConfigsRequest,
@@ -4519,11 +4518,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::delete_per_instance_configs",
-            self.inner.delete_per_instance_configs(req, options));
+            self.inner.delete_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instance_group_managers::GetRequest,
@@ -4533,11 +4532,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instance_group_managers::InsertRequest,
@@ -4547,11 +4546,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instance_group_managers::ListRequest,
@@ -4561,11 +4560,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_errors(
         &self,
         req: crate::model::instance_group_managers::ListErrorsRequest,
@@ -4575,11 +4574,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::list_errors",
-            self.inner.list_errors(req, options));
+            self.inner.list_errors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_managed_instances(
         &self,
         req: crate::model::instance_group_managers::ListManagedInstancesRequest,
@@ -4590,11 +4589,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::list_managed_instances",
-            self.inner.list_managed_instances(req, options));
+            self.inner.list_managed_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_per_instance_configs(
         &self,
         req: crate::model::instance_group_managers::ListPerInstanceConfigsRequest,
@@ -4605,11 +4604,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::list_per_instance_configs",
-            self.inner.list_per_instance_configs(req, options));
+            self.inner.list_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::instance_group_managers::PatchRequest,
@@ -4619,11 +4618,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_per_instance_configs(
         &self,
         req: crate::model::instance_group_managers::PatchPerInstanceConfigsRequest,
@@ -4633,11 +4632,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::patch_per_instance_configs",
-            self.inner.patch_per_instance_configs(req, options));
+            self.inner.patch_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn recreate_instances(
         &self,
         req: crate::model::instance_group_managers::RecreateInstancesRequest,
@@ -4647,11 +4646,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::recreate_instances",
-            self.inner.recreate_instances(req, options));
+            self.inner.recreate_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resize(
         &self,
         req: crate::model::instance_group_managers::ResizeRequest,
@@ -4661,11 +4660,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::resize",
-            self.inner.resize(req, options));
+            self.inner.resize(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_instances(
         &self,
         req: crate::model::instance_group_managers::ResumeInstancesRequest,
@@ -4675,11 +4674,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::resume_instances",
-            self.inner.resume_instances(req, options));
+            self.inner.resume_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_instance_template(
         &self,
         req: crate::model::instance_group_managers::SetInstanceTemplateRequest,
@@ -4689,11 +4688,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::set_instance_template",
-            self.inner.set_instance_template(req, options));
+            self.inner.set_instance_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_target_pools(
         &self,
         req: crate::model::instance_group_managers::SetTargetPoolsRequest,
@@ -4703,11 +4702,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::set_target_pools",
-            self.inner.set_target_pools(req, options));
+            self.inner.set_target_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_instances(
         &self,
         req: crate::model::instance_group_managers::StartInstancesRequest,
@@ -4717,11 +4716,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::start_instances",
-            self.inner.start_instances(req, options));
+            self.inner.start_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_instances(
         &self,
         req: crate::model::instance_group_managers::StopInstancesRequest,
@@ -4731,11 +4730,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::stop_instances",
-            self.inner.stop_instances(req, options));
+            self.inner.stop_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn suspend_instances(
         &self,
         req: crate::model::instance_group_managers::SuspendInstancesRequest,
@@ -4745,11 +4744,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::suspend_instances",
-            self.inner.suspend_instances(req, options));
+            self.inner.suspend_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_per_instance_configs(
         &self,
         req: crate::model::instance_group_managers::UpdatePerInstanceConfigsRequest,
@@ -4759,11 +4758,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::update_per_instance_configs",
-            self.inner.update_per_instance_configs(req, options));
+            self.inner.update_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -4773,7 +4772,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroupManagers::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -4821,7 +4821,6 @@ impl<T> super::stub::InstanceGroups for InstanceGroups<T>
 where
     T: super::stub::InstanceGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_instances(
         &self,
         req: crate::model::instance_groups::AddInstancesRequest,
@@ -4831,11 +4830,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::add_instances",
-            self.inner.add_instances(req, options));
+            self.inner.add_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::instance_groups::AggregatedListRequest,
@@ -4845,11 +4844,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instance_groups::DeleteRequest,
@@ -4859,11 +4858,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instance_groups::GetRequest,
@@ -4873,11 +4872,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instance_groups::InsertRequest,
@@ -4887,11 +4886,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instance_groups::ListRequest,
@@ -4901,11 +4900,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_instances(
         &self,
         req: crate::model::instance_groups::ListInstancesRequest,
@@ -4915,11 +4914,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::list_instances",
-            self.inner.list_instances(req, options));
+            self.inner.list_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_instances(
         &self,
         req: crate::model::instance_groups::RemoveInstancesRequest,
@@ -4929,11 +4928,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::remove_instances",
-            self.inner.remove_instances(req, options));
+            self.inner.remove_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_named_ports(
         &self,
         req: crate::model::instance_groups::SetNamedPortsRequest,
@@ -4943,11 +4942,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::set_named_ports",
-            self.inner.set_named_ports(req, options));
+            self.inner.set_named_ports(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::instance_groups::TestIamPermissionsRequest,
@@ -4957,11 +4956,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -4971,7 +4970,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -5019,7 +5019,6 @@ impl<T> super::stub::InstanceSettings for InstanceSettings<T>
 where
     T: super::stub::InstanceSettings + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instance_settings::GetRequest,
@@ -5029,11 +5028,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceSettings::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::instance_settings::PatchRequest,
@@ -5043,11 +5042,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceSettings::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -5057,7 +5056,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceSettings::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -5105,7 +5105,6 @@ impl<T> super::stub::InstanceTemplates for InstanceTemplates<T>
 where
     T: super::stub::InstanceTemplates + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::instance_templates::AggregatedListRequest,
@@ -5115,11 +5114,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instance_templates::DeleteRequest,
@@ -5129,11 +5128,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instance_templates::GetRequest,
@@ -5143,11 +5142,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::instance_templates::GetIamPolicyRequest,
@@ -5157,11 +5156,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instance_templates::InsertRequest,
@@ -5171,11 +5170,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instance_templates::ListRequest,
@@ -5185,11 +5184,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::instance_templates::SetIamPolicyRequest,
@@ -5199,11 +5198,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::instance_templates::TestIamPermissionsRequest,
@@ -5213,11 +5212,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -5227,7 +5226,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstanceTemplates::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -5275,7 +5275,6 @@ impl<T> super::stub::Instances for Instances<T>
 where
     T: super::stub::Instances + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_access_config(
         &self,
         req: crate::model::instances::AddAccessConfigRequest,
@@ -5285,11 +5284,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::add_access_config",
-            self.inner.add_access_config(req, options));
+            self.inner.add_access_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_network_interface(
         &self,
         req: crate::model::instances::AddNetworkInterfaceRequest,
@@ -5299,11 +5298,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::add_network_interface",
-            self.inner.add_network_interface(req, options));
+            self.inner.add_network_interface(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_resource_policies(
         &self,
         req: crate::model::instances::AddResourcePoliciesRequest,
@@ -5313,11 +5312,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::add_resource_policies",
-            self.inner.add_resource_policies(req, options));
+            self.inner.add_resource_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::instances::AggregatedListRequest,
@@ -5327,11 +5326,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn attach_disk(
         &self,
         req: crate::model::instances::AttachDiskRequest,
@@ -5341,11 +5340,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::attach_disk",
-            self.inner.attach_disk(req, options));
+            self.inner.attach_disk(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_insert(
         &self,
         req: crate::model::instances::BulkInsertRequest,
@@ -5355,11 +5354,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::bulk_insert",
-            self.inner.bulk_insert(req, options));
+            self.inner.bulk_insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instances::DeleteRequest,
@@ -5369,11 +5368,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_access_config(
         &self,
         req: crate::model::instances::DeleteAccessConfigRequest,
@@ -5383,11 +5382,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::delete_access_config",
-            self.inner.delete_access_config(req, options));
+            self.inner.delete_access_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_network_interface(
         &self,
         req: crate::model::instances::DeleteNetworkInterfaceRequest,
@@ -5397,11 +5396,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::delete_network_interface",
-            self.inner.delete_network_interface(req, options));
+            self.inner.delete_network_interface(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_disk(
         &self,
         req: crate::model::instances::DetachDiskRequest,
@@ -5411,11 +5410,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::detach_disk",
-            self.inner.detach_disk(req, options));
+            self.inner.detach_disk(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instances::GetRequest,
@@ -5425,11 +5424,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_firewalls(
         &self,
         req: crate::model::instances::GetEffectiveFirewallsRequest,
@@ -5439,11 +5438,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_effective_firewalls",
-            self.inner.get_effective_firewalls(req, options));
+            self.inner.get_effective_firewalls(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_guest_attributes(
         &self,
         req: crate::model::instances::GetGuestAttributesRequest,
@@ -5453,11 +5452,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_guest_attributes",
-            self.inner.get_guest_attributes(req, options));
+            self.inner.get_guest_attributes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::instances::GetIamPolicyRequest,
@@ -5467,11 +5466,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_screenshot(
         &self,
         req: crate::model::instances::GetScreenshotRequest,
@@ -5481,11 +5480,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_screenshot",
-            self.inner.get_screenshot(req, options));
+            self.inner.get_screenshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_serial_port_output(
         &self,
         req: crate::model::instances::GetSerialPortOutputRequest,
@@ -5495,11 +5494,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_serial_port_output",
-            self.inner.get_serial_port_output(req, options));
+            self.inner.get_serial_port_output(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_shielded_instance_identity(
         &self,
         req: crate::model::instances::GetShieldedInstanceIdentityRequest,
@@ -5509,11 +5508,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_shielded_instance_identity",
-            self.inner.get_shielded_instance_identity(req, options));
+            self.inner.get_shielded_instance_identity(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instances::InsertRequest,
@@ -5523,11 +5522,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instances::ListRequest,
@@ -5537,11 +5536,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_referrers(
         &self,
         req: crate::model::instances::ListReferrersRequest,
@@ -5551,11 +5550,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::list_referrers",
-            self.inner.list_referrers(req, options));
+            self.inner.list_referrers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn perform_maintenance(
         &self,
         req: crate::model::instances::PerformMaintenanceRequest,
@@ -5565,11 +5564,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::perform_maintenance",
-            self.inner.perform_maintenance(req, options));
+            self.inner.perform_maintenance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_resource_policies(
         &self,
         req: crate::model::instances::RemoveResourcePoliciesRequest,
@@ -5579,11 +5578,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::remove_resource_policies",
-            self.inner.remove_resource_policies(req, options));
+            self.inner.remove_resource_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn report_host_as_faulty(
         &self,
         req: crate::model::instances::ReportHostAsFaultyRequest,
@@ -5593,11 +5592,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::report_host_as_faulty",
-            self.inner.report_host_as_faulty(req, options));
+            self.inner.report_host_as_faulty(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reset(
         &self,
         req: crate::model::instances::ResetRequest,
@@ -5607,11 +5606,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::reset",
-            self.inner.reset(req, options));
+            self.inner.reset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume(
         &self,
         req: crate::model::instances::ResumeRequest,
@@ -5621,11 +5620,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::resume",
-            self.inner.resume(req, options));
+            self.inner.resume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn send_diagnostic_interrupt(
         &self,
         req: crate::model::instances::SendDiagnosticInterruptRequest,
@@ -5635,11 +5634,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::send_diagnostic_interrupt",
-            self.inner.send_diagnostic_interrupt(req, options));
+            self.inner.send_diagnostic_interrupt(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_deletion_protection(
         &self,
         req: crate::model::instances::SetDeletionProtectionRequest,
@@ -5649,11 +5648,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_deletion_protection",
-            self.inner.set_deletion_protection(req, options));
+            self.inner.set_deletion_protection(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_disk_auto_delete(
         &self,
         req: crate::model::instances::SetDiskAutoDeleteRequest,
@@ -5663,11 +5662,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_disk_auto_delete",
-            self.inner.set_disk_auto_delete(req, options));
+            self.inner.set_disk_auto_delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::instances::SetIamPolicyRequest,
@@ -5677,11 +5676,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::instances::SetLabelsRequest,
@@ -5691,11 +5690,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_machine_resources(
         &self,
         req: crate::model::instances::SetMachineResourcesRequest,
@@ -5705,11 +5704,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_machine_resources",
-            self.inner.set_machine_resources(req, options));
+            self.inner.set_machine_resources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_machine_type(
         &self,
         req: crate::model::instances::SetMachineTypeRequest,
@@ -5719,11 +5718,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_machine_type",
-            self.inner.set_machine_type(req, options));
+            self.inner.set_machine_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_metadata(
         &self,
         req: crate::model::instances::SetMetadataRequest,
@@ -5733,11 +5732,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_metadata",
-            self.inner.set_metadata(req, options));
+            self.inner.set_metadata(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_min_cpu_platform(
         &self,
         req: crate::model::instances::SetMinCpuPlatformRequest,
@@ -5747,11 +5746,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_min_cpu_platform",
-            self.inner.set_min_cpu_platform(req, options));
+            self.inner.set_min_cpu_platform(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_name(
         &self,
         req: crate::model::instances::SetNameRequest,
@@ -5761,11 +5760,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_name",
-            self.inner.set_name(req, options));
+            self.inner.set_name(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_scheduling(
         &self,
         req: crate::model::instances::SetSchedulingRequest,
@@ -5775,11 +5774,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_scheduling",
-            self.inner.set_scheduling(req, options));
+            self.inner.set_scheduling(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_security_policy(
         &self,
         req: crate::model::instances::SetSecurityPolicyRequest,
@@ -5789,11 +5788,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_security_policy",
-            self.inner.set_security_policy(req, options));
+            self.inner.set_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_service_account(
         &self,
         req: crate::model::instances::SetServiceAccountRequest,
@@ -5803,11 +5802,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_service_account",
-            self.inner.set_service_account(req, options));
+            self.inner.set_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_shielded_instance_integrity_policy(
         &self,
         req: crate::model::instances::SetShieldedInstanceIntegrityPolicyRequest,
@@ -5817,11 +5816,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_shielded_instance_integrity_policy",
-            self.inner.set_shielded_instance_integrity_policy(req, options));
+            self.inner.set_shielded_instance_integrity_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_tags(
         &self,
         req: crate::model::instances::SetTagsRequest,
@@ -5831,11 +5830,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::set_tags",
-            self.inner.set_tags(req, options));
+            self.inner.set_tags(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn simulate_maintenance_event(
         &self,
         req: crate::model::instances::SimulateMaintenanceEventRequest,
@@ -5845,11 +5844,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::simulate_maintenance_event",
-            self.inner.simulate_maintenance_event(req, options));
+            self.inner.simulate_maintenance_event(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start(
         &self,
         req: crate::model::instances::StartRequest,
@@ -5859,11 +5858,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::start",
-            self.inner.start(req, options));
+            self.inner.start(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_with_encryption_key(
         &self,
         req: crate::model::instances::StartWithEncryptionKeyRequest,
@@ -5873,11 +5872,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::start_with_encryption_key",
-            self.inner.start_with_encryption_key(req, options));
+            self.inner.start_with_encryption_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop(
         &self,
         req: crate::model::instances::StopRequest,
@@ -5887,11 +5886,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::stop",
-            self.inner.stop(req, options));
+            self.inner.stop(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn suspend(
         &self,
         req: crate::model::instances::SuspendRequest,
@@ -5901,11 +5900,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::suspend",
-            self.inner.suspend(req, options));
+            self.inner.suspend(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::instances::TestIamPermissionsRequest,
@@ -5915,11 +5914,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::instances::UpdateRequest,
@@ -5929,11 +5928,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_access_config(
         &self,
         req: crate::model::instances::UpdateAccessConfigRequest,
@@ -5943,11 +5942,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::update_access_config",
-            self.inner.update_access_config(req, options));
+            self.inner.update_access_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_display_device(
         &self,
         req: crate::model::instances::UpdateDisplayDeviceRequest,
@@ -5957,11 +5956,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::update_display_device",
-            self.inner.update_display_device(req, options));
+            self.inner.update_display_device(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_network_interface(
         &self,
         req: crate::model::instances::UpdateNetworkInterfaceRequest,
@@ -5971,11 +5970,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::update_network_interface",
-            self.inner.update_network_interface(req, options));
+            self.inner.update_network_interface(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_shielded_instance_config(
         &self,
         req: crate::model::instances::UpdateShieldedInstanceConfigRequest,
@@ -5985,11 +5984,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::update_shielded_instance_config",
-            self.inner.update_shielded_instance_config(req, options));
+            self.inner.update_shielded_instance_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -5999,7 +5998,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Instances::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -6047,7 +6047,6 @@ impl<T> super::stub::InstantSnapshotGroups for InstantSnapshotGroups<T>
 where
     T: super::stub::InstantSnapshotGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instant_snapshot_groups::DeleteRequest,
@@ -6057,11 +6056,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instant_snapshot_groups::GetRequest,
@@ -6071,11 +6070,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::instant_snapshot_groups::GetIamPolicyRequest,
@@ -6085,11 +6084,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instant_snapshot_groups::InsertRequest,
@@ -6099,11 +6098,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instant_snapshot_groups::ListRequest,
@@ -6113,11 +6112,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::instant_snapshot_groups::SetIamPolicyRequest,
@@ -6127,11 +6126,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::instant_snapshot_groups::TestIamPermissionsRequest,
@@ -6141,11 +6140,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -6155,7 +6154,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshotGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -6203,7 +6203,6 @@ impl<T> super::stub::InstantSnapshots for InstantSnapshots<T>
 where
     T: super::stub::InstantSnapshots + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::instant_snapshots::AggregatedListRequest,
@@ -6213,11 +6212,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::instant_snapshots::DeleteRequest,
@@ -6227,11 +6226,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::instant_snapshots::GetRequest,
@@ -6241,11 +6240,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::instant_snapshots::GetIamPolicyRequest,
@@ -6255,11 +6254,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::instant_snapshots::InsertRequest,
@@ -6269,11 +6268,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::instant_snapshots::ListRequest,
@@ -6283,11 +6282,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::instant_snapshots::SetIamPolicyRequest,
@@ -6297,11 +6296,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::instant_snapshots::SetLabelsRequest,
@@ -6311,11 +6310,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::instant_snapshots::TestIamPermissionsRequest,
@@ -6325,11 +6324,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -6339,7 +6338,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InstantSnapshots::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -6387,7 +6387,6 @@ impl<T> super::stub::InterconnectAttachmentGroups for InterconnectAttachmentGrou
 where
     T: super::stub::InterconnectAttachmentGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::interconnect_attachment_groups::DeleteRequest,
@@ -6397,11 +6396,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::interconnect_attachment_groups::GetRequest,
@@ -6411,11 +6410,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::interconnect_attachment_groups::GetIamPolicyRequest,
@@ -6425,11 +6424,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operational_status(
         &self,
         req: crate::model::interconnect_attachment_groups::GetOperationalStatusRequest,
@@ -6441,11 +6440,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::get_operational_status",
-            self.inner.get_operational_status(req, options));
+            self.inner.get_operational_status(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::interconnect_attachment_groups::InsertRequest,
@@ -6455,11 +6454,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::interconnect_attachment_groups::ListRequest,
@@ -6469,11 +6468,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::interconnect_attachment_groups::PatchRequest,
@@ -6483,11 +6482,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::interconnect_attachment_groups::SetIamPolicyRequest,
@@ -6497,11 +6496,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::interconnect_attachment_groups::TestIamPermissionsRequest,
@@ -6511,11 +6510,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -6525,7 +6524,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachmentGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -6573,7 +6573,6 @@ impl<T> super::stub::InterconnectAttachments for InterconnectAttachments<T>
 where
     T: super::stub::InterconnectAttachments + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::interconnect_attachments::AggregatedListRequest,
@@ -6583,11 +6582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::interconnect_attachments::DeleteRequest,
@@ -6597,11 +6596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::interconnect_attachments::GetRequest,
@@ -6611,11 +6610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::interconnect_attachments::InsertRequest,
@@ -6625,11 +6624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::interconnect_attachments::ListRequest,
@@ -6639,11 +6638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::interconnect_attachments::PatchRequest,
@@ -6653,11 +6652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::interconnect_attachments::SetLabelsRequest,
@@ -6667,11 +6666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -6681,7 +6680,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectAttachments::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -6729,7 +6729,6 @@ impl<T> super::stub::InterconnectGroups for InterconnectGroups<T>
 where
     T: super::stub::InterconnectGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_members(
         &self,
         req: crate::model::interconnect_groups::CreateMembersRequest,
@@ -6739,11 +6738,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::create_members",
-            self.inner.create_members(req, options));
+            self.inner.create_members(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::interconnect_groups::DeleteRequest,
@@ -6753,11 +6752,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::interconnect_groups::GetRequest,
@@ -6767,11 +6766,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::interconnect_groups::GetIamPolicyRequest,
@@ -6781,11 +6780,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operational_status(
         &self,
         req: crate::model::interconnect_groups::GetOperationalStatusRequest,
@@ -6795,11 +6794,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::get_operational_status",
-            self.inner.get_operational_status(req, options));
+            self.inner.get_operational_status(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::interconnect_groups::InsertRequest,
@@ -6809,11 +6808,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::interconnect_groups::ListRequest,
@@ -6823,11 +6822,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::interconnect_groups::PatchRequest,
@@ -6837,11 +6836,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::interconnect_groups::SetIamPolicyRequest,
@@ -6851,11 +6850,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::interconnect_groups::TestIamPermissionsRequest,
@@ -6865,11 +6864,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -6879,7 +6878,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -6927,7 +6927,6 @@ impl<T> super::stub::InterconnectLocations for InterconnectLocations<T>
 where
     T: super::stub::InterconnectLocations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::interconnect_locations::GetRequest,
@@ -6937,11 +6936,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectLocations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::interconnect_locations::ListRequest,
@@ -6951,7 +6950,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectLocations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -6985,7 +6985,6 @@ impl<T> super::stub::InterconnectRemoteLocations for InterconnectRemoteLocations
 where
     T: super::stub::InterconnectRemoteLocations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::interconnect_remote_locations::GetRequest,
@@ -6995,11 +6994,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectRemoteLocations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::interconnect_remote_locations::ListRequest,
@@ -7009,7 +7008,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::InterconnectRemoteLocations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -7043,7 +7043,6 @@ impl<T> super::stub::Interconnects for Interconnects<T>
 where
     T: super::stub::Interconnects + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::interconnects::DeleteRequest,
@@ -7053,11 +7052,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::interconnects::GetRequest,
@@ -7067,11 +7066,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_diagnostics(
         &self,
         req: crate::model::interconnects::GetDiagnosticsRequest,
@@ -7081,11 +7080,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::get_diagnostics",
-            self.inner.get_diagnostics(req, options));
+            self.inner.get_diagnostics(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_macsec_config(
         &self,
         req: crate::model::interconnects::GetMacsecConfigRequest,
@@ -7095,11 +7094,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::get_macsec_config",
-            self.inner.get_macsec_config(req, options));
+            self.inner.get_macsec_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::interconnects::InsertRequest,
@@ -7109,11 +7108,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::interconnects::ListRequest,
@@ -7123,11 +7122,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::interconnects::PatchRequest,
@@ -7137,11 +7136,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::interconnects::SetLabelsRequest,
@@ -7151,11 +7150,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -7165,7 +7164,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Interconnects::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -7213,7 +7213,6 @@ impl<T> super::stub::LicenseCodes for LicenseCodes<T>
 where
     T: super::stub::LicenseCodes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::license_codes::GetRequest,
@@ -7223,11 +7222,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseCodes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::license_codes::GetIamPolicyRequest,
@@ -7237,11 +7236,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseCodes::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::license_codes::SetIamPolicyRequest,
@@ -7251,11 +7250,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseCodes::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::license_codes::TestIamPermissionsRequest,
@@ -7265,7 +7264,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseCodes::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -7299,7 +7299,6 @@ impl<T> super::stub::Licenses for Licenses<T>
 where
     T: super::stub::Licenses + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::licenses::DeleteRequest,
@@ -7309,11 +7308,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::licenses::GetRequest,
@@ -7323,11 +7322,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::licenses::GetIamPolicyRequest,
@@ -7337,11 +7336,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::licenses::InsertRequest,
@@ -7351,11 +7350,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::licenses::ListRequest,
@@ -7365,11 +7364,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::licenses::SetIamPolicyRequest,
@@ -7379,11 +7378,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::licenses::TestIamPermissionsRequest,
@@ -7393,11 +7392,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::licenses::UpdateRequest,
@@ -7407,11 +7406,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -7421,7 +7420,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Licenses::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -7469,7 +7469,6 @@ impl<T> super::stub::MachineImages for MachineImages<T>
 where
     T: super::stub::MachineImages + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::machine_images::DeleteRequest,
@@ -7479,11 +7478,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::machine_images::GetRequest,
@@ -7493,11 +7492,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::machine_images::GetIamPolicyRequest,
@@ -7507,11 +7506,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::machine_images::InsertRequest,
@@ -7521,11 +7520,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::machine_images::ListRequest,
@@ -7535,11 +7534,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::machine_images::SetIamPolicyRequest,
@@ -7549,11 +7548,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::machine_images::SetLabelsRequest,
@@ -7563,11 +7562,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::machine_images::TestIamPermissionsRequest,
@@ -7577,11 +7576,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -7591,7 +7590,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineImages::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -7639,7 +7639,6 @@ impl<T> super::stub::MachineTypes for MachineTypes<T>
 where
     T: super::stub::MachineTypes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::machine_types::AggregatedListRequest,
@@ -7649,11 +7648,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineTypes::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::machine_types::GetRequest,
@@ -7663,11 +7662,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineTypes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::machine_types::ListRequest,
@@ -7677,7 +7676,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MachineTypes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -7711,7 +7711,6 @@ impl<T> super::stub::NetworkAttachments for NetworkAttachments<T>
 where
     T: super::stub::NetworkAttachments + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::network_attachments::AggregatedListRequest,
@@ -7721,11 +7720,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::network_attachments::DeleteRequest,
@@ -7735,11 +7734,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::network_attachments::GetRequest,
@@ -7749,11 +7748,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::network_attachments::GetIamPolicyRequest,
@@ -7763,11 +7762,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::network_attachments::InsertRequest,
@@ -7777,11 +7776,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::network_attachments::ListRequest,
@@ -7791,11 +7790,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::network_attachments::PatchRequest,
@@ -7805,11 +7804,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::network_attachments::SetIamPolicyRequest,
@@ -7819,11 +7818,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::network_attachments::TestIamPermissionsRequest,
@@ -7833,11 +7832,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -7847,7 +7846,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkAttachments::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -7895,7 +7895,6 @@ impl<T> super::stub::NetworkEdgeSecurityServices for NetworkEdgeSecurityServices
 where
     T: super::stub::NetworkEdgeSecurityServices + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::network_edge_security_services::AggregatedListRequest,
@@ -7905,11 +7904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEdgeSecurityServices::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::network_edge_security_services::DeleteRequest,
@@ -7919,11 +7918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEdgeSecurityServices::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::network_edge_security_services::GetRequest,
@@ -7933,11 +7932,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEdgeSecurityServices::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::network_edge_security_services::InsertRequest,
@@ -7947,11 +7946,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEdgeSecurityServices::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::network_edge_security_services::PatchRequest,
@@ -7961,11 +7960,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEdgeSecurityServices::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -7975,7 +7974,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEdgeSecurityServices::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -8023,7 +8023,6 @@ impl<T> super::stub::NetworkEndpointGroups for NetworkEndpointGroups<T>
 where
     T: super::stub::NetworkEndpointGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::network_endpoint_groups::AggregatedListRequest,
@@ -8033,11 +8032,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn attach_network_endpoints(
         &self,
         req: crate::model::network_endpoint_groups::AttachNetworkEndpointsRequest,
@@ -8047,11 +8046,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::attach_network_endpoints",
-            self.inner.attach_network_endpoints(req, options));
+            self.inner.attach_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::network_endpoint_groups::DeleteRequest,
@@ -8061,11 +8060,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_network_endpoints(
         &self,
         req: crate::model::network_endpoint_groups::DetachNetworkEndpointsRequest,
@@ -8075,11 +8074,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::detach_network_endpoints",
-            self.inner.detach_network_endpoints(req, options));
+            self.inner.detach_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::network_endpoint_groups::GetRequest,
@@ -8089,11 +8088,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::network_endpoint_groups::InsertRequest,
@@ -8103,11 +8102,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::network_endpoint_groups::ListRequest,
@@ -8117,11 +8116,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_network_endpoints(
         &self,
         req: crate::model::network_endpoint_groups::ListNetworkEndpointsRequest,
@@ -8131,11 +8130,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::list_network_endpoints",
-            self.inner.list_network_endpoints(req, options));
+            self.inner.list_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::network_endpoint_groups::TestIamPermissionsRequest,
@@ -8145,11 +8144,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -8159,7 +8158,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkEndpointGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -8207,7 +8207,6 @@ impl<T> super::stub::NetworkFirewallPolicies for NetworkFirewallPolicies<T>
 where
     T: super::stub::NetworkFirewallPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_association(
         &self,
         req: crate::model::network_firewall_policies::AddAssociationRequest,
@@ -8217,11 +8216,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::add_association",
-            self.inner.add_association(req, options));
+            self.inner.add_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_packet_mirroring_rule(
         &self,
         req: crate::model::network_firewall_policies::AddPacketMirroringRuleRequest,
@@ -8231,11 +8230,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::add_packet_mirroring_rule",
-            self.inner.add_packet_mirroring_rule(req, options));
+            self.inner.add_packet_mirroring_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_rule(
         &self,
         req: crate::model::network_firewall_policies::AddRuleRequest,
@@ -8245,11 +8244,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::add_rule",
-            self.inner.add_rule(req, options));
+            self.inner.add_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::network_firewall_policies::AggregatedListRequest,
@@ -8259,11 +8258,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn clone_rules(
         &self,
         req: crate::model::network_firewall_policies::CloneRulesRequest,
@@ -8273,11 +8272,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::clone_rules",
-            self.inner.clone_rules(req, options));
+            self.inner.clone_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::network_firewall_policies::DeleteRequest,
@@ -8287,11 +8286,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::network_firewall_policies::GetRequest,
@@ -8301,11 +8300,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_association(
         &self,
         req: crate::model::network_firewall_policies::GetAssociationRequest,
@@ -8315,11 +8314,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::get_association",
-            self.inner.get_association(req, options));
+            self.inner.get_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::network_firewall_policies::GetIamPolicyRequest,
@@ -8329,11 +8328,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_packet_mirroring_rule(
         &self,
         req: crate::model::network_firewall_policies::GetPacketMirroringRuleRequest,
@@ -8343,11 +8342,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::get_packet_mirroring_rule",
-            self.inner.get_packet_mirroring_rule(req, options));
+            self.inner.get_packet_mirroring_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::network_firewall_policies::GetRuleRequest,
@@ -8357,11 +8356,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::network_firewall_policies::InsertRequest,
@@ -8371,11 +8370,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::network_firewall_policies::ListRequest,
@@ -8385,11 +8384,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::network_firewall_policies::PatchRequest,
@@ -8399,11 +8398,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_packet_mirroring_rule(
         &self,
         req: crate::model::network_firewall_policies::PatchPacketMirroringRuleRequest,
@@ -8413,11 +8412,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::patch_packet_mirroring_rule",
-            self.inner.patch_packet_mirroring_rule(req, options));
+            self.inner.patch_packet_mirroring_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_rule(
         &self,
         req: crate::model::network_firewall_policies::PatchRuleRequest,
@@ -8427,11 +8426,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::patch_rule",
-            self.inner.patch_rule(req, options));
+            self.inner.patch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_association(
         &self,
         req: crate::model::network_firewall_policies::RemoveAssociationRequest,
@@ -8441,11 +8440,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::remove_association",
-            self.inner.remove_association(req, options));
+            self.inner.remove_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_packet_mirroring_rule(
         &self,
         req: crate::model::network_firewall_policies::RemovePacketMirroringRuleRequest,
@@ -8455,11 +8454,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::remove_packet_mirroring_rule",
-            self.inner.remove_packet_mirroring_rule(req, options));
+            self.inner.remove_packet_mirroring_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_rule(
         &self,
         req: crate::model::network_firewall_policies::RemoveRuleRequest,
@@ -8469,11 +8468,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::remove_rule",
-            self.inner.remove_rule(req, options));
+            self.inner.remove_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::network_firewall_policies::SetIamPolicyRequest,
@@ -8483,11 +8482,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::network_firewall_policies::TestIamPermissionsRequest,
@@ -8497,11 +8496,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -8511,7 +8510,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkFirewallPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -8559,7 +8559,6 @@ impl<T> super::stub::NetworkProfiles for NetworkProfiles<T>
 where
     T: super::stub::NetworkProfiles + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::network_profiles::GetRequest,
@@ -8569,11 +8568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkProfiles::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::network_profiles::ListRequest,
@@ -8583,7 +8582,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetworkProfiles::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -8617,7 +8617,6 @@ impl<T> super::stub::Networks for Networks<T>
 where
     T: super::stub::Networks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_peering(
         &self,
         req: crate::model::networks::AddPeeringRequest,
@@ -8627,11 +8626,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::add_peering",
-            self.inner.add_peering(req, options));
+            self.inner.add_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_request_remove_peering(
         &self,
         req: crate::model::networks::CancelRequestRemovePeeringRequest,
@@ -8641,11 +8640,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::cancel_request_remove_peering",
-            self.inner.cancel_request_remove_peering(req, options));
+            self.inner.cancel_request_remove_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::networks::DeleteRequest,
@@ -8655,11 +8654,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::networks::GetRequest,
@@ -8669,11 +8668,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_firewalls(
         &self,
         req: crate::model::networks::GetEffectiveFirewallsRequest,
@@ -8683,11 +8682,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::get_effective_firewalls",
-            self.inner.get_effective_firewalls(req, options));
+            self.inner.get_effective_firewalls(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::networks::InsertRequest,
@@ -8697,11 +8696,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::networks::ListRequest,
@@ -8711,11 +8710,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_peering_routes(
         &self,
         req: crate::model::networks::ListPeeringRoutesRequest,
@@ -8725,11 +8724,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::list_peering_routes",
-            self.inner.list_peering_routes(req, options));
+            self.inner.list_peering_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::networks::PatchRequest,
@@ -8739,11 +8738,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_peering(
         &self,
         req: crate::model::networks::RemovePeeringRequest,
@@ -8753,11 +8752,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::remove_peering",
-            self.inner.remove_peering(req, options));
+            self.inner.remove_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn request_remove_peering(
         &self,
         req: crate::model::networks::RequestRemovePeeringRequest,
@@ -8767,11 +8766,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::request_remove_peering",
-            self.inner.request_remove_peering(req, options));
+            self.inner.request_remove_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn switch_to_custom_mode(
         &self,
         req: crate::model::networks::SwitchToCustomModeRequest,
@@ -8781,11 +8780,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::switch_to_custom_mode",
-            self.inner.switch_to_custom_mode(req, options));
+            self.inner.switch_to_custom_mode(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_peering(
         &self,
         req: crate::model::networks::UpdatePeeringRequest,
@@ -8795,11 +8794,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::update_peering",
-            self.inner.update_peering(req, options));
+            self.inner.update_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -8809,7 +8808,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Networks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -8857,7 +8857,6 @@ impl<T> super::stub::NodeGroups for NodeGroups<T>
 where
     T: super::stub::NodeGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_nodes(
         &self,
         req: crate::model::node_groups::AddNodesRequest,
@@ -8867,11 +8866,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::add_nodes",
-            self.inner.add_nodes(req, options));
+            self.inner.add_nodes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::node_groups::AggregatedListRequest,
@@ -8881,11 +8880,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::node_groups::DeleteRequest,
@@ -8895,11 +8894,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_nodes(
         &self,
         req: crate::model::node_groups::DeleteNodesRequest,
@@ -8909,11 +8908,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::delete_nodes",
-            self.inner.delete_nodes(req, options));
+            self.inner.delete_nodes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::node_groups::GetRequest,
@@ -8923,11 +8922,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::node_groups::GetIamPolicyRequest,
@@ -8937,11 +8936,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::node_groups::InsertRequest,
@@ -8951,11 +8950,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::node_groups::ListRequest,
@@ -8965,11 +8964,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_nodes(
         &self,
         req: crate::model::node_groups::ListNodesRequest,
@@ -8979,11 +8978,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::list_nodes",
-            self.inner.list_nodes(req, options));
+            self.inner.list_nodes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::node_groups::PatchRequest,
@@ -8993,11 +8992,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn perform_maintenance(
         &self,
         req: crate::model::node_groups::PerformMaintenanceRequest,
@@ -9007,11 +9006,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::perform_maintenance",
-            self.inner.perform_maintenance(req, options));
+            self.inner.perform_maintenance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::node_groups::SetIamPolicyRequest,
@@ -9021,11 +9020,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_node_template(
         &self,
         req: crate::model::node_groups::SetNodeTemplateRequest,
@@ -9035,11 +9034,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::set_node_template",
-            self.inner.set_node_template(req, options));
+            self.inner.set_node_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn simulate_maintenance_event(
         &self,
         req: crate::model::node_groups::SimulateMaintenanceEventRequest,
@@ -9049,11 +9048,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::simulate_maintenance_event",
-            self.inner.simulate_maintenance_event(req, options));
+            self.inner.simulate_maintenance_event(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::node_groups::TestIamPermissionsRequest,
@@ -9063,11 +9062,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -9077,7 +9076,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -9125,7 +9125,6 @@ impl<T> super::stub::NodeTemplates for NodeTemplates<T>
 where
     T: super::stub::NodeTemplates + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::node_templates::AggregatedListRequest,
@@ -9135,11 +9134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::node_templates::DeleteRequest,
@@ -9149,11 +9148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::node_templates::GetRequest,
@@ -9163,11 +9162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::node_templates::GetIamPolicyRequest,
@@ -9177,11 +9176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::node_templates::InsertRequest,
@@ -9191,11 +9190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::node_templates::ListRequest,
@@ -9205,11 +9204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::node_templates::SetIamPolicyRequest,
@@ -9219,11 +9218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::node_templates::TestIamPermissionsRequest,
@@ -9233,11 +9232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -9247,7 +9246,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTemplates::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -9295,7 +9295,6 @@ impl<T> super::stub::NodeTypes for NodeTypes<T>
 where
     T: super::stub::NodeTypes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::node_types::AggregatedListRequest,
@@ -9305,11 +9304,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTypes::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::node_types::GetRequest,
@@ -9319,11 +9318,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTypes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::node_types::ListRequest,
@@ -9333,7 +9332,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NodeTypes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -9367,7 +9367,6 @@ impl<T> super::stub::OrganizationSecurityPolicies for OrganizationSecurityPolici
 where
     T: super::stub::OrganizationSecurityPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_association(
         &self,
         req: crate::model::organization_security_policies::AddAssociationRequest,
@@ -9377,11 +9376,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::add_association",
-            self.inner.add_association(req, options));
+            self.inner.add_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_rule(
         &self,
         req: crate::model::organization_security_policies::AddRuleRequest,
@@ -9391,11 +9390,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::add_rule",
-            self.inner.add_rule(req, options));
+            self.inner.add_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn copy_rules(
         &self,
         req: crate::model::organization_security_policies::CopyRulesRequest,
@@ -9405,11 +9404,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::copy_rules",
-            self.inner.copy_rules(req, options));
+            self.inner.copy_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::organization_security_policies::DeleteRequest,
@@ -9419,11 +9418,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::organization_security_policies::GetRequest,
@@ -9433,11 +9432,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_association(
         &self,
         req: crate::model::organization_security_policies::GetAssociationRequest,
@@ -9447,11 +9446,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::get_association",
-            self.inner.get_association(req, options));
+            self.inner.get_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::organization_security_policies::GetRuleRequest,
@@ -9461,11 +9460,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::organization_security_policies::InsertRequest,
@@ -9475,11 +9474,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::organization_security_policies::ListRequest,
@@ -9489,11 +9488,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_associations(
         &self,
         req: crate::model::organization_security_policies::ListAssociationsRequest,
@@ -9504,11 +9503,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::list_associations",
-            self.inner.list_associations(req, options));
+            self.inner.list_associations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_preconfigured_expression_sets(
         &self,
         req: crate::model::organization_security_policies::ListPreconfiguredExpressionSetsRequest,
@@ -9520,11 +9519,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::list_preconfigured_expression_sets",
-            self.inner.list_preconfigured_expression_sets(req, options));
+            self.inner.list_preconfigured_expression_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn r#move(
         &self,
         req: crate::model::organization_security_policies::MoveRequest,
@@ -9534,11 +9533,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::r#move",
-            self.inner.r#move(req, options));
+            self.inner.r#move(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::organization_security_policies::PatchRequest,
@@ -9548,11 +9547,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_rule(
         &self,
         req: crate::model::organization_security_policies::PatchRuleRequest,
@@ -9562,11 +9561,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::patch_rule",
-            self.inner.patch_rule(req, options));
+            self.inner.patch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_association(
         &self,
         req: crate::model::organization_security_policies::RemoveAssociationRequest,
@@ -9576,11 +9575,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::remove_association",
-            self.inner.remove_association(req, options));
+            self.inner.remove_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_rule(
         &self,
         req: crate::model::organization_security_policies::RemoveRuleRequest,
@@ -9590,11 +9589,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::remove_rule",
-            self.inner.remove_rule(req, options));
+            self.inner.remove_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_organization_operations::GetRequest,
@@ -9604,7 +9603,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OrganizationSecurityPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -9652,7 +9652,6 @@ impl<T> super::stub::PacketMirrorings for PacketMirrorings<T>
 where
     T: super::stub::PacketMirrorings + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::packet_mirrorings::AggregatedListRequest,
@@ -9662,11 +9661,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::packet_mirrorings::DeleteRequest,
@@ -9676,11 +9675,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::packet_mirrorings::GetRequest,
@@ -9690,11 +9689,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::packet_mirrorings::InsertRequest,
@@ -9704,11 +9703,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::packet_mirrorings::ListRequest,
@@ -9718,11 +9717,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::packet_mirrorings::PatchRequest,
@@ -9732,11 +9731,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::packet_mirrorings::TestIamPermissionsRequest,
@@ -9746,11 +9745,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -9760,7 +9759,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PacketMirrorings::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -9808,7 +9808,6 @@ impl<T> super::stub::PreviewFeatures for PreviewFeatures<T>
 where
     T: super::stub::PreviewFeatures + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::preview_features::GetRequest,
@@ -9818,11 +9817,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PreviewFeatures::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::preview_features::ListRequest,
@@ -9832,11 +9831,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PreviewFeatures::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::preview_features::UpdateRequest,
@@ -9846,11 +9845,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PreviewFeatures::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -9860,7 +9859,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PreviewFeatures::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -9908,7 +9908,6 @@ impl<T> super::stub::Projects for Projects<T>
 where
     T: super::stub::Projects + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_xpn_host(
         &self,
         req: crate::model::projects::DisableXpnHostRequest,
@@ -9918,11 +9917,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::disable_xpn_host",
-            self.inner.disable_xpn_host(req, options));
+            self.inner.disable_xpn_host(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_xpn_resource(
         &self,
         req: crate::model::projects::DisableXpnResourceRequest,
@@ -9932,11 +9931,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::disable_xpn_resource",
-            self.inner.disable_xpn_resource(req, options));
+            self.inner.disable_xpn_resource(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_xpn_host(
         &self,
         req: crate::model::projects::EnableXpnHostRequest,
@@ -9946,11 +9945,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::enable_xpn_host",
-            self.inner.enable_xpn_host(req, options));
+            self.inner.enable_xpn_host(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_xpn_resource(
         &self,
         req: crate::model::projects::EnableXpnResourceRequest,
@@ -9960,11 +9959,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::enable_xpn_resource",
-            self.inner.enable_xpn_resource(req, options));
+            self.inner.enable_xpn_resource(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::projects::GetRequest,
@@ -9974,11 +9973,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_xpn_host(
         &self,
         req: crate::model::projects::GetXpnHostRequest,
@@ -9988,11 +9987,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::get_xpn_host",
-            self.inner.get_xpn_host(req, options));
+            self.inner.get_xpn_host(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_xpn_resources(
         &self,
         req: crate::model::projects::GetXpnResourcesRequest,
@@ -10002,11 +10001,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::get_xpn_resources",
-            self.inner.get_xpn_resources(req, options));
+            self.inner.get_xpn_resources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_xpn_hosts(
         &self,
         req: crate::model::projects::ListXpnHostsRequest,
@@ -10016,11 +10015,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::list_xpn_hosts",
-            self.inner.list_xpn_hosts(req, options));
+            self.inner.list_xpn_hosts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_disk(
         &self,
         req: crate::model::projects::MoveDiskRequest,
@@ -10030,11 +10029,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::move_disk",
-            self.inner.move_disk(req, options));
+            self.inner.move_disk(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_instance(
         &self,
         req: crate::model::projects::MoveInstanceRequest,
@@ -10044,11 +10043,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::move_instance",
-            self.inner.move_instance(req, options));
+            self.inner.move_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_cloud_armor_tier(
         &self,
         req: crate::model::projects::SetCloudArmorTierRequest,
@@ -10058,11 +10057,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::set_cloud_armor_tier",
-            self.inner.set_cloud_armor_tier(req, options));
+            self.inner.set_cloud_armor_tier(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_common_instance_metadata(
         &self,
         req: crate::model::projects::SetCommonInstanceMetadataRequest,
@@ -10072,11 +10071,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::set_common_instance_metadata",
-            self.inner.set_common_instance_metadata(req, options));
+            self.inner.set_common_instance_metadata(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_default_network_tier(
         &self,
         req: crate::model::projects::SetDefaultNetworkTierRequest,
@@ -10086,11 +10085,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::set_default_network_tier",
-            self.inner.set_default_network_tier(req, options));
+            self.inner.set_default_network_tier(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_usage_export_bucket(
         &self,
         req: crate::model::projects::SetUsageExportBucketRequest,
@@ -10100,11 +10099,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::set_usage_export_bucket",
-            self.inner.set_usage_export_bucket(req, options));
+            self.inner.set_usage_export_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -10114,7 +10113,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Projects::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -10162,7 +10162,6 @@ impl<T> super::stub::PublicAdvertisedPrefixes for PublicAdvertisedPrefixes<T>
 where
     T: super::stub::PublicAdvertisedPrefixes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn announce(
         &self,
         req: crate::model::public_advertised_prefixes::AnnounceRequest,
@@ -10172,11 +10171,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::announce",
-            self.inner.announce(req, options));
+            self.inner.announce(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::public_advertised_prefixes::DeleteRequest,
@@ -10186,11 +10185,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::public_advertised_prefixes::GetRequest,
@@ -10200,11 +10199,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::public_advertised_prefixes::InsertRequest,
@@ -10214,11 +10213,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::public_advertised_prefixes::ListRequest,
@@ -10228,11 +10227,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::public_advertised_prefixes::PatchRequest,
@@ -10242,11 +10241,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn withdraw(
         &self,
         req: crate::model::public_advertised_prefixes::WithdrawRequest,
@@ -10256,11 +10255,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::withdraw",
-            self.inner.withdraw(req, options));
+            self.inner.withdraw(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -10270,7 +10269,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicAdvertisedPrefixes::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -10318,7 +10318,6 @@ impl<T> super::stub::PublicDelegatedPrefixes for PublicDelegatedPrefixes<T>
 where
     T: super::stub::PublicDelegatedPrefixes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::public_delegated_prefixes::AggregatedListRequest,
@@ -10328,11 +10327,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn announce(
         &self,
         req: crate::model::public_delegated_prefixes::AnnounceRequest,
@@ -10342,11 +10341,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::announce",
-            self.inner.announce(req, options));
+            self.inner.announce(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::public_delegated_prefixes::DeleteRequest,
@@ -10356,11 +10355,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::public_delegated_prefixes::GetRequest,
@@ -10370,11 +10369,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::public_delegated_prefixes::InsertRequest,
@@ -10384,11 +10383,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::public_delegated_prefixes::ListRequest,
@@ -10398,11 +10397,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::public_delegated_prefixes::PatchRequest,
@@ -10412,11 +10411,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn withdraw(
         &self,
         req: crate::model::public_delegated_prefixes::WithdrawRequest,
@@ -10426,11 +10425,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::withdraw",
-            self.inner.withdraw(req, options));
+            self.inner.withdraw(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -10440,7 +10439,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicDelegatedPrefixes::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -10488,7 +10488,6 @@ impl<T> super::stub::RegionAutoscalers for RegionAutoscalers<T>
 where
     T: super::stub::RegionAutoscalers + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_autoscalers::DeleteRequest,
@@ -10498,11 +10497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_autoscalers::GetRequest,
@@ -10512,11 +10511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_autoscalers::InsertRequest,
@@ -10526,11 +10525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_autoscalers::ListRequest,
@@ -10540,11 +10539,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_autoscalers::PatchRequest,
@@ -10554,11 +10553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_autoscalers::TestIamPermissionsRequest,
@@ -10568,11 +10567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::region_autoscalers::UpdateRequest,
@@ -10582,11 +10581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -10596,7 +10595,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionAutoscalers::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -10644,7 +10644,6 @@ impl<T> super::stub::RegionBackendBuckets for RegionBackendBuckets<T>
 where
     T: super::stub::RegionBackendBuckets + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_backend_buckets::DeleteRequest,
@@ -10654,11 +10653,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_backend_buckets::GetRequest,
@@ -10668,11 +10667,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_backend_buckets::GetIamPolicyRequest,
@@ -10682,11 +10681,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_backend_buckets::InsertRequest,
@@ -10696,11 +10695,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_backend_buckets::ListRequest,
@@ -10710,11 +10709,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_usable(
         &self,
         req: crate::model::region_backend_buckets::ListUsableRequest,
@@ -10724,11 +10723,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::list_usable",
-            self.inner.list_usable(req, options));
+            self.inner.list_usable(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_backend_buckets::PatchRequest,
@@ -10738,11 +10737,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_backend_buckets::SetIamPolicyRequest,
@@ -10752,11 +10751,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_backend_buckets::TestIamPermissionsRequest,
@@ -10766,11 +10765,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -10780,7 +10779,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendBuckets::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -10828,7 +10828,6 @@ impl<T> super::stub::RegionBackendServices for RegionBackendServices<T>
 where
     T: super::stub::RegionBackendServices + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_backend_services::DeleteRequest,
@@ -10838,11 +10837,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_backend_services::GetRequest,
@@ -10852,11 +10851,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_health(
         &self,
         req: crate::model::region_backend_services::GetHealthRequest,
@@ -10866,11 +10865,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::get_health",
-            self.inner.get_health(req, options));
+            self.inner.get_health(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_backend_services::GetIamPolicyRequest,
@@ -10880,11 +10879,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_backend_services::InsertRequest,
@@ -10894,11 +10893,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_backend_services::ListRequest,
@@ -10908,11 +10907,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_usable(
         &self,
         req: crate::model::region_backend_services::ListUsableRequest,
@@ -10922,11 +10921,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::list_usable",
-            self.inner.list_usable(req, options));
+            self.inner.list_usable(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_backend_services::PatchRequest,
@@ -10936,11 +10935,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_backend_services::SetIamPolicyRequest,
@@ -10950,11 +10949,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_security_policy(
         &self,
         req: crate::model::region_backend_services::SetSecurityPolicyRequest,
@@ -10964,11 +10963,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::set_security_policy",
-            self.inner.set_security_policy(req, options));
+            self.inner.set_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_backend_services::TestIamPermissionsRequest,
@@ -10978,11 +10977,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::region_backend_services::UpdateRequest,
@@ -10992,11 +10991,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -11006,7 +11005,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionBackendServices::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -11054,7 +11054,6 @@ impl<T> super::stub::RegionCommitments for RegionCommitments<T>
 where
     T: super::stub::RegionCommitments + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::region_commitments::AggregatedListRequest,
@@ -11064,11 +11063,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCommitments::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_commitments::GetRequest,
@@ -11078,11 +11077,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCommitments::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_commitments::InsertRequest,
@@ -11092,11 +11091,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCommitments::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_commitments::ListRequest,
@@ -11106,11 +11105,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCommitments::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::region_commitments::UpdateRequest,
@@ -11120,11 +11119,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCommitments::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -11134,7 +11133,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCommitments::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -11182,7 +11182,6 @@ impl<T> super::stub::RegionCompositeHealthChecks for RegionCompositeHealthChecks
 where
     T: super::stub::RegionCompositeHealthChecks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::region_composite_health_checks::AggregatedListRequest,
@@ -11192,11 +11191,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_composite_health_checks::DeleteRequest,
@@ -11206,11 +11205,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_composite_health_checks::GetRequest,
@@ -11220,11 +11219,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_health(
         &self,
         req: crate::model::region_composite_health_checks::GetHealthRequest,
@@ -11234,11 +11233,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::get_health",
-            self.inner.get_health(req, options));
+            self.inner.get_health(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_composite_health_checks::InsertRequest,
@@ -11248,11 +11247,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_composite_health_checks::ListRequest,
@@ -11262,11 +11261,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_composite_health_checks::PatchRequest,
@@ -11276,11 +11275,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_composite_health_checks::TestIamPermissionsRequest,
@@ -11290,11 +11289,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -11304,7 +11303,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionCompositeHealthChecks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -11352,7 +11352,6 @@ impl<T> super::stub::RegionDiskTypes for RegionDiskTypes<T>
 where
     T: super::stub::RegionDiskTypes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_disk_types::GetRequest,
@@ -11362,11 +11361,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDiskTypes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_disk_types::ListRequest,
@@ -11376,7 +11375,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDiskTypes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -11410,7 +11410,6 @@ impl<T> super::stub::RegionDisks for RegionDisks<T>
 where
     T: super::stub::RegionDisks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_resource_policies(
         &self,
         req: crate::model::region_disks::AddResourcePoliciesRequest,
@@ -11420,11 +11419,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::add_resource_policies",
-            self.inner.add_resource_policies(req, options));
+            self.inner.add_resource_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_insert(
         &self,
         req: crate::model::region_disks::BulkInsertRequest,
@@ -11434,11 +11433,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::bulk_insert",
-            self.inner.bulk_insert(req, options));
+            self.inner.bulk_insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_snapshot(
         &self,
         req: crate::model::region_disks::CreateSnapshotRequest,
@@ -11448,11 +11447,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::create_snapshot",
-            self.inner.create_snapshot(req, options));
+            self.inner.create_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_disks::DeleteRequest,
@@ -11462,11 +11461,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_disks::GetRequest,
@@ -11476,11 +11475,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_disks::GetIamPolicyRequest,
@@ -11490,11 +11489,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_disks::InsertRequest,
@@ -11504,11 +11503,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_disks::ListRequest,
@@ -11518,11 +11517,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_resource_policies(
         &self,
         req: crate::model::region_disks::RemoveResourcePoliciesRequest,
@@ -11532,11 +11531,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::remove_resource_policies",
-            self.inner.remove_resource_policies(req, options));
+            self.inner.remove_resource_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resize(
         &self,
         req: crate::model::region_disks::ResizeRequest,
@@ -11546,11 +11545,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::resize",
-            self.inner.resize(req, options));
+            self.inner.resize(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_disks::SetIamPolicyRequest,
@@ -11560,11 +11559,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::region_disks::SetLabelsRequest,
@@ -11574,11 +11573,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_async_replication(
         &self,
         req: crate::model::region_disks::StartAsyncReplicationRequest,
@@ -11588,11 +11587,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::start_async_replication",
-            self.inner.start_async_replication(req, options));
+            self.inner.start_async_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_async_replication(
         &self,
         req: crate::model::region_disks::StopAsyncReplicationRequest,
@@ -11602,11 +11601,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::stop_async_replication",
-            self.inner.stop_async_replication(req, options));
+            self.inner.stop_async_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_group_async_replication(
         &self,
         req: crate::model::region_disks::StopGroupAsyncReplicationRequest,
@@ -11616,11 +11615,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::stop_group_async_replication",
-            self.inner.stop_group_async_replication(req, options));
+            self.inner.stop_group_async_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_disks::TestIamPermissionsRequest,
@@ -11630,11 +11629,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::region_disks::UpdateRequest,
@@ -11644,11 +11643,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_kms_key(
         &self,
         req: crate::model::region_disks::UpdateKmsKeyRequest,
@@ -11658,11 +11657,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::update_kms_key",
-            self.inner.update_kms_key(req, options));
+            self.inner.update_kms_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -11672,7 +11671,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionDisks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -11720,7 +11720,6 @@ impl<T> super::stub::RegionHealthAggregationPolicies for RegionHealthAggregation
 where
     T: super::stub::RegionHealthAggregationPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::region_health_aggregation_policies::AggregatedListRequest,
@@ -11730,11 +11729,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_health_aggregation_policies::DeleteRequest,
@@ -11744,11 +11743,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_health_aggregation_policies::GetRequest,
@@ -11758,11 +11757,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_health_aggregation_policies::InsertRequest,
@@ -11772,11 +11771,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_health_aggregation_policies::ListRequest,
@@ -11786,11 +11785,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_health_aggregation_policies::PatchRequest,
@@ -11800,11 +11799,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_health_aggregation_policies::TestIamPermissionsRequest,
@@ -11814,11 +11813,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -11828,7 +11827,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthAggregationPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -11876,7 +11876,6 @@ impl<T> super::stub::RegionHealthCheckServices for RegionHealthCheckServices<T>
 where
     T: super::stub::RegionHealthCheckServices + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::region_health_check_services::AggregatedListRequest,
@@ -11886,11 +11885,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_health_check_services::DeleteRequest,
@@ -11900,11 +11899,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_health_check_services::GetRequest,
@@ -11914,11 +11913,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_health_check_services::InsertRequest,
@@ -11928,11 +11927,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_health_check_services::ListRequest,
@@ -11942,11 +11941,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_health_check_services::PatchRequest,
@@ -11956,11 +11955,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_health_check_services::TestIamPermissionsRequest,
@@ -11970,11 +11969,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -11984,7 +11983,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthCheckServices::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -12032,7 +12032,6 @@ impl<T> super::stub::RegionHealthChecks for RegionHealthChecks<T>
 where
     T: super::stub::RegionHealthChecks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_health_checks::DeleteRequest,
@@ -12042,11 +12041,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_health_checks::GetRequest,
@@ -12056,11 +12055,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_health_checks::InsertRequest,
@@ -12070,11 +12069,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_health_checks::ListRequest,
@@ -12084,11 +12083,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_health_checks::PatchRequest,
@@ -12098,11 +12097,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_health_checks::TestIamPermissionsRequest,
@@ -12112,11 +12111,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::region_health_checks::UpdateRequest,
@@ -12126,11 +12125,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -12140,7 +12139,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthChecks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -12188,7 +12188,6 @@ impl<T> super::stub::RegionHealthSources for RegionHealthSources<T>
 where
     T: super::stub::RegionHealthSources + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::region_health_sources::AggregatedListRequest,
@@ -12198,11 +12197,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_health_sources::DeleteRequest,
@@ -12212,11 +12211,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_health_sources::GetRequest,
@@ -12226,11 +12225,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_health(
         &self,
         req: crate::model::region_health_sources::GetHealthRequest,
@@ -12240,11 +12239,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::get_health",
-            self.inner.get_health(req, options));
+            self.inner.get_health(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_health_sources::InsertRequest,
@@ -12254,11 +12253,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_health_sources::ListRequest,
@@ -12268,11 +12267,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_health_sources::PatchRequest,
@@ -12282,11 +12281,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_health_sources::TestIamPermissionsRequest,
@@ -12296,11 +12295,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -12310,7 +12309,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionHealthSources::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -12359,7 +12359,6 @@ impl<T> super::stub::RegionInstanceGroupManagerResizeRequests
 where
     T: super::stub::RegionInstanceGroupManagerResizeRequests + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel(
         &self,
         req: crate::model::region_instance_group_manager_resize_requests::CancelRequest,
@@ -12369,11 +12368,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagerResizeRequests::cancel",
-            self.inner.cancel(req, options));
+            self.inner.cancel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_instance_group_manager_resize_requests::DeleteRequest,
@@ -12383,11 +12382,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagerResizeRequests::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_instance_group_manager_resize_requests::GetRequest,
@@ -12397,11 +12396,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagerResizeRequests::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_instance_group_manager_resize_requests::InsertRequest,
@@ -12411,11 +12410,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagerResizeRequests::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_instance_group_manager_resize_requests::ListRequest,
@@ -12426,11 +12425,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagerResizeRequests::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -12440,7 +12439,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagerResizeRequests::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -12488,7 +12488,6 @@ impl<T> super::stub::RegionInstanceGroupManagers for RegionInstanceGroupManagers
 where
     T: super::stub::RegionInstanceGroupManagers + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn abandon_instances(
         &self,
         req: crate::model::region_instance_group_managers::AbandonInstancesRequest,
@@ -12498,11 +12497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::abandon_instances",
-            self.inner.abandon_instances(req, options));
+            self.inner.abandon_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn apply_updates_to_instances(
         &self,
         req: crate::model::region_instance_group_managers::ApplyUpdatesToInstancesRequest,
@@ -12512,11 +12511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::apply_updates_to_instances",
-            self.inner.apply_updates_to_instances(req, options));
+            self.inner.apply_updates_to_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_instances(
         &self,
         req: crate::model::region_instance_group_managers::CreateInstancesRequest,
@@ -12526,11 +12525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::create_instances",
-            self.inner.create_instances(req, options));
+            self.inner.create_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_instance_group_managers::DeleteRequest,
@@ -12540,11 +12539,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_instances(
         &self,
         req: crate::model::region_instance_group_managers::DeleteInstancesRequest,
@@ -12554,11 +12553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::delete_instances",
-            self.inner.delete_instances(req, options));
+            self.inner.delete_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_per_instance_configs(
         &self,
         req: crate::model::region_instance_group_managers::DeletePerInstanceConfigsRequest,
@@ -12568,11 +12567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::delete_per_instance_configs",
-            self.inner.delete_per_instance_configs(req, options));
+            self.inner.delete_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_instance_group_managers::GetRequest,
@@ -12582,11 +12581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_instance_group_managers::InsertRequest,
@@ -12596,11 +12595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_instance_group_managers::ListRequest,
@@ -12610,11 +12609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_errors(
         &self,
         req: crate::model::region_instance_group_managers::ListErrorsRequest,
@@ -12624,11 +12623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::list_errors",
-            self.inner.list_errors(req, options));
+            self.inner.list_errors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_managed_instances(
         &self,
         req: crate::model::region_instance_group_managers::ListManagedInstancesRequest,
@@ -12639,11 +12638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::list_managed_instances",
-            self.inner.list_managed_instances(req, options));
+            self.inner.list_managed_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_per_instance_configs(
         &self,
         req: crate::model::region_instance_group_managers::ListPerInstanceConfigsRequest,
@@ -12654,11 +12653,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::list_per_instance_configs",
-            self.inner.list_per_instance_configs(req, options));
+            self.inner.list_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_instance_group_managers::PatchRequest,
@@ -12668,11 +12667,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_per_instance_configs(
         &self,
         req: crate::model::region_instance_group_managers::PatchPerInstanceConfigsRequest,
@@ -12682,11 +12681,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::patch_per_instance_configs",
-            self.inner.patch_per_instance_configs(req, options));
+            self.inner.patch_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn recreate_instances(
         &self,
         req: crate::model::region_instance_group_managers::RecreateInstancesRequest,
@@ -12696,11 +12695,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::recreate_instances",
-            self.inner.recreate_instances(req, options));
+            self.inner.recreate_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resize(
         &self,
         req: crate::model::region_instance_group_managers::ResizeRequest,
@@ -12710,11 +12709,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::resize",
-            self.inner.resize(req, options));
+            self.inner.resize(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_instances(
         &self,
         req: crate::model::region_instance_group_managers::ResumeInstancesRequest,
@@ -12724,11 +12723,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::resume_instances",
-            self.inner.resume_instances(req, options));
+            self.inner.resume_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_instance_template(
         &self,
         req: crate::model::region_instance_group_managers::SetInstanceTemplateRequest,
@@ -12738,11 +12737,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::set_instance_template",
-            self.inner.set_instance_template(req, options));
+            self.inner.set_instance_template(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_target_pools(
         &self,
         req: crate::model::region_instance_group_managers::SetTargetPoolsRequest,
@@ -12752,11 +12751,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::set_target_pools",
-            self.inner.set_target_pools(req, options));
+            self.inner.set_target_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_instances(
         &self,
         req: crate::model::region_instance_group_managers::StartInstancesRequest,
@@ -12766,11 +12765,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::start_instances",
-            self.inner.start_instances(req, options));
+            self.inner.start_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_instances(
         &self,
         req: crate::model::region_instance_group_managers::StopInstancesRequest,
@@ -12780,11 +12779,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::stop_instances",
-            self.inner.stop_instances(req, options));
+            self.inner.stop_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn suspend_instances(
         &self,
         req: crate::model::region_instance_group_managers::SuspendInstancesRequest,
@@ -12794,11 +12793,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::suspend_instances",
-            self.inner.suspend_instances(req, options));
+            self.inner.suspend_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_per_instance_configs(
         &self,
         req: crate::model::region_instance_group_managers::UpdatePerInstanceConfigsRequest,
@@ -12808,11 +12807,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::update_per_instance_configs",
-            self.inner.update_per_instance_configs(req, options));
+            self.inner.update_per_instance_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -12822,7 +12821,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroupManagers::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -12870,7 +12870,6 @@ impl<T> super::stub::RegionInstanceGroups for RegionInstanceGroups<T>
 where
     T: super::stub::RegionInstanceGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_instance_groups::GetRequest,
@@ -12880,11 +12879,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_instance_groups::ListRequest,
@@ -12894,11 +12893,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_instances(
         &self,
         req: crate::model::region_instance_groups::ListInstancesRequest,
@@ -12908,11 +12907,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroups::list_instances",
-            self.inner.list_instances(req, options));
+            self.inner.list_instances(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_named_ports(
         &self,
         req: crate::model::region_instance_groups::SetNamedPortsRequest,
@@ -12922,11 +12921,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroups::set_named_ports",
-            self.inner.set_named_ports(req, options));
+            self.inner.set_named_ports(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_instance_groups::TestIamPermissionsRequest,
@@ -12936,11 +12935,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -12950,7 +12949,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -12998,7 +12998,6 @@ impl<T> super::stub::RegionInstanceTemplates for RegionInstanceTemplates<T>
 where
     T: super::stub::RegionInstanceTemplates + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_instance_templates::DeleteRequest,
@@ -13008,11 +13007,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceTemplates::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_instance_templates::GetRequest,
@@ -13022,11 +13021,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceTemplates::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_instance_templates::InsertRequest,
@@ -13036,11 +13035,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceTemplates::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_instance_templates::ListRequest,
@@ -13050,11 +13049,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceTemplates::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -13064,7 +13063,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstanceTemplates::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -13112,7 +13112,6 @@ impl<T> super::stub::RegionInstances for RegionInstances<T>
 where
     T: super::stub::RegionInstances + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_insert(
         &self,
         req: crate::model::region_instances::BulkInsertRequest,
@@ -13122,11 +13121,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstances::bulk_insert",
-            self.inner.bulk_insert(req, options));
+            self.inner.bulk_insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -13136,7 +13135,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstances::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -13184,7 +13184,6 @@ impl<T> super::stub::RegionInstantSnapshotGroups for RegionInstantSnapshotGroups
 where
     T: super::stub::RegionInstantSnapshotGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_instant_snapshot_groups::DeleteRequest,
@@ -13194,11 +13193,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_instant_snapshot_groups::GetRequest,
@@ -13208,11 +13207,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_instant_snapshot_groups::GetIamPolicyRequest,
@@ -13222,11 +13221,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_instant_snapshot_groups::InsertRequest,
@@ -13236,11 +13235,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_instant_snapshot_groups::ListRequest,
@@ -13250,11 +13249,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_instant_snapshot_groups::SetIamPolicyRequest,
@@ -13264,11 +13263,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_instant_snapshot_groups::TestIamPermissionsRequest,
@@ -13278,11 +13277,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -13292,7 +13291,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshotGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -13340,7 +13340,6 @@ impl<T> super::stub::RegionInstantSnapshots for RegionInstantSnapshots<T>
 where
     T: super::stub::RegionInstantSnapshots + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_instant_snapshots::DeleteRequest,
@@ -13350,11 +13349,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_instant_snapshots::GetRequest,
@@ -13364,11 +13363,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_instant_snapshots::GetIamPolicyRequest,
@@ -13378,11 +13377,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_instant_snapshots::InsertRequest,
@@ -13392,11 +13391,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_instant_snapshots::ListRequest,
@@ -13406,11 +13405,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_instant_snapshots::SetIamPolicyRequest,
@@ -13420,11 +13419,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::region_instant_snapshots::SetLabelsRequest,
@@ -13434,11 +13433,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_instant_snapshots::TestIamPermissionsRequest,
@@ -13448,11 +13447,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -13462,7 +13461,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionInstantSnapshots::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -13510,7 +13510,6 @@ impl<T> super::stub::RegionNetworkEndpointGroups for RegionNetworkEndpointGroups
 where
     T: super::stub::RegionNetworkEndpointGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn attach_network_endpoints(
         &self,
         req: crate::model::region_network_endpoint_groups::AttachNetworkEndpointsRequest,
@@ -13520,11 +13519,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::attach_network_endpoints",
-            self.inner.attach_network_endpoints(req, options));
+            self.inner.attach_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_network_endpoint_groups::DeleteRequest,
@@ -13534,11 +13533,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_network_endpoints(
         &self,
         req: crate::model::region_network_endpoint_groups::DetachNetworkEndpointsRequest,
@@ -13548,11 +13547,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::detach_network_endpoints",
-            self.inner.detach_network_endpoints(req, options));
+            self.inner.detach_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_network_endpoint_groups::GetRequest,
@@ -13562,11 +13561,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_network_endpoint_groups::InsertRequest,
@@ -13576,11 +13575,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_network_endpoint_groups::ListRequest,
@@ -13590,11 +13589,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_network_endpoints(
         &self,
         req: crate::model::region_network_endpoint_groups::ListNetworkEndpointsRequest,
@@ -13604,11 +13603,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::list_network_endpoints",
-            self.inner.list_network_endpoints(req, options));
+            self.inner.list_network_endpoints(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -13618,7 +13617,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkEndpointGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -13666,7 +13666,6 @@ impl<T> super::stub::RegionNetworkFirewallPolicies for RegionNetworkFirewallPoli
 where
     T: super::stub::RegionNetworkFirewallPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_association(
         &self,
         req: crate::model::region_network_firewall_policies::AddAssociationRequest,
@@ -13676,11 +13675,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::add_association",
-            self.inner.add_association(req, options));
+            self.inner.add_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_rule(
         &self,
         req: crate::model::region_network_firewall_policies::AddRuleRequest,
@@ -13690,11 +13689,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::add_rule",
-            self.inner.add_rule(req, options));
+            self.inner.add_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn clone_rules(
         &self,
         req: crate::model::region_network_firewall_policies::CloneRulesRequest,
@@ -13704,11 +13703,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::clone_rules",
-            self.inner.clone_rules(req, options));
+            self.inner.clone_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_network_firewall_policies::DeleteRequest,
@@ -13718,11 +13717,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_network_firewall_policies::GetRequest,
@@ -13732,11 +13731,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_association(
         &self,
         req: crate::model::region_network_firewall_policies::GetAssociationRequest,
@@ -13746,11 +13745,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::get_association",
-            self.inner.get_association(req, options));
+            self.inner.get_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_effective_firewalls(
         &self,
         req: crate::model::region_network_firewall_policies::GetEffectiveFirewallsRequest,
@@ -13762,11 +13761,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::get_effective_firewalls",
-            self.inner.get_effective_firewalls(req, options));
+            self.inner.get_effective_firewalls(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_network_firewall_policies::GetIamPolicyRequest,
@@ -13776,11 +13775,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::region_network_firewall_policies::GetRuleRequest,
@@ -13790,11 +13789,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_network_firewall_policies::InsertRequest,
@@ -13804,11 +13803,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_network_firewall_policies::ListRequest,
@@ -13818,11 +13817,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_network_firewall_policies::PatchRequest,
@@ -13832,11 +13831,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_rule(
         &self,
         req: crate::model::region_network_firewall_policies::PatchRuleRequest,
@@ -13846,11 +13845,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::patch_rule",
-            self.inner.patch_rule(req, options));
+            self.inner.patch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_association(
         &self,
         req: crate::model::region_network_firewall_policies::RemoveAssociationRequest,
@@ -13860,11 +13859,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::remove_association",
-            self.inner.remove_association(req, options));
+            self.inner.remove_association(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_rule(
         &self,
         req: crate::model::region_network_firewall_policies::RemoveRuleRequest,
@@ -13874,11 +13873,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::remove_rule",
-            self.inner.remove_rule(req, options));
+            self.inner.remove_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_network_firewall_policies::SetIamPolicyRequest,
@@ -13888,11 +13887,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_network_firewall_policies::TestIamPermissionsRequest,
@@ -13902,11 +13901,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -13916,7 +13915,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNetworkFirewallPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -13964,7 +13964,6 @@ impl<T> super::stub::RegionNotificationEndpoints for RegionNotificationEndpoints
 where
     T: super::stub::RegionNotificationEndpoints + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::region_notification_endpoints::AggregatedListRequest,
@@ -13974,11 +13973,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_notification_endpoints::DeleteRequest,
@@ -13988,11 +13987,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_notification_endpoints::GetRequest,
@@ -14002,11 +14001,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_notification_endpoints::InsertRequest,
@@ -14016,11 +14015,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_notification_endpoints::ListRequest,
@@ -14030,11 +14029,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_notification_endpoints::TestIamPermissionsRequest,
@@ -14044,11 +14043,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14058,7 +14057,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionNotificationEndpoints::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -14106,7 +14106,6 @@ impl<T> super::stub::RegionOperations for RegionOperations<T>
 where
     T: super::stub::RegionOperations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_operations::DeleteRequest,
@@ -14116,11 +14115,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionOperations::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14130,11 +14129,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionOperations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_operations::ListRequest,
@@ -14144,11 +14143,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionOperations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn wait(
         &self,
         req: crate::model::region_operations::WaitRequest,
@@ -14158,7 +14157,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionOperations::wait",
-            self.inner.wait(req, options));
+            self.inner.wait(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -14192,7 +14192,6 @@ impl<T> super::stub::RegionSecurityPolicies for RegionSecurityPolicies<T>
 where
     T: super::stub::RegionSecurityPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_rule(
         &self,
         req: crate::model::region_security_policies::AddRuleRequest,
@@ -14202,11 +14201,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::add_rule",
-            self.inner.add_rule(req, options));
+            self.inner.add_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_security_policies::DeleteRequest,
@@ -14216,11 +14215,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_security_policies::GetRequest,
@@ -14230,11 +14229,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::region_security_policies::GetRuleRequest,
@@ -14244,11 +14243,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_security_policies::InsertRequest,
@@ -14258,11 +14257,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_security_policies::ListRequest,
@@ -14272,11 +14271,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_security_policies::PatchRequest,
@@ -14286,11 +14285,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_rule(
         &self,
         req: crate::model::region_security_policies::PatchRuleRequest,
@@ -14300,11 +14299,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::patch_rule",
-            self.inner.patch_rule(req, options));
+            self.inner.patch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_rule(
         &self,
         req: crate::model::region_security_policies::RemoveRuleRequest,
@@ -14314,11 +14313,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::remove_rule",
-            self.inner.remove_rule(req, options));
+            self.inner.remove_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::region_security_policies::SetLabelsRequest,
@@ -14328,11 +14327,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14342,7 +14341,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSecurityPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -14390,7 +14390,6 @@ impl<T> super::stub::RegionSnapshotSettings for RegionSnapshotSettings<T>
 where
     T: super::stub::RegionSnapshotSettings + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_snapshot_settings::GetRequest,
@@ -14400,11 +14399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshotSettings::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_snapshot_settings::PatchRequest,
@@ -14414,11 +14413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshotSettings::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14428,7 +14427,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshotSettings::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -14476,7 +14476,6 @@ impl<T> super::stub::RegionSnapshots for RegionSnapshots<T>
 where
     T: super::stub::RegionSnapshots + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_snapshots::DeleteRequest,
@@ -14486,11 +14485,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_snapshots::GetRequest,
@@ -14500,11 +14499,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::region_snapshots::GetIamPolicyRequest,
@@ -14514,11 +14513,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_snapshots::InsertRequest,
@@ -14528,11 +14527,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_snapshots::ListRequest,
@@ -14542,11 +14541,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::region_snapshots::SetIamPolicyRequest,
@@ -14556,11 +14555,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::region_snapshots::SetLabelsRequest,
@@ -14570,11 +14569,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::region_snapshots::TestIamPermissionsRequest,
@@ -14584,11 +14583,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_kms_key(
         &self,
         req: crate::model::region_snapshots::UpdateKmsKeyRequest,
@@ -14598,11 +14597,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::update_kms_key",
-            self.inner.update_kms_key(req, options));
+            self.inner.update_kms_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14612,7 +14611,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSnapshots::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -14660,7 +14660,6 @@ impl<T> super::stub::RegionSslCertificates for RegionSslCertificates<T>
 where
     T: super::stub::RegionSslCertificates + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_ssl_certificates::DeleteRequest,
@@ -14670,11 +14669,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslCertificates::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_ssl_certificates::GetRequest,
@@ -14684,11 +14683,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslCertificates::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_ssl_certificates::InsertRequest,
@@ -14698,11 +14697,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslCertificates::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_ssl_certificates::ListRequest,
@@ -14712,11 +14711,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslCertificates::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14726,7 +14725,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslCertificates::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -14774,7 +14774,6 @@ impl<T> super::stub::RegionSslPolicies for RegionSslPolicies<T>
 where
     T: super::stub::RegionSslPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_ssl_policies::DeleteRequest,
@@ -14784,11 +14783,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_ssl_policies::GetRequest,
@@ -14798,11 +14797,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_ssl_policies::InsertRequest,
@@ -14812,11 +14811,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_ssl_policies::ListRequest,
@@ -14826,11 +14825,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_available_features(
         &self,
         req: crate::model::region_ssl_policies::ListAvailableFeaturesRequest,
@@ -14840,11 +14839,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::list_available_features",
-            self.inner.list_available_features(req, options));
+            self.inner.list_available_features(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_ssl_policies::PatchRequest,
@@ -14854,11 +14853,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14868,7 +14867,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionSslPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -14916,7 +14916,6 @@ impl<T> super::stub::RegionTargetHttpProxies for RegionTargetHttpProxies<T>
 where
     T: super::stub::RegionTargetHttpProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_target_http_proxies::DeleteRequest,
@@ -14926,11 +14925,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_target_http_proxies::GetRequest,
@@ -14940,11 +14939,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_target_http_proxies::InsertRequest,
@@ -14954,11 +14953,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_target_http_proxies::ListRequest,
@@ -14968,11 +14967,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_url_map(
         &self,
         req: crate::model::region_target_http_proxies::SetUrlMapRequest,
@@ -14982,11 +14981,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpProxies::set_url_map",
-            self.inner.set_url_map(req, options));
+            self.inner.set_url_map(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -14996,7 +14995,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15044,7 +15044,6 @@ impl<T> super::stub::RegionTargetHttpsProxies for RegionTargetHttpsProxies<T>
 where
     T: super::stub::RegionTargetHttpsProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_target_https_proxies::DeleteRequest,
@@ -15054,11 +15053,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_target_https_proxies::GetRequest,
@@ -15068,11 +15067,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_target_https_proxies::InsertRequest,
@@ -15082,11 +15081,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_target_https_proxies::ListRequest,
@@ -15096,11 +15095,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_target_https_proxies::PatchRequest,
@@ -15110,11 +15109,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_ssl_certificates(
         &self,
         req: crate::model::region_target_https_proxies::SetSslCertificatesRequest,
@@ -15124,11 +15123,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::set_ssl_certificates",
-            self.inner.set_ssl_certificates(req, options));
+            self.inner.set_ssl_certificates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_url_map(
         &self,
         req: crate::model::region_target_https_proxies::SetUrlMapRequest,
@@ -15138,11 +15137,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::set_url_map",
-            self.inner.set_url_map(req, options));
+            self.inner.set_url_map(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -15152,7 +15151,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetHttpsProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15200,7 +15200,6 @@ impl<T> super::stub::RegionTargetTcpProxies for RegionTargetTcpProxies<T>
 where
     T: super::stub::RegionTargetTcpProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_target_tcp_proxies::DeleteRequest,
@@ -15210,11 +15209,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetTcpProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_target_tcp_proxies::GetRequest,
@@ -15224,11 +15223,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetTcpProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_target_tcp_proxies::InsertRequest,
@@ -15238,11 +15237,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetTcpProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_target_tcp_proxies::ListRequest,
@@ -15252,11 +15251,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetTcpProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -15266,7 +15265,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionTargetTcpProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15314,7 +15314,6 @@ impl<T> super::stub::RegionUrlMaps for RegionUrlMaps<T>
 where
     T: super::stub::RegionUrlMaps + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::region_url_maps::DeleteRequest,
@@ -15324,11 +15323,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::region_url_maps::GetRequest,
@@ -15338,11 +15337,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::region_url_maps::InsertRequest,
@@ -15352,11 +15351,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_url_maps::ListRequest,
@@ -15366,11 +15365,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::region_url_maps::PatchRequest,
@@ -15380,11 +15379,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::region_url_maps::UpdateRequest,
@@ -15394,11 +15393,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate(
         &self,
         req: crate::model::region_url_maps::ValidateRequest,
@@ -15408,11 +15407,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::validate",
-            self.inner.validate(req, options));
+            self.inner.validate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -15422,7 +15421,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionUrlMaps::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15470,7 +15470,6 @@ impl<T> super::stub::RegionZones for RegionZones<T>
 where
     T: super::stub::RegionZones + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::region_zones::ListRequest,
@@ -15480,7 +15479,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RegionZones::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -15514,7 +15514,6 @@ impl<T> super::stub::Regions for Regions<T>
 where
     T: super::stub::Regions + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::regions::GetRequest,
@@ -15524,11 +15523,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Regions::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::regions::ListRequest,
@@ -15538,7 +15537,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Regions::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -15572,7 +15572,6 @@ impl<T> super::stub::ReservationBlocks for ReservationBlocks<T>
 where
     T: super::stub::ReservationBlocks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::reservation_blocks::GetRequest,
@@ -15582,11 +15581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::reservation_blocks::GetIamPolicyRequest,
@@ -15596,11 +15595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::reservation_blocks::ListRequest,
@@ -15610,11 +15609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn perform_maintenance(
         &self,
         req: crate::model::reservation_blocks::PerformMaintenanceRequest,
@@ -15624,11 +15623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::perform_maintenance",
-            self.inner.perform_maintenance(req, options));
+            self.inner.perform_maintenance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::reservation_blocks::SetIamPolicyRequest,
@@ -15638,11 +15637,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::reservation_blocks::TestIamPermissionsRequest,
@@ -15652,11 +15651,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -15666,7 +15665,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationBlocks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15714,7 +15714,6 @@ impl<T> super::stub::ReservationSlots for ReservationSlots<T>
 where
     T: super::stub::ReservationSlots + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::reservation_slots::GetRequest,
@@ -15724,11 +15723,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSlots::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_version(
         &self,
         req: crate::model::reservation_slots::GetVersionRequest,
@@ -15738,11 +15737,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSlots::get_version",
-            self.inner.get_version(req, options));
+            self.inner.get_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::reservation_slots::ListRequest,
@@ -15752,11 +15751,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSlots::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::reservation_slots::UpdateRequest,
@@ -15766,11 +15765,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSlots::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -15780,7 +15779,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSlots::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15828,7 +15828,6 @@ impl<T> super::stub::ReservationSubBlocks for ReservationSubBlocks<T>
 where
     T: super::stub::ReservationSubBlocks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::reservation_sub_blocks::GetRequest,
@@ -15838,11 +15837,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::reservation_sub_blocks::GetIamPolicyRequest,
@@ -15852,11 +15851,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_version(
         &self,
         req: crate::model::reservation_sub_blocks::GetVersionRequest,
@@ -15866,11 +15865,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::get_version",
-            self.inner.get_version(req, options));
+            self.inner.get_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::reservation_sub_blocks::ListRequest,
@@ -15880,11 +15879,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn perform_maintenance(
         &self,
         req: crate::model::reservation_sub_blocks::PerformMaintenanceRequest,
@@ -15894,11 +15893,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::perform_maintenance",
-            self.inner.perform_maintenance(req, options));
+            self.inner.perform_maintenance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn report_faulty(
         &self,
         req: crate::model::reservation_sub_blocks::ReportFaultyRequest,
@@ -15908,11 +15907,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::report_faulty",
-            self.inner.report_faulty(req, options));
+            self.inner.report_faulty(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::reservation_sub_blocks::SetIamPolicyRequest,
@@ -15922,11 +15921,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::reservation_sub_blocks::TestIamPermissionsRequest,
@@ -15936,11 +15935,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -15950,7 +15949,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationSubBlocks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -15998,7 +15998,6 @@ impl<T> super::stub::Reservations for Reservations<T>
 where
     T: super::stub::Reservations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::reservations::AggregatedListRequest,
@@ -16008,11 +16007,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::reservations::DeleteRequest,
@@ -16022,11 +16021,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::reservations::GetRequest,
@@ -16036,11 +16035,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::reservations::GetIamPolicyRequest,
@@ -16050,11 +16049,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::reservations::InsertRequest,
@@ -16064,11 +16063,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::reservations::ListRequest,
@@ -16078,11 +16077,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn perform_maintenance(
         &self,
         req: crate::model::reservations::PerformMaintenanceRequest,
@@ -16092,11 +16091,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::perform_maintenance",
-            self.inner.perform_maintenance(req, options));
+            self.inner.perform_maintenance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resize(
         &self,
         req: crate::model::reservations::ResizeRequest,
@@ -16106,11 +16105,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::resize",
-            self.inner.resize(req, options));
+            self.inner.resize(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::reservations::SetIamPolicyRequest,
@@ -16120,11 +16119,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::reservations::TestIamPermissionsRequest,
@@ -16134,11 +16133,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::reservations::UpdateRequest,
@@ -16148,11 +16147,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -16162,7 +16161,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Reservations::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -16210,7 +16210,6 @@ impl<T> super::stub::ResourcePolicies for ResourcePolicies<T>
 where
     T: super::stub::ResourcePolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::resource_policies::AggregatedListRequest,
@@ -16220,11 +16219,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::resource_policies::DeleteRequest,
@@ -16234,11 +16233,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::resource_policies::GetRequest,
@@ -16248,11 +16247,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::resource_policies::GetIamPolicyRequest,
@@ -16262,11 +16261,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::resource_policies::InsertRequest,
@@ -16276,11 +16275,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::resource_policies::ListRequest,
@@ -16290,11 +16289,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::resource_policies::PatchRequest,
@@ -16304,11 +16303,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::resource_policies::SetIamPolicyRequest,
@@ -16318,11 +16317,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::resource_policies::TestIamPermissionsRequest,
@@ -16332,11 +16331,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -16346,7 +16345,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ResourcePolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -16394,7 +16394,6 @@ impl<T> super::stub::RolloutPlans for RolloutPlans<T>
 where
     T: super::stub::RolloutPlans + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::rollout_plans::DeleteRequest,
@@ -16404,11 +16403,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RolloutPlans::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::rollout_plans::GetRequest,
@@ -16418,11 +16417,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RolloutPlans::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::rollout_plans::InsertRequest,
@@ -16432,11 +16431,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RolloutPlans::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::rollout_plans::ListRequest,
@@ -16446,11 +16445,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RolloutPlans::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -16460,7 +16459,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RolloutPlans::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -16508,7 +16508,6 @@ impl<T> super::stub::Rollouts for Rollouts<T>
 where
     T: super::stub::Rollouts + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel(
         &self,
         req: crate::model::rollouts::CancelRequest,
@@ -16518,11 +16517,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Rollouts::cancel",
-            self.inner.cancel(req, options));
+            self.inner.cancel(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::rollouts::DeleteRequest,
@@ -16532,11 +16531,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Rollouts::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::rollouts::GetRequest,
@@ -16546,11 +16545,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Rollouts::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::rollouts::ListRequest,
@@ -16560,11 +16559,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Rollouts::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -16574,7 +16573,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Rollouts::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -16622,7 +16622,6 @@ impl<T> super::stub::Routers for Routers<T>
 where
     T: super::stub::Routers + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::routers::AggregatedListRequest,
@@ -16632,11 +16631,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::routers::DeleteRequest,
@@ -16646,11 +16645,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_route_policy(
         &self,
         req: crate::model::routers::DeleteRoutePolicyRequest,
@@ -16660,11 +16659,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::delete_route_policy",
-            self.inner.delete_route_policy(req, options));
+            self.inner.delete_route_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::routers::GetRequest,
@@ -16674,11 +16673,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_nat_ip_info(
         &self,
         req: crate::model::routers::GetNatIpInfoRequest,
@@ -16688,11 +16687,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::get_nat_ip_info",
-            self.inner.get_nat_ip_info(req, options));
+            self.inner.get_nat_ip_info(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_nat_mapping_info(
         &self,
         req: crate::model::routers::GetNatMappingInfoRequest,
@@ -16702,11 +16701,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::get_nat_mapping_info",
-            self.inner.get_nat_mapping_info(req, options));
+            self.inner.get_nat_mapping_info(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_route_policy(
         &self,
         req: crate::model::routers::GetRoutePolicyRequest,
@@ -16716,11 +16715,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::get_route_policy",
-            self.inner.get_route_policy(req, options));
+            self.inner.get_route_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_router_status(
         &self,
         req: crate::model::routers::GetRouterStatusRequest,
@@ -16730,11 +16729,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::get_router_status",
-            self.inner.get_router_status(req, options));
+            self.inner.get_router_status(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::routers::InsertRequest,
@@ -16744,11 +16743,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::routers::ListRequest,
@@ -16758,11 +16757,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_bgp_routes(
         &self,
         req: crate::model::routers::ListBgpRoutesRequest,
@@ -16772,11 +16771,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::list_bgp_routes",
-            self.inner.list_bgp_routes(req, options));
+            self.inner.list_bgp_routes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_route_policies(
         &self,
         req: crate::model::routers::ListRoutePoliciesRequest,
@@ -16786,11 +16785,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::list_route_policies",
-            self.inner.list_route_policies(req, options));
+            self.inner.list_route_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::routers::PatchRequest,
@@ -16800,11 +16799,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_route_policy(
         &self,
         req: crate::model::routers::PatchRoutePolicyRequest,
@@ -16814,11 +16813,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::patch_route_policy",
-            self.inner.patch_route_policy(req, options));
+            self.inner.patch_route_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn preview(
         &self,
         req: crate::model::routers::PreviewRequest,
@@ -16828,11 +16827,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::preview",
-            self.inner.preview(req, options));
+            self.inner.preview(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::routers::UpdateRequest,
@@ -16842,11 +16841,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_route_policy(
         &self,
         req: crate::model::routers::UpdateRoutePolicyRequest,
@@ -16856,11 +16855,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::update_route_policy",
-            self.inner.update_route_policy(req, options));
+            self.inner.update_route_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -16870,7 +16869,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routers::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -16918,7 +16918,6 @@ impl<T> super::stub::Routes for Routes<T>
 where
     T: super::stub::Routes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::routes::DeleteRequest,
@@ -16928,11 +16927,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routes::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::routes::GetRequest,
@@ -16942,11 +16941,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::routes::InsertRequest,
@@ -16956,11 +16955,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routes::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::routes::ListRequest,
@@ -16970,11 +16969,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::routes::TestIamPermissionsRequest,
@@ -16984,11 +16983,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routes::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -16998,7 +16997,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Routes::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -17046,7 +17046,6 @@ impl<T> super::stub::SecurityPolicies for SecurityPolicies<T>
 where
     T: super::stub::SecurityPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_rule(
         &self,
         req: crate::model::security_policies::AddRuleRequest,
@@ -17056,11 +17055,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::add_rule",
-            self.inner.add_rule(req, options));
+            self.inner.add_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::security_policies::AggregatedListRequest,
@@ -17070,11 +17069,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::security_policies::DeleteRequest,
@@ -17084,11 +17083,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::security_policies::GetRequest,
@@ -17098,11 +17097,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_rule(
         &self,
         req: crate::model::security_policies::GetRuleRequest,
@@ -17112,11 +17111,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::get_rule",
-            self.inner.get_rule(req, options));
+            self.inner.get_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::security_policies::InsertRequest,
@@ -17126,11 +17125,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::security_policies::ListRequest,
@@ -17140,11 +17139,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_preconfigured_expression_sets(
         &self,
         req: crate::model::security_policies::ListPreconfiguredExpressionSetsRequest,
@@ -17156,11 +17155,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::list_preconfigured_expression_sets",
-            self.inner.list_preconfigured_expression_sets(req, options));
+            self.inner.list_preconfigured_expression_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::security_policies::PatchRequest,
@@ -17170,11 +17169,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_rule(
         &self,
         req: crate::model::security_policies::PatchRuleRequest,
@@ -17184,11 +17183,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::patch_rule",
-            self.inner.patch_rule(req, options));
+            self.inner.patch_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_rule(
         &self,
         req: crate::model::security_policies::RemoveRuleRequest,
@@ -17198,11 +17197,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::remove_rule",
-            self.inner.remove_rule(req, options));
+            self.inner.remove_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::security_policies::SetLabelsRequest,
@@ -17212,11 +17211,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -17226,7 +17225,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecurityPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -17274,7 +17274,6 @@ impl<T> super::stub::ServiceAttachments for ServiceAttachments<T>
 where
     T: super::stub::ServiceAttachments + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::service_attachments::AggregatedListRequest,
@@ -17284,11 +17283,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::service_attachments::DeleteRequest,
@@ -17298,11 +17297,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::service_attachments::GetRequest,
@@ -17312,11 +17311,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::service_attachments::GetIamPolicyRequest,
@@ -17326,11 +17325,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::service_attachments::InsertRequest,
@@ -17340,11 +17339,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::service_attachments::ListRequest,
@@ -17354,11 +17353,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::service_attachments::PatchRequest,
@@ -17368,11 +17367,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::service_attachments::SetIamPolicyRequest,
@@ -17382,11 +17381,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::service_attachments::TestIamPermissionsRequest,
@@ -17396,11 +17395,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -17410,7 +17409,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ServiceAttachments::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -17458,7 +17458,6 @@ impl<T> super::stub::SnapshotSettings for SnapshotSettings<T>
 where
     T: super::stub::SnapshotSettings + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::snapshot_settings::GetRequest,
@@ -17468,11 +17467,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnapshotSettings::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::snapshot_settings::PatchRequest,
@@ -17482,11 +17481,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnapshotSettings::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -17496,7 +17495,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SnapshotSettings::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -17544,7 +17544,6 @@ impl<T> super::stub::Snapshots for Snapshots<T>
 where
     T: super::stub::Snapshots + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::snapshots::DeleteRequest,
@@ -17554,11 +17553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::snapshots::GetRequest,
@@ -17568,11 +17567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::snapshots::GetIamPolicyRequest,
@@ -17582,11 +17581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::snapshots::InsertRequest,
@@ -17596,11 +17595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::snapshots::ListRequest,
@@ -17610,11 +17609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::snapshots::SetIamPolicyRequest,
@@ -17624,11 +17623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::snapshots::SetLabelsRequest,
@@ -17638,11 +17637,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::snapshots::TestIamPermissionsRequest,
@@ -17652,11 +17651,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_kms_key(
         &self,
         req: crate::model::snapshots::UpdateKmsKeyRequest,
@@ -17666,11 +17665,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::update_kms_key",
-            self.inner.update_kms_key(req, options));
+            self.inner.update_kms_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -17680,7 +17679,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Snapshots::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -17728,7 +17728,6 @@ impl<T> super::stub::SslCertificates for SslCertificates<T>
 where
     T: super::stub::SslCertificates + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::ssl_certificates::AggregatedListRequest,
@@ -17738,11 +17737,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslCertificates::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::ssl_certificates::DeleteRequest,
@@ -17752,11 +17751,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslCertificates::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::ssl_certificates::GetRequest,
@@ -17766,11 +17765,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslCertificates::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::ssl_certificates::InsertRequest,
@@ -17780,11 +17779,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslCertificates::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::ssl_certificates::ListRequest,
@@ -17794,11 +17793,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslCertificates::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -17808,7 +17807,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslCertificates::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -17856,7 +17856,6 @@ impl<T> super::stub::SslPolicies for SslPolicies<T>
 where
     T: super::stub::SslPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::ssl_policies::AggregatedListRequest,
@@ -17866,11 +17865,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::ssl_policies::DeleteRequest,
@@ -17880,11 +17879,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::ssl_policies::GetRequest,
@@ -17894,11 +17893,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::ssl_policies::InsertRequest,
@@ -17908,11 +17907,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::ssl_policies::ListRequest,
@@ -17922,11 +17921,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_available_features(
         &self,
         req: crate::model::ssl_policies::ListAvailableFeaturesRequest,
@@ -17936,11 +17935,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::list_available_features",
-            self.inner.list_available_features(req, options));
+            self.inner.list_available_features(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::ssl_policies::PatchRequest,
@@ -17950,11 +17949,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -17964,7 +17963,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SslPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -18012,7 +18012,6 @@ impl<T> super::stub::StoragePoolTypes for StoragePoolTypes<T>
 where
     T: super::stub::StoragePoolTypes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::storage_pool_types::AggregatedListRequest,
@@ -18022,11 +18021,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePoolTypes::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::storage_pool_types::GetRequest,
@@ -18036,11 +18035,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePoolTypes::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::storage_pool_types::ListRequest,
@@ -18050,7 +18049,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePoolTypes::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -18084,7 +18084,6 @@ impl<T> super::stub::StoragePools for StoragePools<T>
 where
     T: super::stub::StoragePools + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::storage_pools::AggregatedListRequest,
@@ -18094,11 +18093,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::storage_pools::DeleteRequest,
@@ -18108,11 +18107,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::storage_pools::GetRequest,
@@ -18122,11 +18121,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::storage_pools::GetIamPolicyRequest,
@@ -18136,11 +18135,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::storage_pools::InsertRequest,
@@ -18150,11 +18149,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::storage_pools::ListRequest,
@@ -18164,11 +18163,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_disks(
         &self,
         req: crate::model::storage_pools::ListDisksRequest,
@@ -18178,11 +18177,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::list_disks",
-            self.inner.list_disks(req, options));
+            self.inner.list_disks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::storage_pools::SetIamPolicyRequest,
@@ -18192,11 +18191,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::storage_pools::TestIamPermissionsRequest,
@@ -18206,11 +18205,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::storage_pools::UpdateRequest,
@@ -18220,11 +18219,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -18234,7 +18233,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::StoragePools::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -18282,7 +18282,6 @@ impl<T> super::stub::Subnetworks for Subnetworks<T>
 where
     T: super::stub::Subnetworks + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::subnetworks::AggregatedListRequest,
@@ -18292,11 +18291,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::subnetworks::DeleteRequest,
@@ -18306,11 +18305,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn expand_ip_cidr_range(
         &self,
         req: crate::model::subnetworks::ExpandIpCidrRangeRequest,
@@ -18320,11 +18319,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::expand_ip_cidr_range",
-            self.inner.expand_ip_cidr_range(req, options));
+            self.inner.expand_ip_cidr_range(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::subnetworks::GetRequest,
@@ -18334,11 +18333,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::subnetworks::GetIamPolicyRequest,
@@ -18348,11 +18347,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::subnetworks::InsertRequest,
@@ -18362,11 +18361,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::subnetworks::ListRequest,
@@ -18376,11 +18375,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_usable(
         &self,
         req: crate::model::subnetworks::ListUsableRequest,
@@ -18390,11 +18389,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::list_usable",
-            self.inner.list_usable(req, options));
+            self.inner.list_usable(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::subnetworks::PatchRequest,
@@ -18404,11 +18403,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::subnetworks::SetIamPolicyRequest,
@@ -18418,11 +18417,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_private_ip_google_access(
         &self,
         req: crate::model::subnetworks::SetPrivateIpGoogleAccessRequest,
@@ -18432,11 +18431,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::set_private_ip_google_access",
-            self.inner.set_private_ip_google_access(req, options));
+            self.inner.set_private_ip_google_access(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::subnetworks::TestIamPermissionsRequest,
@@ -18446,11 +18445,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -18460,7 +18459,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Subnetworks::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -18508,7 +18508,6 @@ impl<T> super::stub::TargetGrpcProxies for TargetGrpcProxies<T>
 where
     T: super::stub::TargetGrpcProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_grpc_proxies::DeleteRequest,
@@ -18518,11 +18517,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetGrpcProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_grpc_proxies::GetRequest,
@@ -18532,11 +18531,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetGrpcProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_grpc_proxies::InsertRequest,
@@ -18546,11 +18545,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetGrpcProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_grpc_proxies::ListRequest,
@@ -18560,11 +18559,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetGrpcProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::target_grpc_proxies::PatchRequest,
@@ -18574,11 +18573,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetGrpcProxies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -18588,7 +18587,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetGrpcProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -18636,7 +18636,6 @@ impl<T> super::stub::TargetHttpProxies for TargetHttpProxies<T>
 where
     T: super::stub::TargetHttpProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::target_http_proxies::AggregatedListRequest,
@@ -18646,11 +18645,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_http_proxies::DeleteRequest,
@@ -18660,11 +18659,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_http_proxies::GetRequest,
@@ -18674,11 +18673,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_http_proxies::InsertRequest,
@@ -18688,11 +18687,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_http_proxies::ListRequest,
@@ -18702,11 +18701,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::target_http_proxies::PatchRequest,
@@ -18716,11 +18715,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_url_map(
         &self,
         req: crate::model::target_http_proxies::SetUrlMapRequest,
@@ -18730,11 +18729,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::set_url_map",
-            self.inner.set_url_map(req, options));
+            self.inner.set_url_map(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -18744,7 +18743,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -18792,7 +18792,6 @@ impl<T> super::stub::TargetHttpsProxies for TargetHttpsProxies<T>
 where
     T: super::stub::TargetHttpsProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::target_https_proxies::AggregatedListRequest,
@@ -18802,11 +18801,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_https_proxies::DeleteRequest,
@@ -18816,11 +18815,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_https_proxies::GetRequest,
@@ -18830,11 +18829,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_https_proxies::InsertRequest,
@@ -18844,11 +18843,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_https_proxies::ListRequest,
@@ -18858,11 +18857,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::target_https_proxies::PatchRequest,
@@ -18872,11 +18871,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_certificate_map(
         &self,
         req: crate::model::target_https_proxies::SetCertificateMapRequest,
@@ -18886,11 +18885,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::set_certificate_map",
-            self.inner.set_certificate_map(req, options));
+            self.inner.set_certificate_map(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_quic_override(
         &self,
         req: crate::model::target_https_proxies::SetQuicOverrideRequest,
@@ -18900,11 +18899,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::set_quic_override",
-            self.inner.set_quic_override(req, options));
+            self.inner.set_quic_override(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_ssl_certificates(
         &self,
         req: crate::model::target_https_proxies::SetSslCertificatesRequest,
@@ -18914,11 +18913,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::set_ssl_certificates",
-            self.inner.set_ssl_certificates(req, options));
+            self.inner.set_ssl_certificates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_ssl_policy(
         &self,
         req: crate::model::target_https_proxies::SetSslPolicyRequest,
@@ -18928,11 +18927,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::set_ssl_policy",
-            self.inner.set_ssl_policy(req, options));
+            self.inner.set_ssl_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_url_map(
         &self,
         req: crate::model::target_https_proxies::SetUrlMapRequest,
@@ -18942,11 +18941,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::set_url_map",
-            self.inner.set_url_map(req, options));
+            self.inner.set_url_map(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -18956,7 +18955,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetHttpsProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -19004,7 +19004,6 @@ impl<T> super::stub::TargetInstances for TargetInstances<T>
 where
     T: super::stub::TargetInstances + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::target_instances::AggregatedListRequest,
@@ -19014,11 +19013,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_instances::DeleteRequest,
@@ -19028,11 +19027,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_instances::GetRequest,
@@ -19042,11 +19041,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_instances::InsertRequest,
@@ -19056,11 +19055,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_instances::ListRequest,
@@ -19070,11 +19069,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_security_policy(
         &self,
         req: crate::model::target_instances::SetSecurityPolicyRequest,
@@ -19084,11 +19083,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::set_security_policy",
-            self.inner.set_security_policy(req, options));
+            self.inner.set_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::target_instances::TestIamPermissionsRequest,
@@ -19098,11 +19097,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -19112,7 +19111,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetInstances::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -19160,7 +19160,6 @@ impl<T> super::stub::TargetPools for TargetPools<T>
 where
     T: super::stub::TargetPools + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_health_check(
         &self,
         req: crate::model::target_pools::AddHealthCheckRequest,
@@ -19170,11 +19169,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::add_health_check",
-            self.inner.add_health_check(req, options));
+            self.inner.add_health_check(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_instance(
         &self,
         req: crate::model::target_pools::AddInstanceRequest,
@@ -19184,11 +19183,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::add_instance",
-            self.inner.add_instance(req, options));
+            self.inner.add_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::target_pools::AggregatedListRequest,
@@ -19198,11 +19197,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_pools::DeleteRequest,
@@ -19212,11 +19211,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_pools::GetRequest,
@@ -19226,11 +19225,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_health(
         &self,
         req: crate::model::target_pools::GetHealthRequest,
@@ -19240,11 +19239,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::get_health",
-            self.inner.get_health(req, options));
+            self.inner.get_health(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_pools::InsertRequest,
@@ -19254,11 +19253,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_pools::ListRequest,
@@ -19268,11 +19267,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_health_check(
         &self,
         req: crate::model::target_pools::RemoveHealthCheckRequest,
@@ -19282,11 +19281,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::remove_health_check",
-            self.inner.remove_health_check(req, options));
+            self.inner.remove_health_check(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_instance(
         &self,
         req: crate::model::target_pools::RemoveInstanceRequest,
@@ -19296,11 +19295,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::remove_instance",
-            self.inner.remove_instance(req, options));
+            self.inner.remove_instance(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_backup(
         &self,
         req: crate::model::target_pools::SetBackupRequest,
@@ -19310,11 +19309,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::set_backup",
-            self.inner.set_backup(req, options));
+            self.inner.set_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_security_policy(
         &self,
         req: crate::model::target_pools::SetSecurityPolicyRequest,
@@ -19324,11 +19323,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::set_security_policy",
-            self.inner.set_security_policy(req, options));
+            self.inner.set_security_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::target_pools::TestIamPermissionsRequest,
@@ -19338,11 +19337,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -19352,7 +19351,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetPools::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -19400,7 +19400,6 @@ impl<T> super::stub::TargetSslProxies for TargetSslProxies<T>
 where
     T: super::stub::TargetSslProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_ssl_proxies::DeleteRequest,
@@ -19410,11 +19409,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_ssl_proxies::GetRequest,
@@ -19424,11 +19423,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_ssl_proxies::InsertRequest,
@@ -19438,11 +19437,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_ssl_proxies::ListRequest,
@@ -19452,11 +19451,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_backend_service(
         &self,
         req: crate::model::target_ssl_proxies::SetBackendServiceRequest,
@@ -19466,11 +19465,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::set_backend_service",
-            self.inner.set_backend_service(req, options));
+            self.inner.set_backend_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_certificate_map(
         &self,
         req: crate::model::target_ssl_proxies::SetCertificateMapRequest,
@@ -19480,11 +19479,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::set_certificate_map",
-            self.inner.set_certificate_map(req, options));
+            self.inner.set_certificate_map(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_proxy_header(
         &self,
         req: crate::model::target_ssl_proxies::SetProxyHeaderRequest,
@@ -19494,11 +19493,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::set_proxy_header",
-            self.inner.set_proxy_header(req, options));
+            self.inner.set_proxy_header(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_ssl_certificates(
         &self,
         req: crate::model::target_ssl_proxies::SetSslCertificatesRequest,
@@ -19508,11 +19507,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::set_ssl_certificates",
-            self.inner.set_ssl_certificates(req, options));
+            self.inner.set_ssl_certificates(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_ssl_policy(
         &self,
         req: crate::model::target_ssl_proxies::SetSslPolicyRequest,
@@ -19522,11 +19521,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::set_ssl_policy",
-            self.inner.set_ssl_policy(req, options));
+            self.inner.set_ssl_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::target_ssl_proxies::TestIamPermissionsRequest,
@@ -19536,11 +19535,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -19550,7 +19549,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetSslProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -19598,7 +19598,6 @@ impl<T> super::stub::TargetTcpProxies for TargetTcpProxies<T>
 where
     T: super::stub::TargetTcpProxies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::target_tcp_proxies::AggregatedListRequest,
@@ -19608,11 +19607,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_tcp_proxies::DeleteRequest,
@@ -19622,11 +19621,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_tcp_proxies::GetRequest,
@@ -19636,11 +19635,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_tcp_proxies::InsertRequest,
@@ -19650,11 +19649,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_tcp_proxies::ListRequest,
@@ -19664,11 +19663,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_backend_service(
         &self,
         req: crate::model::target_tcp_proxies::SetBackendServiceRequest,
@@ -19678,11 +19677,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::set_backend_service",
-            self.inner.set_backend_service(req, options));
+            self.inner.set_backend_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_proxy_header(
         &self,
         req: crate::model::target_tcp_proxies::SetProxyHeaderRequest,
@@ -19692,11 +19691,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::set_proxy_header",
-            self.inner.set_proxy_header(req, options));
+            self.inner.set_proxy_header(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::target_tcp_proxies::TestIamPermissionsRequest,
@@ -19706,11 +19705,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -19720,7 +19719,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetTcpProxies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -19768,7 +19768,6 @@ impl<T> super::stub::TargetVpnGateways for TargetVpnGateways<T>
 where
     T: super::stub::TargetVpnGateways + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::target_vpn_gateways::AggregatedListRequest,
@@ -19778,11 +19777,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::target_vpn_gateways::DeleteRequest,
@@ -19792,11 +19791,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::target_vpn_gateways::GetRequest,
@@ -19806,11 +19805,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::target_vpn_gateways::InsertRequest,
@@ -19820,11 +19819,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::target_vpn_gateways::ListRequest,
@@ -19834,11 +19833,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::target_vpn_gateways::SetLabelsRequest,
@@ -19848,11 +19847,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -19862,7 +19861,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TargetVpnGateways::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -19910,7 +19910,6 @@ impl<T> super::stub::UrlMaps for UrlMaps<T>
 where
     T: super::stub::UrlMaps + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::url_maps::AggregatedListRequest,
@@ -19920,11 +19919,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::url_maps::DeleteRequest,
@@ -19934,11 +19933,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::url_maps::GetRequest,
@@ -19948,11 +19947,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::url_maps::InsertRequest,
@@ -19962,11 +19961,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn invalidate_cache(
         &self,
         req: crate::model::url_maps::InvalidateCacheRequest,
@@ -19976,11 +19975,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::invalidate_cache",
-            self.inner.invalidate_cache(req, options));
+            self.inner.invalidate_cache(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::url_maps::ListRequest,
@@ -19990,11 +19989,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::url_maps::PatchRequest,
@@ -20004,11 +20003,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::url_maps::TestIamPermissionsRequest,
@@ -20018,11 +20017,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::url_maps::UpdateRequest,
@@ -20032,11 +20031,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate(
         &self,
         req: crate::model::url_maps::ValidateRequest,
@@ -20046,11 +20045,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::validate",
-            self.inner.validate(req, options));
+            self.inner.validate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -20060,7 +20059,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::UrlMaps::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -20108,7 +20108,6 @@ impl<T> super::stub::VpnGateways for VpnGateways<T>
 where
     T: super::stub::VpnGateways + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::vpn_gateways::AggregatedListRequest,
@@ -20118,11 +20117,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::vpn_gateways::DeleteRequest,
@@ -20132,11 +20131,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::vpn_gateways::GetRequest,
@@ -20146,11 +20145,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_status(
         &self,
         req: crate::model::vpn_gateways::GetStatusRequest,
@@ -20160,11 +20159,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::get_status",
-            self.inner.get_status(req, options));
+            self.inner.get_status(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::vpn_gateways::InsertRequest,
@@ -20174,11 +20173,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::vpn_gateways::ListRequest,
@@ -20188,11 +20187,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::vpn_gateways::SetLabelsRequest,
@@ -20202,11 +20201,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::vpn_gateways::TestIamPermissionsRequest,
@@ -20216,11 +20215,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -20230,7 +20229,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnGateways::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -20278,7 +20278,6 @@ impl<T> super::stub::VpnTunnels for VpnTunnels<T>
 where
     T: super::stub::VpnTunnels + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn aggregated_list(
         &self,
         req: crate::model::vpn_tunnels::AggregatedListRequest,
@@ -20288,11 +20287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::aggregated_list",
-            self.inner.aggregated_list(req, options));
+            self.inner.aggregated_list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::vpn_tunnels::DeleteRequest,
@@ -20302,11 +20301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::vpn_tunnels::GetRequest,
@@ -20316,11 +20315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::vpn_tunnels::InsertRequest,
@@ -20330,11 +20329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::vpn_tunnels::ListRequest,
@@ -20344,11 +20343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_labels(
         &self,
         req: crate::model::vpn_tunnels::SetLabelsRequest,
@@ -20358,11 +20357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::set_labels",
-            self.inner.set_labels(req, options));
+            self.inner.set_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::region_operations::GetRequest,
@@ -20372,7 +20371,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::VpnTunnels::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -20420,7 +20420,6 @@ impl<T> super::stub::WireGroups for WireGroups<T>
 where
     T: super::stub::WireGroups + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::wire_groups::DeleteRequest,
@@ -20430,11 +20429,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WireGroups::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::wire_groups::GetRequest,
@@ -20444,11 +20443,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WireGroups::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::wire_groups::InsertRequest,
@@ -20458,11 +20457,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WireGroups::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::wire_groups::ListRequest,
@@ -20472,11 +20471,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WireGroups::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch(
         &self,
         req: crate::model::wire_groups::PatchRequest,
@@ -20486,11 +20485,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WireGroups::patch",
-            self.inner.patch(req, options));
+            self.inner.patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::global_operations::GetRequest,
@@ -20500,7 +20499,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WireGroups::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -20548,7 +20548,6 @@ impl<T> super::stub::ZoneOperations for ZoneOperations<T>
 where
     T: super::stub::ZoneOperations + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::zone_operations::DeleteRequest,
@@ -20558,11 +20557,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneOperations::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -20572,11 +20571,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneOperations::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::zone_operations::ListRequest,
@@ -20586,11 +20585,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneOperations::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn wait(
         &self,
         req: crate::model::zone_operations::WaitRequest,
@@ -20600,7 +20599,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneOperations::wait",
-            self.inner.wait(req, options));
+            self.inner.wait(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -20634,7 +20634,6 @@ impl<T> super::stub::ZoneVmExtensionPolicies for ZoneVmExtensionPolicies<T>
 where
     T: super::stub::ZoneVmExtensionPolicies + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete(
         &self,
         req: crate::model::zone_vm_extension_policies::DeleteRequest,
@@ -20644,11 +20643,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneVmExtensionPolicies::delete",
-            self.inner.delete(req, options));
+            self.inner.delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::zone_vm_extension_policies::GetRequest,
@@ -20658,11 +20657,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneVmExtensionPolicies::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert(
         &self,
         req: crate::model::zone_vm_extension_policies::InsertRequest,
@@ -20672,11 +20671,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneVmExtensionPolicies::insert",
-            self.inner.insert(req, options));
+            self.inner.insert(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::zone_vm_extension_policies::ListRequest,
@@ -20686,11 +20685,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneVmExtensionPolicies::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update(
         &self,
         req: crate::model::zone_vm_extension_policies::UpdateRequest,
@@ -20700,11 +20699,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneVmExtensionPolicies::update",
-            self.inner.update(req, options));
+            self.inner.update(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: crate::model::zone_operations::GetRequest,
@@ -20714,7 +20713,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ZoneVmExtensionPolicies::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -20762,7 +20762,6 @@ impl<T> super::stub::Zones for Zones<T>
 where
     T: super::stub::Zones + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get(
         &self,
         req: crate::model::zones::GetRequest,
@@ -20772,11 +20771,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Zones::get",
-            self.inner.get(req, options));
+            self.inner.get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list(
         &self,
         req: crate::model::zones::ListRequest,
@@ -20786,7 +20785,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Zones::list",
-            self.inner.list(req, options));
+            self.inner.list(req.clone(), options.clone()));
+
         pending.await
     }
 }

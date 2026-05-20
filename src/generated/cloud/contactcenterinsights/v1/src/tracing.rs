@@ -41,7 +41,6 @@ impl<T> super::stub::ContactCenterInsights for ContactCenterInsights<T>
 where
     T: super::stub::ContactCenterInsights + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_conversation(
         &self,
         req: crate::model::CreateConversationRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_conversation",
-            self.inner.create_conversation(req, options));
+            self.inner.create_conversation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn upload_conversation(
         &self,
         req: crate::model::UploadConversationRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::upload_conversation",
-            self.inner.upload_conversation(req, options));
+            self.inner.upload_conversation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_conversation(
         &self,
         req: crate::model::UpdateConversationRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_conversation",
-            self.inner.update_conversation(req, options));
+            self.inner.update_conversation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_conversation(
         &self,
         req: crate::model::GetConversationRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_conversation",
-            self.inner.get_conversation(req, options));
+            self.inner.get_conversation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_conversations(
         &self,
         req: crate::model::ListConversationsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_conversations",
-            self.inner.list_conversations(req, options));
+            self.inner.list_conversations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_conversation(
         &self,
         req: crate::model::DeleteConversationRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_conversation",
-            self.inner.delete_conversation(req, options));
+            self.inner.delete_conversation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_analysis(
         &self,
         req: crate::model::CreateAnalysisRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_analysis",
-            self.inner.create_analysis(req, options));
+            self.inner.create_analysis(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_analysis(
         &self,
         req: crate::model::GetAnalysisRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_analysis",
-            self.inner.get_analysis(req, options));
+            self.inner.get_analysis(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_analyses(
         &self,
         req: crate::model::ListAnalysesRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_analyses",
-            self.inner.list_analyses(req, options));
+            self.inner.list_analyses(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_analysis(
         &self,
         req: crate::model::DeleteAnalysisRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_analysis",
-            self.inner.delete_analysis(req, options));
+            self.inner.delete_analysis(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_analyze_conversations(
         &self,
         req: crate::model::BulkAnalyzeConversationsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::bulk_analyze_conversations",
-            self.inner.bulk_analyze_conversations(req, options));
+            self.inner.bulk_analyze_conversations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_delete_conversations(
         &self,
         req: crate::model::BulkDeleteConversationsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::bulk_delete_conversations",
-            self.inner.bulk_delete_conversations(req, options));
+            self.inner.bulk_delete_conversations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn ingest_conversations(
         &self,
         req: crate::model::IngestConversationsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::ingest_conversations",
-            self.inner.ingest_conversations(req, options));
+            self.inner.ingest_conversations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_insights_data(
         &self,
         req: crate::model::ExportInsightsDataRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::export_insights_data",
-            self.inner.export_insights_data(req, options));
+            self.inner.export_insights_data(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_issue_model(
         &self,
         req: crate::model::CreateIssueModelRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_issue_model",
-            self.inner.create_issue_model(req, options));
+            self.inner.create_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_issue_model(
         &self,
         req: crate::model::UpdateIssueModelRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_issue_model",
-            self.inner.update_issue_model(req, options));
+            self.inner.update_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_issue_model(
         &self,
         req: crate::model::GetIssueModelRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_issue_model",
-            self.inner.get_issue_model(req, options));
+            self.inner.get_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_issue_models(
         &self,
         req: crate::model::ListIssueModelsRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_issue_models",
-            self.inner.list_issue_models(req, options));
+            self.inner.list_issue_models(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_issue_model(
         &self,
         req: crate::model::DeleteIssueModelRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_issue_model",
-            self.inner.delete_issue_model(req, options));
+            self.inner.delete_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn deploy_issue_model(
         &self,
         req: crate::model::DeployIssueModelRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::deploy_issue_model",
-            self.inner.deploy_issue_model(req, options));
+            self.inner.deploy_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undeploy_issue_model(
         &self,
         req: crate::model::UndeployIssueModelRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::undeploy_issue_model",
-            self.inner.undeploy_issue_model(req, options));
+            self.inner.undeploy_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_issue_model(
         &self,
         req: crate::model::ExportIssueModelRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::export_issue_model",
-            self.inner.export_issue_model(req, options));
+            self.inner.export_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_issue_model(
         &self,
         req: crate::model::ImportIssueModelRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::import_issue_model",
-            self.inner.import_issue_model(req, options));
+            self.inner.import_issue_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_issue(
         &self,
         req: crate::model::GetIssueRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_issue",
-            self.inner.get_issue(req, options));
+            self.inner.get_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_issues(
         &self,
         req: crate::model::ListIssuesRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_issues",
-            self.inner.list_issues(req, options));
+            self.inner.list_issues(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_issue(
         &self,
         req: crate::model::UpdateIssueRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_issue",
-            self.inner.update_issue(req, options));
+            self.inner.update_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_issue(
         &self,
         req: crate::model::DeleteIssueRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_issue",
-            self.inner.delete_issue(req, options));
+            self.inner.delete_issue(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn calculate_issue_model_stats(
         &self,
         req: crate::model::CalculateIssueModelStatsRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::calculate_issue_model_stats",
-            self.inner.calculate_issue_model_stats(req, options));
+            self.inner.calculate_issue_model_stats(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_phrase_matcher(
         &self,
         req: crate::model::CreatePhraseMatcherRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_phrase_matcher",
-            self.inner.create_phrase_matcher(req, options));
+            self.inner.create_phrase_matcher(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_phrase_matcher(
         &self,
         req: crate::model::GetPhraseMatcherRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_phrase_matcher",
-            self.inner.get_phrase_matcher(req, options));
+            self.inner.get_phrase_matcher(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_phrase_matchers(
         &self,
         req: crate::model::ListPhraseMatchersRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_phrase_matchers",
-            self.inner.list_phrase_matchers(req, options));
+            self.inner.list_phrase_matchers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_phrase_matcher(
         &self,
         req: crate::model::DeletePhraseMatcherRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_phrase_matcher",
-            self.inner.delete_phrase_matcher(req, options));
+            self.inner.delete_phrase_matcher(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_phrase_matcher(
         &self,
         req: crate::model::UpdatePhraseMatcherRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_phrase_matcher",
-            self.inner.update_phrase_matcher(req, options));
+            self.inner.update_phrase_matcher(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn calculate_stats(
         &self,
         req: crate::model::CalculateStatsRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::calculate_stats",
-            self.inner.calculate_stats(req, options));
+            self.inner.calculate_stats(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_settings(
         &self,
         req: crate::model::GetSettingsRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_settings",
-            self.inner.get_settings(req, options));
+            self.inner.get_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_settings(
         &self,
         req: crate::model::UpdateSettingsRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_settings",
-            self.inner.update_settings(req, options));
+            self.inner.update_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_analysis_rule(
         &self,
         req: crate::model::CreateAnalysisRuleRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_analysis_rule",
-            self.inner.create_analysis_rule(req, options));
+            self.inner.create_analysis_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_analysis_rule(
         &self,
         req: crate::model::GetAnalysisRuleRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_analysis_rule",
-            self.inner.get_analysis_rule(req, options));
+            self.inner.get_analysis_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_analysis_rules(
         &self,
         req: crate::model::ListAnalysisRulesRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_analysis_rules",
-            self.inner.list_analysis_rules(req, options));
+            self.inner.list_analysis_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_analysis_rule(
         &self,
         req: crate::model::UpdateAnalysisRuleRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_analysis_rule",
-            self.inner.update_analysis_rule(req, options));
+            self.inner.update_analysis_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_analysis_rule(
         &self,
         req: crate::model::DeleteAnalysisRuleRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_analysis_rule",
-            self.inner.delete_analysis_rule(req, options));
+            self.inner.delete_analysis_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_encryption_spec(
         &self,
         req: crate::model::GetEncryptionSpecRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_encryption_spec",
-            self.inner.get_encryption_spec(req, options));
+            self.inner.get_encryption_spec(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn initialize_encryption_spec(
         &self,
         req: crate::model::InitializeEncryptionSpecRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::initialize_encryption_spec",
-            self.inner.initialize_encryption_spec(req, options));
+            self.inner.initialize_encryption_spec(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_view(
         &self,
         req: crate::model::CreateViewRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_view",
-            self.inner.create_view(req, options));
+            self.inner.create_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_view(
         &self,
         req: crate::model::GetViewRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_view",
-            self.inner.get_view(req, options));
+            self.inner.get_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_views(
         &self,
         req: crate::model::ListViewsRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_views",
-            self.inner.list_views(req, options));
+            self.inner.list_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_view(
         &self,
         req: crate::model::UpdateViewRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_view",
-            self.inner.update_view(req, options));
+            self.inner.update_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_view(
         &self,
         req: crate::model::DeleteViewRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_view",
-            self.inner.delete_view(req, options));
+            self.inner.delete_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_metrics(
         &self,
         req: crate::model::QueryMetricsRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::query_metrics",
-            self.inner.query_metrics(req, options));
+            self.inner.query_metrics(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_qa_question(
         &self,
         req: crate::model::CreateQaQuestionRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_qa_question",
-            self.inner.create_qa_question(req, options));
+            self.inner.create_qa_question(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_qa_question(
         &self,
         req: crate::model::GetQaQuestionRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_qa_question",
-            self.inner.get_qa_question(req, options));
+            self.inner.get_qa_question(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_qa_question(
         &self,
         req: crate::model::UpdateQaQuestionRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_qa_question",
-            self.inner.update_qa_question(req, options));
+            self.inner.update_qa_question(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_qa_question(
         &self,
         req: crate::model::DeleteQaQuestionRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_qa_question",
-            self.inner.delete_qa_question(req, options));
+            self.inner.delete_qa_question(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_qa_questions(
         &self,
         req: crate::model::ListQaQuestionsRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_qa_questions",
-            self.inner.list_qa_questions(req, options));
+            self.inner.list_qa_questions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_qa_scorecard(
         &self,
         req: crate::model::CreateQaScorecardRequest,
@@ -807,11 +806,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_qa_scorecard",
-            self.inner.create_qa_scorecard(req, options));
+            self.inner.create_qa_scorecard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_qa_scorecard(
         &self,
         req: crate::model::GetQaScorecardRequest,
@@ -821,11 +820,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_qa_scorecard",
-            self.inner.get_qa_scorecard(req, options));
+            self.inner.get_qa_scorecard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_qa_scorecard(
         &self,
         req: crate::model::UpdateQaScorecardRequest,
@@ -835,11 +834,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_qa_scorecard",
-            self.inner.update_qa_scorecard(req, options));
+            self.inner.update_qa_scorecard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_qa_scorecard(
         &self,
         req: crate::model::DeleteQaScorecardRequest,
@@ -849,11 +848,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_qa_scorecard",
-            self.inner.delete_qa_scorecard(req, options));
+            self.inner.delete_qa_scorecard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_qa_scorecards(
         &self,
         req: crate::model::ListQaScorecardsRequest,
@@ -863,11 +862,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_qa_scorecards",
-            self.inner.list_qa_scorecards(req, options));
+            self.inner.list_qa_scorecards(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_qa_scorecard_revision(
         &self,
         req: crate::model::CreateQaScorecardRevisionRequest,
@@ -877,11 +876,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_qa_scorecard_revision",
-            self.inner.create_qa_scorecard_revision(req, options));
+            self.inner.create_qa_scorecard_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_qa_scorecard_revision(
         &self,
         req: crate::model::GetQaScorecardRevisionRequest,
@@ -891,11 +890,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_qa_scorecard_revision",
-            self.inner.get_qa_scorecard_revision(req, options));
+            self.inner.get_qa_scorecard_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn tune_qa_scorecard_revision(
         &self,
         req: crate::model::TuneQaScorecardRevisionRequest,
@@ -905,11 +904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::tune_qa_scorecard_revision",
-            self.inner.tune_qa_scorecard_revision(req, options));
+            self.inner.tune_qa_scorecard_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn deploy_qa_scorecard_revision(
         &self,
         req: crate::model::DeployQaScorecardRevisionRequest,
@@ -919,11 +918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::deploy_qa_scorecard_revision",
-            self.inner.deploy_qa_scorecard_revision(req, options));
+            self.inner.deploy_qa_scorecard_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undeploy_qa_scorecard_revision(
         &self,
         req: crate::model::UndeployQaScorecardRevisionRequest,
@@ -933,11 +932,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::undeploy_qa_scorecard_revision",
-            self.inner.undeploy_qa_scorecard_revision(req, options));
+            self.inner.undeploy_qa_scorecard_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_qa_scorecard_revision(
         &self,
         req: crate::model::DeleteQaScorecardRevisionRequest,
@@ -947,11 +946,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_qa_scorecard_revision",
-            self.inner.delete_qa_scorecard_revision(req, options));
+            self.inner.delete_qa_scorecard_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_qa_scorecard_revisions(
         &self,
         req: crate::model::ListQaScorecardRevisionsRequest,
@@ -961,11 +960,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_qa_scorecard_revisions",
-            self.inner.list_qa_scorecard_revisions(req, options));
+            self.inner.list_qa_scorecard_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_feedback_label(
         &self,
         req: crate::model::CreateFeedbackLabelRequest,
@@ -975,11 +974,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::create_feedback_label",
-            self.inner.create_feedback_label(req, options));
+            self.inner.create_feedback_label(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_feedback_labels(
         &self,
         req: crate::model::ListFeedbackLabelsRequest,
@@ -989,11 +988,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_feedback_labels",
-            self.inner.list_feedback_labels(req, options));
+            self.inner.list_feedback_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_feedback_label(
         &self,
         req: crate::model::GetFeedbackLabelRequest,
@@ -1003,11 +1002,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_feedback_label",
-            self.inner.get_feedback_label(req, options));
+            self.inner.get_feedback_label(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_feedback_label(
         &self,
         req: crate::model::UpdateFeedbackLabelRequest,
@@ -1017,11 +1016,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::update_feedback_label",
-            self.inner.update_feedback_label(req, options));
+            self.inner.update_feedback_label(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_feedback_label(
         &self,
         req: crate::model::DeleteFeedbackLabelRequest,
@@ -1031,11 +1030,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::delete_feedback_label",
-            self.inner.delete_feedback_label(req, options));
+            self.inner.delete_feedback_label(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_all_feedback_labels(
         &self,
         req: crate::model::ListAllFeedbackLabelsRequest,
@@ -1045,11 +1044,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_all_feedback_labels",
-            self.inner.list_all_feedback_labels(req, options));
+            self.inner.list_all_feedback_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_upload_feedback_labels(
         &self,
         req: crate::model::BulkUploadFeedbackLabelsRequest,
@@ -1059,11 +1058,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::bulk_upload_feedback_labels",
-            self.inner.bulk_upload_feedback_labels(req, options));
+            self.inner.bulk_upload_feedback_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn bulk_download_feedback_labels(
         &self,
         req: crate::model::BulkDownloadFeedbackLabelsRequest,
@@ -1073,11 +1072,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::bulk_download_feedback_labels",
-            self.inner.bulk_download_feedback_labels(req, options));
+            self.inner.bulk_download_feedback_labels(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1087,11 +1086,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1101,11 +1100,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1115,7 +1114,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ContactCenterInsights::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

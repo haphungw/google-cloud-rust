@@ -52,9 +52,7 @@ where
             method: "client::Compliance::repeat_data_body",
             self.inner.repeat_data_body(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_body_info(
@@ -68,9 +66,7 @@ where
             method: "client::Compliance::repeat_data_body_info",
             self.inner.repeat_data_body_info(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_query(
@@ -84,9 +80,7 @@ where
             method: "client::Compliance::repeat_data_query",
             self.inner.repeat_data_query(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_simple_path(
@@ -100,9 +94,7 @@ where
             method: "client::Compliance::repeat_data_simple_path",
             self.inner.repeat_data_simple_path(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_path_resource(
@@ -116,9 +108,7 @@ where
             method: "client::Compliance::repeat_data_path_resource",
             self.inner.repeat_data_path_resource(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_path_trailing_resource(
@@ -132,9 +122,7 @@ where
             method: "client::Compliance::repeat_data_path_trailing_resource",
             self.inner.repeat_data_path_trailing_resource(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_body_put(
@@ -148,9 +136,7 @@ where
             method: "client::Compliance::repeat_data_body_put",
             self.inner.repeat_data_body_put(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn repeat_data_body_patch(
@@ -164,9 +150,7 @@ where
             method: "client::Compliance::repeat_data_body_patch",
             self.inner.repeat_data_body_patch(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_enum(
@@ -180,9 +164,7 @@ where
             method: "client::Compliance::get_enum",
             self.inner.get_enum(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn verify_enum(
@@ -196,9 +178,7 @@ where
             method: "client::Compliance::verify_enum",
             self.inner.verify_enum(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -212,9 +192,7 @@ where
             method: "client::Compliance::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -228,9 +206,7 @@ where
             method: "client::Compliance::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -244,9 +220,7 @@ where
             method: "client::Compliance::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -260,9 +234,7 @@ where
             method: "client::Compliance::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -276,9 +248,7 @@ where
             method: "client::Compliance::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -292,9 +262,7 @@ where
             method: "client::Compliance::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -308,9 +276,7 @@ where
             method: "client::Compliance::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -324,9 +290,7 @@ where
             method: "client::Compliance::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn cancel_operation(
@@ -340,9 +304,7 @@ where
             method: "client::Compliance::cancel_operation",
             self.inner.cancel_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 }
 
@@ -383,9 +345,7 @@ where
             method: "client::Echo::echo",
             self.inner.echo(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn echo_error_details(
@@ -399,9 +359,7 @@ where
             method: "client::Echo::echo_error_details",
             self.inner.echo_error_details(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn fail_echo_with_details(
@@ -415,9 +373,7 @@ where
             method: "client::Echo::fail_echo_with_details",
             self.inner.fail_echo_with_details(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn paged_expand(
@@ -431,9 +387,7 @@ where
             method: "client::Echo::paged_expand",
             self.inner.paged_expand(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn paged_expand_legacy(
@@ -447,9 +401,7 @@ where
             method: "client::Echo::paged_expand_legacy",
             self.inner.paged_expand_legacy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn paged_expand_legacy_mapped(
@@ -463,9 +415,7 @@ where
             method: "client::Echo::paged_expand_legacy_mapped",
             self.inner.paged_expand_legacy_mapped(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn wait(
@@ -479,9 +429,7 @@ where
             method: "client::Echo::wait",
             self.inner.wait(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn block(
@@ -495,9 +443,7 @@ where
             method: "client::Echo::block",
             self.inner.block(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -511,9 +457,7 @@ where
             method: "client::Echo::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -527,9 +471,7 @@ where
             method: "client::Echo::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -543,9 +485,7 @@ where
             method: "client::Echo::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -559,9 +499,7 @@ where
             method: "client::Echo::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -575,9 +513,7 @@ where
             method: "client::Echo::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -591,9 +527,7 @@ where
             method: "client::Echo::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -607,9 +541,7 @@ where
             method: "client::Echo::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -623,9 +555,7 @@ where
             method: "client::Echo::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn cancel_operation(
@@ -639,9 +569,7 @@ where
             method: "client::Echo::cancel_operation",
             self.inner.cancel_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     fn get_polling_error_policy(
@@ -707,9 +635,7 @@ where
             method: "client::Identity::create_user",
             self.inner.create_user(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_user(
@@ -723,9 +649,7 @@ where
             method: "client::Identity::get_user",
             self.inner.get_user(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn update_user(
@@ -739,9 +663,7 @@ where
             method: "client::Identity::update_user",
             self.inner.update_user(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_user(
@@ -755,9 +677,7 @@ where
             method: "client::Identity::delete_user",
             self.inner.delete_user(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_users(
@@ -771,9 +691,7 @@ where
             method: "client::Identity::list_users",
             self.inner.list_users(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -787,9 +705,7 @@ where
             method: "client::Identity::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -803,9 +719,7 @@ where
             method: "client::Identity::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -819,9 +733,7 @@ where
             method: "client::Identity::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -835,9 +747,7 @@ where
             method: "client::Identity::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -851,9 +761,7 @@ where
             method: "client::Identity::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -867,9 +775,7 @@ where
             method: "client::Identity::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -883,9 +789,7 @@ where
             method: "client::Identity::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -899,9 +803,7 @@ where
             method: "client::Identity::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn cancel_operation(
@@ -915,9 +817,7 @@ where
             method: "client::Identity::cancel_operation",
             self.inner.cancel_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 }
 
@@ -958,9 +858,7 @@ where
             method: "client::Messaging::create_room",
             self.inner.create_room(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_room(
@@ -974,9 +872,7 @@ where
             method: "client::Messaging::get_room",
             self.inner.get_room(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn update_room(
@@ -990,9 +886,7 @@ where
             method: "client::Messaging::update_room",
             self.inner.update_room(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_room(
@@ -1006,9 +900,7 @@ where
             method: "client::Messaging::delete_room",
             self.inner.delete_room(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_rooms(
@@ -1022,9 +914,7 @@ where
             method: "client::Messaging::list_rooms",
             self.inner.list_rooms(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn create_blurb(
@@ -1038,9 +928,7 @@ where
             method: "client::Messaging::create_blurb",
             self.inner.create_blurb(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_blurb(
@@ -1054,9 +942,7 @@ where
             method: "client::Messaging::get_blurb",
             self.inner.get_blurb(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn update_blurb(
@@ -1070,9 +956,7 @@ where
             method: "client::Messaging::update_blurb",
             self.inner.update_blurb(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_blurb(
@@ -1086,9 +970,7 @@ where
             method: "client::Messaging::delete_blurb",
             self.inner.delete_blurb(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_blurbs(
@@ -1102,9 +984,7 @@ where
             method: "client::Messaging::list_blurbs",
             self.inner.list_blurbs(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn search_blurbs(
@@ -1118,9 +998,7 @@ where
             method: "client::Messaging::search_blurbs",
             self.inner.search_blurbs(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -1134,9 +1012,7 @@ where
             method: "client::Messaging::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -1150,9 +1026,7 @@ where
             method: "client::Messaging::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -1166,9 +1040,7 @@ where
             method: "client::Messaging::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -1182,9 +1054,7 @@ where
             method: "client::Messaging::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -1198,9 +1068,7 @@ where
             method: "client::Messaging::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -1214,9 +1082,7 @@ where
             method: "client::Messaging::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -1230,9 +1096,7 @@ where
             method: "client::Messaging::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -1246,9 +1110,7 @@ where
             method: "client::Messaging::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn cancel_operation(
@@ -1262,9 +1124,7 @@ where
             method: "client::Messaging::cancel_operation",
             self.inner.cancel_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     fn get_polling_error_policy(
@@ -1330,9 +1190,7 @@ where
             method: "client::SequenceService::create_sequence",
             self.inner.create_sequence(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn create_streaming_sequence(
@@ -1346,9 +1204,7 @@ where
             method: "client::SequenceService::create_streaming_sequence",
             self.inner.create_streaming_sequence(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_sequence_report(
@@ -1362,9 +1218,7 @@ where
             method: "client::SequenceService::get_sequence_report",
             self.inner.get_sequence_report(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_streaming_sequence_report(
@@ -1378,9 +1232,7 @@ where
             method: "client::SequenceService::get_streaming_sequence_report",
             self.inner.get_streaming_sequence_report(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn attempt_sequence(
@@ -1394,9 +1246,7 @@ where
             method: "client::SequenceService::attempt_sequence",
             self.inner.attempt_sequence(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -1410,9 +1260,7 @@ where
             method: "client::SequenceService::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -1426,9 +1274,7 @@ where
             method: "client::SequenceService::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -1442,9 +1288,7 @@ where
             method: "client::SequenceService::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -1458,9 +1302,7 @@ where
             method: "client::SequenceService::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -1474,9 +1316,7 @@ where
             method: "client::SequenceService::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -1490,9 +1330,7 @@ where
             method: "client::SequenceService::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -1506,9 +1344,7 @@ where
             method: "client::SequenceService::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -1522,9 +1358,7 @@ where
             method: "client::SequenceService::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn cancel_operation(
@@ -1538,9 +1372,7 @@ where
             method: "client::SequenceService::cancel_operation",
             self.inner.cancel_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 }
 
@@ -1581,9 +1413,7 @@ where
             method: "client::Testing::create_session",
             self.inner.create_session(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_session(
@@ -1597,9 +1427,7 @@ where
             method: "client::Testing::get_session",
             self.inner.get_session(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_sessions(
@@ -1613,9 +1441,7 @@ where
             method: "client::Testing::list_sessions",
             self.inner.list_sessions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_session(
@@ -1629,9 +1455,7 @@ where
             method: "client::Testing::delete_session",
             self.inner.delete_session(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn report_session(
@@ -1645,9 +1469,7 @@ where
             method: "client::Testing::report_session",
             self.inner.report_session(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_tests(
@@ -1661,9 +1483,7 @@ where
             method: "client::Testing::list_tests",
             self.inner.list_tests(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_test(
@@ -1677,9 +1497,7 @@ where
             method: "client::Testing::delete_test",
             self.inner.delete_test(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn verify_test(
@@ -1693,9 +1511,7 @@ where
             method: "client::Testing::verify_test",
             self.inner.verify_test(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -1709,9 +1525,7 @@ where
             method: "client::Testing::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -1725,9 +1539,7 @@ where
             method: "client::Testing::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -1741,9 +1553,7 @@ where
             method: "client::Testing::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -1757,9 +1567,7 @@ where
             method: "client::Testing::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -1773,9 +1581,7 @@ where
             method: "client::Testing::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -1789,9 +1595,7 @@ where
             method: "client::Testing::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -1805,9 +1609,7 @@ where
             method: "client::Testing::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -1821,9 +1623,7 @@ where
             method: "client::Testing::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn cancel_operation(
@@ -1837,9 +1637,7 @@ where
             method: "client::Testing::cancel_operation",
             self.inner.cancel_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 }
 

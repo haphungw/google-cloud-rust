@@ -41,7 +41,6 @@ impl<T> super::stub::DataTransferService for DataTransferService<T>
 where
     T: super::stub::DataTransferService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_data_source(
         &self,
         req: crate::model::GetDataSourceRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::get_data_source",
-            self.inner.get_data_source(req, options));
+            self.inner.get_data_source(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_data_sources(
         &self,
         req: crate::model::ListDataSourcesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::list_data_sources",
-            self.inner.list_data_sources(req, options));
+            self.inner.list_data_sources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_transfer_config(
         &self,
         req: crate::model::CreateTransferConfigRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::create_transfer_config",
-            self.inner.create_transfer_config(req, options));
+            self.inner.create_transfer_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_transfer_config(
         &self,
         req: crate::model::UpdateTransferConfigRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::update_transfer_config",
-            self.inner.update_transfer_config(req, options));
+            self.inner.update_transfer_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_transfer_config(
         &self,
         req: crate::model::DeleteTransferConfigRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::delete_transfer_config",
-            self.inner.delete_transfer_config(req, options));
+            self.inner.delete_transfer_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_transfer_config(
         &self,
         req: crate::model::GetTransferConfigRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::get_transfer_config",
-            self.inner.get_transfer_config(req, options));
+            self.inner.get_transfer_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_transfer_configs(
         &self,
         req: crate::model::ListTransferConfigsRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::list_transfer_configs",
-            self.inner.list_transfer_configs(req, options));
+            self.inner.list_transfer_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn schedule_transfer_runs(
         &self,
         req: crate::model::ScheduleTransferRunsRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::schedule_transfer_runs",
-            self.inner.schedule_transfer_runs(req, options));
+            self.inner.schedule_transfer_runs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_manual_transfer_runs(
         &self,
         req: crate::model::StartManualTransferRunsRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::start_manual_transfer_runs",
-            self.inner.start_manual_transfer_runs(req, options));
+            self.inner.start_manual_transfer_runs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_transfer_run(
         &self,
         req: crate::model::GetTransferRunRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::get_transfer_run",
-            self.inner.get_transfer_run(req, options));
+            self.inner.get_transfer_run(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_transfer_run(
         &self,
         req: crate::model::DeleteTransferRunRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::delete_transfer_run",
-            self.inner.delete_transfer_run(req, options));
+            self.inner.delete_transfer_run(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_transfer_runs(
         &self,
         req: crate::model::ListTransferRunsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::list_transfer_runs",
-            self.inner.list_transfer_runs(req, options));
+            self.inner.list_transfer_runs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_transfer_logs(
         &self,
         req: crate::model::ListTransferLogsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::list_transfer_logs",
-            self.inner.list_transfer_logs(req, options));
+            self.inner.list_transfer_logs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn check_valid_creds(
         &self,
         req: crate::model::CheckValidCredsRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::check_valid_creds",
-            self.inner.check_valid_creds(req, options));
+            self.inner.check_valid_creds(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enroll_data_sources(
         &self,
         req: crate::model::EnrollDataSourcesRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::enroll_data_sources",
-            self.inner.enroll_data_sources(req, options));
+            self.inner.enroll_data_sources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn unenroll_data_sources(
         &self,
         req: crate::model::UnenrollDataSourcesRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::unenroll_data_sources",
-            self.inner.unenroll_data_sources(req, options));
+            self.inner.unenroll_data_sources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -289,7 +288,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DataTransferService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 }

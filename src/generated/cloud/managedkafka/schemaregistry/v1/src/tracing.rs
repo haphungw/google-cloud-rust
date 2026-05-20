@@ -41,7 +41,6 @@ impl<T> super::stub::ManagedSchemaRegistry for ManagedSchemaRegistry<T>
 where
     T: super::stub::ManagedSchemaRegistry + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_schema_registry(
         &self,
         req: crate::model::GetSchemaRegistryRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_schema_registry",
-            self.inner.get_schema_registry(req, options));
+            self.inner.get_schema_registry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_schema_registries(
         &self,
         req: crate::model::ListSchemaRegistriesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_schema_registries",
-            self.inner.list_schema_registries(req, options));
+            self.inner.list_schema_registries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_schema_registry(
         &self,
         req: crate::model::CreateSchemaRegistryRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::create_schema_registry",
-            self.inner.create_schema_registry(req, options));
+            self.inner.create_schema_registry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_schema_registry(
         &self,
         req: crate::model::DeleteSchemaRegistryRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::delete_schema_registry",
-            self.inner.delete_schema_registry(req, options));
+            self.inner.delete_schema_registry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_context(
         &self,
         req: crate::model::GetContextRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_context",
-            self.inner.get_context(req, options));
+            self.inner.get_context(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_contexts(
         &self,
         req: crate::model::ListContextsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_contexts",
-            self.inner.list_contexts(req, options));
+            self.inner.list_contexts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_schema(
         &self,
         req: crate::model::GetSchemaRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_schema",
-            self.inner.get_schema(req, options));
+            self.inner.get_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_raw_schema(
         &self,
         req: crate::model::GetSchemaRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_raw_schema",
-            self.inner.get_raw_schema(req, options));
+            self.inner.get_raw_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_schema_versions(
         &self,
         req: crate::model::ListSchemaVersionsRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_schema_versions",
-            self.inner.list_schema_versions(req, options));
+            self.inner.list_schema_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_schema_types(
         &self,
         req: crate::model::ListSchemaTypesRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_schema_types",
-            self.inner.list_schema_types(req, options));
+            self.inner.list_schema_types(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_subjects(
         &self,
         req: crate::model::ListSubjectsRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_subjects",
-            self.inner.list_subjects(req, options));
+            self.inner.list_subjects(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_subjects_by_schema_id(
         &self,
         req: crate::model::ListSubjectsBySchemaIdRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_subjects_by_schema_id",
-            self.inner.list_subjects_by_schema_id(req, options));
+            self.inner.list_subjects_by_schema_id(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_subject(
         &self,
         req: crate::model::DeleteSubjectRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::delete_subject",
-            self.inner.delete_subject(req, options));
+            self.inner.delete_subject(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn lookup_version(
         &self,
         req: crate::model::LookupVersionRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::lookup_version",
-            self.inner.lookup_version(req, options));
+            self.inner.lookup_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_version(
         &self,
         req: crate::model::GetVersionRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_version",
-            self.inner.get_version(req, options));
+            self.inner.get_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_raw_schema_version(
         &self,
         req: crate::model::GetVersionRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_raw_schema_version",
-            self.inner.get_raw_schema_version(req, options));
+            self.inner.get_raw_schema_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_versions(
         &self,
         req: crate::model::ListVersionsRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_versions",
-            self.inner.list_versions(req, options));
+            self.inner.list_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_version(
         &self,
         req: crate::model::CreateVersionRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::create_version",
-            self.inner.create_version(req, options));
+            self.inner.create_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_version(
         &self,
         req: crate::model::DeleteVersionRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::delete_version",
-            self.inner.delete_version(req, options));
+            self.inner.delete_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_referenced_schemas(
         &self,
         req: crate::model::ListReferencedSchemasRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_referenced_schemas",
-            self.inner.list_referenced_schemas(req, options));
+            self.inner.list_referenced_schemas(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn check_compatibility(
         &self,
         req: crate::model::CheckCompatibilityRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::check_compatibility",
-            self.inner.check_compatibility(req, options));
+            self.inner.check_compatibility(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_schema_config(
         &self,
         req: crate::model::GetSchemaConfigRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_schema_config",
-            self.inner.get_schema_config(req, options));
+            self.inner.get_schema_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_schema_config(
         &self,
         req: crate::model::UpdateSchemaConfigRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::update_schema_config",
-            self.inner.update_schema_config(req, options));
+            self.inner.update_schema_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_schema_config(
         &self,
         req: crate::model::DeleteSchemaConfigRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::delete_schema_config",
-            self.inner.delete_schema_config(req, options));
+            self.inner.delete_schema_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_schema_mode(
         &self,
         req: crate::model::GetSchemaModeRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_schema_mode",
-            self.inner.get_schema_mode(req, options));
+            self.inner.get_schema_mode(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_schema_mode(
         &self,
         req: crate::model::UpdateSchemaModeRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::update_schema_mode",
-            self.inner.update_schema_mode(req, options));
+            self.inner.update_schema_mode(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_schema_mode(
         &self,
         req: crate::model::DeleteSchemaModeRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::delete_schema_mode",
-            self.inner.delete_schema_mode(req, options));
+            self.inner.delete_schema_mode(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -499,7 +498,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ManagedSchemaRegistry::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }

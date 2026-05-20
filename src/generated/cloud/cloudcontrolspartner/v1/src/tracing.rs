@@ -41,7 +41,6 @@ impl<T> super::stub::CloudControlsPartnerCore for CloudControlsPartnerCore<T>
 where
     T: super::stub::CloudControlsPartnerCore + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_workload(
         &self,
         req: crate::model::GetWorkloadRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::get_workload",
-            self.inner.get_workload(req, options));
+            self.inner.get_workload(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_workloads(
         &self,
         req: crate::model::ListWorkloadsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::list_workloads",
-            self.inner.list_workloads(req, options));
+            self.inner.list_workloads(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_customer(
         &self,
         req: crate::model::GetCustomerRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::get_customer",
-            self.inner.get_customer(req, options));
+            self.inner.get_customer(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_customers(
         &self,
         req: crate::model::ListCustomersRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::list_customers",
-            self.inner.list_customers(req, options));
+            self.inner.list_customers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_ekm_connections(
         &self,
         req: crate::model::GetEkmConnectionsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::get_ekm_connections",
-            self.inner.get_ekm_connections(req, options));
+            self.inner.get_ekm_connections(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_partner_permissions(
         &self,
         req: crate::model::GetPartnerPermissionsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::get_partner_permissions",
-            self.inner.get_partner_permissions(req, options));
+            self.inner.get_partner_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_access_approval_requests(
         &self,
         req: crate::model::ListAccessApprovalRequestsRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::list_access_approval_requests",
-            self.inner.list_access_approval_requests(req, options));
+            self.inner.list_access_approval_requests(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_partner(
         &self,
         req: crate::model::GetPartnerRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::get_partner",
-            self.inner.get_partner(req, options));
+            self.inner.get_partner(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_customer(
         &self,
         req: crate::model::CreateCustomerRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::create_customer",
-            self.inner.create_customer(req, options));
+            self.inner.create_customer(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_customer(
         &self,
         req: crate::model::UpdateCustomerRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::update_customer",
-            self.inner.update_customer(req, options));
+            self.inner.update_customer(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_customer(
         &self,
         req: crate::model::DeleteCustomerRequest,
@@ -191,7 +190,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerCore::delete_customer",
-            self.inner.delete_customer(req, options));
+            self.inner.delete_customer(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -222,7 +222,6 @@ impl<T> super::stub::CloudControlsPartnerMonitoring for CloudControlsPartnerMoni
 where
     T: super::stub::CloudControlsPartnerMonitoring + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_violations(
         &self,
         req: crate::model::ListViolationsRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerMonitoring::list_violations",
-            self.inner.list_violations(req, options));
+            self.inner.list_violations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_violation(
         &self,
         req: crate::model::GetViolationRequest,
@@ -246,7 +245,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CloudControlsPartnerMonitoring::get_violation",
-            self.inner.get_violation(req, options));
+            self.inner.get_violation(req.clone(), options.clone()));
+
         pending.await
     }
 }

@@ -41,7 +41,6 @@ impl<T> super::stub::NetApp for NetApp<T>
 where
     T: super::stub::NetApp + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_storage_pools(
         &self,
         req: crate::model::ListStoragePoolsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_storage_pools",
-            self.inner.list_storage_pools(req, options));
+            self.inner.list_storage_pools(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_storage_pool(
         &self,
         req: crate::model::CreateStoragePoolRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_storage_pool",
-            self.inner.create_storage_pool(req, options));
+            self.inner.create_storage_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_storage_pool(
         &self,
         req: crate::model::GetStoragePoolRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_storage_pool",
-            self.inner.get_storage_pool(req, options));
+            self.inner.get_storage_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_storage_pool(
         &self,
         req: crate::model::UpdateStoragePoolRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_storage_pool",
-            self.inner.update_storage_pool(req, options));
+            self.inner.update_storage_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_storage_pool(
         &self,
         req: crate::model::DeleteStoragePoolRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_storage_pool",
-            self.inner.delete_storage_pool(req, options));
+            self.inner.delete_storage_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_directory_service(
         &self,
         req: crate::model::ValidateDirectoryServiceRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::validate_directory_service",
-            self.inner.validate_directory_service(req, options));
+            self.inner.validate_directory_service(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn switch_active_replica_zone(
         &self,
         req: crate::model::SwitchActiveReplicaZoneRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::switch_active_replica_zone",
-            self.inner.switch_active_replica_zone(req, options));
+            self.inner.switch_active_replica_zone(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_volumes(
         &self,
         req: crate::model::ListVolumesRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_volumes",
-            self.inner.list_volumes(req, options));
+            self.inner.list_volumes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_volume(
         &self,
         req: crate::model::GetVolumeRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_volume",
-            self.inner.get_volume(req, options));
+            self.inner.get_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_volume(
         &self,
         req: crate::model::CreateVolumeRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_volume",
-            self.inner.create_volume(req, options));
+            self.inner.create_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_volume(
         &self,
         req: crate::model::UpdateVolumeRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_volume",
-            self.inner.update_volume(req, options));
+            self.inner.update_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_volume(
         &self,
         req: crate::model::DeleteVolumeRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_volume",
-            self.inner.delete_volume(req, options));
+            self.inner.delete_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn revert_volume(
         &self,
         req: crate::model::RevertVolumeRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::revert_volume",
-            self.inner.revert_volume(req, options));
+            self.inner.revert_volume(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn establish_volume_peering(
         &self,
         req: crate::model::EstablishVolumePeeringRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::establish_volume_peering",
-            self.inner.establish_volume_peering(req, options));
+            self.inner.establish_volume_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_snapshots(
         &self,
         req: crate::model::ListSnapshotsRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_snapshots",
-            self.inner.list_snapshots(req, options));
+            self.inner.list_snapshots(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_snapshot(
         &self,
         req: crate::model::GetSnapshotRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_snapshot",
-            self.inner.get_snapshot(req, options));
+            self.inner.get_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_snapshot(
         &self,
         req: crate::model::CreateSnapshotRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_snapshot",
-            self.inner.create_snapshot(req, options));
+            self.inner.create_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_snapshot(
         &self,
         req: crate::model::DeleteSnapshotRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_snapshot",
-            self.inner.delete_snapshot(req, options));
+            self.inner.delete_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_snapshot(
         &self,
         req: crate::model::UpdateSnapshotRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_snapshot",
-            self.inner.update_snapshot(req, options));
+            self.inner.update_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_active_directories(
         &self,
         req: crate::model::ListActiveDirectoriesRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_active_directories",
-            self.inner.list_active_directories(req, options));
+            self.inner.list_active_directories(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_active_directory(
         &self,
         req: crate::model::GetActiveDirectoryRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_active_directory",
-            self.inner.get_active_directory(req, options));
+            self.inner.get_active_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_active_directory(
         &self,
         req: crate::model::CreateActiveDirectoryRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_active_directory",
-            self.inner.create_active_directory(req, options));
+            self.inner.create_active_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_active_directory(
         &self,
         req: crate::model::UpdateActiveDirectoryRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_active_directory",
-            self.inner.update_active_directory(req, options));
+            self.inner.update_active_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_active_directory(
         &self,
         req: crate::model::DeleteActiveDirectoryRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_active_directory",
-            self.inner.delete_active_directory(req, options));
+            self.inner.delete_active_directory(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_kms_configs(
         &self,
         req: crate::model::ListKmsConfigsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_kms_configs",
-            self.inner.list_kms_configs(req, options));
+            self.inner.list_kms_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_kms_config(
         &self,
         req: crate::model::CreateKmsConfigRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_kms_config",
-            self.inner.create_kms_config(req, options));
+            self.inner.create_kms_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_kms_config(
         &self,
         req: crate::model::GetKmsConfigRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_kms_config",
-            self.inner.get_kms_config(req, options));
+            self.inner.get_kms_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_kms_config(
         &self,
         req: crate::model::UpdateKmsConfigRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_kms_config",
-            self.inner.update_kms_config(req, options));
+            self.inner.update_kms_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn encrypt_volumes(
         &self,
         req: crate::model::EncryptVolumesRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::encrypt_volumes",
-            self.inner.encrypt_volumes(req, options));
+            self.inner.encrypt_volumes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn verify_kms_config(
         &self,
         req: crate::model::VerifyKmsConfigRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::verify_kms_config",
-            self.inner.verify_kms_config(req, options));
+            self.inner.verify_kms_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_kms_config(
         &self,
         req: crate::model::DeleteKmsConfigRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_kms_config",
-            self.inner.delete_kms_config(req, options));
+            self.inner.delete_kms_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_replications(
         &self,
         req: crate::model::ListReplicationsRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_replications",
-            self.inner.list_replications(req, options));
+            self.inner.list_replications(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_replication(
         &self,
         req: crate::model::GetReplicationRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_replication",
-            self.inner.get_replication(req, options));
+            self.inner.get_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_replication(
         &self,
         req: crate::model::CreateReplicationRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_replication",
-            self.inner.create_replication(req, options));
+            self.inner.create_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_replication(
         &self,
         req: crate::model::DeleteReplicationRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_replication",
-            self.inner.delete_replication(req, options));
+            self.inner.delete_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_replication(
         &self,
         req: crate::model::UpdateReplicationRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_replication",
-            self.inner.update_replication(req, options));
+            self.inner.update_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_replication(
         &self,
         req: crate::model::StopReplicationRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::stop_replication",
-            self.inner.stop_replication(req, options));
+            self.inner.stop_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn resume_replication(
         &self,
         req: crate::model::ResumeReplicationRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::resume_replication",
-            self.inner.resume_replication(req, options));
+            self.inner.resume_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn reverse_replication_direction(
         &self,
         req: crate::model::ReverseReplicationDirectionRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::reverse_replication_direction",
-            self.inner.reverse_replication_direction(req, options));
+            self.inner.reverse_replication_direction(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn establish_peering(
         &self,
         req: crate::model::EstablishPeeringRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::establish_peering",
-            self.inner.establish_peering(req, options));
+            self.inner.establish_peering(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn sync_replication(
         &self,
         req: crate::model::SyncReplicationRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::sync_replication",
-            self.inner.sync_replication(req, options));
+            self.inner.sync_replication(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backup_vault(
         &self,
         req: crate::model::CreateBackupVaultRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_backup_vault",
-            self.inner.create_backup_vault(req, options));
+            self.inner.create_backup_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backup_vault(
         &self,
         req: crate::model::GetBackupVaultRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_backup_vault",
-            self.inner.get_backup_vault(req, options));
+            self.inner.get_backup_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backup_vaults(
         &self,
         req: crate::model::ListBackupVaultsRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_backup_vaults",
-            self.inner.list_backup_vaults(req, options));
+            self.inner.list_backup_vaults(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backup_vault(
         &self,
         req: crate::model::UpdateBackupVaultRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_backup_vault",
-            self.inner.update_backup_vault(req, options));
+            self.inner.update_backup_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backup_vault(
         &self,
         req: crate::model::DeleteBackupVaultRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_backup_vault",
-            self.inner.delete_backup_vault(req, options));
+            self.inner.delete_backup_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backup(
         &self,
         req: crate::model::CreateBackupRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_backup",
-            self.inner.create_backup(req, options));
+            self.inner.create_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backup(
         &self,
         req: crate::model::GetBackupRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_backup",
-            self.inner.get_backup(req, options));
+            self.inner.get_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backups(
         &self,
         req: crate::model::ListBackupsRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_backups",
-            self.inner.list_backups(req, options));
+            self.inner.list_backups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backup(
         &self,
         req: crate::model::DeleteBackupRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_backup",
-            self.inner.delete_backup(req, options));
+            self.inner.delete_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backup(
         &self,
         req: crate::model::UpdateBackupRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_backup",
-            self.inner.update_backup(req, options));
+            self.inner.update_backup(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_backup_policy(
         &self,
         req: crate::model::CreateBackupPolicyRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_backup_policy",
-            self.inner.create_backup_policy(req, options));
+            self.inner.create_backup_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_backup_policy(
         &self,
         req: crate::model::GetBackupPolicyRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_backup_policy",
-            self.inner.get_backup_policy(req, options));
+            self.inner.get_backup_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_backup_policies(
         &self,
         req: crate::model::ListBackupPoliciesRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_backup_policies",
-            self.inner.list_backup_policies(req, options));
+            self.inner.list_backup_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_backup_policy(
         &self,
         req: crate::model::UpdateBackupPolicyRequest,
@@ -807,11 +806,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_backup_policy",
-            self.inner.update_backup_policy(req, options));
+            self.inner.update_backup_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_backup_policy(
         &self,
         req: crate::model::DeleteBackupPolicyRequest,
@@ -821,11 +820,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_backup_policy",
-            self.inner.delete_backup_policy(req, options));
+            self.inner.delete_backup_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_quota_rules(
         &self,
         req: crate::model::ListQuotaRulesRequest,
@@ -835,11 +834,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_quota_rules",
-            self.inner.list_quota_rules(req, options));
+            self.inner.list_quota_rules(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_quota_rule(
         &self,
         req: crate::model::GetQuotaRuleRequest,
@@ -849,11 +848,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_quota_rule",
-            self.inner.get_quota_rule(req, options));
+            self.inner.get_quota_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_quota_rule(
         &self,
         req: crate::model::CreateQuotaRuleRequest,
@@ -863,11 +862,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_quota_rule",
-            self.inner.create_quota_rule(req, options));
+            self.inner.create_quota_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_quota_rule(
         &self,
         req: crate::model::UpdateQuotaRuleRequest,
@@ -877,11 +876,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_quota_rule",
-            self.inner.update_quota_rule(req, options));
+            self.inner.update_quota_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_quota_rule(
         &self,
         req: crate::model::DeleteQuotaRuleRequest,
@@ -891,11 +890,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_quota_rule",
-            self.inner.delete_quota_rule(req, options));
+            self.inner.delete_quota_rule(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_backup_files(
         &self,
         req: crate::model::RestoreBackupFilesRequest,
@@ -905,11 +904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::restore_backup_files",
-            self.inner.restore_backup_files(req, options));
+            self.inner.restore_backup_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_host_groups(
         &self,
         req: crate::model::ListHostGroupsRequest,
@@ -919,11 +918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_host_groups",
-            self.inner.list_host_groups(req, options));
+            self.inner.list_host_groups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_host_group(
         &self,
         req: crate::model::GetHostGroupRequest,
@@ -933,11 +932,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_host_group",
-            self.inner.get_host_group(req, options));
+            self.inner.get_host_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_host_group(
         &self,
         req: crate::model::CreateHostGroupRequest,
@@ -947,11 +946,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::create_host_group",
-            self.inner.create_host_group(req, options));
+            self.inner.create_host_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_host_group(
         &self,
         req: crate::model::UpdateHostGroupRequest,
@@ -961,11 +960,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::update_host_group",
-            self.inner.update_host_group(req, options));
+            self.inner.update_host_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_host_group(
         &self,
         req: crate::model::DeleteHostGroupRequest,
@@ -975,11 +974,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_host_group",
-            self.inner.delete_host_group(req, options));
+            self.inner.delete_host_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_ontap_post(
         &self,
         req: crate::model::ExecuteOntapPostRequest,
@@ -989,11 +988,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::execute_ontap_post",
-            self.inner.execute_ontap_post(req, options));
+            self.inner.execute_ontap_post(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_ontap_get(
         &self,
         req: crate::model::ExecuteOntapGetRequest,
@@ -1003,11 +1002,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::execute_ontap_get",
-            self.inner.execute_ontap_get(req, options));
+            self.inner.execute_ontap_get(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_ontap_delete(
         &self,
         req: crate::model::ExecuteOntapDeleteRequest,
@@ -1017,11 +1016,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::execute_ontap_delete",
-            self.inner.execute_ontap_delete(req, options));
+            self.inner.execute_ontap_delete(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn execute_ontap_patch(
         &self,
         req: crate::model::ExecuteOntapPatchRequest,
@@ -1031,11 +1030,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::execute_ontap_patch",
-            self.inner.execute_ontap_patch(req, options));
+            self.inner.execute_ontap_patch(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -1045,11 +1044,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -1059,11 +1058,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -1073,11 +1072,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -1087,11 +1086,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -1101,11 +1100,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -1115,7 +1114,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::NetApp::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::ReservationService for ReservationService<T>
 where
     T: super::stub::ReservationService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_reservation(
         &self,
         req: crate::model::CreateReservationRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::create_reservation",
-            self.inner.create_reservation(req, options));
+            self.inner.create_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_reservations(
         &self,
         req: crate::model::ListReservationsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::list_reservations",
-            self.inner.list_reservations(req, options));
+            self.inner.list_reservations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_reservation(
         &self,
         req: crate::model::GetReservationRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::get_reservation",
-            self.inner.get_reservation(req, options));
+            self.inner.get_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_reservation(
         &self,
         req: crate::model::DeleteReservationRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::delete_reservation",
-            self.inner.delete_reservation(req, options));
+            self.inner.delete_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_reservation(
         &self,
         req: crate::model::UpdateReservationRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::update_reservation",
-            self.inner.update_reservation(req, options));
+            self.inner.update_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn failover_reservation(
         &self,
         req: crate::model::FailoverReservationRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::failover_reservation",
-            self.inner.failover_reservation(req, options));
+            self.inner.failover_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_capacity_commitment(
         &self,
         req: crate::model::CreateCapacityCommitmentRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::create_capacity_commitment",
-            self.inner.create_capacity_commitment(req, options));
+            self.inner.create_capacity_commitment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_capacity_commitments(
         &self,
         req: crate::model::ListCapacityCommitmentsRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::list_capacity_commitments",
-            self.inner.list_capacity_commitments(req, options));
+            self.inner.list_capacity_commitments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_capacity_commitment(
         &self,
         req: crate::model::GetCapacityCommitmentRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::get_capacity_commitment",
-            self.inner.get_capacity_commitment(req, options));
+            self.inner.get_capacity_commitment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_capacity_commitment(
         &self,
         req: crate::model::DeleteCapacityCommitmentRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::delete_capacity_commitment",
-            self.inner.delete_capacity_commitment(req, options));
+            self.inner.delete_capacity_commitment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_capacity_commitment(
         &self,
         req: crate::model::UpdateCapacityCommitmentRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::update_capacity_commitment",
-            self.inner.update_capacity_commitment(req, options));
+            self.inner.update_capacity_commitment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn split_capacity_commitment(
         &self,
         req: crate::model::SplitCapacityCommitmentRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::split_capacity_commitment",
-            self.inner.split_capacity_commitment(req, options));
+            self.inner.split_capacity_commitment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn merge_capacity_commitments(
         &self,
         req: crate::model::MergeCapacityCommitmentsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::merge_capacity_commitments",
-            self.inner.merge_capacity_commitments(req, options));
+            self.inner.merge_capacity_commitments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_assignment(
         &self,
         req: crate::model::CreateAssignmentRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::create_assignment",
-            self.inner.create_assignment(req, options));
+            self.inner.create_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_assignments(
         &self,
         req: crate::model::ListAssignmentsRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::list_assignments",
-            self.inner.list_assignments(req, options));
+            self.inner.list_assignments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_assignment(
         &self,
         req: crate::model::DeleteAssignmentRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::delete_assignment",
-            self.inner.delete_assignment(req, options));
+            self.inner.delete_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_assignments(
         &self,
         req: crate::model::SearchAssignmentsRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::search_assignments",
-            self.inner.search_assignments(req, options));
+            self.inner.search_assignments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_all_assignments(
         &self,
         req: crate::model::SearchAllAssignmentsRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::search_all_assignments",
-            self.inner.search_all_assignments(req, options));
+            self.inner.search_all_assignments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn move_assignment(
         &self,
         req: crate::model::MoveAssignmentRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::move_assignment",
-            self.inner.move_assignment(req, options));
+            self.inner.move_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_assignment(
         &self,
         req: crate::model::UpdateAssignmentRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::update_assignment",
-            self.inner.update_assignment(req, options));
+            self.inner.update_assignment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_bi_reservation(
         &self,
         req: crate::model::GetBiReservationRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::get_bi_reservation",
-            self.inner.get_bi_reservation(req, options));
+            self.inner.get_bi_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_bi_reservation(
         &self,
         req: crate::model::UpdateBiReservationRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::update_bi_reservation",
-            self.inner.update_bi_reservation(req, options));
+            self.inner.update_bi_reservation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_reservation_group(
         &self,
         req: crate::model::CreateReservationGroupRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::create_reservation_group",
-            self.inner.create_reservation_group(req, options));
+            self.inner.create_reservation_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_reservation_group(
         &self,
         req: crate::model::GetReservationGroupRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::get_reservation_group",
-            self.inner.get_reservation_group(req, options));
+            self.inner.get_reservation_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_reservation_group(
         &self,
         req: crate::model::DeleteReservationGroupRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::delete_reservation_group",
-            self.inner.delete_reservation_group(req, options));
+            self.inner.delete_reservation_group(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_reservation_groups(
         &self,
         req: crate::model::ListReservationGroupsRequest,
@@ -443,7 +442,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ReservationService::list_reservation_groups",
-            self.inner.list_reservation_groups(req, options));
+            self.inner.list_reservation_groups(req.clone(), options.clone()));
+
         pending.await
     }
 }

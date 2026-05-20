@@ -41,7 +41,6 @@ impl<T> super::stub::AssetService for AssetService<T>
 where
     T: super::stub::AssetService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_assets(
         &self,
         req: crate::model::ExportAssetsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::export_assets",
-            self.inner.export_assets(req, options));
+            self.inner.export_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_assets(
         &self,
         req: crate::model::ListAssetsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::list_assets",
-            self.inner.list_assets(req, options));
+            self.inner.list_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_get_assets_history(
         &self,
         req: crate::model::BatchGetAssetsHistoryRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::batch_get_assets_history",
-            self.inner.batch_get_assets_history(req, options));
+            self.inner.batch_get_assets_history(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_feed(
         &self,
         req: crate::model::CreateFeedRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::create_feed",
-            self.inner.create_feed(req, options));
+            self.inner.create_feed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_feed(
         &self,
         req: crate::model::GetFeedRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::get_feed",
-            self.inner.get_feed(req, options));
+            self.inner.get_feed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_feeds(
         &self,
         req: crate::model::ListFeedsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::list_feeds",
-            self.inner.list_feeds(req, options));
+            self.inner.list_feeds(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_feed(
         &self,
         req: crate::model::UpdateFeedRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::update_feed",
-            self.inner.update_feed(req, options));
+            self.inner.update_feed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_feed(
         &self,
         req: crate::model::DeleteFeedRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::delete_feed",
-            self.inner.delete_feed(req, options));
+            self.inner.delete_feed(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_all_resources(
         &self,
         req: crate::model::SearchAllResourcesRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::search_all_resources",
-            self.inner.search_all_resources(req, options));
+            self.inner.search_all_resources(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_all_iam_policies(
         &self,
         req: crate::model::SearchAllIamPoliciesRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::search_all_iam_policies",
-            self.inner.search_all_iam_policies(req, options));
+            self.inner.search_all_iam_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_iam_policy(
         &self,
         req: crate::model::AnalyzeIamPolicyRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::analyze_iam_policy",
-            self.inner.analyze_iam_policy(req, options));
+            self.inner.analyze_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_iam_policy_longrunning(
         &self,
         req: crate::model::AnalyzeIamPolicyLongrunningRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::analyze_iam_policy_longrunning",
-            self.inner.analyze_iam_policy_longrunning(req, options));
+            self.inner.analyze_iam_policy_longrunning(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_move(
         &self,
         req: crate::model::AnalyzeMoveRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::analyze_move",
-            self.inner.analyze_move(req, options));
+            self.inner.analyze_move(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_assets(
         &self,
         req: crate::model::QueryAssetsRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::query_assets",
-            self.inner.query_assets(req, options));
+            self.inner.query_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_saved_query(
         &self,
         req: crate::model::CreateSavedQueryRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::create_saved_query",
-            self.inner.create_saved_query(req, options));
+            self.inner.create_saved_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_saved_query(
         &self,
         req: crate::model::GetSavedQueryRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::get_saved_query",
-            self.inner.get_saved_query(req, options));
+            self.inner.get_saved_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_saved_queries(
         &self,
         req: crate::model::ListSavedQueriesRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::list_saved_queries",
-            self.inner.list_saved_queries(req, options));
+            self.inner.list_saved_queries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_saved_query(
         &self,
         req: crate::model::UpdateSavedQueryRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::update_saved_query",
-            self.inner.update_saved_query(req, options));
+            self.inner.update_saved_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_saved_query(
         &self,
         req: crate::model::DeleteSavedQueryRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::delete_saved_query",
-            self.inner.delete_saved_query(req, options));
+            self.inner.delete_saved_query(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_get_effective_iam_policies(
         &self,
         req: crate::model::BatchGetEffectiveIamPoliciesRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::batch_get_effective_iam_policies",
-            self.inner.batch_get_effective_iam_policies(req, options));
+            self.inner.batch_get_effective_iam_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_org_policies(
         &self,
         req: crate::model::AnalyzeOrgPoliciesRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::analyze_org_policies",
-            self.inner.analyze_org_policies(req, options));
+            self.inner.analyze_org_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_org_policy_governed_containers(
         &self,
         req: crate::model::AnalyzeOrgPolicyGovernedContainersRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::analyze_org_policy_governed_containers",
-            self.inner.analyze_org_policy_governed_containers(req, options));
+            self.inner.analyze_org_policy_governed_containers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn analyze_org_policy_governed_assets(
         &self,
         req: crate::model::AnalyzeOrgPolicyGovernedAssetsRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::analyze_org_policy_governed_assets",
-            self.inner.analyze_org_policy_governed_assets(req, options));
+            self.inner.analyze_org_policy_governed_assets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -373,7 +372,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AssetService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

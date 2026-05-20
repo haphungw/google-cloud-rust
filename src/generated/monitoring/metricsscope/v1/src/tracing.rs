@@ -41,7 +41,6 @@ impl<T> super::stub::MetricsScopes for MetricsScopes<T>
 where
     T: super::stub::MetricsScopes + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_metrics_scope(
         &self,
         req: crate::model::GetMetricsScopeRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsScopes::get_metrics_scope",
-            self.inner.get_metrics_scope(req, options));
+            self.inner.get_metrics_scope(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_metrics_scopes_by_monitored_project(
         &self,
         req: crate::model::ListMetricsScopesByMonitoredProjectRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsScopes::list_metrics_scopes_by_monitored_project",
-            self.inner.list_metrics_scopes_by_monitored_project(req, options));
+            self.inner.list_metrics_scopes_by_monitored_project(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_monitored_project(
         &self,
         req: crate::model::CreateMonitoredProjectRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsScopes::create_monitored_project",
-            self.inner.create_monitored_project(req, options));
+            self.inner.create_monitored_project(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_monitored_project(
         &self,
         req: crate::model::DeleteMonitoredProjectRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsScopes::delete_monitored_project",
-            self.inner.delete_monitored_project(req, options));
+            self.inner.delete_monitored_project(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsScopes::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

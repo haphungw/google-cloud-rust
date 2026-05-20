@@ -41,7 +41,6 @@ impl<T> super::stub::OsLoginService for OsLoginService<T>
 where
     T: super::stub::OsLoginService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_ssh_public_key(
         &self,
         req: crate::model::CreateSshPublicKeyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::create_ssh_public_key",
-            self.inner.create_ssh_public_key(req, options));
+            self.inner.create_ssh_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_posix_account(
         &self,
         req: crate::model::DeletePosixAccountRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::delete_posix_account",
-            self.inner.delete_posix_account(req, options));
+            self.inner.delete_posix_account(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_ssh_public_key(
         &self,
         req: crate::model::DeleteSshPublicKeyRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::delete_ssh_public_key",
-            self.inner.delete_ssh_public_key(req, options));
+            self.inner.delete_ssh_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_login_profile(
         &self,
         req: crate::model::GetLoginProfileRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::get_login_profile",
-            self.inner.get_login_profile(req, options));
+            self.inner.get_login_profile(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_ssh_public_key(
         &self,
         req: crate::model::GetSshPublicKeyRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::get_ssh_public_key",
-            self.inner.get_ssh_public_key(req, options));
+            self.inner.get_ssh_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_ssh_public_key(
         &self,
         req: crate::model::ImportSshPublicKeyRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::import_ssh_public_key",
-            self.inner.import_ssh_public_key(req, options));
+            self.inner.import_ssh_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_ssh_public_key(
         &self,
         req: crate::model::UpdateSshPublicKeyRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OsLoginService::update_ssh_public_key",
-            self.inner.update_ssh_public_key(req, options));
+            self.inner.update_ssh_public_key(req.clone(), options.clone()));
+
         pending.await
     }
 }

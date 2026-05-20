@@ -41,7 +41,6 @@ impl<T> super::stub::TimeseriesInsightsController for TimeseriesInsightsControll
 where
     T: super::stub::TimeseriesInsightsController + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_data_sets(
         &self,
         req: crate::model::ListDataSetsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::list_data_sets",
-            self.inner.list_data_sets(req, options));
+            self.inner.list_data_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_data_set(
         &self,
         req: crate::model::CreateDataSetRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::create_data_set",
-            self.inner.create_data_set(req, options));
+            self.inner.create_data_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_data_set(
         &self,
         req: crate::model::DeleteDataSetRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::delete_data_set",
-            self.inner.delete_data_set(req, options));
+            self.inner.delete_data_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn append_events(
         &self,
         req: crate::model::AppendEventsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::append_events",
-            self.inner.append_events(req, options));
+            self.inner.append_events(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query_data_set(
         &self,
         req: crate::model::QueryDataSetRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::query_data_set",
-            self.inner.query_data_set(req, options));
+            self.inner.query_data_set(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn evaluate_slice(
         &self,
         req: crate::model::EvaluateSliceRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::evaluate_slice",
-            self.inner.evaluate_slice(req, options));
+            self.inner.evaluate_slice(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn evaluate_timeseries(
         &self,
         req: crate::model::EvaluateTimeseriesRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TimeseriesInsightsController::evaluate_timeseries",
-            self.inner.evaluate_timeseries(req, options));
+            self.inner.evaluate_timeseries(req.clone(), options.clone()));
+
         pending.await
     }
 }

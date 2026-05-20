@@ -41,7 +41,6 @@ impl<T> super::stub::TranslationService for TranslationService<T>
 where
     T: super::stub::TranslationService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn translate_text(
         &self,
         req: crate::model::TranslateTextRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::translate_text",
-            self.inner.translate_text(req, options));
+            self.inner.translate_text(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn romanize_text(
         &self,
         req: crate::model::RomanizeTextRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::romanize_text",
-            self.inner.romanize_text(req, options));
+            self.inner.romanize_text(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detect_language(
         &self,
         req: crate::model::DetectLanguageRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::detect_language",
-            self.inner.detect_language(req, options));
+            self.inner.detect_language(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_supported_languages(
         &self,
         req: crate::model::GetSupportedLanguagesRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_supported_languages",
-            self.inner.get_supported_languages(req, options));
+            self.inner.get_supported_languages(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn translate_document(
         &self,
         req: crate::model::TranslateDocumentRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::translate_document",
-            self.inner.translate_document(req, options));
+            self.inner.translate_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_translate_text(
         &self,
         req: crate::model::BatchTranslateTextRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::batch_translate_text",
-            self.inner.batch_translate_text(req, options));
+            self.inner.batch_translate_text(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_translate_document(
         &self,
         req: crate::model::BatchTranslateDocumentRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::batch_translate_document",
-            self.inner.batch_translate_document(req, options));
+            self.inner.batch_translate_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_glossary(
         &self,
         req: crate::model::CreateGlossaryRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::create_glossary",
-            self.inner.create_glossary(req, options));
+            self.inner.create_glossary(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_glossary(
         &self,
         req: crate::model::UpdateGlossaryRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::update_glossary",
-            self.inner.update_glossary(req, options));
+            self.inner.update_glossary(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_glossaries(
         &self,
         req: crate::model::ListGlossariesRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_glossaries",
-            self.inner.list_glossaries(req, options));
+            self.inner.list_glossaries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_glossary(
         &self,
         req: crate::model::GetGlossaryRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_glossary",
-            self.inner.get_glossary(req, options));
+            self.inner.get_glossary(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_glossary(
         &self,
         req: crate::model::DeleteGlossaryRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_glossary",
-            self.inner.delete_glossary(req, options));
+            self.inner.delete_glossary(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_glossary_entry(
         &self,
         req: crate::model::GetGlossaryEntryRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_glossary_entry",
-            self.inner.get_glossary_entry(req, options));
+            self.inner.get_glossary_entry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_glossary_entries(
         &self,
         req: crate::model::ListGlossaryEntriesRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_glossary_entries",
-            self.inner.list_glossary_entries(req, options));
+            self.inner.list_glossary_entries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_glossary_entry(
         &self,
         req: crate::model::CreateGlossaryEntryRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::create_glossary_entry",
-            self.inner.create_glossary_entry(req, options));
+            self.inner.create_glossary_entry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_glossary_entry(
         &self,
         req: crate::model::UpdateGlossaryEntryRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::update_glossary_entry",
-            self.inner.update_glossary_entry(req, options));
+            self.inner.update_glossary_entry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_glossary_entry(
         &self,
         req: crate::model::DeleteGlossaryEntryRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_glossary_entry",
-            self.inner.delete_glossary_entry(req, options));
+            self.inner.delete_glossary_entry(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_dataset(
         &self,
         req: crate::model::CreateDatasetRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::create_dataset",
-            self.inner.create_dataset(req, options));
+            self.inner.create_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dataset(
         &self,
         req: crate::model::GetDatasetRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_dataset",
-            self.inner.get_dataset(req, options));
+            self.inner.get_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_datasets(
         &self,
         req: crate::model::ListDatasetsRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_datasets",
-            self.inner.list_datasets(req, options));
+            self.inner.list_datasets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_dataset(
         &self,
         req: crate::model::DeleteDatasetRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_dataset",
-            self.inner.delete_dataset(req, options));
+            self.inner.delete_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_adaptive_mt_dataset(
         &self,
         req: crate::model::CreateAdaptiveMtDatasetRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::create_adaptive_mt_dataset",
-            self.inner.create_adaptive_mt_dataset(req, options));
+            self.inner.create_adaptive_mt_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_adaptive_mt_dataset(
         &self,
         req: crate::model::DeleteAdaptiveMtDatasetRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_adaptive_mt_dataset",
-            self.inner.delete_adaptive_mt_dataset(req, options));
+            self.inner.delete_adaptive_mt_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_adaptive_mt_dataset(
         &self,
         req: crate::model::GetAdaptiveMtDatasetRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_adaptive_mt_dataset",
-            self.inner.get_adaptive_mt_dataset(req, options));
+            self.inner.get_adaptive_mt_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_adaptive_mt_datasets(
         &self,
         req: crate::model::ListAdaptiveMtDatasetsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_adaptive_mt_datasets",
-            self.inner.list_adaptive_mt_datasets(req, options));
+            self.inner.list_adaptive_mt_datasets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn adaptive_mt_translate(
         &self,
         req: crate::model::AdaptiveMtTranslateRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::adaptive_mt_translate",
-            self.inner.adaptive_mt_translate(req, options));
+            self.inner.adaptive_mt_translate(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_adaptive_mt_file(
         &self,
         req: crate::model::GetAdaptiveMtFileRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_adaptive_mt_file",
-            self.inner.get_adaptive_mt_file(req, options));
+            self.inner.get_adaptive_mt_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_adaptive_mt_file(
         &self,
         req: crate::model::DeleteAdaptiveMtFileRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_adaptive_mt_file",
-            self.inner.delete_adaptive_mt_file(req, options));
+            self.inner.delete_adaptive_mt_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_adaptive_mt_file(
         &self,
         req: crate::model::ImportAdaptiveMtFileRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::import_adaptive_mt_file",
-            self.inner.import_adaptive_mt_file(req, options));
+            self.inner.import_adaptive_mt_file(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_adaptive_mt_files(
         &self,
         req: crate::model::ListAdaptiveMtFilesRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_adaptive_mt_files",
-            self.inner.list_adaptive_mt_files(req, options));
+            self.inner.list_adaptive_mt_files(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_adaptive_mt_sentences(
         &self,
         req: crate::model::ListAdaptiveMtSentencesRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_adaptive_mt_sentences",
-            self.inner.list_adaptive_mt_sentences(req, options));
+            self.inner.list_adaptive_mt_sentences(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn import_data(
         &self,
         req: crate::model::ImportDataRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::import_data",
-            self.inner.import_data(req, options));
+            self.inner.import_data(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn export_data(
         &self,
         req: crate::model::ExportDataRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::export_data",
-            self.inner.export_data(req, options));
+            self.inner.export_data(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_examples(
         &self,
         req: crate::model::ListExamplesRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_examples",
-            self.inner.list_examples(req, options));
+            self.inner.list_examples(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_model(
         &self,
         req: crate::model::CreateModelRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::create_model",
-            self.inner.create_model(req, options));
+            self.inner.create_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_models(
         &self,
         req: crate::model::ListModelsRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_models",
-            self.inner.list_models(req, options));
+            self.inner.list_models(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_model(
         &self,
         req: crate::model::GetModelRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_model",
-            self.inner.get_model(req, options));
+            self.inner.get_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_model(
         &self,
         req: crate::model::DeleteModelRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_model",
-            self.inner.delete_model(req, options));
+            self.inner.delete_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn wait_operation(
         &self,
         req: google_cloud_longrunning::model::WaitOperationRequest,
@@ -667,7 +666,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TranslationService::wait_operation",
-            self.inner.wait_operation(req, options));
+            self.inner.wait_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

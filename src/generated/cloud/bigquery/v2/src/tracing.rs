@@ -41,7 +41,6 @@ impl<T> super::stub::DatasetService for DatasetService<T>
 where
     T: super::stub::DatasetService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dataset(
         &self,
         req: crate::model::GetDatasetRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::get_dataset",
-            self.inner.get_dataset(req, options));
+            self.inner.get_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert_dataset(
         &self,
         req: crate::model::InsertDatasetRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::insert_dataset",
-            self.inner.insert_dataset(req, options));
+            self.inner.insert_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_dataset(
         &self,
         req: crate::model::UpdateOrPatchDatasetRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::patch_dataset",
-            self.inner.patch_dataset(req, options));
+            self.inner.patch_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_dataset(
         &self,
         req: crate::model::UpdateOrPatchDatasetRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::update_dataset",
-            self.inner.update_dataset(req, options));
+            self.inner.update_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_dataset(
         &self,
         req: crate::model::DeleteDatasetRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::delete_dataset",
-            self.inner.delete_dataset(req, options));
+            self.inner.delete_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_datasets(
         &self,
         req: crate::model::ListDatasetsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::list_datasets",
-            self.inner.list_datasets(req, options));
+            self.inner.list_datasets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_dataset(
         &self,
         req: crate::model::UndeleteDatasetRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DatasetService::undelete_dataset",
-            self.inner.undelete_dataset(req, options));
+            self.inner.undelete_dataset(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -166,7 +166,6 @@ impl<T> super::stub::JobService for JobService<T>
 where
     T: super::stub::JobService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_job(
         &self,
         req: crate::model::CancelJobRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::cancel_job",
-            self.inner.cancel_job(req, options));
+            self.inner.cancel_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_job(
         &self,
         req: crate::model::GetJobRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::get_job",
-            self.inner.get_job(req, options));
+            self.inner.get_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert_job(
         &self,
         req: crate::model::InsertJobRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::insert_job",
-            self.inner.insert_job(req, options));
+            self.inner.insert_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_job(
         &self,
         req: crate::model::DeleteJobRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::delete_job",
-            self.inner.delete_job(req, options));
+            self.inner.delete_job(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_jobs(
         &self,
         req: crate::model::ListJobsRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::list_jobs",
-            self.inner.list_jobs(req, options));
+            self.inner.list_jobs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_query_results(
         &self,
         req: crate::model::GetQueryResultsRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::get_query_results",
-            self.inner.get_query_results(req, options));
+            self.inner.get_query_results(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn query(
         &self,
         req: crate::model::PostQueryRequest,
@@ -260,7 +259,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::JobService::query",
-            self.inner.query(req, options));
+            self.inner.query(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -291,7 +291,6 @@ impl<T> super::stub::ModelService for ModelService<T>
 where
     T: super::stub::ModelService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_model(
         &self,
         req: crate::model::GetModelRequest,
@@ -301,11 +300,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelService::get_model",
-            self.inner.get_model(req, options));
+            self.inner.get_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_models(
         &self,
         req: crate::model::ListModelsRequest,
@@ -315,11 +314,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelService::list_models",
-            self.inner.list_models(req, options));
+            self.inner.list_models(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_model(
         &self,
         req: crate::model::PatchModelRequest,
@@ -329,11 +328,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelService::patch_model",
-            self.inner.patch_model(req, options));
+            self.inner.patch_model(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_model(
         &self,
         req: crate::model::DeleteModelRequest,
@@ -343,7 +342,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ModelService::delete_model",
-            self.inner.delete_model(req, options));
+            self.inner.delete_model(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -374,7 +374,6 @@ impl<T> super::stub::ProjectService for ProjectService<T>
 where
     T: super::stub::ProjectService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_service_account(
         &self,
         req: crate::model::GetServiceAccountRequest,
@@ -384,7 +383,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ProjectService::get_service_account",
-            self.inner.get_service_account(req, options));
+            self.inner.get_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -415,7 +415,6 @@ impl<T> super::stub::RoutineService for RoutineService<T>
 where
     T: super::stub::RoutineService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_routine(
         &self,
         req: crate::model::GetRoutineRequest,
@@ -425,11 +424,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RoutineService::get_routine",
-            self.inner.get_routine(req, options));
+            self.inner.get_routine(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert_routine(
         &self,
         req: crate::model::InsertRoutineRequest,
@@ -439,11 +438,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RoutineService::insert_routine",
-            self.inner.insert_routine(req, options));
+            self.inner.insert_routine(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_routine(
         &self,
         req: crate::model::UpdateRoutineRequest,
@@ -453,11 +452,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RoutineService::update_routine",
-            self.inner.update_routine(req, options));
+            self.inner.update_routine(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_routine(
         &self,
         req: crate::model::DeleteRoutineRequest,
@@ -467,11 +466,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RoutineService::delete_routine",
-            self.inner.delete_routine(req, options));
+            self.inner.delete_routine(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_routines(
         &self,
         req: crate::model::ListRoutinesRequest,
@@ -481,7 +480,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RoutineService::list_routines",
-            self.inner.list_routines(req, options));
+            self.inner.list_routines(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -512,7 +512,6 @@ impl<T> super::stub::RowAccessPolicyService for RowAccessPolicyService<T>
 where
     T: super::stub::RowAccessPolicyService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_row_access_policies(
         &self,
         req: crate::model::ListRowAccessPoliciesRequest,
@@ -522,11 +521,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RowAccessPolicyService::list_row_access_policies",
-            self.inner.list_row_access_policies(req, options));
+            self.inner.list_row_access_policies(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_row_access_policy(
         &self,
         req: crate::model::GetRowAccessPolicyRequest,
@@ -536,11 +535,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RowAccessPolicyService::get_row_access_policy",
-            self.inner.get_row_access_policy(req, options));
+            self.inner.get_row_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_row_access_policy(
         &self,
         req: crate::model::CreateRowAccessPolicyRequest,
@@ -550,11 +549,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RowAccessPolicyService::create_row_access_policy",
-            self.inner.create_row_access_policy(req, options));
+            self.inner.create_row_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_row_access_policy(
         &self,
         req: crate::model::UpdateRowAccessPolicyRequest,
@@ -564,11 +563,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RowAccessPolicyService::update_row_access_policy",
-            self.inner.update_row_access_policy(req, options));
+            self.inner.update_row_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_row_access_policy(
         &self,
         req: crate::model::DeleteRowAccessPolicyRequest,
@@ -578,11 +577,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RowAccessPolicyService::delete_row_access_policy",
-            self.inner.delete_row_access_policy(req, options));
+            self.inner.delete_row_access_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_delete_row_access_policies(
         &self,
         req: crate::model::BatchDeleteRowAccessPoliciesRequest,
@@ -592,7 +591,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::RowAccessPolicyService::batch_delete_row_access_policies",
-            self.inner.batch_delete_row_access_policies(req, options));
+            self.inner.batch_delete_row_access_policies(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -623,7 +623,6 @@ impl<T> super::stub::TableService for TableService<T>
 where
     T: super::stub::TableService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_table(
         &self,
         req: crate::model::GetTableRequest,
@@ -633,11 +632,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TableService::get_table",
-            self.inner.get_table(req, options));
+            self.inner.get_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn insert_table(
         &self,
         req: crate::model::InsertTableRequest,
@@ -647,11 +646,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TableService::insert_table",
-            self.inner.insert_table(req, options));
+            self.inner.insert_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_table(
         &self,
         req: crate::model::UpdateOrPatchTableRequest,
@@ -661,11 +660,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TableService::patch_table",
-            self.inner.patch_table(req, options));
+            self.inner.patch_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_table(
         &self,
         req: crate::model::UpdateOrPatchTableRequest,
@@ -675,11 +674,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TableService::update_table",
-            self.inner.update_table(req, options));
+            self.inner.update_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_table(
         &self,
         req: crate::model::DeleteTableRequest,
@@ -689,11 +688,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TableService::delete_table",
-            self.inner.delete_table(req, options));
+            self.inner.delete_table(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_tables(
         &self,
         req: crate::model::ListTablesRequest,
@@ -703,7 +702,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TableService::list_tables",
-            self.inner.list_tables(req, options));
+            self.inner.list_tables(req.clone(), options.clone()));
+
         pending.await
     }
 }

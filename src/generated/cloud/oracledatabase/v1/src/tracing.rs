@@ -41,7 +41,6 @@ impl<T> super::stub::OracleDatabase for OracleDatabase<T>
 where
     T: super::stub::OracleDatabase + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_cloud_exadata_infrastructures(
         &self,
         req: crate::model::ListCloudExadataInfrastructuresRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_cloud_exadata_infrastructures",
-            self.inner.list_cloud_exadata_infrastructures(req, options));
+            self.inner.list_cloud_exadata_infrastructures(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cloud_exadata_infrastructure(
         &self,
         req: crate::model::GetCloudExadataInfrastructureRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_cloud_exadata_infrastructure",
-            self.inner.get_cloud_exadata_infrastructure(req, options));
+            self.inner.get_cloud_exadata_infrastructure(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cloud_exadata_infrastructure(
         &self,
         req: crate::model::CreateCloudExadataInfrastructureRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_cloud_exadata_infrastructure",
-            self.inner.create_cloud_exadata_infrastructure(req, options));
+            self.inner.create_cloud_exadata_infrastructure(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cloud_exadata_infrastructure(
         &self,
         req: crate::model::DeleteCloudExadataInfrastructureRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_cloud_exadata_infrastructure",
-            self.inner.delete_cloud_exadata_infrastructure(req, options));
+            self.inner.delete_cloud_exadata_infrastructure(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_cloud_vm_clusters(
         &self,
         req: crate::model::ListCloudVmClustersRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_cloud_vm_clusters",
-            self.inner.list_cloud_vm_clusters(req, options));
+            self.inner.list_cloud_vm_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cloud_vm_cluster(
         &self,
         req: crate::model::GetCloudVmClusterRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_cloud_vm_cluster",
-            self.inner.get_cloud_vm_cluster(req, options));
+            self.inner.get_cloud_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_cloud_vm_cluster(
         &self,
         req: crate::model::CreateCloudVmClusterRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_cloud_vm_cluster",
-            self.inner.create_cloud_vm_cluster(req, options));
+            self.inner.create_cloud_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_cloud_vm_cluster(
         &self,
         req: crate::model::DeleteCloudVmClusterRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_cloud_vm_cluster",
-            self.inner.delete_cloud_vm_cluster(req, options));
+            self.inner.delete_cloud_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_entitlements(
         &self,
         req: crate::model::ListEntitlementsRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_entitlements",
-            self.inner.list_entitlements(req, options));
+            self.inner.list_entitlements(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_db_servers(
         &self,
         req: crate::model::ListDbServersRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_db_servers",
-            self.inner.list_db_servers(req, options));
+            self.inner.list_db_servers(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_db_nodes(
         &self,
         req: crate::model::ListDbNodesRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_db_nodes",
-            self.inner.list_db_nodes(req, options));
+            self.inner.list_db_nodes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_gi_versions(
         &self,
         req: crate::model::ListGiVersionsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_gi_versions",
-            self.inner.list_gi_versions(req, options));
+            self.inner.list_gi_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_minor_versions(
         &self,
         req: crate::model::ListMinorVersionsRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_minor_versions",
-            self.inner.list_minor_versions(req, options));
+            self.inner.list_minor_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_db_system_shapes(
         &self,
         req: crate::model::ListDbSystemShapesRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_db_system_shapes",
-            self.inner.list_db_system_shapes(req, options));
+            self.inner.list_db_system_shapes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_autonomous_databases(
         &self,
         req: crate::model::ListAutonomousDatabasesRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_autonomous_databases",
-            self.inner.list_autonomous_databases(req, options));
+            self.inner.list_autonomous_databases(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_autonomous_database(
         &self,
         req: crate::model::GetAutonomousDatabaseRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_autonomous_database",
-            self.inner.get_autonomous_database(req, options));
+            self.inner.get_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_autonomous_database(
         &self,
         req: crate::model::CreateAutonomousDatabaseRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_autonomous_database",
-            self.inner.create_autonomous_database(req, options));
+            self.inner.create_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_autonomous_database(
         &self,
         req: crate::model::UpdateAutonomousDatabaseRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::update_autonomous_database",
-            self.inner.update_autonomous_database(req, options));
+            self.inner.update_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_autonomous_database(
         &self,
         req: crate::model::DeleteAutonomousDatabaseRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_autonomous_database",
-            self.inner.delete_autonomous_database(req, options));
+            self.inner.delete_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restore_autonomous_database(
         &self,
         req: crate::model::RestoreAutonomousDatabaseRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::restore_autonomous_database",
-            self.inner.restore_autonomous_database(req, options));
+            self.inner.restore_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_autonomous_database_wallet(
         &self,
         req: crate::model::GenerateAutonomousDatabaseWalletRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::generate_autonomous_database_wallet",
-            self.inner.generate_autonomous_database_wallet(req, options));
+            self.inner.generate_autonomous_database_wallet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_autonomous_db_versions(
         &self,
         req: crate::model::ListAutonomousDbVersionsRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_autonomous_db_versions",
-            self.inner.list_autonomous_db_versions(req, options));
+            self.inner.list_autonomous_db_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_autonomous_database_character_sets(
         &self,
         req: crate::model::ListAutonomousDatabaseCharacterSetsRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_autonomous_database_character_sets",
-            self.inner.list_autonomous_database_character_sets(req, options));
+            self.inner.list_autonomous_database_character_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_autonomous_database_backups(
         &self,
         req: crate::model::ListAutonomousDatabaseBackupsRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_autonomous_database_backups",
-            self.inner.list_autonomous_database_backups(req, options));
+            self.inner.list_autonomous_database_backups(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_autonomous_database(
         &self,
         req: crate::model::StopAutonomousDatabaseRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::stop_autonomous_database",
-            self.inner.stop_autonomous_database(req, options));
+            self.inner.stop_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_autonomous_database(
         &self,
         req: crate::model::StartAutonomousDatabaseRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::start_autonomous_database",
-            self.inner.start_autonomous_database(req, options));
+            self.inner.start_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn restart_autonomous_database(
         &self,
         req: crate::model::RestartAutonomousDatabaseRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::restart_autonomous_database",
-            self.inner.restart_autonomous_database(req, options));
+            self.inner.restart_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn switchover_autonomous_database(
         &self,
         req: crate::model::SwitchoverAutonomousDatabaseRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::switchover_autonomous_database",
-            self.inner.switchover_autonomous_database(req, options));
+            self.inner.switchover_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn failover_autonomous_database(
         &self,
         req: crate::model::FailoverAutonomousDatabaseRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::failover_autonomous_database",
-            self.inner.failover_autonomous_database(req, options));
+            self.inner.failover_autonomous_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_odb_networks(
         &self,
         req: crate::model::ListOdbNetworksRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_odb_networks",
-            self.inner.list_odb_networks(req, options));
+            self.inner.list_odb_networks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_odb_network(
         &self,
         req: crate::model::GetOdbNetworkRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_odb_network",
-            self.inner.get_odb_network(req, options));
+            self.inner.get_odb_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_odb_network(
         &self,
         req: crate::model::CreateOdbNetworkRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_odb_network",
-            self.inner.create_odb_network(req, options));
+            self.inner.create_odb_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_odb_network(
         &self,
         req: crate::model::DeleteOdbNetworkRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_odb_network",
-            self.inner.delete_odb_network(req, options));
+            self.inner.delete_odb_network(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_odb_subnets(
         &self,
         req: crate::model::ListOdbSubnetsRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_odb_subnets",
-            self.inner.list_odb_subnets(req, options));
+            self.inner.list_odb_subnets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_odb_subnet(
         &self,
         req: crate::model::GetOdbSubnetRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_odb_subnet",
-            self.inner.get_odb_subnet(req, options));
+            self.inner.get_odb_subnet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_odb_subnet(
         &self,
         req: crate::model::CreateOdbSubnetRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_odb_subnet",
-            self.inner.create_odb_subnet(req, options));
+            self.inner.create_odb_subnet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_odb_subnet(
         &self,
         req: crate::model::DeleteOdbSubnetRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_odb_subnet",
-            self.inner.delete_odb_subnet(req, options));
+            self.inner.delete_odb_subnet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_exadb_vm_clusters(
         &self,
         req: crate::model::ListExadbVmClustersRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_exadb_vm_clusters",
-            self.inner.list_exadb_vm_clusters(req, options));
+            self.inner.list_exadb_vm_clusters(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_exadb_vm_cluster(
         &self,
         req: crate::model::GetExadbVmClusterRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_exadb_vm_cluster",
-            self.inner.get_exadb_vm_cluster(req, options));
+            self.inner.get_exadb_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_exadb_vm_cluster(
         &self,
         req: crate::model::CreateExadbVmClusterRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_exadb_vm_cluster",
-            self.inner.create_exadb_vm_cluster(req, options));
+            self.inner.create_exadb_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_exadb_vm_cluster(
         &self,
         req: crate::model::DeleteExadbVmClusterRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_exadb_vm_cluster",
-            self.inner.delete_exadb_vm_cluster(req, options));
+            self.inner.delete_exadb_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_exadb_vm_cluster(
         &self,
         req: crate::model::UpdateExadbVmClusterRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::update_exadb_vm_cluster",
-            self.inner.update_exadb_vm_cluster(req, options));
+            self.inner.update_exadb_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn remove_virtual_machine_exadb_vm_cluster(
         &self,
         req: crate::model::RemoveVirtualMachineExadbVmClusterRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::remove_virtual_machine_exadb_vm_cluster",
-            self.inner.remove_virtual_machine_exadb_vm_cluster(req, options));
+            self.inner.remove_virtual_machine_exadb_vm_cluster(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_exascale_db_storage_vaults(
         &self,
         req: crate::model::ListExascaleDbStorageVaultsRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_exascale_db_storage_vaults",
-            self.inner.list_exascale_db_storage_vaults(req, options));
+            self.inner.list_exascale_db_storage_vaults(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_exascale_db_storage_vault(
         &self,
         req: crate::model::GetExascaleDbStorageVaultRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_exascale_db_storage_vault",
-            self.inner.get_exascale_db_storage_vault(req, options));
+            self.inner.get_exascale_db_storage_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_exascale_db_storage_vault(
         &self,
         req: crate::model::CreateExascaleDbStorageVaultRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_exascale_db_storage_vault",
-            self.inner.create_exascale_db_storage_vault(req, options));
+            self.inner.create_exascale_db_storage_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_exascale_db_storage_vault(
         &self,
         req: crate::model::DeleteExascaleDbStorageVaultRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_exascale_db_storage_vault",
-            self.inner.delete_exascale_db_storage_vault(req, options));
+            self.inner.delete_exascale_db_storage_vault(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_db_system_initial_storage_sizes(
         &self,
         req: crate::model::ListDbSystemInitialStorageSizesRequest,
@@ -709,11 +708,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_db_system_initial_storage_sizes",
-            self.inner.list_db_system_initial_storage_sizes(req, options));
+            self.inner.list_db_system_initial_storage_sizes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_databases(
         &self,
         req: crate::model::ListDatabasesRequest,
@@ -723,11 +722,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_databases",
-            self.inner.list_databases(req, options));
+            self.inner.list_databases(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_database(
         &self,
         req: crate::model::GetDatabaseRequest,
@@ -737,11 +736,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_database",
-            self.inner.get_database(req, options));
+            self.inner.get_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_pluggable_databases(
         &self,
         req: crate::model::ListPluggableDatabasesRequest,
@@ -751,11 +750,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_pluggable_databases",
-            self.inner.list_pluggable_databases(req, options));
+            self.inner.list_pluggable_databases(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_pluggable_database(
         &self,
         req: crate::model::GetPluggableDatabaseRequest,
@@ -765,11 +764,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_pluggable_database",
-            self.inner.get_pluggable_database(req, options));
+            self.inner.get_pluggable_database(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_db_systems(
         &self,
         req: crate::model::ListDbSystemsRequest,
@@ -779,11 +778,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_db_systems",
-            self.inner.list_db_systems(req, options));
+            self.inner.list_db_systems(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_db_system(
         &self,
         req: crate::model::GetDbSystemRequest,
@@ -793,11 +792,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_db_system",
-            self.inner.get_db_system(req, options));
+            self.inner.get_db_system(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_db_system(
         &self,
         req: crate::model::CreateDbSystemRequest,
@@ -807,11 +806,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::create_db_system",
-            self.inner.create_db_system(req, options));
+            self.inner.create_db_system(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_db_system(
         &self,
         req: crate::model::DeleteDbSystemRequest,
@@ -821,11 +820,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_db_system",
-            self.inner.delete_db_system(req, options));
+            self.inner.delete_db_system(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_db_versions(
         &self,
         req: crate::model::ListDbVersionsRequest,
@@ -835,11 +834,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_db_versions",
-            self.inner.list_db_versions(req, options));
+            self.inner.list_db_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_database_character_sets(
         &self,
         req: crate::model::ListDatabaseCharacterSetsRequest,
@@ -849,11 +848,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_database_character_sets",
-            self.inner.list_database_character_sets(req, options));
+            self.inner.list_database_character_sets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -863,11 +862,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -877,11 +876,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -891,11 +890,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -905,11 +904,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -919,11 +918,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -933,7 +932,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::OracleDatabase::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

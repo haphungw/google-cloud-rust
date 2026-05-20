@@ -41,7 +41,6 @@ impl<T> super::stub::TopicAdmin for TopicAdmin<T>
 where
     T: super::stub::TopicAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_topic(
         &self,
         req: crate::model::Topic,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::create_topic",
-            self.inner.create_topic(req, options));
+            self.inner.create_topic(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_topic(
         &self,
         req: crate::model::UpdateTopicRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::update_topic",
-            self.inner.update_topic(req, options));
+            self.inner.update_topic(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_topic(
         &self,
         req: crate::model::GetTopicRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::get_topic",
-            self.inner.get_topic(req, options));
+            self.inner.get_topic(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_topics(
         &self,
         req: crate::model::ListTopicsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::list_topics",
-            self.inner.list_topics(req, options));
+            self.inner.list_topics(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_topic_subscriptions(
         &self,
         req: crate::model::ListTopicSubscriptionsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::list_topic_subscriptions",
-            self.inner.list_topic_subscriptions(req, options));
+            self.inner.list_topic_subscriptions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_topic_snapshots(
         &self,
         req: crate::model::ListTopicSnapshotsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::list_topic_snapshots",
-            self.inner.list_topic_snapshots(req, options));
+            self.inner.list_topic_snapshots(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_topic(
         &self,
         req: crate::model::DeleteTopicRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::delete_topic",
-            self.inner.delete_topic(req, options));
+            self.inner.delete_topic(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn detach_subscription(
         &self,
         req: crate::model::DetachSubscriptionRequest,
@@ -149,7 +148,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TopicAdmin::detach_subscription",
-            self.inner.detach_subscription(req, options));
+            self.inner.detach_subscription(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -180,7 +180,6 @@ impl<T> super::stub::SubscriptionAdmin for SubscriptionAdmin<T>
 where
     T: super::stub::SubscriptionAdmin + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_subscription(
         &self,
         req: crate::model::Subscription,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::create_subscription",
-            self.inner.create_subscription(req, options));
+            self.inner.create_subscription(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_subscription(
         &self,
         req: crate::model::GetSubscriptionRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::get_subscription",
-            self.inner.get_subscription(req, options));
+            self.inner.get_subscription(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_subscription(
         &self,
         req: crate::model::UpdateSubscriptionRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::update_subscription",
-            self.inner.update_subscription(req, options));
+            self.inner.update_subscription(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_subscriptions(
         &self,
         req: crate::model::ListSubscriptionsRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::list_subscriptions",
-            self.inner.list_subscriptions(req, options));
+            self.inner.list_subscriptions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_subscription(
         &self,
         req: crate::model::DeleteSubscriptionRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::delete_subscription",
-            self.inner.delete_subscription(req, options));
+            self.inner.delete_subscription(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn modify_push_config(
         &self,
         req: crate::model::ModifyPushConfigRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::modify_push_config",
-            self.inner.modify_push_config(req, options));
+            self.inner.modify_push_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_snapshot(
         &self,
         req: crate::model::GetSnapshotRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::get_snapshot",
-            self.inner.get_snapshot(req, options));
+            self.inner.get_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_snapshots(
         &self,
         req: crate::model::ListSnapshotsRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::list_snapshots",
-            self.inner.list_snapshots(req, options));
+            self.inner.list_snapshots(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_snapshot(
         &self,
         req: crate::model::CreateSnapshotRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::create_snapshot",
-            self.inner.create_snapshot(req, options));
+            self.inner.create_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_snapshot(
         &self,
         req: crate::model::UpdateSnapshotRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::update_snapshot",
-            self.inner.update_snapshot(req, options));
+            self.inner.update_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_snapshot(
         &self,
         req: crate::model::DeleteSnapshotRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::delete_snapshot",
-            self.inner.delete_snapshot(req, options));
+            self.inner.delete_snapshot(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn seek(
         &self,
         req: crate::model::SeekRequest,
@@ -344,7 +343,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SubscriptionAdmin::seek",
-            self.inner.seek(req, options));
+            self.inner.seek(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -375,7 +375,6 @@ impl<T> super::stub::SchemaService for SchemaService<T>
 where
     T: super::stub::SchemaService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_schema(
         &self,
         req: crate::model::CreateSchemaRequest,
@@ -385,11 +384,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::create_schema",
-            self.inner.create_schema(req, options));
+            self.inner.create_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_schema(
         &self,
         req: crate::model::GetSchemaRequest,
@@ -399,11 +398,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::get_schema",
-            self.inner.get_schema(req, options));
+            self.inner.get_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_schemas(
         &self,
         req: crate::model::ListSchemasRequest,
@@ -413,11 +412,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::list_schemas",
-            self.inner.list_schemas(req, options));
+            self.inner.list_schemas(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_schema_revisions(
         &self,
         req: crate::model::ListSchemaRevisionsRequest,
@@ -427,11 +426,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::list_schema_revisions",
-            self.inner.list_schema_revisions(req, options));
+            self.inner.list_schema_revisions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn commit_schema(
         &self,
         req: crate::model::CommitSchemaRequest,
@@ -441,11 +440,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::commit_schema",
-            self.inner.commit_schema(req, options));
+            self.inner.commit_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn rollback_schema(
         &self,
         req: crate::model::RollbackSchemaRequest,
@@ -455,11 +454,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::rollback_schema",
-            self.inner.rollback_schema(req, options));
+            self.inner.rollback_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_schema_revision(
         &self,
         req: crate::model::DeleteSchemaRevisionRequest,
@@ -469,11 +468,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::delete_schema_revision",
-            self.inner.delete_schema_revision(req, options));
+            self.inner.delete_schema_revision(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_schema(
         &self,
         req: crate::model::DeleteSchemaRequest,
@@ -483,11 +482,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::delete_schema",
-            self.inner.delete_schema(req, options));
+            self.inner.delete_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_schema(
         &self,
         req: crate::model::ValidateSchemaRequest,
@@ -497,11 +496,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::validate_schema",
-            self.inner.validate_schema(req, options));
+            self.inner.validate_schema(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_message(
         &self,
         req: crate::model::ValidateMessageRequest,
@@ -511,11 +510,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::validate_message",
-            self.inner.validate_message(req, options));
+            self.inner.validate_message(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::SetIamPolicyRequest,
@@ -525,11 +524,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: google_cloud_iam_v1::model::GetIamPolicyRequest,
@@ -539,11 +538,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: google_cloud_iam_v1::model::TestIamPermissionsRequest,
@@ -553,7 +552,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SchemaService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 }

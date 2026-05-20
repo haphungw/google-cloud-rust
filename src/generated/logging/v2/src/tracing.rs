@@ -41,7 +41,6 @@ impl<T> super::stub::LoggingServiceV2 for LoggingServiceV2<T>
 where
     T: super::stub::LoggingServiceV2 + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_log(
         &self,
         req: crate::model::DeleteLogRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::delete_log",
-            self.inner.delete_log(req, options));
+            self.inner.delete_log(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn write_log_entries(
         &self,
         req: crate::model::WriteLogEntriesRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::write_log_entries",
-            self.inner.write_log_entries(req, options));
+            self.inner.write_log_entries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_log_entries(
         &self,
         req: crate::model::ListLogEntriesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::list_log_entries",
-            self.inner.list_log_entries(req, options));
+            self.inner.list_log_entries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_monitored_resource_descriptors(
         &self,
         req: crate::model::ListMonitoredResourceDescriptorsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::list_monitored_resource_descriptors",
-            self.inner.list_monitored_resource_descriptors(req, options));
+            self.inner.list_monitored_resource_descriptors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_logs(
         &self,
         req: crate::model::ListLogsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::list_logs",
-            self.inner.list_logs(req, options));
+            self.inner.list_logs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -149,7 +148,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LoggingServiceV2::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -180,7 +180,6 @@ impl<T> super::stub::ConfigServiceV2 for ConfigServiceV2<T>
 where
     T: super::stub::ConfigServiceV2 + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_buckets(
         &self,
         req: crate::model::ListBucketsRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::list_buckets",
-            self.inner.list_buckets(req, options));
+            self.inner.list_buckets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_bucket(
         &self,
         req: crate::model::GetBucketRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_bucket",
-            self.inner.get_bucket(req, options));
+            self.inner.get_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_bucket_async(
         &self,
         req: crate::model::CreateBucketRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::create_bucket_async",
-            self.inner.create_bucket_async(req, options));
+            self.inner.create_bucket_async(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_bucket_async(
         &self,
         req: crate::model::UpdateBucketRequest,
@@ -232,11 +231,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_bucket_async",
-            self.inner.update_bucket_async(req, options));
+            self.inner.update_bucket_async(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_bucket(
         &self,
         req: crate::model::CreateBucketRequest,
@@ -246,11 +245,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::create_bucket",
-            self.inner.create_bucket(req, options));
+            self.inner.create_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_bucket(
         &self,
         req: crate::model::UpdateBucketRequest,
@@ -260,11 +259,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_bucket",
-            self.inner.update_bucket(req, options));
+            self.inner.update_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_bucket(
         &self,
         req: crate::model::DeleteBucketRequest,
@@ -274,11 +273,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::delete_bucket",
-            self.inner.delete_bucket(req, options));
+            self.inner.delete_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undelete_bucket(
         &self,
         req: crate::model::UndeleteBucketRequest,
@@ -288,11 +287,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::undelete_bucket",
-            self.inner.undelete_bucket(req, options));
+            self.inner.undelete_bucket(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_views(
         &self,
         req: crate::model::ListViewsRequest,
@@ -302,11 +301,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::list_views",
-            self.inner.list_views(req, options));
+            self.inner.list_views(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_view(
         &self,
         req: crate::model::GetViewRequest,
@@ -316,11 +315,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_view",
-            self.inner.get_view(req, options));
+            self.inner.get_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_view(
         &self,
         req: crate::model::CreateViewRequest,
@@ -330,11 +329,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::create_view",
-            self.inner.create_view(req, options));
+            self.inner.create_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_view(
         &self,
         req: crate::model::UpdateViewRequest,
@@ -344,11 +343,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_view",
-            self.inner.update_view(req, options));
+            self.inner.update_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_view(
         &self,
         req: crate::model::DeleteViewRequest,
@@ -358,11 +357,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::delete_view",
-            self.inner.delete_view(req, options));
+            self.inner.delete_view(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_sinks(
         &self,
         req: crate::model::ListSinksRequest,
@@ -372,11 +371,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::list_sinks",
-            self.inner.list_sinks(req, options));
+            self.inner.list_sinks(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_sink(
         &self,
         req: crate::model::GetSinkRequest,
@@ -386,11 +385,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_sink",
-            self.inner.get_sink(req, options));
+            self.inner.get_sink(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_sink(
         &self,
         req: crate::model::CreateSinkRequest,
@@ -400,11 +399,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::create_sink",
-            self.inner.create_sink(req, options));
+            self.inner.create_sink(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_sink(
         &self,
         req: crate::model::UpdateSinkRequest,
@@ -414,11 +413,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_sink",
-            self.inner.update_sink(req, options));
+            self.inner.update_sink(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_sink(
         &self,
         req: crate::model::DeleteSinkRequest,
@@ -428,11 +427,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::delete_sink",
-            self.inner.delete_sink(req, options));
+            self.inner.delete_sink(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_link(
         &self,
         req: crate::model::CreateLinkRequest,
@@ -442,11 +441,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::create_link",
-            self.inner.create_link(req, options));
+            self.inner.create_link(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_link(
         &self,
         req: crate::model::DeleteLinkRequest,
@@ -456,11 +455,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::delete_link",
-            self.inner.delete_link(req, options));
+            self.inner.delete_link(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_links(
         &self,
         req: crate::model::ListLinksRequest,
@@ -470,11 +469,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::list_links",
-            self.inner.list_links(req, options));
+            self.inner.list_links(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_link(
         &self,
         req: crate::model::GetLinkRequest,
@@ -484,11 +483,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_link",
-            self.inner.get_link(req, options));
+            self.inner.get_link(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_exclusions(
         &self,
         req: crate::model::ListExclusionsRequest,
@@ -498,11 +497,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::list_exclusions",
-            self.inner.list_exclusions(req, options));
+            self.inner.list_exclusions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_exclusion(
         &self,
         req: crate::model::GetExclusionRequest,
@@ -512,11 +511,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_exclusion",
-            self.inner.get_exclusion(req, options));
+            self.inner.get_exclusion(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_exclusion(
         &self,
         req: crate::model::CreateExclusionRequest,
@@ -526,11 +525,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::create_exclusion",
-            self.inner.create_exclusion(req, options));
+            self.inner.create_exclusion(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_exclusion(
         &self,
         req: crate::model::UpdateExclusionRequest,
@@ -540,11 +539,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_exclusion",
-            self.inner.update_exclusion(req, options));
+            self.inner.update_exclusion(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_exclusion(
         &self,
         req: crate::model::DeleteExclusionRequest,
@@ -554,11 +553,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::delete_exclusion",
-            self.inner.delete_exclusion(req, options));
+            self.inner.delete_exclusion(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_cmek_settings(
         &self,
         req: crate::model::GetCmekSettingsRequest,
@@ -568,11 +567,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_cmek_settings",
-            self.inner.get_cmek_settings(req, options));
+            self.inner.get_cmek_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_cmek_settings(
         &self,
         req: crate::model::UpdateCmekSettingsRequest,
@@ -582,11 +581,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_cmek_settings",
-            self.inner.update_cmek_settings(req, options));
+            self.inner.update_cmek_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_settings(
         &self,
         req: crate::model::GetSettingsRequest,
@@ -596,11 +595,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_settings",
-            self.inner.get_settings(req, options));
+            self.inner.get_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_settings(
         &self,
         req: crate::model::UpdateSettingsRequest,
@@ -610,11 +609,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::update_settings",
-            self.inner.update_settings(req, options));
+            self.inner.update_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn copy_log_entries(
         &self,
         req: crate::model::CopyLogEntriesRequest,
@@ -624,11 +623,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::copy_log_entries",
-            self.inner.copy_log_entries(req, options));
+            self.inner.copy_log_entries(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -638,11 +637,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -652,11 +651,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -666,7 +665,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConfigServiceV2::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
@@ -711,7 +711,6 @@ impl<T> super::stub::MetricsServiceV2 for MetricsServiceV2<T>
 where
     T: super::stub::MetricsServiceV2 + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_log_metrics(
         &self,
         req: crate::model::ListLogMetricsRequest,
@@ -721,11 +720,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::list_log_metrics",
-            self.inner.list_log_metrics(req, options));
+            self.inner.list_log_metrics(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_log_metric(
         &self,
         req: crate::model::GetLogMetricRequest,
@@ -735,11 +734,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::get_log_metric",
-            self.inner.get_log_metric(req, options));
+            self.inner.get_log_metric(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_log_metric(
         &self,
         req: crate::model::CreateLogMetricRequest,
@@ -749,11 +748,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::create_log_metric",
-            self.inner.create_log_metric(req, options));
+            self.inner.create_log_metric(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_log_metric(
         &self,
         req: crate::model::UpdateLogMetricRequest,
@@ -763,11 +762,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::update_log_metric",
-            self.inner.update_log_metric(req, options));
+            self.inner.update_log_metric(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_log_metric(
         &self,
         req: crate::model::DeleteLogMetricRequest,
@@ -777,11 +776,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::delete_log_metric",
-            self.inner.delete_log_metric(req, options));
+            self.inner.delete_log_metric(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -791,11 +790,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -805,11 +804,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -819,7 +818,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MetricsServiceV2::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }

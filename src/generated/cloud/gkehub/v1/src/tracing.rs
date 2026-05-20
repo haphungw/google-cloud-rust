@@ -41,7 +41,6 @@ impl<T> super::stub::GkeHub for GkeHub<T>
 where
     T: super::stub::GkeHub + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_memberships(
         &self,
         req: crate::model::ListMembershipsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_memberships",
-            self.inner.list_memberships(req, options));
+            self.inner.list_memberships(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_bound_memberships(
         &self,
         req: crate::model::ListBoundMembershipsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_bound_memberships",
-            self.inner.list_bound_memberships(req, options));
+            self.inner.list_bound_memberships(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_features(
         &self,
         req: crate::model::ListFeaturesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_features",
-            self.inner.list_features(req, options));
+            self.inner.list_features(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_membership(
         &self,
         req: crate::model::GetMembershipRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_membership",
-            self.inner.get_membership(req, options));
+            self.inner.get_membership(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_feature(
         &self,
         req: crate::model::GetFeatureRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_feature",
-            self.inner.get_feature(req, options));
+            self.inner.get_feature(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_membership(
         &self,
         req: crate::model::CreateMembershipRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_membership",
-            self.inner.create_membership(req, options));
+            self.inner.create_membership(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_feature(
         &self,
         req: crate::model::CreateFeatureRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_feature",
-            self.inner.create_feature(req, options));
+            self.inner.create_feature(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_membership(
         &self,
         req: crate::model::DeleteMembershipRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_membership",
-            self.inner.delete_membership(req, options));
+            self.inner.delete_membership(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_feature(
         &self,
         req: crate::model::DeleteFeatureRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_feature",
-            self.inner.delete_feature(req, options));
+            self.inner.delete_feature(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_membership(
         &self,
         req: crate::model::UpdateMembershipRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_membership",
-            self.inner.update_membership(req, options));
+            self.inner.update_membership(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_feature(
         &self,
         req: crate::model::UpdateFeatureRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_feature",
-            self.inner.update_feature(req, options));
+            self.inner.update_feature(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_connect_manifest(
         &self,
         req: crate::model::GenerateConnectManifestRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::generate_connect_manifest",
-            self.inner.generate_connect_manifest(req, options));
+            self.inner.generate_connect_manifest(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_fleet(
         &self,
         req: crate::model::CreateFleetRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_fleet",
-            self.inner.create_fleet(req, options));
+            self.inner.create_fleet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_fleet(
         &self,
         req: crate::model::GetFleetRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_fleet",
-            self.inner.get_fleet(req, options));
+            self.inner.get_fleet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_fleet(
         &self,
         req: crate::model::UpdateFleetRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_fleet",
-            self.inner.update_fleet(req, options));
+            self.inner.update_fleet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_fleet(
         &self,
         req: crate::model::DeleteFleetRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_fleet",
-            self.inner.delete_fleet(req, options));
+            self.inner.delete_fleet(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_fleets(
         &self,
         req: crate::model::ListFleetsRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_fleets",
-            self.inner.list_fleets(req, options));
+            self.inner.list_fleets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_scope_namespace(
         &self,
         req: crate::model::GetScopeNamespaceRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_scope_namespace",
-            self.inner.get_scope_namespace(req, options));
+            self.inner.get_scope_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_scope_namespace(
         &self,
         req: crate::model::CreateScopeNamespaceRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_scope_namespace",
-            self.inner.create_scope_namespace(req, options));
+            self.inner.create_scope_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_scope_namespace(
         &self,
         req: crate::model::UpdateScopeNamespaceRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_scope_namespace",
-            self.inner.update_scope_namespace(req, options));
+            self.inner.update_scope_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_scope_namespace(
         &self,
         req: crate::model::DeleteScopeNamespaceRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_scope_namespace",
-            self.inner.delete_scope_namespace(req, options));
+            self.inner.delete_scope_namespace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_scope_namespaces(
         &self,
         req: crate::model::ListScopeNamespacesRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_scope_namespaces",
-            self.inner.list_scope_namespaces(req, options));
+            self.inner.list_scope_namespaces(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_scope_rbac_role_binding(
         &self,
         req: crate::model::GetScopeRBACRoleBindingRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_scope_rbac_role_binding",
-            self.inner.get_scope_rbac_role_binding(req, options));
+            self.inner.get_scope_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_scope_rbac_role_binding(
         &self,
         req: crate::model::CreateScopeRBACRoleBindingRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_scope_rbac_role_binding",
-            self.inner.create_scope_rbac_role_binding(req, options));
+            self.inner.create_scope_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_scope_rbac_role_binding(
         &self,
         req: crate::model::UpdateScopeRBACRoleBindingRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_scope_rbac_role_binding",
-            self.inner.update_scope_rbac_role_binding(req, options));
+            self.inner.update_scope_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_scope_rbac_role_binding(
         &self,
         req: crate::model::DeleteScopeRBACRoleBindingRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_scope_rbac_role_binding",
-            self.inner.delete_scope_rbac_role_binding(req, options));
+            self.inner.delete_scope_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_scope_rbac_role_bindings(
         &self,
         req: crate::model::ListScopeRBACRoleBindingsRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_scope_rbac_role_bindings",
-            self.inner.list_scope_rbac_role_bindings(req, options));
+            self.inner.list_scope_rbac_role_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_scope(
         &self,
         req: crate::model::GetScopeRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_scope",
-            self.inner.get_scope(req, options));
+            self.inner.get_scope(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_scope(
         &self,
         req: crate::model::CreateScopeRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_scope",
-            self.inner.create_scope(req, options));
+            self.inner.create_scope(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_scope(
         &self,
         req: crate::model::UpdateScopeRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_scope",
-            self.inner.update_scope(req, options));
+            self.inner.update_scope(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_scope(
         &self,
         req: crate::model::DeleteScopeRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_scope",
-            self.inner.delete_scope(req, options));
+            self.inner.delete_scope(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_scopes(
         &self,
         req: crate::model::ListScopesRequest,
@@ -485,11 +484,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_scopes",
-            self.inner.list_scopes(req, options));
+            self.inner.list_scopes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_permitted_scopes(
         &self,
         req: crate::model::ListPermittedScopesRequest,
@@ -499,11 +498,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_permitted_scopes",
-            self.inner.list_permitted_scopes(req, options));
+            self.inner.list_permitted_scopes(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_membership_binding(
         &self,
         req: crate::model::GetMembershipBindingRequest,
@@ -513,11 +512,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_membership_binding",
-            self.inner.get_membership_binding(req, options));
+            self.inner.get_membership_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_membership_binding(
         &self,
         req: crate::model::CreateMembershipBindingRequest,
@@ -527,11 +526,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_membership_binding",
-            self.inner.create_membership_binding(req, options));
+            self.inner.create_membership_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_membership_binding(
         &self,
         req: crate::model::UpdateMembershipBindingRequest,
@@ -541,11 +540,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_membership_binding",
-            self.inner.update_membership_binding(req, options));
+            self.inner.update_membership_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_membership_binding(
         &self,
         req: crate::model::DeleteMembershipBindingRequest,
@@ -555,11 +554,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_membership_binding",
-            self.inner.delete_membership_binding(req, options));
+            self.inner.delete_membership_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_membership_bindings(
         &self,
         req: crate::model::ListMembershipBindingsRequest,
@@ -569,11 +568,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_membership_bindings",
-            self.inner.list_membership_bindings(req, options));
+            self.inner.list_membership_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_membership_rbac_role_binding(
         &self,
         req: crate::model::GetMembershipRBACRoleBindingRequest,
@@ -583,11 +582,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_membership_rbac_role_binding",
-            self.inner.get_membership_rbac_role_binding(req, options));
+            self.inner.get_membership_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_membership_rbac_role_binding(
         &self,
         req: crate::model::CreateMembershipRBACRoleBindingRequest,
@@ -597,11 +596,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::create_membership_rbac_role_binding",
-            self.inner.create_membership_rbac_role_binding(req, options));
+            self.inner.create_membership_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_membership_rbac_role_binding(
         &self,
         req: crate::model::UpdateMembershipRBACRoleBindingRequest,
@@ -611,11 +610,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::update_membership_rbac_role_binding",
-            self.inner.update_membership_rbac_role_binding(req, options));
+            self.inner.update_membership_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_membership_rbac_role_binding(
         &self,
         req: crate::model::DeleteMembershipRBACRoleBindingRequest,
@@ -625,11 +624,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_membership_rbac_role_binding",
-            self.inner.delete_membership_rbac_role_binding(req, options));
+            self.inner.delete_membership_rbac_role_binding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_membership_rbac_role_bindings(
         &self,
         req: crate::model::ListMembershipRBACRoleBindingsRequest,
@@ -639,11 +638,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_membership_rbac_role_bindings",
-            self.inner.list_membership_rbac_role_bindings(req, options));
+            self.inner.list_membership_rbac_role_bindings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn generate_membership_rbac_role_binding_yaml(
         &self,
         req: crate::model::GenerateMembershipRBACRoleBindingYAMLRequest,
@@ -653,11 +652,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::generate_membership_rbac_role_binding_yaml",
-            self.inner.generate_membership_rbac_role_binding_yaml(req, options));
+            self.inner.generate_membership_rbac_role_binding_yaml(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -667,11 +666,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -681,11 +680,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_operation(
         &self,
         req: google_cloud_longrunning::model::DeleteOperationRequest,
@@ -695,11 +694,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::delete_operation",
-            self.inner.delete_operation(req, options));
+            self.inner.delete_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -709,7 +708,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GkeHub::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

@@ -41,7 +41,6 @@ impl<T> super::stub::DashboardsService for DashboardsService<T>
 where
     T: super::stub::DashboardsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_dashboard(
         &self,
         req: crate::model::CreateDashboardRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DashboardsService::create_dashboard",
-            self.inner.create_dashboard(req, options));
+            self.inner.create_dashboard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_dashboards(
         &self,
         req: crate::model::ListDashboardsRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DashboardsService::list_dashboards",
-            self.inner.list_dashboards(req, options));
+            self.inner.list_dashboards(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_dashboard(
         &self,
         req: crate::model::GetDashboardRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DashboardsService::get_dashboard",
-            self.inner.get_dashboard(req, options));
+            self.inner.get_dashboard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_dashboard(
         &self,
         req: crate::model::DeleteDashboardRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DashboardsService::delete_dashboard",
-            self.inner.delete_dashboard(req, options));
+            self.inner.delete_dashboard(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_dashboard(
         &self,
         req: crate::model::UpdateDashboardRequest,
@@ -107,7 +106,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DashboardsService::update_dashboard",
-            self.inner.update_dashboard(req, options));
+            self.inner.update_dashboard(req.clone(), options.clone()));
+
         pending.await
     }
 }

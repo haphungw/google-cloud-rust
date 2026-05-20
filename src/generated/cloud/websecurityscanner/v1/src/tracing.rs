@@ -41,7 +41,6 @@ impl<T> super::stub::WebSecurityScanner for WebSecurityScanner<T>
 where
     T: super::stub::WebSecurityScanner + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_scan_config(
         &self,
         req: crate::model::CreateScanConfigRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::create_scan_config",
-            self.inner.create_scan_config(req, options));
+            self.inner.create_scan_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_scan_config(
         &self,
         req: crate::model::DeleteScanConfigRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::delete_scan_config",
-            self.inner.delete_scan_config(req, options));
+            self.inner.delete_scan_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_scan_config(
         &self,
         req: crate::model::GetScanConfigRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::get_scan_config",
-            self.inner.get_scan_config(req, options));
+            self.inner.get_scan_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_scan_configs(
         &self,
         req: crate::model::ListScanConfigsRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::list_scan_configs",
-            self.inner.list_scan_configs(req, options));
+            self.inner.list_scan_configs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_scan_config(
         &self,
         req: crate::model::UpdateScanConfigRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::update_scan_config",
-            self.inner.update_scan_config(req, options));
+            self.inner.update_scan_config(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_scan_run(
         &self,
         req: crate::model::StartScanRunRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::start_scan_run",
-            self.inner.start_scan_run(req, options));
+            self.inner.start_scan_run(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_scan_run(
         &self,
         req: crate::model::GetScanRunRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::get_scan_run",
-            self.inner.get_scan_run(req, options));
+            self.inner.get_scan_run(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_scan_runs(
         &self,
         req: crate::model::ListScanRunsRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::list_scan_runs",
-            self.inner.list_scan_runs(req, options));
+            self.inner.list_scan_runs(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn stop_scan_run(
         &self,
         req: crate::model::StopScanRunRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::stop_scan_run",
-            self.inner.stop_scan_run(req, options));
+            self.inner.stop_scan_run(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_crawled_urls(
         &self,
         req: crate::model::ListCrawledUrlsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::list_crawled_urls",
-            self.inner.list_crawled_urls(req, options));
+            self.inner.list_crawled_urls(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_finding(
         &self,
         req: crate::model::GetFindingRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::get_finding",
-            self.inner.get_finding(req, options));
+            self.inner.get_finding(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_findings(
         &self,
         req: crate::model::ListFindingsRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::list_findings",
-            self.inner.list_findings(req, options));
+            self.inner.list_findings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_finding_type_stats(
         &self,
         req: crate::model::ListFindingTypeStatsRequest,
@@ -219,7 +218,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::WebSecurityScanner::list_finding_type_stats",
-            self.inner.list_finding_type_stats(req, options));
+            self.inner.list_finding_type_stats(req.clone(), options.clone()));
+
         pending.await
     }
 }

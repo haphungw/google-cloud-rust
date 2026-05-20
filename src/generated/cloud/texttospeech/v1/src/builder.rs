@@ -611,28 +611,28 @@ pub mod text_to_speech_long_audio_synthesize {
             };
 
             #[cfg(google_cloud_unstable_tracing)]
-            let poller = {
+            {
                 use google_cloud_lro::internal::PollerExt;
-                google_cloud_lro::internal::new_poller(
-                    polling_error_policy,
-                    polling_backoff_policy,
-                    start,
-                    query,
-                )
+                {
+                    google_cloud_lro::internal::new_poller(
+                        polling_error_policy,
+                        polling_backoff_policy,
+                        start,
+                        query,
+                    )
+                }
                 .with_options(poller_options)
-            };
+            }
 
             #[cfg(not(google_cloud_unstable_tracing))]
-            let poller = {
+            {
                 google_cloud_lro::internal::new_poller(
                     polling_error_policy,
                     polling_backoff_policy,
                     start,
                     query,
                 )
-            };
-
-            poller
+            }
         }
 
         /// Sets the value of [parent][crate::model::SynthesizeLongAudioRequest::parent].

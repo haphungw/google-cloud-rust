@@ -41,7 +41,6 @@ impl<T> super::stub::EssentialContactsService for EssentialContactsService<T>
 where
     T: super::stub::EssentialContactsService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_contact(
         &self,
         req: crate::model::CreateContactRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::create_contact",
-            self.inner.create_contact(req, options));
+            self.inner.create_contact(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_contact(
         &self,
         req: crate::model::UpdateContactRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::update_contact",
-            self.inner.update_contact(req, options));
+            self.inner.update_contact(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_contacts(
         &self,
         req: crate::model::ListContactsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::list_contacts",
-            self.inner.list_contacts(req, options));
+            self.inner.list_contacts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_contact(
         &self,
         req: crate::model::GetContactRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::get_contact",
-            self.inner.get_contact(req, options));
+            self.inner.get_contact(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_contact(
         &self,
         req: crate::model::DeleteContactRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::delete_contact",
-            self.inner.delete_contact(req, options));
+            self.inner.delete_contact(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn compute_contacts(
         &self,
         req: crate::model::ComputeContactsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::compute_contacts",
-            self.inner.compute_contacts(req, options));
+            self.inner.compute_contacts(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn send_test_message(
         &self,
         req: crate::model::SendTestMessageRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::EssentialContactsService::send_test_message",
-            self.inner.send_test_message(req, options));
+            self.inner.send_test_message(req.clone(), options.clone()));
+
         pending.await
     }
 }

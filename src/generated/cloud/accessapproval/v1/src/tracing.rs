@@ -41,7 +41,6 @@ impl<T> super::stub::AccessApproval for AccessApproval<T>
 where
     T: super::stub::AccessApproval + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_approval_requests(
         &self,
         req: crate::model::ListApprovalRequestsMessage,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::list_approval_requests",
-            self.inner.list_approval_requests(req, options));
+            self.inner.list_approval_requests(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_approval_request(
         &self,
         req: crate::model::GetApprovalRequestMessage,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::get_approval_request",
-            self.inner.get_approval_request(req, options));
+            self.inner.get_approval_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn approve_approval_request(
         &self,
         req: crate::model::ApproveApprovalRequestMessage,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::approve_approval_request",
-            self.inner.approve_approval_request(req, options));
+            self.inner.approve_approval_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn dismiss_approval_request(
         &self,
         req: crate::model::DismissApprovalRequestMessage,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::dismiss_approval_request",
-            self.inner.dismiss_approval_request(req, options));
+            self.inner.dismiss_approval_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn invalidate_approval_request(
         &self,
         req: crate::model::InvalidateApprovalRequestMessage,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::invalidate_approval_request",
-            self.inner.invalidate_approval_request(req, options));
+            self.inner.invalidate_approval_request(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_access_approval_settings(
         &self,
         req: crate::model::GetAccessApprovalSettingsMessage,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::get_access_approval_settings",
-            self.inner.get_access_approval_settings(req, options));
+            self.inner.get_access_approval_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_access_approval_settings(
         &self,
         req: crate::model::UpdateAccessApprovalSettingsMessage,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::update_access_approval_settings",
-            self.inner.update_access_approval_settings(req, options));
+            self.inner.update_access_approval_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_access_approval_settings(
         &self,
         req: crate::model::DeleteAccessApprovalSettingsMessage,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::delete_access_approval_settings",
-            self.inner.delete_access_approval_settings(req, options));
+            self.inner.delete_access_approval_settings(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_access_approval_service_account(
         &self,
         req: crate::model::GetAccessApprovalServiceAccountMessage,
@@ -163,7 +162,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::AccessApproval::get_access_approval_service_account",
-            self.inner.get_access_approval_service_account(req, options));
+            self.inner.get_access_approval_service_account(req.clone(), options.clone()));
+
         pending.await
     }
 }

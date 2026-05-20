@@ -41,7 +41,6 @@ impl<T> super::stub::PublicCertificateAuthorityService for PublicCertificateAuth
 where
     T: super::stub::PublicCertificateAuthorityService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_external_account_key(
         &self,
         req: crate::model::CreateExternalAccountKeyRequest,
@@ -51,7 +50,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::PublicCertificateAuthorityService::create_external_account_key",
-            self.inner.create_external_account_key(req, options));
+            self.inner.create_external_account_key(req.clone(), options.clone()));
+
         pending.await
     }
 }

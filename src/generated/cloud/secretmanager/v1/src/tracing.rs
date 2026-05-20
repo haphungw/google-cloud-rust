@@ -52,9 +52,7 @@ where
             method: "client::SecretManagerService::list_secrets",
             self.inner.list_secrets(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn create_secret(
@@ -68,9 +66,7 @@ where
             method: "client::SecretManagerService::create_secret",
             self.inner.create_secret(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn add_secret_version(
@@ -84,9 +80,7 @@ where
             method: "client::SecretManagerService::add_secret_version",
             self.inner.add_secret_version(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_secret(
@@ -100,9 +94,7 @@ where
             method: "client::SecretManagerService::get_secret",
             self.inner.get_secret(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn update_secret(
@@ -116,9 +108,7 @@ where
             method: "client::SecretManagerService::update_secret",
             self.inner.update_secret(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_secret(
@@ -132,9 +122,7 @@ where
             method: "client::SecretManagerService::delete_secret",
             self.inner.delete_secret(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_secret_versions(
@@ -148,9 +136,7 @@ where
             method: "client::SecretManagerService::list_secret_versions",
             self.inner.list_secret_versions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_secret_version(
@@ -164,9 +150,7 @@ where
             method: "client::SecretManagerService::get_secret_version",
             self.inner.get_secret_version(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn access_secret_version(
@@ -180,9 +164,7 @@ where
             method: "client::SecretManagerService::access_secret_version",
             self.inner.access_secret_version(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn disable_secret_version(
@@ -196,9 +178,7 @@ where
             method: "client::SecretManagerService::disable_secret_version",
             self.inner.disable_secret_version(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn enable_secret_version(
@@ -212,9 +192,7 @@ where
             method: "client::SecretManagerService::enable_secret_version",
             self.inner.enable_secret_version(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn destroy_secret_version(
@@ -228,9 +206,7 @@ where
             method: "client::SecretManagerService::destroy_secret_version",
             self.inner.destroy_secret_version(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn set_iam_policy(
@@ -244,9 +220,7 @@ where
             method: "client::SecretManagerService::set_iam_policy",
             self.inner.set_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_iam_policy(
@@ -260,9 +234,7 @@ where
             method: "client::SecretManagerService::get_iam_policy",
             self.inner.get_iam_policy(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn test_iam_permissions(
@@ -276,9 +248,7 @@ where
             method: "client::SecretManagerService::test_iam_permissions",
             self.inner.test_iam_permissions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -292,9 +262,7 @@ where
             method: "client::SecretManagerService::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -308,9 +276,7 @@ where
             method: "client::SecretManagerService::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 }
 

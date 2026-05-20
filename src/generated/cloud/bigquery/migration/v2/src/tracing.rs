@@ -41,7 +41,6 @@ impl<T> super::stub::MigrationService for MigrationService<T>
 where
     T: super::stub::MigrationService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_migration_workflow(
         &self,
         req: crate::model::CreateMigrationWorkflowRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::create_migration_workflow",
-            self.inner.create_migration_workflow(req, options));
+            self.inner.create_migration_workflow(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_migration_workflow(
         &self,
         req: crate::model::GetMigrationWorkflowRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::get_migration_workflow",
-            self.inner.get_migration_workflow(req, options));
+            self.inner.get_migration_workflow(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_migration_workflows(
         &self,
         req: crate::model::ListMigrationWorkflowsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::list_migration_workflows",
-            self.inner.list_migration_workflows(req, options));
+            self.inner.list_migration_workflows(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_migration_workflow(
         &self,
         req: crate::model::DeleteMigrationWorkflowRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::delete_migration_workflow",
-            self.inner.delete_migration_workflow(req, options));
+            self.inner.delete_migration_workflow(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn start_migration_workflow(
         &self,
         req: crate::model::StartMigrationWorkflowRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::start_migration_workflow",
-            self.inner.start_migration_workflow(req, options));
+            self.inner.start_migration_workflow(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_migration_subtask(
         &self,
         req: crate::model::GetMigrationSubtaskRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::get_migration_subtask",
-            self.inner.get_migration_subtask(req, options));
+            self.inner.get_migration_subtask(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_migration_subtasks(
         &self,
         req: crate::model::ListMigrationSubtasksRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::MigrationService::list_migration_subtasks",
-            self.inner.list_migration_subtasks(req, options));
+            self.inner.list_migration_subtasks(req.clone(), options.clone()));
+
         pending.await
     }
 }

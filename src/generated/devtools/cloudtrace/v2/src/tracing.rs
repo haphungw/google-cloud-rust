@@ -41,7 +41,6 @@ impl<T> super::stub::TraceService for TraceService<T>
 where
     T: super::stub::TraceService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_write_spans(
         &self,
         req: crate::model::BatchWriteSpansRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TraceService::batch_write_spans",
-            self.inner.batch_write_spans(req, options));
+            self.inner.batch_write_spans(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_span(
         &self,
         req: crate::model::Span,
@@ -65,7 +64,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TraceService::create_span",
-            self.inner.create_span(req, options));
+            self.inner.create_span(req.clone(), options.clone()));
+
         pending.await
     }
 }

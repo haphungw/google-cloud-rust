@@ -41,7 +41,6 @@ impl<T> super::stub::BinauthzManagementServiceV1 for BinauthzManagementServiceV1
 where
     T: super::stub::BinauthzManagementServiceV1 + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_policy(
         &self,
         req: crate::model::GetPolicyRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::get_policy",
-            self.inner.get_policy(req, options));
+            self.inner.get_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_policy(
         &self,
         req: crate::model::UpdatePolicyRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::update_policy",
-            self.inner.update_policy(req, options));
+            self.inner.update_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_attestor(
         &self,
         req: crate::model::CreateAttestorRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::create_attestor",
-            self.inner.create_attestor(req, options));
+            self.inner.create_attestor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_attestor(
         &self,
         req: crate::model::GetAttestorRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::get_attestor",
-            self.inner.get_attestor(req, options));
+            self.inner.get_attestor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_attestor(
         &self,
         req: crate::model::UpdateAttestorRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::update_attestor",
-            self.inner.update_attestor(req, options));
+            self.inner.update_attestor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_attestors(
         &self,
         req: crate::model::ListAttestorsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::list_attestors",
-            self.inner.list_attestors(req, options));
+            self.inner.list_attestors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_attestor(
         &self,
         req: crate::model::DeleteAttestorRequest,
@@ -135,7 +134,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::BinauthzManagementServiceV1::delete_attestor",
-            self.inner.delete_attestor(req, options));
+            self.inner.delete_attestor(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -166,7 +166,6 @@ impl<T> super::stub::SystemPolicyV1 for SystemPolicyV1<T>
 where
     T: super::stub::SystemPolicyV1 + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_system_policy(
         &self,
         req: crate::model::GetSystemPolicyRequest,
@@ -176,7 +175,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SystemPolicyV1::get_system_policy",
-            self.inner.get_system_policy(req, options));
+            self.inner.get_system_policy(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -207,7 +207,6 @@ impl<T> super::stub::ValidationHelperV1 for ValidationHelperV1<T>
 where
     T: super::stub::ValidationHelperV1 + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn validate_attestation_occurrence(
         &self,
         req: crate::model::ValidateAttestationOccurrenceRequest,
@@ -217,7 +216,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ValidationHelperV1::validate_attestation_occurrence",
-            self.inner.validate_attestation_occurrence(req, options));
+            self.inner.validate_attestation_occurrence(req.clone(), options.clone()));
+
         pending.await
     }
 }

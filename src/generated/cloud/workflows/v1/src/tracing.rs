@@ -52,9 +52,7 @@ where
             method: "client::Workflows::list_workflows",
             self.inner.list_workflows(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_workflow(
@@ -68,9 +66,7 @@ where
             method: "client::Workflows::get_workflow",
             self.inner.get_workflow(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn create_workflow(
@@ -84,9 +80,7 @@ where
             method: "client::Workflows::create_workflow",
             self.inner.create_workflow(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_workflow(
@@ -100,9 +94,7 @@ where
             method: "client::Workflows::delete_workflow",
             self.inner.delete_workflow(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn update_workflow(
@@ -116,9 +108,7 @@ where
             method: "client::Workflows::update_workflow",
             self.inner.update_workflow(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_workflow_revisions(
@@ -132,9 +122,7 @@ where
             method: "client::Workflows::list_workflow_revisions",
             self.inner.list_workflow_revisions(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_locations(
@@ -148,9 +136,7 @@ where
             method: "client::Workflows::list_locations",
             self.inner.list_locations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_location(
@@ -164,9 +150,7 @@ where
             method: "client::Workflows::get_location",
             self.inner.get_location(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn list_operations(
@@ -180,9 +164,7 @@ where
             method: "client::Workflows::list_operations",
             self.inner.list_operations(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn get_operation(
@@ -196,9 +178,7 @@ where
             method: "client::Workflows::get_operation",
             self.inner.get_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     async fn delete_operation(
@@ -212,9 +192,7 @@ where
             method: "client::Workflows::delete_operation",
             self.inner.delete_operation(req.clone(), options.clone()));
 
-        let result = pending.await;
-
-        result
+        pending.await
     }
 
     fn get_polling_error_policy(

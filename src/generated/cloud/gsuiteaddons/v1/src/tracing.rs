@@ -41,7 +41,6 @@ impl<T> super::stub::GSuiteAddOns for GSuiteAddOns<T>
 where
     T: super::stub::GSuiteAddOns + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_authorization(
         &self,
         req: crate::model::GetAuthorizationRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::get_authorization",
-            self.inner.get_authorization(req, options));
+            self.inner.get_authorization(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_deployment(
         &self,
         req: crate::model::CreateDeploymentRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::create_deployment",
-            self.inner.create_deployment(req, options));
+            self.inner.create_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn replace_deployment(
         &self,
         req: crate::model::ReplaceDeploymentRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::replace_deployment",
-            self.inner.replace_deployment(req, options));
+            self.inner.replace_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_deployment(
         &self,
         req: crate::model::GetDeploymentRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::get_deployment",
-            self.inner.get_deployment(req, options));
+            self.inner.get_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_deployments(
         &self,
         req: crate::model::ListDeploymentsRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::list_deployments",
-            self.inner.list_deployments(req, options));
+            self.inner.list_deployments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_deployment(
         &self,
         req: crate::model::DeleteDeploymentRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::delete_deployment",
-            self.inner.delete_deployment(req, options));
+            self.inner.delete_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn install_deployment(
         &self,
         req: crate::model::InstallDeploymentRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::install_deployment",
-            self.inner.install_deployment(req, options));
+            self.inner.install_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn uninstall_deployment(
         &self,
         req: crate::model::UninstallDeploymentRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::uninstall_deployment",
-            self.inner.uninstall_deployment(req, options));
+            self.inner.uninstall_deployment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_install_status(
         &self,
         req: crate::model::GetInstallStatusRequest,
@@ -163,7 +162,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::GSuiteAddOns::get_install_status",
-            self.inner.get_install_status(req, options));
+            self.inner.get_install_status(req.clone(), options.clone()));
+
         pending.await
     }
 }

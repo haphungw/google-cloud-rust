@@ -41,7 +41,6 @@ impl<T> super::stub::Executions for Executions<T>
 where
     T: super::stub::Executions + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_executions(
         &self,
         req: crate::model::ListExecutionsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Executions::list_executions",
-            self.inner.list_executions(req, options));
+            self.inner.list_executions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_execution(
         &self,
         req: crate::model::CreateExecutionRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Executions::create_execution",
-            self.inner.create_execution(req, options));
+            self.inner.create_execution(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_execution(
         &self,
         req: crate::model::GetExecutionRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Executions::get_execution",
-            self.inner.get_execution(req, options));
+            self.inner.get_execution(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_execution(
         &self,
         req: crate::model::CancelExecutionRequest,
@@ -93,7 +92,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::Executions::cancel_execution",
-            self.inner.cancel_execution(req, options));
+            self.inner.cancel_execution(req.clone(), options.clone()));
+
         pending.await
     }
 }

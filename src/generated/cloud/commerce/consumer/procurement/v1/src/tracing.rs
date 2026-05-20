@@ -41,7 +41,6 @@ impl<T> super::stub::LicenseManagementService for LicenseManagementService<T>
 where
     T: super::stub::LicenseManagementService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_license_pool(
         &self,
         req: crate::model::GetLicensePoolRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseManagementService::get_license_pool",
-            self.inner.get_license_pool(req, options));
+            self.inner.get_license_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_license_pool(
         &self,
         req: crate::model::UpdateLicensePoolRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseManagementService::update_license_pool",
-            self.inner.update_license_pool(req, options));
+            self.inner.update_license_pool(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn assign(
         &self,
         req: crate::model::AssignRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseManagementService::assign",
-            self.inner.assign(req, options));
+            self.inner.assign(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn unassign(
         &self,
         req: crate::model::UnassignRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseManagementService::unassign",
-            self.inner.unassign(req, options));
+            self.inner.unassign(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enumerate_licensed_users(
         &self,
         req: crate::model::EnumerateLicensedUsersRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseManagementService::enumerate_licensed_users",
-            self.inner.enumerate_licensed_users(req, options));
+            self.inner.enumerate_licensed_users(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -121,7 +120,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::LicenseManagementService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -152,7 +152,6 @@ impl<T> super::stub::ConsumerProcurementService for ConsumerProcurementService<T
 where
     T: super::stub::ConsumerProcurementService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn place_order(
         &self,
         req: crate::model::PlaceOrderRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConsumerProcurementService::place_order",
-            self.inner.place_order(req, options));
+            self.inner.place_order(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_order(
         &self,
         req: crate::model::GetOrderRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConsumerProcurementService::get_order",
-            self.inner.get_order(req, options));
+            self.inner.get_order(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_orders(
         &self,
         req: crate::model::ListOrdersRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConsumerProcurementService::list_orders",
-            self.inner.list_orders(req, options));
+            self.inner.list_orders(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn modify_order(
         &self,
         req: crate::model::ModifyOrderRequest,
@@ -204,11 +203,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConsumerProcurementService::modify_order",
-            self.inner.modify_order(req, options));
+            self.inner.modify_order(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_order(
         &self,
         req: crate::model::CancelOrderRequest,
@@ -218,11 +217,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConsumerProcurementService::cancel_order",
-            self.inner.cancel_order(req, options));
+            self.inner.cancel_order(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -232,7 +231,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::ConsumerProcurementService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

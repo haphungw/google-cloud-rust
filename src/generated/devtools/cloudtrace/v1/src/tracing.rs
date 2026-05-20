@@ -41,7 +41,6 @@ impl<T> super::stub::TraceService for TraceService<T>
 where
     T: super::stub::TraceService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_traces(
         &self,
         req: crate::model::ListTracesRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TraceService::list_traces",
-            self.inner.list_traces(req, options));
+            self.inner.list_traces(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_trace(
         &self,
         req: crate::model::GetTraceRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TraceService::get_trace",
-            self.inner.get_trace(req, options));
+            self.inner.get_trace(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn patch_traces(
         &self,
         req: crate::model::PatchTracesRequest,
@@ -79,7 +78,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::TraceService::patch_traces",
-            self.inner.patch_traces(req, options));
+            self.inner.patch_traces(req.clone(), options.clone()));
+
         pending.await
     }
 }

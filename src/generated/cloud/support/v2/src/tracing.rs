@@ -41,7 +41,6 @@ impl<T> super::stub::CaseAttachmentService for CaseAttachmentService<T>
 where
     T: super::stub::CaseAttachmentService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_attachments(
         &self,
         req: crate::model::ListAttachmentsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseAttachmentService::list_attachments",
-            self.inner.list_attachments(req, options));
+            self.inner.list_attachments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_attachment(
         &self,
         req: crate::model::GetAttachmentRequest,
@@ -65,7 +64,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseAttachmentService::get_attachment",
-            self.inner.get_attachment(req, options));
+            self.inner.get_attachment(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -96,7 +96,6 @@ impl<T> super::stub::CaseService for CaseService<T>
 where
     T: super::stub::CaseService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_case(
         &self,
         req: crate::model::GetCaseRequest,
@@ -106,11 +105,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::get_case",
-            self.inner.get_case(req, options));
+            self.inner.get_case(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_cases(
         &self,
         req: crate::model::ListCasesRequest,
@@ -120,11 +119,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::list_cases",
-            self.inner.list_cases(req, options));
+            self.inner.list_cases(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_cases(
         &self,
         req: crate::model::SearchCasesRequest,
@@ -134,11 +133,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::search_cases",
-            self.inner.search_cases(req, options));
+            self.inner.search_cases(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_case(
         &self,
         req: crate::model::CreateCaseRequest,
@@ -148,11 +147,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::create_case",
-            self.inner.create_case(req, options));
+            self.inner.create_case(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_case(
         &self,
         req: crate::model::UpdateCaseRequest,
@@ -162,11 +161,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::update_case",
-            self.inner.update_case(req, options));
+            self.inner.update_case(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn escalate_case(
         &self,
         req: crate::model::EscalateCaseRequest,
@@ -176,11 +175,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::escalate_case",
-            self.inner.escalate_case(req, options));
+            self.inner.escalate_case(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn close_case(
         &self,
         req: crate::model::CloseCaseRequest,
@@ -190,11 +189,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::close_case",
-            self.inner.close_case(req, options));
+            self.inner.close_case(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn search_case_classifications(
         &self,
         req: crate::model::SearchCaseClassificationsRequest,
@@ -204,7 +203,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CaseService::search_case_classifications",
-            self.inner.search_case_classifications(req, options));
+            self.inner.search_case_classifications(req.clone(), options.clone()));
+
         pending.await
     }
 }
@@ -235,7 +235,6 @@ impl<T> super::stub::CommentService for CommentService<T>
 where
     T: super::stub::CommentService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_comments(
         &self,
         req: crate::model::ListCommentsRequest,
@@ -245,11 +244,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CommentService::list_comments",
-            self.inner.list_comments(req, options));
+            self.inner.list_comments(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_comment(
         &self,
         req: crate::model::CreateCommentRequest,
@@ -259,11 +258,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CommentService::create_comment",
-            self.inner.create_comment(req, options));
+            self.inner.create_comment(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_comment(
         &self,
         req: crate::model::GetCommentRequest,
@@ -273,7 +272,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::CommentService::get_comment",
-            self.inner.get_comment(req, options));
+            self.inner.get_comment(req.clone(), options.clone()));
+
         pending.await
     }
 }

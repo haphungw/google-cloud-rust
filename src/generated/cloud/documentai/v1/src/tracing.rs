@@ -41,7 +41,6 @@ impl<T> super::stub::DocumentProcessorService for DocumentProcessorService<T>
 where
     T: super::stub::DocumentProcessorService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn process_document(
         &self,
         req: crate::model::ProcessRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::process_document",
-            self.inner.process_document(req, options));
+            self.inner.process_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn batch_process_documents(
         &self,
         req: crate::model::BatchProcessRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::batch_process_documents",
-            self.inner.batch_process_documents(req, options));
+            self.inner.batch_process_documents(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn fetch_processor_types(
         &self,
         req: crate::model::FetchProcessorTypesRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::fetch_processor_types",
-            self.inner.fetch_processor_types(req, options));
+            self.inner.fetch_processor_types(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_processor_types(
         &self,
         req: crate::model::ListProcessorTypesRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::list_processor_types",
-            self.inner.list_processor_types(req, options));
+            self.inner.list_processor_types(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_processor_type(
         &self,
         req: crate::model::GetProcessorTypeRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::get_processor_type",
-            self.inner.get_processor_type(req, options));
+            self.inner.get_processor_type(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_processors(
         &self,
         req: crate::model::ListProcessorsRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::list_processors",
-            self.inner.list_processors(req, options));
+            self.inner.list_processors(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_processor(
         &self,
         req: crate::model::GetProcessorRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::get_processor",
-            self.inner.get_processor(req, options));
+            self.inner.get_processor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn train_processor_version(
         &self,
         req: crate::model::TrainProcessorVersionRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::train_processor_version",
-            self.inner.train_processor_version(req, options));
+            self.inner.train_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_processor_version(
         &self,
         req: crate::model::GetProcessorVersionRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::get_processor_version",
-            self.inner.get_processor_version(req, options));
+            self.inner.get_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_processor_versions(
         &self,
         req: crate::model::ListProcessorVersionsRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::list_processor_versions",
-            self.inner.list_processor_versions(req, options));
+            self.inner.list_processor_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_processor_version(
         &self,
         req: crate::model::DeleteProcessorVersionRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::delete_processor_version",
-            self.inner.delete_processor_version(req, options));
+            self.inner.delete_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn deploy_processor_version(
         &self,
         req: crate::model::DeployProcessorVersionRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::deploy_processor_version",
-            self.inner.deploy_processor_version(req, options));
+            self.inner.deploy_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn undeploy_processor_version(
         &self,
         req: crate::model::UndeployProcessorVersionRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::undeploy_processor_version",
-            self.inner.undeploy_processor_version(req, options));
+            self.inner.undeploy_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_processor(
         &self,
         req: crate::model::CreateProcessorRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::create_processor",
-            self.inner.create_processor(req, options));
+            self.inner.create_processor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_processor(
         &self,
         req: crate::model::DeleteProcessorRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::delete_processor",
-            self.inner.delete_processor(req, options));
+            self.inner.delete_processor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_processor(
         &self,
         req: crate::model::EnableProcessorRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::enable_processor",
-            self.inner.enable_processor(req, options));
+            self.inner.enable_processor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_processor(
         &self,
         req: crate::model::DisableProcessorRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::disable_processor",
-            self.inner.disable_processor(req, options));
+            self.inner.disable_processor(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_default_processor_version(
         &self,
         req: crate::model::SetDefaultProcessorVersionRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::set_default_processor_version",
-            self.inner.set_default_processor_version(req, options));
+            self.inner.set_default_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn review_document(
         &self,
         req: crate::model::ReviewDocumentRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::review_document",
-            self.inner.review_document(req, options));
+            self.inner.review_document(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn evaluate_processor_version(
         &self,
         req: crate::model::EvaluateProcessorVersionRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::evaluate_processor_version",
-            self.inner.evaluate_processor_version(req, options));
+            self.inner.evaluate_processor_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_evaluation(
         &self,
         req: crate::model::GetEvaluationRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::get_evaluation",
-            self.inner.get_evaluation(req, options));
+            self.inner.get_evaluation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_evaluations(
         &self,
         req: crate::model::ListEvaluationsRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::list_evaluations",
-            self.inner.list_evaluations(req, options));
+            self.inner.list_evaluations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: google_cloud_location::model::ListLocationsRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: google_cloud_location::model::GetLocationRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_operations(
         &self,
         req: google_cloud_longrunning::model::ListOperationsRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::list_operations",
-            self.inner.list_operations(req, options));
+            self.inner.list_operations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_operation(
         &self,
         req: google_cloud_longrunning::model::GetOperationRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::get_operation",
-            self.inner.get_operation(req, options));
+            self.inner.get_operation(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn cancel_operation(
         &self,
         req: google_cloud_longrunning::model::CancelOperationRequest,
@@ -415,7 +414,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::DocumentProcessorService::cancel_operation",
-            self.inner.cancel_operation(req, options));
+            self.inner.cancel_operation(req.clone(), options.clone()));
+
         pending.await
     }
 

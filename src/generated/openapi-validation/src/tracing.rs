@@ -41,7 +41,6 @@ impl<T> super::stub::SecretManagerService for SecretManagerService<T>
 where
     T: super::stub::SecretManagerService + std::fmt::Debug + Send + Sync,
 {
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_locations(
         &self,
         req: crate::model::secret_manager_service::ListLocationsRequest,
@@ -51,11 +50,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::list_locations",
-            self.inner.list_locations(req, options));
+            self.inner.list_locations(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_location(
         &self,
         req: crate::model::secret_manager_service::GetLocationRequest,
@@ -65,11 +64,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_location",
-            self.inner.get_location(req, options));
+            self.inner.get_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_secrets(
         &self,
         req: crate::model::secret_manager_service::ListSecretsRequest,
@@ -79,11 +78,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::list_secrets",
-            self.inner.list_secrets(req, options));
+            self.inner.list_secrets(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_secret(
         &self,
         req: crate::model::secret_manager_service::CreateSecretRequest,
@@ -93,11 +92,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::create_secret",
-            self.inner.create_secret(req, options));
+            self.inner.create_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_secrets_by_project_and_location(
         &self,
         req: crate::model::secret_manager_service::ListSecretsByProjectAndLocationRequest,
@@ -107,11 +106,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::list_secrets_by_project_and_location",
-            self.inner.list_secrets_by_project_and_location(req, options));
+            self.inner.list_secrets_by_project_and_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn create_secret_by_project_and_location(
         &self,
         req: crate::model::secret_manager_service::CreateSecretByProjectAndLocationRequest,
@@ -121,11 +120,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::create_secret_by_project_and_location",
-            self.inner.create_secret_by_project_and_location(req, options));
+            self.inner.create_secret_by_project_and_location(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_secret_version(
         &self,
         req: crate::model::secret_manager_service::AddSecretVersionRequest,
@@ -135,11 +134,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::add_secret_version",
-            self.inner.add_secret_version(req, options));
+            self.inner.add_secret_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn add_secret_version_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::AddSecretVersionByProjectAndLocationAndSecretRequest,
@@ -149,11 +148,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::add_secret_version_by_project_and_location_and_secret",
-            self.inner.add_secret_version_by_project_and_location_and_secret(req, options));
+            self.inner.add_secret_version_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_secret(
         &self,
         req: crate::model::secret_manager_service::GetSecretRequest,
@@ -163,11 +162,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_secret",
-            self.inner.get_secret(req, options));
+            self.inner.get_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_secret(
         &self,
         req: crate::model::secret_manager_service::DeleteSecretRequest,
@@ -177,11 +176,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::delete_secret",
-            self.inner.delete_secret(req, options));
+            self.inner.delete_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_secret(
         &self,
         req: crate::model::secret_manager_service::UpdateSecretRequest,
@@ -191,11 +190,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::update_secret",
-            self.inner.update_secret(req, options));
+            self.inner.update_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_secret_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::GetSecretByProjectAndLocationAndSecretRequest,
@@ -205,11 +204,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_secret_by_project_and_location_and_secret",
-            self.inner.get_secret_by_project_and_location_and_secret(req, options));
+            self.inner.get_secret_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn delete_secret_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::DeleteSecretByProjectAndLocationAndSecretRequest,
@@ -219,11 +218,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::delete_secret_by_project_and_location_and_secret",
-            self.inner.delete_secret_by_project_and_location_and_secret(req, options));
+            self.inner.delete_secret_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn update_secret_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::UpdateSecretByProjectAndLocationAndSecretRequest,
@@ -233,11 +232,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::update_secret_by_project_and_location_and_secret",
-            self.inner.update_secret_by_project_and_location_and_secret(req, options));
+            self.inner.update_secret_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_secret_versions(
         &self,
         req: crate::model::secret_manager_service::ListSecretVersionsRequest,
@@ -247,11 +246,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::list_secret_versions",
-            self.inner.list_secret_versions(req, options));
+            self.inner.list_secret_versions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn list_secret_versions_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::ListSecretVersionsByProjectAndLocationAndSecretRequest,
@@ -261,11 +260,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::list_secret_versions_by_project_and_location_and_secret",
-            self.inner.list_secret_versions_by_project_and_location_and_secret(req, options));
+            self.inner.list_secret_versions_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_secret_version(
         &self,
         req: crate::model::secret_manager_service::GetSecretVersionRequest,
@@ -275,11 +274,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_secret_version",
-            self.inner.get_secret_version(req, options));
+            self.inner.get_secret_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_secret_version_by_project_and_location_and_secret_and_version(
         &self,
         req: crate::model::secret_manager_service::GetSecretVersionByProjectAndLocationAndSecretAndVersionRequest,
@@ -289,11 +288,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_secret_version_by_project_and_location_and_secret_and_version",
-            self.inner.get_secret_version_by_project_and_location_and_secret_and_version(req, options));
+            self.inner.get_secret_version_by_project_and_location_and_secret_and_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn access_secret_version(
         &self,
         req: crate::model::secret_manager_service::AccessSecretVersionRequest,
@@ -303,11 +302,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::access_secret_version",
-            self.inner.access_secret_version(req, options));
+            self.inner.access_secret_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn access_secret_version_by_project_and_location_and_secret_and_version(
         &self,
         req: crate::model::secret_manager_service::AccessSecretVersionByProjectAndLocationAndSecretAndVersionRequest,
@@ -317,11 +316,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::access_secret_version_by_project_and_location_and_secret_and_version",
-            self.inner.access_secret_version_by_project_and_location_and_secret_and_version(req, options));
+            self.inner.access_secret_version_by_project_and_location_and_secret_and_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_secret_version(
         &self,
         req: crate::model::secret_manager_service::DisableSecretVersionRequest,
@@ -331,11 +330,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::disable_secret_version",
-            self.inner.disable_secret_version(req, options));
+            self.inner.disable_secret_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn disable_secret_version_by_project_and_location_and_secret_and_version(
         &self,
         req: crate::model::secret_manager_service::DisableSecretVersionByProjectAndLocationAndSecretAndVersionRequest,
@@ -345,11 +344,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::disable_secret_version_by_project_and_location_and_secret_and_version",
-            self.inner.disable_secret_version_by_project_and_location_and_secret_and_version(req, options));
+            self.inner.disable_secret_version_by_project_and_location_and_secret_and_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_secret_version(
         &self,
         req: crate::model::secret_manager_service::EnableSecretVersionRequest,
@@ -359,11 +358,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::enable_secret_version",
-            self.inner.enable_secret_version(req, options));
+            self.inner.enable_secret_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn enable_secret_version_by_project_and_location_and_secret_and_version(
         &self,
         req: crate::model::secret_manager_service::EnableSecretVersionByProjectAndLocationAndSecretAndVersionRequest,
@@ -373,11 +372,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::enable_secret_version_by_project_and_location_and_secret_and_version",
-            self.inner.enable_secret_version_by_project_and_location_and_secret_and_version(req, options));
+            self.inner.enable_secret_version_by_project_and_location_and_secret_and_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn destroy_secret_version(
         &self,
         req: crate::model::secret_manager_service::DestroySecretVersionRequest,
@@ -387,11 +386,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::destroy_secret_version",
-            self.inner.destroy_secret_version(req, options));
+            self.inner.destroy_secret_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn destroy_secret_version_by_project_and_location_and_secret_and_version(
         &self,
         req: crate::model::secret_manager_service::DestroySecretVersionByProjectAndLocationAndSecretAndVersionRequest,
@@ -401,11 +400,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::destroy_secret_version_by_project_and_location_and_secret_and_version",
-            self.inner.destroy_secret_version_by_project_and_location_and_secret_and_version(req, options));
+            self.inner.destroy_secret_version_by_project_and_location_and_secret_and_version(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy(
         &self,
         req: crate::model::secret_manager_service::SetIamPolicyRequest,
@@ -415,11 +414,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::set_iam_policy",
-            self.inner.set_iam_policy(req, options));
+            self.inner.set_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn set_iam_policy_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::SetIamPolicyByProjectAndLocationAndSecretRequest,
@@ -429,11 +428,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::set_iam_policy_by_project_and_location_and_secret",
-            self.inner.set_iam_policy_by_project_and_location_and_secret(req, options));
+            self.inner.set_iam_policy_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy(
         &self,
         req: crate::model::secret_manager_service::GetIamPolicyRequest,
@@ -443,11 +442,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_iam_policy",
-            self.inner.get_iam_policy(req, options));
+            self.inner.get_iam_policy(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn get_iam_policy_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::GetIamPolicyByProjectAndLocationAndSecretRequest,
@@ -457,11 +456,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::get_iam_policy_by_project_and_location_and_secret",
-            self.inner.get_iam_policy_by_project_and_location_and_secret(req, options));
+            self.inner.get_iam_policy_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions(
         &self,
         req: crate::model::secret_manager_service::TestIamPermissionsRequest,
@@ -471,11 +470,11 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::test_iam_permissions",
-            self.inner.test_iam_permissions(req, options));
+            self.inner.test_iam_permissions(req.clone(), options.clone()));
+
         pending.await
     }
 
-    #[tracing::instrument(level = tracing::Level::DEBUG, ret)]
     async fn test_iam_permissions_by_project_and_location_and_secret(
         &self,
         req: crate::model::secret_manager_service::TestIamPermissionsByProjectAndLocationAndSecretRequest,
@@ -485,7 +484,8 @@ where
             metric: self.duration.clone(),
             info: *info::INSTRUMENTATION_CLIENT_INFO,
             method: "client::SecretManagerService::test_iam_permissions_by_project_and_location_and_secret",
-            self.inner.test_iam_permissions_by_project_and_location_and_secret(req, options));
+            self.inner.test_iam_permissions_by_project_and_location_and_secret(req.clone(), options.clone()));
+
         pending.await
     }
 }
