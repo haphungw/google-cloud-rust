@@ -18,6 +18,9 @@ mod copy_table_multiple_source;
 mod create_job;
 mod get_job;
 mod list_jobs;
+mod load_from_gcs;
+mod add_column_load_append;
+mod relax_column_load_append;
 
 use google_cloud_bigquery_v2::client::DatasetService;
 use google_cloud_bigquery_v2::model::{Dataset, DatasetReference};
@@ -62,6 +65,9 @@ pub async fn run_samples_with_resources() -> anyhow::Result<()> {
     let res = async {
         copy_table::sample(&project_id, &dataset_id).await?;
         copy_table_multiple_source::sample(&project_id, &dataset_id).await?;
+        load_from_gcs::sample(&project_id, &dataset_id).await?;
+        add_column_load_append::sample(&project_id, &dataset_id).await?;
+        relax_column_load_append::sample(&project_id, &dataset_id).await?;
         Ok::<(), anyhow::Error>(())
     }
     .await;
