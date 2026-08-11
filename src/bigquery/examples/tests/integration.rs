@@ -33,4 +33,9 @@ mod tests {
     async fn job_samples() -> anyhow::Result<()> {
         job::run_samples().await.inspect_err(anydump)
     }
+
+    #[tokio::test]
+    async fn job_samples_with_resources() -> anyhow::Result<()> {
+        job::run_samples_with_resources().await.inspect_err(anydump)
+    }
 }
