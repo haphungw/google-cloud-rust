@@ -37,6 +37,7 @@ mod partitioned_table;
 #[allow(clippy::module_inception)]
 mod query;
 mod query_append;
+mod relax_column_query_append;
 mod script;
 mod simple_app;
 mod total_rows;
@@ -115,6 +116,7 @@ pub async fn run_samples_with_resources() -> anyhow::Result<()> {
     let ddl_view_id = format!("view_{}", random_id_suffix());
     let ddl_routine_id = format!("fn_{}", random_id_suffix());
     let append_table_id = format!("append_{}", random_id_suffix());
+    let relax_append_table_id = format!("relax_append_{}", random_id_suffix());
 
     let pending: Vec<Pin<Box<dyn Future<Output = anyhow::Result<()>>>>> = vec![
         Box::pin(destination_table::sample(
@@ -142,6 +144,11 @@ pub async fn run_samples_with_resources() -> anyhow::Result<()> {
             &project_id,
             &dataset_id,
             &append_table_id,
+        )),
+        Box::pin(relax_column_query_append::sample(
+            &project_id,
+            &dataset_id,
+            &relax_append_table_id,
         )),
     ];
     let res: anyhow::Result<Vec<_>> = futures::future::join_all(pending)
