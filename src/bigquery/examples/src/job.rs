@@ -17,6 +17,9 @@ mod cancel_job;
 mod copy_table;
 mod copy_table_multiple_source;
 mod create_job;
+mod extract_table;
+mod extract_table_compressed;
+mod extract_table_json;
 mod get_job;
 mod list_jobs;
 mod load_from_gcs;
@@ -68,6 +71,19 @@ pub async fn run_samples_with_resources() -> anyhow::Result<()> {
         load_from_gcs::sample(&project_id, &dataset_id).await?;
         add_column_load_append::sample(&project_id, &dataset_id).await?;
         relax_column_load_append::sample(&project_id, &dataset_id).await?;
+
+        if let Ok(bucket_name) = std::env::var("GOOGLE_CLOUD_RUST_TEST_STORAGE_BUCKET") {
+            println!("Running extract tests to bucket: {}", bucket_name);
+            extract_table::sample(&project_id, &dataset_id, "us_states", &bucket_name).await?;
+            extract_table_json::sample(&project_id, &dataset_id, "us_states", &bucket_name).await?;
+            extract_table_compressed::sample(&project_id, &dataset_id, "us_states", &bucket_name)
+                .await?;
+        } else {
+            println!(
+                "Skipping extract tests because GOOGLE_CLOUD_RUST_TEST_STORAGE_BUCKET is not set"
+            );
+        }
+
         Ok::<(), anyhow::Error>(())
     }
     .await;
