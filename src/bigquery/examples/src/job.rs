@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+mod add_column_load_append;
 mod cancel_job;
 mod copy_table;
 mod copy_table_multiple_source;
@@ -19,7 +20,6 @@ mod create_job;
 mod get_job;
 mod list_jobs;
 mod load_from_gcs;
-mod add_column_load_append;
 mod relax_column_load_append;
 
 use google_cloud_bigquery_v2::client::DatasetService;
