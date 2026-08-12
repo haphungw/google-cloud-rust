@@ -39,31 +39,15 @@ pub async fn sample(project_id: &str, dataset_id: &str) -> anyhow::Result<()> {
         ),
     );
 
-    let inserted = job_service
+    let job = job_service
         .insert_job()
         .set_project_id(project_id)
         .set_job(job)
-        .send()
+        .into_job_poller()
+        .until_done()
         .await?;
-
-    let job_ref = inserted.job_reference.unwrap();
-    println!("Created copy job: {}", job_ref.job_id);
-
-    // Wait for the job to complete
-
-    println!("Table copied successfully.");
-    loop {
-        let current_job = job_service
-            .get_job()
-            .set_project_id(project_id)
-            .set_job_id(&job_ref.job_id)
-            .send()
-            .await?;
-        if current_job.status.unwrap().state == "DONE" {
-            break;
-        }
-        tokio::time::sleep(std::time::Duration::from_secs(2)).await;
-    }
+    let job_id = job.job_reference.unwrap().job_id;
+    println!("Job completed successfully: {}", job_id);
 
     Ok(())
 }
