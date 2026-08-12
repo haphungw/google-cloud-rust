@@ -39,17 +39,15 @@ pub async fn sample(project_id: &str) -> anyhow::Result<()> {
     println!("Created long-running job: {}", job_id);
 
     // Call the job cancellation API abruptly to abort its execution
-    let cancelled = job_service
+    let resp = job_service
         .cancel_job()
         .set_project_id(project_id)
         .set_job_id(&job_id)
         .set_location("US")
         .send()
-        .await;
+        .await?;
 
-    if cancelled.is_ok() {
-        println!("Successfully cancelled job.");
-    }
+    println!("Successfully cancelled job: {resp:?}");
 
     Ok(())
 }
