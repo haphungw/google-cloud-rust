@@ -14,21 +14,31 @@
 
 // [START bigquery_create_job]
 use google_cloud_bigquery_v2::client::JobService;
-use google_cloud_bigquery_v2::model::{Job, JobConfiguration, JobConfigurationQuery};
+use google_cloud_bigquery_v2::model::{Job, JobConfiguration, JobConfigurationQuery, JobReference};
 use std::collections::HashMap;
 
 pub async fn sample(project_id: &str) -> anyhow::Result<String> {
     let job_service = JobService::builder().build().await?;
-    let job = Job::new().set_configuration(
-        JobConfiguration::new()
-            .set_labels(HashMap::from([("example-label".to_string(), "example-value".to_string())]))
-            .set_query(
-                JobConfigurationQuery::new()
-                    .set_query("SELECT 1")
-                    .set_use_legacy_sql(false)
-                    .set_maximum_bytes_billed(10000000_i64),
-            ),
-    );
+    let job = Job::new()
+        .set_job_reference(
+            JobReference::new()
+                .set_project_id(project_id)
+                .set_job_id(format!("my_job_prefix_{}", rand::random::<u64>()))
+                .set_location("US"),
+        )
+        .set_configuration(
+            JobConfiguration::new()
+                .set_labels(HashMap::from([(
+                    "example-label".to_string(),
+                    "example-value".to_string(),
+                )]))
+                .set_query(
+                    JobConfigurationQuery::new()
+                        .set_query("SELECT 1")
+                        .set_use_legacy_sql(false)
+                        .set_maximum_bytes_billed(10000000_i64),
+                ),
+        );
 
     let job = job_service
         .insert_job()
