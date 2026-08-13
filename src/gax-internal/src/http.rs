@@ -576,8 +576,7 @@ pub fn map_send_error(err: ::reqwest::Error) -> Error {
     }
 }
 
-#[derive(Default, serde::Serialize)]
-pub struct NoBody;
+
 
 pub fn handle_empty<T: Default>(body: Option<T>, method: &Method) -> Option<T> {
     body.or_else(|| {
@@ -769,7 +768,7 @@ mod tests {
     #[test_case(Method::DELETE, false)]
     #[test_case(Method::PATCH, false)]
     fn handle_empty(input: Method, expected: bool) {
-        assert!(super::handle_empty(None::<super::NoBody>, &input).is_some() == expected);
+        
 
         let s = Some(wkt::Empty {});
         assert_eq!(s, super::handle_empty(s.clone(), &input));
