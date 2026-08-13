@@ -757,7 +757,7 @@ impl super::stub::Compliance for Compliance {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner.execute(builder, body, options).await
     }
 
@@ -1583,7 +1583,7 @@ impl super::stub::Compliance for Compliance {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner
             .execute(builder, body, options)
             .await
@@ -1787,7 +1787,7 @@ impl super::stub::Echo for Echo {
     async fn chat(
         &self,
         req: crate::model::EchoRequest,
-        options: crate::RequestOptions,
+        options: crate::BidiStreamOptions,
     ) -> Result<(
         google_cloud_gax::streaming::RequestSender<crate::model::EchoRequest>,
         google_cloud_gax::streaming::ResponseReceiver<crate::model::EchoResponse>,
@@ -1799,7 +1799,7 @@ impl super::stub::Echo for Echo {
             .to_proto()
             .map_err(google_cloud_gax::error::Error::ser)?;
 
-        let (req_tx, req_rx) = tokio::sync::mpsc::channel(16);
+        let (req_tx, req_rx) = tokio::sync::mpsc::channel(options.request_channel_capacity());
 
         let req_stream = futures::stream::once(async move { first_req })
             .chain(tokio_stream::wrappers::ReceiverStream::new(req_rx));
@@ -1823,7 +1823,7 @@ impl super::stub::Echo for Echo {
                 extensions,
                 path,
                 req_stream,
-                options,
+                options.into(),
                 &crate::info::X_GOOG_API_CLIENT_HEADER,
                 x_goog_request_params,
             )
@@ -2909,7 +2909,7 @@ impl super::stub::Echo for Echo {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner
             .execute(builder, body, options)
             .await
@@ -4070,7 +4070,7 @@ impl super::stub::Identity for Identity {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner
             .execute(builder, body, options)
             .await
@@ -5034,7 +5034,7 @@ impl super::stub::Messaging for Messaging {
     async fn connect(
         &self,
         req: crate::model::ConnectRequest,
-        options: crate::RequestOptions,
+        options: crate::BidiStreamOptions,
     ) -> Result<(
         google_cloud_gax::streaming::RequestSender<crate::model::ConnectRequest>,
         google_cloud_gax::streaming::ResponseReceiver<crate::model::StreamBlurbsResponse>,
@@ -5046,7 +5046,7 @@ impl super::stub::Messaging for Messaging {
             .to_proto()
             .map_err(google_cloud_gax::error::Error::ser)?;
 
-        let (req_tx, req_rx) = tokio::sync::mpsc::channel(16);
+        let (req_tx, req_rx) = tokio::sync::mpsc::channel(options.request_channel_capacity());
 
         let req_stream = futures::stream::once(async move { first_req })
             .chain(tokio_stream::wrappers::ReceiverStream::new(req_rx));
@@ -5071,7 +5071,7 @@ impl super::stub::Messaging for Messaging {
                 extensions,
                 path,
                 req_stream,
-                options,
+                options.into(),
                 &crate::info::X_GOOG_API_CLIENT_HEADER,
                 x_goog_request_params,
             )
@@ -5922,7 +5922,7 @@ impl super::stub::Messaging for Messaging {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner
             .execute(builder, body, options)
             .await
@@ -7085,7 +7085,7 @@ impl super::stub::SequenceService for SequenceService {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner
             .execute(builder, body, options)
             .await
@@ -7390,7 +7390,7 @@ impl super::stub::Testing for Testing {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner.execute(builder, body, options).await
     }
 
@@ -7597,7 +7597,7 @@ impl super::stub::Testing for Testing {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner.execute(builder, body, options).await
     }
 
@@ -8423,7 +8423,7 @@ impl super::stub::Testing for Testing {
             "x-goog-api-client",
             HeaderValue::from_static(&crate::info::X_GOOG_API_CLIENT_HEADER),
         );
-        let body = gaxi::http::handle_empty(None::<gaxi::http::NoBody>, &method);
+        let body = gaxi::http::handle_empty(None::<wkt::Empty>, &method);
         self.inner
             .execute(builder, body, options)
             .await
