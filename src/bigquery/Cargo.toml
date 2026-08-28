@@ -59,6 +59,8 @@ tokio                       = { workspace = true, features = ["macros", "rt-mult
 bigquery-grpc-mock          = { path = "../bigquery/grpc-mock" }
 google-cloud-auth.workspace = true
 google-cloud-bigquery       = { path = ".", features = ["default-rustls-provider"] }
+prost-reflect = "0.16.5"
+prost-types.workspace = true
 
 [features]
 default = ["default-rustls-provider"]

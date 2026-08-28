@@ -42,6 +42,9 @@ google-cloud-bigquery-v2   = { workspace = true, features = ["default"] }
 google-cloud-gax           = { workspace = true, features = ["unstable-stream"] }
 google-cloud-test-utils    = { workspace = true }
 google-cloud-type          = { workspace = true }
+prost.workspace = true
+prost-reflect = "0.16.5"
+prost-types.workspace = true
 rand.workspace             = true
 rust_decimal               = { workspace = true }
 tokio.workspace            = true
