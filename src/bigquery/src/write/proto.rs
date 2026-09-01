@@ -12,27 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/// Types to write data in [Arrow] format
-///
-/// [arrow]: https://arrow.apache.org/
-pub mod arrow;
+mod base;
+mod buffered;
+mod committed;
+mod default;
+mod pending;
+mod writer;
+mod writer_builder;
 
-pub use append_future::AppendFuture;
-
-pub(super) mod append_builder;
-pub(super) mod append_future;
-pub(super) mod append_response;
-pub(super) mod client;
-pub(super) mod client_builder;
-pub(super) mod error;
-mod proto_schema;
-mod runner;
-mod stream;
-mod transport;
-
-// TODO(#4832) - remove handwritten code.
-mod status;
-
-#[allow(dead_code)]
-pub(crate) mod generated;
-pub(crate) mod proto;
+pub(crate) use buffered::BufferedWriter;
+pub(crate) use committed::CommittedWriter;
+pub(crate) use default::DefaultWriter;
+pub(crate) use pending::PendingWriter;
+pub(crate) use writer::Writer;
+pub(crate) use writer_builder::WriterBuilder;
