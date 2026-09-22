@@ -243,6 +243,70 @@ mod tests {
     }
 
     #[tokio::test]
+    async fn reproduce_out_of_order_stream_response_misdelivery() -> anyhow::Result<()> {
+        let (response_tx, response_rx) = mpsc::channel(10);
+        let mut mock = MockBigQueryWrite::new();
+        mock.expect_append_rows()
+            .return_once(|_| Ok(TonicResponse::from(response_rx)));
+        let (endpoint, _server) = start("0.0.0.0:0", mock).await?;
+        let transport = Arc::new(test_transport(endpoint).await?);
+        let pool = StreamPool::new(transport, StreamPoolOptions::default());
+
+        // Without regional channel pooling, two writers for different regions
+        // share the same underlying stream connection:
+        let s_us = pool.get();
+        let s_eu = pool.get();
+        assert_eq!(s_us.id, s_eu.id); // Same physical stream ID: 1
+
+        // 1. Writer US sends Request 1
+        let (resp_tx1, resp_rx1) = oneshot::channel();
+        let mut req1 = test_request(1);
+        req1.write_stream = "projects/p/datasets/us/tables/t1/streams/_default".to_string();
+        s_us.req_tx.send(WriteRequest {
+            req: req1,
+            resp_tx: resp_tx1,
+        })?;
+
+        // 2. Writer EU sends Request 2
+        let (resp_tx2, resp_rx2) = oneshot::channel();
+        let mut req2 = test_request(2);
+        req2.write_stream = "projects/p/datasets/eu/tables/t2/streams/_default".to_string();
+        s_eu.req_tx.send(WriteRequest {
+            req: req2,
+            resp_tx: resp_tx2,
+        })?;
+
+        // 3. The distributed backend finishes EU first (offset 200):
+        let mut resp_for_eu = test_response(200);
+        resp_for_eu.write_stream = "projects/p/datasets/eu/tables/t2/streams/_default".to_string();
+        response_tx.send(Ok(convert(&resp_for_eu))).await?;
+        let got_us = resp_rx1.await??;
+
+        // 4. Then backend finishes US second (offset 100):
+        let mut resp_for_us = test_response(100);
+        resp_for_us.write_stream = "projects/p/datasets/us/tables/t1/streams/_default".to_string();
+        response_tx.send(Ok(convert(&resp_for_us))).await?;
+        let got_eu = resp_rx2.await??;
+
+        // Demonstrates the bug:
+        // Because runner uses FIFO pop_front() without regional channel pooling,
+        // Writer US receives EU's response and offset, and Writer EU receives US's response!
+        assert_eq!(
+            got_us.write_stream,
+            "projects/p/datasets/eu/tables/t2/streams/_default"
+        );
+        assert_eq!(got_us.response, test_response(200).response);
+
+        assert_eq!(
+            got_eu.write_stream,
+            "projects/p/datasets/us/tables/t1/streams/_default"
+        );
+        assert_eq!(got_eu.response, test_response(100).response);
+
+        Ok(())
+    }
+
+    #[tokio::test]
     async fn empty_pool_get_lock_contention() -> anyhow::Result<()> {
         let transport = Arc::new(test_transport("ignored").await?);
         let options = StreamPoolOptions {
