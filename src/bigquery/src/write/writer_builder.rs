@@ -290,6 +290,21 @@ impl<S: Stream> WriterBuilder<S> {
     }
 
     /// Consumes the builder and creates a writer using Protobuf as the data format.
+    #[cfg(feature = "_internal-proto-write")]
+    #[doc(hidden)]
+    pub async fn build_proto<W>(
+        self,
+        schema: ProtoSchema,
+    ) -> std::result::Result<W, WriterBuilderError>
+    where
+        S: Stream<Writer<Proto> = W>,
+        W: HasStream<Stream = S>,
+    {
+        self.build(Proto { schema }).await
+    }
+
+    /// Consumes the builder and creates a writer using Protobuf as the data format.
+    #[cfg(not(feature = "_internal-proto-write"))]
     #[allow(dead_code)]
     pub(crate) async fn build_proto<W>(
         self,

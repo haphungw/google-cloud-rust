@@ -36,4 +36,8 @@ pub(crate) mod sealed {
 }
 
 pub use arrow::Arrow;
+#[cfg(feature = "_internal-proto-write")]
+#[doc(hidden)]
+pub use proto::Proto;
+#[cfg(not(feature = "_internal-proto-write"))]
 pub(crate) use proto::Proto;
