@@ -483,6 +483,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "bigquery-json-write-benchmark"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "arrow",
+ "arrow-json",
+ "bytes",
+ "clap",
+ "google-cloud-bigquery",
+ "google-cloud-bigquery-v2",
+ "google-cloud-wkt",
+ "prost",
+ "prost-reflect",
+ "prost-types",
+ "rand 0.10.3",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "bigquery-samples"
 version = "0.0.0"
 dependencies = [
@@ -8573,6 +8594,16 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.119",
+]
+
+[[package]]
+name = "prost-reflect"
+version = "0.16.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "01b80ea363c31af2de2b92e3c07ed1156628f7838c4afb4df75ee78a37fedbd1"
+dependencies = [
+ "prost",
+ "prost-types",
 ]
 
 [[package]]

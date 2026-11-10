@@ -73,6 +73,7 @@ members = [
   "src/auth",
   "src/bigquery",
   "src/bigquery-derive",
+  "src/bigquery/benchmarks/json-write",
   "src/bigquery/benchmarks/queries",
   "src/bigquery/benchmarks/write-throughput",
   "src/bigquery/examples",
@@ -532,6 +533,7 @@ once_cell         = { default-features = false, version = "1.19.0" }
 pastey            = { default-features = false, version = "0.2.3" }
 pretty_assertions = { default-features = false, version = "1.4.1", features = ["alloc"] }
 proc-macro2       = { default-features = false, version = "1.0.106" }
+prost-reflect     = { default-features = false, version = "0.16.5" }
 quote             = { default-features = false, version = "1.0.38" }
 regex             = { default-features = false, version = "1.10.4" }
 rsa               = { default-features = false, version = "0.9.10" }
